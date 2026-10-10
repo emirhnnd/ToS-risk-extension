@@ -1,0 +1,7 @@
+#!/bin/sh
+# API anahtarı içeren commit'i engeller. `npm install` bu kancayı otomatik etkinleştirir.
+npx vitest run tests/unit/secrets.test.ts --reporter=dot >/dev/null 2>&1 || {
+  echo "✋ Commit durduruldu: bir dosyada API anahtarı olabilir."
+  echo "   Ayrıntı için: npx vitest run tests/unit/secrets.test.ts"
+  exit 1
+}

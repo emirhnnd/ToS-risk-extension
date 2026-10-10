@@ -9,7 +9,9 @@
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "check:secrets": "vitest run tests/unit/secrets.test.ts"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^3.0.0",
