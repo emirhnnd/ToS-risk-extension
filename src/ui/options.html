@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <title>ToS Risk Analizi – Ayarlar</title>
+  <style>
+    body { font: 15px/1.5 system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 16px; }
+    input { width: 100%; padding: 8px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 12px; padding: 8px 16px; font: inherit; }
+    .note { color: #555; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Ayarlar</h1>
+  <label for="key">Gemini API anahtarı</label>
+  <input id="key" type="password" autocomplete="off" placeholder="AIza..." />
+  <button id="save">Kaydet</button>
+  <p id="status" role="status"></p>
+  <p class="note">Anahtar yalnızca bu tarayıcıda (chrome.storage.local) saklanır. Ziyaret ettiğiniz sayfalar anahtara erişemez; LLM isteği uzantının arka plan betiğinden yapılır.</p>
+  <script type="module" src="./options.ts"></script>
+</body>
+</html>
