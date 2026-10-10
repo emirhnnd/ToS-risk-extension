@@ -2,6 +2,7 @@ import type { AnalyzeRequest, AnalyzeResponse } from '../shared/messages';
 import { findHiddenText, removeHiddenLines } from '../sanitizer/hidden';
 import { segmentText } from '../sanitizer/segment';
 import { ReportPanel } from '../ui/panel';
+import { startActionGuard } from './action-guard';
 import { detectContractPage } from './detect';
 import { extractVisibleText } from './extract';
 
@@ -27,6 +28,7 @@ function currentDetection(): number {
 }
 
 async function runAnalysis(p: ReportPanel): Promise<void> {
+  const stopGuard = startActionGuard();
   try {
     p.showLoading('Sayfa metni okunuyor…');
     const detectionScore = currentDetection();
@@ -48,9 +50,20 @@ async function runAnalysis(p: ReportPanel): Promise<void> {
 
     if (!res) p.showError('Uzantının arka plan betiğinden yanıt alınamadı. Sayfayı yenileyip tekrar deneyin.');
     else if (!res.ok) p.showError(res.error);
-    else p.showReport(res.report);
+    else {
+      const guard = stopGuard();
+      const report = res.report;
+      if (guard.synthetic > 0) {
+        report.synthetic_interactions = { count: guard.synthetic, samples: guard.samples };
+        report.uncertainty.reasons.push('synthetic_interaction');
+        report.uncertainty.level = 'high';
+      }
+      p.showReport(report);
+    }
   } catch (e) {
     p.showError(`Beklenmeyen hata: ${(e as Error).message}`);
+  } finally {
+    stopGuard(); // her yolda dinleyiciler kaldırılır
   }
 }
 

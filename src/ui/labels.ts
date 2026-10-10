@@ -10,6 +10,7 @@ export const UNCERTAINTY_LABELS: Record<UncertaintyReason, string> = {
   visible_instructions: 'Sayfa metninde yapay zekâya yönelik talimat gibi görünen ifadeler var.',
   low_confidence_findings: 'Bazı maddelerde yapay zekâ düşük güven bildirdi.',
   unsupported_language: 'Metin desteklenmeyen bir dilde; sonuçlar güvenilir olmayabilir.',
+  synthetic_interaction: 'Analiz sırasında sayfada kodla tetiklenmiş tıklama veya giriş olayı görüldü.',
   llm_reported_uncertainty: 'Yapay zekâ analiz sırasında belirsizlik notları bıraktı.',
 };
 

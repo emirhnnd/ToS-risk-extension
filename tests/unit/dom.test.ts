@@ -84,3 +84,47 @@ describe('ReportPanel', () => {
     expect(p.shadowRoot.querySelector('[data-testid=risk-score]')!.getAttribute('data-score')).toBe('73');
   });
 });
+
+import { startActionGuard } from '../../src/content/action-guard';
+describe('startActionGuard (çalışma anı salt-okuma denetimi)', () => {
+  it('kodla tetiklenen tıklamayı yakalar', () => {
+    document.body.innerHTML = '<button id="subscribe">Abone ol</button>';
+    const stop = startActionGuard(document);
+    (document.getElementById('subscribe') as HTMLButtonElement).click(); // isTrusted=false
+    const r = stop();
+    expect(r.synthetic).toBe(1);
+    expect(r.samples[0]).toContain('#subscribe');
+  });
+  it('durdurulduktan sonra saymaz', () => {
+    document.body.innerHTML = '<button id="b">x</button>';
+    const stop = startActionGuard(document);
+    const r = stop();
+    (document.getElementById('b') as HTMLButtonElement).click();
+    expect(r.synthetic).toBe(0);
+  });
+  it('kendi panelimizdeki tıklamaları saymaz', () => {
+    const p = new ReportPanel();
+    p.showIdle(1);
+    const stop = startActionGuard(document);
+    (p.shadowRoot.querySelector('[data-testid=minimize]') as HTMLButtonElement).click();
+    expect(stop().synthetic).toBe(0);
+  });
+});
+describe('startActionGuard idempotent', () => {
+  it('iki kez durdurmak güvenli ve sayaç korunur', () => {
+    document.body.innerHTML = '<button id="b">x</button>';
+    const stop = startActionGuard(document);
+    (document.getElementById('b') as HTMLButtonElement).click();
+    expect(stop().synthetic).toBe(1);
+    expect(stop().synthetic).toBe(1);
+  });
+});
+describe('startActionGuard idempotent', () => {
+  it('iki kez durdurmak güvenli ve sayaç korunur', () => {
+    document.body.innerHTML = '<button id="b">x</button>';
+    const stop = startActionGuard(document);
+    (document.getElementById('b') as HTMLButtonElement).click();
+    expect(stop().synthetic).toBe(1);
+    expect(stop().synthetic).toBe(1);
+  });
+});

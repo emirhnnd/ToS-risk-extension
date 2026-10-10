@@ -66,6 +66,7 @@ export type UncertaintyReason =
   | 'visible_instructions'
   | 'low_confidence_findings'
   | 'unsupported_language'
+  | 'synthetic_interaction'
   | 'llm_reported_uncertainty';
 
 /** Panelde gösterilen son rapor: tamamen kodla üretilir */
@@ -81,6 +82,8 @@ export interface Report {
   hidden: HiddenTextFinding[];
   /** Görünür metinde yapay zekâya yönelik talimat gibi görünen segmentler (A2) */
   instruction_segments: string[];
+  /** Analiz sırasında görülen, kodla tetiklenmiş sayfa etkileşimleri (salt-okuma denetimi) */
+  synthetic_interactions?: { count: number; samples: string[] };
   summary_tr: string;
   coverage: number; // 0–1, LLM'e gönderilen metin / toplam görünür metin
   uncertainty: { level: 'low' | 'high'; reasons: UncertaintyReason[]; notes: string[] };

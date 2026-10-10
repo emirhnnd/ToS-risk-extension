@@ -102,6 +102,14 @@ export class ReportPanel {
       );
     }
 
+    // 2b) Salt-okuma denetimi sonucu
+    parts.push(
+      r.synthetic_interactions && r.synthetic_interactions.count > 0
+        ? h('div', { class: 'error', 'data-testid': 'action-guard', 'data-synthetic': String(r.synthetic_interactions.count), role: 'alert' },
+            `🚨 Analiz sırasında ${r.synthetic_interactions.count} sentetik etkileşim görüldü: `, r.synthetic_interactions.samples.join(', '))
+        : h('p', { class: 'muted', 'data-testid': 'action-guard', 'data-synthetic': '0' }, '✅ Salt-okuma denetimi: analiz sırasında sayfada hiçbir tıklama veya giriş tetiklenmedi.'),
+    );
+
     // 3) Özet
     if (r.summary_tr) parts.push(h('p', { class: 'summary', 'data-testid': 'summary' }, r.summary_tr));
 
