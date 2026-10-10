@@ -14,6 +14,9 @@
   <h1>Ayarlar</h1>
   <label for="key">Gemini API anahtarı</label>
   <input id="key" type="password" autocomplete="off" placeholder="Gemini API anahtarı" />
+  <label for="model" style="display:block;margin-top:12px">Model</label>
+  <input id="model" type="text" autocomplete="off" placeholder="gemini-3.8-flash" />
+  <p class="note">Boş bırakırsanız varsayılan model kullanılır. "Model bulunamadı" hatası alırsanız örn. <code>gemini-3.6-flash</code> veya <code>gemini-3.5-flash-lite</code> deneyin.</p>
   <button id="save">Kaydet</button>
   <p id="status" role="status"></p>
   <p class="note">Anahtar yalnızca bu tarayıcıda (chrome.storage.local) saklanır. Ziyaret ettiğiniz sayfalar anahtara erişemez; LLM isteği uzantının arka plan betiğinden yapılır.</p>

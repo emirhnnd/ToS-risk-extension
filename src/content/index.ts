@@ -1,11 +1,61 @@
+import type { AnalyzeRequest, AnalyzeResponse } from '../shared/messages';
+import { findHiddenText, removeHiddenLines } from '../sanitizer/hidden';
+import { segmentText } from '../sanitizer/segment';
+import { ReportPanel } from '../ui/panel';
 import { detectContractPage } from './detect';
+import { extractVisibleText } from './extract';
 
 /**
- * İçerik betiği giriş noktası.
- * Şu an (gün 1): yalnızca algılama. Metin çıkarma → sanitizer → service worker → panel
- * hattı gün 2–3'te bağlanacak (bkz. plan §11).
+ * İçerik betiği: veri akışının sayfa tarafı (plan §5.2, adım 1–3 ve 6).
+ *   algıla → (kullanıcı "analiz et" der) → page-agent ile görünür metni çıkar
+ *   → gizli metni ayıkla → segmentlere böl → service worker'a gönder → raporu göster
+ * İçerik betiği API anahtarını görmez ve LLM'e kendisi istek atmaz.
+ * LLM'e otomatik istek atılmaz; kullanıcı butona basınca analiz başlar.
  */
-const score = detectContractPage(location.href, document.title, document.body?.innerText ?? '');
-if (score >= 0.5) {
-  console.debug('[ToS Risk] sözleşme sayfası olabilir, algılama skoru:', score);
+let panel: ReportPanel | null = null;
+
+function openPanel(): ReportPanel {
+  if (panel && document.getElementById('tos-risk-panel-host')) return panel;
+  panel = new ReportPanel();
+  panel.onAnalyze = () => void runAnalysis(panel!);
+  panel.showIdle(currentDetection());
+  return panel;
 }
+
+function currentDetection(): number {
+  return detectContractPage(location.href, document.title, document.body?.innerText ?? '');
+}
+
+async function runAnalysis(p: ReportPanel): Promise<void> {
+  try {
+    p.showLoading('Sayfa metni okunuyor…');
+    const detectionScore = currentDetection();
+    const hidden = findHiddenText(document.body);
+
+    let visible: string;
+    try {
+      visible = await extractVisibleText();
+    } catch (e) {
+      console.warn('[ToS Risk] page-agent metin çıkarma başarısız, innerText kullanılıyor:', e);
+      visible = document.body.innerText;
+    }
+    const { text } = removeHiddenLines(visible, hidden);
+    const segments = segmentText(text);
+
+    p.showLoading(`Yapay zekâ analiz ediyor (${segments.length} bölüm)… Bu 10–60 sn sürebilir.`);
+    const req: AnalyzeRequest = { type: 'analyze', url: location.href, title: document.title, detectionScore, segments, hidden };
+    const res = (await chrome.runtime.sendMessage(req)) as AnalyzeResponse | undefined;
+
+    if (!res) p.showError('Uzantının arka plan betiğinden yanıt alınamadı. Sayfayı yenileyip tekrar deneyin.');
+    else if (!res.ok) p.showError(res.error);
+    else p.showReport(res.report);
+  } catch (e) {
+    p.showError(`Beklenmeyen hata: ${(e as Error).message}`);
+  }
+}
+
+chrome.runtime.onMessage.addListener((msg, sender) => {
+  if (sender.id === chrome.runtime.id && msg?.type === 'open-panel') openPanel();
+});
+
+if (currentDetection() >= 0.5) openPanel();

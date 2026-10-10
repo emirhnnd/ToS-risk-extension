@@ -8,6 +8,7 @@ import {
   type UncertaintyReason,
   type VerifiedFinding,
 } from '../shared/schema';
+import { looksLikeInstruction } from '../sanitizer/instructions';
 import { normalizeForMatch } from './normalize';
 import { QuoteIndex } from './quote';
 import { computeRiskScore, riskLevel } from './score';
@@ -76,12 +77,14 @@ export interface ReportInput {
 export function buildReport(input: ReportInput): Report {
   const { verified, rejected } = verifyFindings(input.output, input.segments);
   const score = computeRiskScore(verified);
+  const instructionSegments = input.segments.filter((s) => looksLikeInstruction(s.text)).map((s) => s.id);
 
   const reasons: UncertaintyReason[] = [];
   if (input.detectionScore < MIN_DETECTION) reasons.push('not_a_contract_page');
   if (input.coverage < MIN_COVERAGE) reasons.push('partial_coverage');
   if (rejected.some((r) => r.reason !== 'duplicate')) reasons.push('rejected_claims');
   if (input.hidden.some((h) => h.looks_like_instruction)) reasons.push('hidden_instructions');
+  if (instructionSegments.length > 0) reasons.push('visible_instructions');
   if (verified.some((f) => f.confidence < LOW_CONFIDENCE)) reasons.push('low_confidence_findings');
   if (!SUPPORTED_LANGUAGES.includes(input.output.language)) reasons.push('unsupported_language');
   if (input.output.uncertainty_notes.length > 0) reasons.push('llm_reported_uncertainty');
@@ -99,6 +102,7 @@ export function buildReport(input: ReportInput): Report {
     findings: verified,
     rejected,
     hidden: [...input.hidden],
+    instruction_segments: instructionSegments,
     summary_tr: input.output.summary_tr,
     coverage: input.coverage,
     uncertainty: { level: hard.length > 0 ? 'high' : 'low', reasons, notes: input.output.uncertainty_notes },

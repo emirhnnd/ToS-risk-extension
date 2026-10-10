@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "git config core.hooksPath .githooks || true",
-    "check:secrets": "vitest run tests/unit/secrets.test.ts"
+    "check:secrets": "vitest run tests/unit/secrets.test.ts",
+    "fixtures": "node scripts/serve-fixtures.mjs"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^3.0.0",

@@ -4,7 +4,7 @@ Kullanım koşulları, gizlilik politikası ve abonelik şartları sayfalarını
 
 > ⚠️ **Bu uygulama hukuki tavsiye vermez.**
 
-> 🚧 Geliştirme sürüyor (gün 1/5). Bu README teslimden önce mimari diyagram, eval sonuçları ve güvenlik bölümüyle tamamlanacak.
+> 🚧 Geliştirme sürüyor (gün 2/5). Bu README teslimden önce mimari diyagram, eval sonuçları ve güvenlik bölümüyle tamamlanacak.
 
 ## Temel ilke
 
@@ -27,6 +27,8 @@ npm run build    # dist/ klasörü oluşur
 
 Chrome → `chrome://extensions` → Geliştirici modu → **Paketlenmemiş öğe yükle** → `dist/` klasörü.
 Ayarlar sayfasında Gemini API anahtarını girin. Anahtar yalnızca `chrome.storage.local` içinde saklanır, repoda yoktur.
+
+Yerel test sayfaları için `npm run fixtures` çalıştırıp http://localhost:5555 adresini açın (kurgusal ToS + prompt injection sayfası).
 
 ## Klasör yapısı
 
@@ -66,3 +68,21 @@ Her kategori yalnızca bir kez, en yüksek şiddetiyle sayılır. Böylece LLM a
 | "sade Türkçe açıklama ve ___" | Güven / belirsizlik seviyesi |
 | page-agent kullanımı | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler |
 | İçerik betiği kapsamı | Otomatik algılama (F1) için tüm http/https sayfalarda çalışır. Yalnızca okuma yapar, ağ isteği atmaz |
+
+## Güvenlik
+
+- **Gizli metin LLM'e gitmez.** `display:none`, `visibility:hidden`, `opacity:0`, 2 px altı yazı, ekran dışı konum, kırpma, şeffaf veya arka planla aynı renk yazı tespit edilir (`src/sanitizer/hidden.ts`). Bu metinler raporda "gizli içerik" olarak listelenir; talimata benzeyenler güvenilirliği düşürür.
+- **Sayfa metni veri olarak işaretlenir.** Talimatlar `systemInstruction` alanında, sayfa metni `<untrusted_document>` içinde gönderilir; metindeki kapanış etiketi etkisizleştirilir (sınırlayıcıdan kaçış saldırısı).
+- **LLM hiçbir şeye karar vermez.** Şema dışı çıktı reddedilir (`.strict()`: LLM'in eklediği bir `risk_score` alanı bile geçmez). Alıntısı metinde olmayan iddia atılır. Skor formülle hesaplanır.
+- **page-agent salt okuma modunda.** Yalnızca `@page-agent/page-controller` paketinin `updateTree()` metodu kullanılır; aksiyonlu `page-agent` paketi bağımlılıkta yoktur. `tests/unit/readonly.test.ts`, kaynak kodda hiçbir aksiyon metodunun çağrılmadığını denetler. Kütüphanedeki `eval` çağrısı yalnızca hiç kullanmadığımız `executeJavascript` aksiyonundadır; ayrıca MV3'ün içerik güvenliği politikası `eval`'i zaten engeller.
+- **API anahtarı.** Yalnızca service worker okur; içerik betiği ve sayfa göremez. İstek başlığında (`x-goog-api-key`) gönderilir, URL'de değil. `tests/unit/secrets.test.ts` git'e girecek dosyaları anahtar kalıplarına karşı tarar; `.githooks/pre-commit` anahtar içeren commit'i engeller.
+- **XSS.** Panel, LLM veya sayfa kaynaklı metni yalnızca `textContent` ile yazar; birim testi `<img onerror>` içeren LLM çıktısının çalışmadığını doğrular.
+- **Mesaj doğrulama.** Service worker, içerik betiğinden gelen isteği de Zod ile doğrular ve yalnızca kendi uzantısından gelen mesajları kabul eder.
+
+## Bilinen sınırlamalar
+
+- **Alıntı doğrulama, metnin sayfada var olduğunu kanıtlar; gerçek bir sözleşme maddesi olduğunu kanıtlamaz.** Saldırgan uydurma bir maddeyi sayfaya görünür biçimde yazarsa doğrulama onu kabul eder. Bu durumda tek savunma, görünür metindeki talimat benzeri ifadelerin güvenilirliği düşürmesidir (`tests/unit/fixtures.test.ts`, "BİLİNEN SINIRLAMA" testi).
+- Talimat tespiti düzenli ifadelere dayanır; eş anlamlı ifadeleri veya desteklenmeyen dilleri kaçırabilir. Bu bir raporlama sinyalidir, asıl savunma değildir.
+- Gizli metin tespiti; başka bir elemanın arkasına saklanmış (z-index) veya resim üstüne aynı renkte yazılmış metni yakalamaz. `aria-hidden` bilinçli olarak gizli sayılmaz, çünkü görsel olarak görünürdür.
+- jsdom yerleşim hesaplamadığı için "ekran dışı" kuralı birim testlerinde değil, Cypress'te gerçek Chrome'da test edilir.
+- Alıntı normalizasyonu aksanları kaldırır; çok nadir durumlarda farklı kelimeleri eşleştirebilir.

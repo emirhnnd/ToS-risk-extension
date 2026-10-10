@@ -63,6 +63,7 @@ export type UncertaintyReason =
   | 'partial_coverage'
   | 'rejected_claims'
   | 'hidden_instructions'
+  | 'visible_instructions'
   | 'low_confidence_findings'
   | 'unsupported_language'
   | 'llm_reported_uncertainty';
@@ -78,6 +79,8 @@ export interface Report {
   findings: VerifiedFinding[];
   rejected: RejectedFinding[];
   hidden: HiddenTextFinding[];
+  /** Görünür metinde yapay zekâya yönelik talimat gibi görünen segmentler (A2) */
+  instruction_segments: string[];
   summary_tr: string;
   coverage: number; // 0–1, LLM'e gönderilen metin / toplam görünür metin
   uncertainty: { level: 'low' | 'high'; reasons: UncertaintyReason[]; notes: string[] };
