@@ -75,6 +75,11 @@ describe('buildReport (belirsizlik)', () => {
       expect.arrayContaining(['partial_coverage', 'not_a_contract_page', 'low_confidence_findings', 'unsupported_language']),
     );
   });
+  it('boş veya yalnızca boşluk olan LLM notları atılır ve belirsizlik sayılmaz (Chrome\'da görülen hata)', () => {
+    const r = buildReport({ ...base, output: output([finding()], { uncertainty_notes: ['', '   '] }) });
+    expect(r.uncertainty.notes).toEqual([]);
+    expect(r.uncertainty.reasons).not.toContain('llm_reported_uncertainty');
+  });
   it('yalnızca LLM notu varsa güvenilirlik düşürülmez ama not gösterilir', () => {
     const r = buildReport({ ...base, output: output([finding()], { uncertainty_notes: ['metin kesik görünüyor'] }) });
     expect(r.uncertainty.level).toBe('low');

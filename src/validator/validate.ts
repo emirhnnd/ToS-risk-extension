@@ -77,6 +77,8 @@ export interface ReportInput {
 export function buildReport(input: ReportInput): Report {
   const { verified, rejected } = verifyFindings(input.output, input.segments);
   const score = computeRiskScore(verified);
+  // LLM bazen boş not döndürüyor (gerçek Chrome testinde görüldü): boş notlar belirsizlik sayılmaz.
+  const notes = input.output.uncertainty_notes.map((n) => n.trim()).filter((n) => n.length > 0);
   const instructionSegments = input.segments.filter((s) => looksLikeInstruction(s.text)).map((s) => s.id);
 
   const reasons: UncertaintyReason[] = [];
@@ -87,7 +89,7 @@ export function buildReport(input: ReportInput): Report {
   if (instructionSegments.length > 0) reasons.push('visible_instructions');
   if (verified.some((f) => f.confidence < LOW_CONFIDENCE)) reasons.push('low_confidence_findings');
   if (!SUPPORTED_LANGUAGES.includes(input.output.language)) reasons.push('unsupported_language');
-  if (input.output.uncertainty_notes.length > 0) reasons.push('llm_reported_uncertainty');
+  if (notes.length > 0) reasons.push('llm_reported_uncertainty');
 
   // LLM'in kendi notları tek başına güvenilirliği "düşük" yapmaz; diğer nedenler yapar.
   const hard = reasons.filter((r) => r !== 'llm_reported_uncertainty');
@@ -105,6 +107,6 @@ export function buildReport(input: ReportInput): Report {
     instruction_segments: instructionSegments,
     summary_tr: input.output.summary_tr,
     coverage: input.coverage,
-    uncertainty: { level: hard.length > 0 ? 'high' : 'low', reasons, notes: input.output.uncertainty_notes },
+    uncertainty: { level: hard.length > 0 ? 'high' : 'low', reasons, notes },
   };
 }
