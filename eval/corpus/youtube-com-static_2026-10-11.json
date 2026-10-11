@@ -1,9 +1,9 @@
 {
   "format": "tos-risk-corpus/v1",
-  "captured_at": "2026-10-11T06:50:24.940Z",
+  "captured_at": "2026-10-11T07:16:21.636Z",
   "url": "https://www.youtube.com/static?gl=TR&template=terms",
   "title": "HİZMET KOŞULLARI",
-  "detection_score": 0.7,
+  "detection_score": 1,
   "segments": [
     {
       "id": "S1",
@@ -314,5 +314,6 @@
   "extraction": {
     "region": "whole_page",
     "dropped_lines": 0
-  }
+  },
+  "extension_build": "2026-10-11T07:10:18.198Z"
 }

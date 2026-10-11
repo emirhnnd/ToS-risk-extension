@@ -1,6 +1,6 @@
 {
   "format": "tos-risk-corpus/v1",
-  "captured_at": "2026-10-11T06:46:50.841Z",
+  "captured_at": "2026-10-11T07:15:23.609Z",
   "url": "https://www.spotify.com/tr-en/legal/end-user-agreement/",
   "title": "Terms and Conditions of Use - Spotify",
   "detection_score": 1,
@@ -740,5 +740,6 @@
   "extraction": {
     "region": "main",
     "dropped_lines": 41
-  }
+  },
+  "extension_build": "2026-10-11T07:10:18.198Z"
 }

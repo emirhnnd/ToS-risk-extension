@@ -1,6 +1,6 @@
 {
   "format": "tos-risk-corpus/v1",
-  "captured_at": "2026-10-11T06:56:26.824Z",
+  "captured_at": "2026-10-11T07:16:52.679Z",
   "url": "https://store.steampowered.com/subscriber_agreement/",
   "title": "Steam Abonelik Sözleşmesi",
   "detection_score": 1,
@@ -552,5 +552,6 @@
   "extraction": {
     "region": "main",
     "dropped_lines": 33
-  }
+  },
+  "extension_build": "2026-10-11T07:10:18.198Z"
 }
