@@ -1,0 +1,730 @@
+{
+  "format": "tos-risk-corpus/v1",
+  "captured_at": "2026-10-11T07:02:05.090Z",
+  "url": "https://www.spotify.com/il-en/legal/end-user-agreement/",
+  "title": "Terms and Conditions of Use - Spotify",
+  "detection_score": 1,
+  "segments": [
+    {
+      "id": "S1",
+      "text": "Close Support Download Sign up Legal Terms and Conditions of Use Intellectual Property Policy Privacy Policy User Guidelines Paid Subscription Terms Spotify Terms of Use 1. Introduction 2. The Spotify Service Provided by Us 3. Your Use of the Spotify Service 4. Content and Intellectual Property Rights 5. Customer Support, Information, Questions and Complaints 6. Problems and Disputes 7. About these Terms 1. Introduction Please read these Terms of Use (these \"Terms\") carefully as they govern your use of (which includes access to) Spotify's personalized services for streaming music and other content, including all of our websites and software applications that incorporate or link to these Terms (collectively, the \"Spotify Service\") and any music, videos, podcasts, or other material that is made available through the Spotify Service (the \"Content\")."
+    },
+    {
+      "id": "S2",
+      "text": "Use of the Spotify Service may be subject to additional terms and conditions presented by Spotify, which are hereby incorporated by this reference into these Terms."
+    },
+    {
+      "id": "S3",
+      "text": "By signing up for, or otherwise using, the Spotify Service, you agree to these Terms. If you do not agree to these Terms, then you must not use the Spotify Service or access any Content."
+    },
+    {
+      "id": "S4",
+      "text": "Service Provider These Terms are between you and Spotify AB, Regeringsgatan 19, 111 53, Stockholm, Sweden."
+    },
+    {
+      "id": "S5",
+      "text": "Age and eligibility requirements In order to use the Spotify Service and access any Content, you need to (1) be 13 years of age (or the equivalent minimum age in your home country) or older, (2) have parent or guardian consent if you are a minor in your home country, (3) have the power to enter a binding contract with us and not be barred from doing so under any applicable laws, and (4) reside in a country where the Service is available. You also promise that any registration information that you submit to Spotify is true, accurate, and complete, and you agree to keep it that way at all times If you are a minor in your home country, your parent or guardian will need to enter into these Terms on your behalf. You can find additional information regarding minimum age requirements in the registration process. If you do not meet the minimum age requirements then Spotify will be unable to register you as a user."
+    },
+    {
+      "id": "S6",
+      "text": "2. The Spotify Service Provided by Us Spotify Service Options We provide numerous Spotify Service options. Certain Spotify Service options are provided free-of-charge, while other options require payment before they can be accessed (the \"Paid Subscriptions\"). We may also offer special promotional plans, memberships, or services, including offerings of third-party products and services. We are not responsible for the products and services provided by such third parties."
+    },
+    {
+      "id": "S7",
+      "text": "The Unlimited Service may not be available to all users. We will explain which services are available to you when you are signing up for the services. If you cancel your subscription to the Unlimited Service, or if your subscription to the Unlimited Service is interrupted (for example, if you change your payment details), you may not be able to re-subscribe for the Unlimited Service. Note that the Unlimited Service may be discontinued in the future, in which case you will no longer be charged for the Service."
+    },
+    {
+      "id": "S8",
+      "text": "Trials From time to time, we or others on our behalf may offer trials of Paid Subscriptions for a specified period without payment or at a reduced rate (a \"Trial\"). By using a Spotify Service via a Trial, you agree to the Spotify Premium Promotional Offer Terms."
+    },
+    {
+      "id": "S9",
+      "text": "Third-Party Applications, Devices and Open Source Software The Spotify Service may be integrated with, or may otherwise interact with, third-party applications, websites, and services (\"Third-Party Applications\") and third-party personal computers, mobile handsets, tablets, wearable devices, speakers, and other devices (\"Devices\"). Your use of such Third-Party Applications and Devices may be subject to additional terms, conditions and policies provided to you by the applicable third party. Spotify does not guarantee that Third-Party Applications and Devices will be compatible with the Spotify Service."
+    },
+    {
+      "id": "S10",
+      "text": "Service Limitations and Modifications We use reasonable care and skill to keep the Spotify Service operational and to provide you with a personalized, immersive audio experience. However, our service offerings and their availability may change from time to time and subject to applicable laws, without liability to you; for example:"
+    },
+    {
+      "id": "S11",
+      "text": "The Spotify Service may experience temporary interruptions due to technical difficulties, maintenance or testing, or updates, including those required to reflect changes in relevant laws and regulatory requirements."
+    },
+    {
+      "id": "S12",
+      "text": "We aim to evolve and improve our Services constantly, and we may modify, suspend, or stop (permanently or temporarily) providing all or part of the Spotify Service (including particular functions, features, subscription plans and promotional offerings)."
+    },
+    {
+      "id": "S13",
+      "text": "Spotify has no obligation to provide any specific content through the Spotify Service, and Spotify or the applicable owners may remove particular songs, videos, podcasts, and other Content without notice."
+    },
+    {
+      "id": "S14",
+      "text": "If you have prepaid fees directly to Spotify for a Paid Subscription that Spotify discontinues prior to the end of your Pre-Paid Period (as that term is defined in the Payments and cancellations section below), Spotify will refund you the prepaid fees for the Pre-Paid Period for any unused part of your then current Paid Subscription after such discontinuation. Your account and billing information must be up to date in order for us to refund you."
+    },
+    {
+      "id": "S15",
+      "text": "Spotify has no liability to you, nor any obligation to provide a refund to you, in connection with internet or other service outages or failures that are caused by the actions of government authorities, other third parties or events beyond our control."
+    },
+    {
+      "id": "S16",
+      "text": "3. Your Use of the Spotify Service Creating a Spotify account You may need to create a Spotify account to use all or part of the Spotify Service. Your username and password are for your personal use only and should be kept confidential. You understand that you are responsible for all use (including any unauthorized use) of your username and password. Notify our Customer Service team immediately if your username or password is lost or stolen, or if you believe there has been unauthorized access to your account."
+    },
+    {
+      "id": "S17",
+      "text": "Spotify may reclaim, or require you to change, your username for any reason."
+    },
+    {
+      "id": "S18",
+      "text": "Your rights to use the Spotify Service Access to the Spotify Service Subject to your compliance with these Terms (including any other applicable terms and conditions), we grant to you limited, non-exclusive, revocable permission to make personal, non-commercial use of the Spotify Service and the Content (collectively, \"Access\"). This Access shall remain in effect unless and until terminated by you or Spotify. You agree that you will not redistribute or transfer the Spotify Service or the Content."
+    },
+    {
+      "id": "S19",
+      "text": "The Spotify software applications and the Content are licensed, not sold or transferred to you, and Spotify and its licensors retain ownership of all copies of the Spotify software applications and Content even after installation on your Devices."
+    },
+    {
+      "id": "S20",
+      "text": "Spotify's Proprietary Rights The Spotify Service and the Content are the property of Spotify or Spotify's licensors. All Spotify trademarks, service marks, trade names, logos, domain names, and any other features of the Spotify brand (\"Spotify Brand Features\") are the sole property of Spotify or its licensors. These Terms do not grant you any rights to use any Spotify Brand Features whether for commercial or non-commercial use."
+    },
+    {
+      "id": "S21",
+      "text": "You agree to abide by the Spotify User Guidelines and not to use the Spotify Service, the Content, or any part thereof in any manner not expressly permitted by these Terms."
+    },
+    {
+      "id": "S22",
+      "text": "Payments and cancellation Billing You may purchase a Paid Subscription directly from Spotify or through a third party either by: paying a subscription fee in advance on a monthly basis or some other recurring interval disclosed to you prior to your purchase; or pre-payment giving you access to the Spotify Service for a specific time period (\"Pre-Paid Period\")."
+    },
+    {
+      "id": "S23",
+      "text": "Tax rates are calculated based on the information you provide and the applicable rate at the time of your monthly charge."
+    },
+    {
+      "id": "S24",
+      "text": "If you purchase access to a Paid Subscription through a third party, separate terms and conditions with such third party may apply to your use of the Spotify Service in addition to these Terms. If you purchase a Paid Subscription using a code, gift card, pre-paid offer, or other offer provided or sold by or on behalf of Spotify for access to a Paid Subscription (\"Codes\"), you hereby agree to the Spotify Card Terms."
+    },
+    {
+      "id": "S25",
+      "text": "Price and tax changes Spotify may from time to time change the price for the Paid Subscriptions, including recurring subscription fees, the Pre-Paid Period (for periods not yet paid), or Codes (defined above), and will communicate any price changes to you in advance on reasonable notice. Price changes will take effect at the start of the next subscription period following the date of the price change. Subject to applicable law, by continuing to use the Spotify Service after the price change takes effect, you will have accepted the new price. If you do not agree to a price change, you can reject the change by unsubscribing from the applicable Paid Subscription prior to the price change going into effect."
+    },
+    {
+      "id": "S26",
+      "text": "Tax rates are based on the rates applicable at the time of your monthly charge. These amounts can change over time with local tax requirements in your country, state, territory or even city. Any change in Tax rate will be automatically applied based on the account information you provide."
+    },
+    {
+      "id": "S27",
+      "text": "Renewal and Cancellation With the exception of Paid Subscriptions for a Pre-Paid Period, your payment to Spotify or the third party through which you purchased the Paid Subscription will automatically renew at the end of the applicable subscription period, unless you cancel your Paid Subscription before the end of the then-current subscription period. Contact our Customer Support team here for instructions on how to cancel. The cancellation will take effect the day after the last day of the current subscription period, and you will be downgraded to the free version of the Spotify Service. We do not provide refunds or credits for any partial subscription periods, except as expressly stated in these Terms."
+    },
+    {
+      "id": "S28",
+      "text": "If you have purchased a Paid Subscription using a Code, your subscription will automatically terminate at the end of the period stated in the Code, or when there is an insufficient pre-paid balance to pay for the Spotify Service."
+    },
+    {
+      "id": "S29",
+      "text": "Withdrawal right If you sign up for a Trial, you agree that the withdrawal right for the Paid Subscription for which you are receiving a Trial ends fourteen (14) days after you start the Trial. If you don't cancel the Paid Subscription before the Trial ends, you lose your right of withdrawal and authorise Spotify to automatically charge you the agreed price each month until you cancel the Paid Subscription. For trials less than fourteen (14) days, you expressly consent to us providing you with the paid service immediately after the end of your Trial and that from that point you lose your right of withdrawal."
+    },
+    {
+      "id": "S30",
+      "text": "If you purchase a Paid Subscription with no Trial, you agree you have fourteen (14) days after your purchase to withdraw for any reason and must pay us for the services provided up until the time you tell us that you have changed your mind. You expressly consent to us providing you with the service immediately following your purchase, that you lose your right of withdrawal, and authorise Spotify to charge you automatically each month until you cancel."
+    },
+    {
+      "id": "S31",
+      "text": "User Guidelines We've established guidelines for using the Spotify Service, to make sure the Spotify Service stays enjoyable for everyone (\"Spotify User Guidelines\"). In using the Spotify Service, you must comply with the Spotify User Guidelines, as well as all applicable laws, rules, and regulation, and respect the intellectual property, privacy, and other rights of third parties."
+    },
+    {
+      "id": "S32",
+      "text": "Brand Accounts If you establish a Spotify account on behalf of a company, organization, entity, or brand (a \"Brand ,\" and such account a \"Brand Account\"), the terms \"you\" and \"your ,\" as used throughout these Terms (including other Spotify terms and conditions incorporated by reference herein), apply to both you and the Brand."
+    },
+    {
+      "id": "S33",
+      "text": "If you create a Brand Account, you represent and warrant that you are authorized to grant all permissions and licenses provided in these Terms (including any other applicable Spotify terms and conditions) and to bind the Brand to these Terms."
+    },
+    {
+      "id": "S34",
+      "text": "A Brand may follow users and create and share playlists, provided that the Brand does not take any action that implies an endorsement or commercial relationship between the Brand and the followed user, artist, songwriter, or any other person, unless the Brand has independently obtained the rights to imply such an endorsement. In addition, Brands must be transparent to our users about disclosing any endorsements or consideration provided to artists, songwriters, users, or any other party and must comply with all applicable laws, regulations, and codes of practice when engaging in the foregoing practices."
+    },
+    {
+      "id": "S35",
+      "text": "Export control and sanctions Spotify's products may be subject to U.S. export and re-export control laws and regulations or similar laws applicable in other jurisdictions, including the Export Administration Regulations (\"EAR\") maintained by the U.S. Department of Commerce, trade and economic sanctions maintained by the Treasury Department's Office of Foreign Assets Control (\"OFAC\"), and the International Traffic in Arms Regulations (\"ITAR\") maintained by the Department of State. You warrant that you are (1) not located in any country to which the United States has embargoed goods or has otherwise applied any economic sanctions; and (2) not a denied party as specified in any applicable export or re-export laws or regulations or similar laws applicable in other jurisdictions or otherwise listed on any U.S. government list of prohibited or restricted parties."
+    },
+    {
+      "id": "S36",
+      "text": "You agree to comply with all applicable export and reexport control laws and regulations, including without limitation the EAR and trade and economic sanctions maintained by OFAC. Specifically, you agree not to – directly or indirectly – use, sell, export, reexport, transfer, divert, release, or otherwise dispose of any products, software, or technology (including products derived from or based on such technology) received from Spotify under these Terms to any destination, entity, or person or for any end-use prohibited by the EAR, trade and economic sanctions maintained by OFAC, or any applicable laws or regulations of the United States or any other jurisdiction without obtaining any required prior authorization from the competent government authorities as required by those laws and regulations."
+    },
+    {
+      "id": "S37",
+      "text": "4. Content and Intellectual Property Rights User content The content you post on the service Spotify users may post, upload, or otherwise contribute content to the Spotify Service (\"User Content\"). For the avoidance of doubt, \"User Content\" includes all information, materials and other content that is added, created, uploaded, submitted, distributed, or posted to the Spotify Service (including to the Spotify Support Community ) by users."
+    },
+    {
+      "id": "S38",
+      "text": "You are solely responsible for all User Content that you post You promise that, with respect to any User Content you post on Spotify, (1) you own or have the right to post such User Content; (2) such User Content, or its use by Spotify pursuant to the license granted below, does not: (i) violate these Terms, applicable law, or the intellectual property or other rights of any third party; or (ii) such User Content does not imply any affiliation with or endorsement of you or your User Content by Spotify or any artist, band, label, or other individual or entity without the prior express written consent from Spotify or such individual or entity."
+    },
+    {
+      "id": "S39",
+      "text": "In posting or sharing User Content or other information on the Spotify Service, please keep in mind that content and other information will be publicly accessible, and may be used and re-shared by others on the Spotify Service and across the web, so please use caution in posting or sharing on the Spotify Service, and be mindful of your account settings. Spotify is not responsible for what you or others post or share on the Spotify Service."
+    },
+    {
+      "id": "S40",
+      "text": "Monitoring user content Spotify may, but has no obligation to, monitor or review User Content. Spotify reserves the right to remove or disable access to any User Content for any or no reason. Spotify may take these actions without prior notification to you."
+    },
+    {
+      "id": "S41",
+      "text": "Licenses that you grant us User Content You retain ownership of your User Content when you post it to the Service. However, in order for us to make your User Content available on the Spotify Service, we do need a limited license from you to that User Content. Accordingly, you hereby grant to Spotify a non-exclusive, transferable, sub-licensable, royalty-free, fully paid, irrevocable, worldwide license to reproduce, make available, perform and display, translate, modify, create derivative works from, distribute, and otherwise use any such User Content through any medium, whether alone or in combination with other Content or materials, in any manner and by any means, method or technology, whether now known or hereafter created, in connection with the Spotify Service. Where applicable and to the extent permitted under applicable law, you also agree to waive, and not to enforce, any \"moral rights\" or equivalent rights, such as your right to be identified as the author of any User Content, including Feedback, and your right to object to derogatory treatment of such User Content."
+    },
+    {
+      "id": "S42",
+      "text": "Feedback If you provide ideas, suggestions, or other feedback in connection with your use of the Spotify Service or any Content (\"Feedback\"), such Feedback is not confidential and may be used by Spotify without restriction and without payment to you. Feedback is considered a type of User Content under these Terms."
+    },
+    {
+      "id": "S43",
+      "text": "You also grant to us the right (1) to allow the Spotify Service to use the processor, bandwidth, and storage hardware on your Device in order to facilitate the operation of the Spotify Service, (2) to provide advertising and other information to you, and to allow our business partners to do the same, as permitted in accordance with the Spotify Privacy Policy."
+    },
+    {
+      "id": "S44",
+      "text": "Content experience In any part of the Spotify Service, the Content that you access, including its selection and placement, may be influenced by commercial considerations, including Spotify's agreements with third parties."
+    },
+    {
+      "id": "S45",
+      "text": "Some Content licensed by, provided to, created by, or otherwise made available by Spotify (e.g., podcasts) may incorporate advertising, and Spotify is not responsible for any such advertising."
+    },
+    {
+      "id": "S46",
+      "text": "Infringement claims Spotify respects the rights of intellectual property owners. If you believe that any Content infringes your copyright rights, please see the Spotify Copyright Policy."
+    },
+    {
+      "id": "S47",
+      "text": "5. Customer Support, Information, Questions and Complaints Spotify Support Community The Spotify Support Community is a place for discussions and exchange of information, tips, and other materials related to the Spotify Service. By using the Spotify Support Community, you agree to the Community Terms."
+    },
+    {
+      "id": "S48",
+      "text": "Customer Support, Information, Questions, Complaints For customer support with account- and payment-related questions (\"Customer Support Queries\"), please use Customer Support resources listed on the About Us section of our website."
+    },
+    {
+      "id": "S49",
+      "text": "If you have any questions concerning the Spotify Service or these Terms (including any additional Spotify terms and conditions incorporated herein), please contact Spotify Customer Service by visiting the About Us section of our website."
+    },
+    {
+      "id": "S50",
+      "text": "If you reside in the European Union, you can also file a complaint at the online platform for alternative dispute resolution (ODR-platform). You can find the ODR-platform through the following link: https://ec.europa.eu/consumers/odr."
+    },
+    {
+      "id": "S51",
+      "text": "6. Problems and Disputes Suspending and terminating the Spotify Service These Terms will continue to apply to you until terminated by either you or Spotify. Spotify may terminate these Terms (including any additional terms and conditions incorporated herein) or suspend your access to the Spotify Service at any time if we believe you have breached any of these Terms, if we stop providing the Spotify Service or any material component thereof on reasonable notice to you, or as we believe necessary to comply with applicable law. If you or Spotify terminate these Terms, or if Spotify suspends your access to the Spotify Service, you agree that Spotify shall, subject to applicable laws, have no liability or responsibility to you, and (except as expressly provided in these Terms) Spotify will not refund any amounts that you have already paid. You may terminate these Terms at any time, in which case you may not continue accessing or using the Spotify Service. To learn how to terminate your Spotify account, please use the Customer Support resources on our About Us page."
+    },
+    {
+      "id": "S52",
+      "text": "Sections 4 (Content and Intellectual Property Rights), 3 (Your Use of the Spotify Service), 2 (The Spotify Service Provided by Us), 6 (Problems and Disputes), 7 (About These Terms) herein, as well as any other sections of these Terms that, either explicitly or by their nature, must remain in effect even after termination of these Terms, shall survive termination."
+    },
+    {
+      "id": "S53",
+      "text": "Warranty disclaimers Spotify will provide the Spotify Service using reasonable care and skill and in accordance with any specification of the Spotify Service provided by Spotify, however, subject to that, the Spotify Service is provided \"as is\" and \"as available,\" without any warranties of any kind, whether express, implied, or statutory. Further, Spotify and all owners of the content disclaim any express, implied, and statutory warranties regarding the content, including warranties of satisfactory quality, merchantability, fitness for a particular purpose, or non-infringement. Neither Spotify nor any owner of content warrants that the Spotify Service or content is free of malware or other harmful components. In addition, Spotify makes no representation regarding, nor does it warrant or assume any responsibility for, any third-party applications (or the content thereof), user content, devices or any product or service advertised, promoted or offered by a third party on or through the Spotify Service or any hyperlinked website, and Spotify is not responsible for any transactions between you and any third-party providers of the foregoing."
+    },
+    {
+      "id": "S54",
+      "text": "No advice or information whether oral or in writing obtained by you from Spotify shall create any warranty on behalf of Spotify. While using the Spotify Service, you may have access to explicit content filtering features, but use of these features may still result in some explicit content being served and you should not rely on such features to filter all explicit content. This section applies to the fullest extent permitted by applicable law."
+    },
+    {
+      "id": "S55",
+      "text": "Some jurisdictions do not allow the exclusion of implied warranties or limitations on applicable statutory rights of a consumer, so the exclusion and limitations in this section may not apply to you and nothing will affect your statutory rights."
+    },
+    {
+      "id": "S56",
+      "text": "Limitation of Liability and Time for Filing a Claim Subject to applicable law, you agree that your sole and exclusive remedy for any problems or dissatisfaction with the Spotify Service is to uninstall any Spotify software and to stop using the Spotify Service. You agree that Spotify has no obligation or liability arising from or related to third-party applications or the content thereof made available through or in connection with the Spotify Service, and while your relationship with such third-party applications may be governed by separate agreements with such third parties, your sole and exclusive remedy, as with respect to Spotify, for any problems or dissatisfaction with any third-party applications or the content thereof, is to uninstall or stop using such third-party applications."
+    },
+    {
+      "id": "S57",
+      "text": "In no event will Spotify, its officers, shareholders, employees, agents, directors, subsidiaries, affiliates, successors, assigns, suppliers, or licensors be liable for (1) any indirect, special, incidental, punitive, exemplary, or consequential damages; (2) any loss of use, data, business, or profits (whether direct or indirect), in all cases arising out of the use of or inability to use the Spotify Service, devices, third-party applications, or third-party application content; or (3) aggregate liability for all claims relating to the Spotify Service, third-party applications, or third-party application content more than the greater of (a) the amounts paid by you to Spotify during the twelve months prior to the first claim; or (b) $30.00. Any liability we do have for losses you suffer is strictly limited to losses that were reasonably foreseeable."
+    },
+    {
+      "id": "S58",
+      "text": "For clarification, these terms do not limit Spotify's liability for fraud, fraudulent misrepresentation, death or personal injury to the extent that applicable law would prohibit such a limitation and for any other liability that, by applicable law, may not be limited or excluded."
+    },
+    {
+      "id": "S59",
+      "text": "Except where such restriction is prohibited under applicable law, any claim arising under these terms must be commenced (by filing a demand for arbitration or filing an individual action under the arbitration agreement below) within one (1) year after the date the party asserting the claim first knows or reasonably should know of the act, omission, or default giving rise to the claim; and there shall be no right to any remedy for any claim not asserted within that time period."
+    },
+    {
+      "id": "S60",
+      "text": "Third Party Rights You acknowledge and agree that the owners of the Content and certain distributors (such as app store providers) are intended beneficiaries of these Terms and have the right to enforce these Terms directly against you. Other than as set out in this section, these Terms are not intended to grant rights to anyone except you and Spotify, and in no event shall these Terms create any third-party beneficiary rights."
+    },
+    {
+      "id": "S61",
+      "text": "If you have downloaded any of our mobile software applications (each, an \"App\") from the Apple Inc. (\"Apple\") App Store or if you are using the App on an iOS device, you acknowledge that you have read, understood, and agree to the following notice regarding Apple. These Terms are between you and Spotify only, not with Apple, and Apple is not responsible for the Spotify Service and the content thereof. Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the Spotify Service. In the event of any failure of the Spotify Service to conform to any applicable warranty, you may notify Apple and Apple will refund the applicable purchase price for the App to you; and, to the maximum extent permitted by applicable law, Apple has no other warranty obligation whatsoever with respect to the Spotify Service. Apple is not responsible for addressing any claims by you or any third party relating to the Spotify Service or your possession or use of the Spotify Service, including: (1) product liability claims; (2) any claim that the Spotify Service fails to conform to any applicable legal or regulatory requirement;"
+    },
+    {
+      "id": "S62",
+      "text": "(3) claims arising under consumer protection or similar legislation; and (4) claims with respect to intellectual property infringement. Apple is not responsible for the investigation, defense, settlement, and discharge of any third-party claim that the Spotify Service or your possession and use of the App infringe that third party's intellectual property rights. You agree to comply with any applicable third-party terms, when using the Spotify Service. Apple, and Apple's subsidiaries, are third-party beneficiaries of these Terms, and upon your acceptance of these Terms, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary of these Terms."
+    },
+    {
+      "id": "S63",
+      "text": "Indemnification You agree to indemnify and hold Spotify harmless from and against any reasonably foreseeable direct losses, damages, and reasonable expenses (including reasonable attorney fees and costs) suffered or incurred by Spotify arising out of or related to: (1) your breach of any of these Terms (including any additional Spotify terms and conditions incorporated herein); (2) any User Content you post or otherwise contribute; (3) any activity in which you engage on or through the Spotify Service; and (4) your violation of any law or the rights of a third party."
+    },
+    {
+      "id": "S64",
+      "text": "Governing Law, Mandatory Arbitration and Venue 6.1 Governing Law / Jurisdiction Unless otherwise required by mandatory laws in your country of residence, the Agreements (and any non-contractual disputes/claims arising out of or in connection with them) are subject to the laws of the state or country listed below, without regard to choice or conflicts of law principles."
+    },
+    {
+      "id": "S65",
+      "text": "Further, you and Spotify agree to the jurisdiction of the courts listed below to resolve any dispute, claim, or controversy that arises in connection with the Agreements (and any non-contractual disputes/claims arising out of or in connection with them), except where under applicable mandatory laws, you can choose to bring legal proceedings in your country of residence, or we are required to only bring legal proceedings in your country of residence Country or region Choice of Law Jurisdiction All other countries and regions in which Spotify is available."
+    },
+    {
+      "id": "S66",
+      "text": "Sweden Exclusive; Courts of Sweden Bulgaria, Cyprus, Estonia, France, Hong Kong, Latvia, Lithuania, Luxembourg, Malta, Monaco, Norway, Philippines, Portugal, Slovakia, Spain, Turkey Laws of Sweden Non-exclusive; Courts of Sweden Brazil Laws of Brazil Exclusive; State and Federal Courts of São Paulo, State of São Paulo, Brazil Canada Not applicable to residents of Quebec: Laws of the Province of OntarioResidents of Quebec: Laws of the Province of Quebec, Canada Not applicable to residents of Quebec: Exclusive other than for the purpose of enforcing judgements; Courts of Ontario, CanadaResidents of Quebec: Courts of Quebec, Canada Argentina, Bolivia, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, El Salvador, Guatemala, Honduras, Nicaragua, Panama, Paraguay, Peru, Uruguay State of California, United States Exclusive; State and Federal Courts of San Francisco County, CA or New York, NY United Kingdom Laws of England and Wales Exclusive 6."
+    },
+    {
+      "id": "S67",
+      "text": "2 CLASS ACTION WAIVER WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND SPOTIFY AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE ACTION. Unless both you and Spotify agree, no arbitrator or judge may consolidate more than one person's claims or otherwise preside over any form of a representative or class proceeding."
+    },
+    {
+      "id": "S68",
+      "text": "6.3 ARBITRATION If you are located in, are based in, have offices in, or do business in a jurisdiction in which this Section 6.3. is enforceable, the following mandatory arbitration provisions apply to you:"
+    },
+    {
+      "id": "S69",
+      "text": "6.3.1 Dispute resolution and arbitration You and Spotify agree that any dispute, claim, or controversy between you and Spotify arising in connection with or relating in any way to these Agreements or to your relationship with Spotify as a user of the Service (whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, and whether the claims arise during or after the termination of the Agreements) will be determined by mandatory binding individual arbitration. Arbitration is more informal than a lawsuit in court. THERE IS NO JUDGE OR JURY IN ARBITRATION, AND COURT REVIEW OF AN ARBITRATION AWARD IS LIMITED. There may be more limited discovery than in court. The arbitrator must follow this agreement and can award the same damages and relief as a court (including attorney fees), except that the arbitrator may not award declaratory or injunctive relief benefiting anyone but the parties to the arbitration. This arbitration provision will survive termination of the Agreements."
+    },
+    {
+      "id": "S70",
+      "text": "6.3.2 Exceptions Notwithstanding clause 6.3.1 above, you and Spotify both agree that nothing herein will be deemed to waive, preclude, or otherwise limit either of our rights, at any time, to (1) bring an individual action in a small claims court ,(2) pursue enforcement actions through applicable federal, state, or local agencies where such actions are available, (3) seek injunctive relief in a court of law, or (4) to file suit in a court of law to address intellectual property infringement claims."
+    },
+    {
+      "id": "S71",
+      "text": "6.3.3 Arbitration rules Either you or we may start arbitration proceedings. Any arbitration between you and Spotify will be finally settled under the Rules of Arbitration of the International Chamber of Commerce (the \"ICC\") then in force (the \"ICC Rules\") by one or more arbitrators appointed in accordance with the ICC Rules, as modified by these Agreements, and will be administered by the International Court of Arbitration of the ICC."
+    },
+    {
+      "id": "S72",
+      "text": "Any arbitration will be conducted in the English language and unless otherwise required by a mandatory law of a member state of the European Union or any other jurisdiction, the law to be applied in any arbitration shall be the law of [the relevant state or country described in clause 6.1], without regard to choice or conflicts of law principles."
+    },
+    {
+      "id": "S73",
+      "text": "6.3.4 Time for filing Any arbitration must be commenced by filing a demand for arbitration within ONE (1) YEAR after the date the party asserting the claim first knows or reasonably should know of the act, omission, or default giving rise to the claim; and there shall be no right to any remedy for any claim not asserted within that time period. If applicable law prohibits a one-year limitation period for asserting claims, any claim must be asserted within the shortest time period permitted by applicable law."
+    },
+    {
+      "id": "S74",
+      "text": "6.3.5 Notice; Process A party who intends to seek arbitration must first send a written notice of the dispute to the other, by certified mail or Federal Express (signature required), or in the event that we do not have a physical address on file for you, by electronic mail (\"Notice\"). Spotify's address for Notice is: [Spotify, Attn: General Counsel, 4 World Trade Center, 150 Greenwich Street, 62nd Floor, New York, New York 10007, USA]. The Notice must (1) describe the nature and basis of the claim or dispute; and (2) set forth the specific relief sought (\"Demand\"). We agree to use good faith efforts to resolve the claim directly, but if we do not reach an agreement to do so within 30 days after the Notice is received, you or Spotify may commence an arbitration proceeding. During the arbitration, the amount of any settlement offer made by you or Spotify shall not be disclosed to the arbitrator until after the arbitrator makes a final decision and award, if any."
+    },
+    {
+      "id": "S75",
+      "text": "In the event our dispute is finally resolved through arbitration in your favor, Spotify shall pay you (1) the amount awarded by the arbitrator, if any, (2) the last written settlement amount offered by Spotify in settlement of the dispute prior to the arbitrator's award; or (3) $1,000.00, whichever is greater. All documents and information disclosed in the course of the arbitration shall be kept strictly confidential by the recipient and shall not be used by the recipient for any purpose other than for purposes of the arbitration or the enforcement of the arbitrator's decision and award and shall not be disclosed except in confidence to persons who have a need to know for such purposes or as required by applicable law.Except as required to enforce the arbitrator's decision and award, neither you nor Spotify shall make any public announcement or public comment or originate any publicity concerning the arbitration, including, but not limited to, the fact that the parties are in dispute, the existence of the arbitration, or any decision or award of the arbitrator."
+    },
+    {
+      "id": "S76",
+      "text": "6.3.6 Modifications In the event that Spotify makes any future change to this arbitration provision (other than a change to Spotify's address for Notice), you may reject any such change by sending us written notice within 30 days of the change to Spotify's address for Notice, in which case your account with Spotify shall be immediately terminated and this arbitration provision, as in effect immediately prior to the amendments you reject, shall survive."
+    },
+    {
+      "id": "S77",
+      "text": "6.3.7 Enforceability If the class action waiver at Section 6.2 is found to be unenforceable in arbitration or if any part of this Section 6.3 is found to be invalid or unenforceable, then the entirety of this Section 6.3 shall be null and void and, in such case, the parties agree that the exclusive jurisdiction and venue described in Section 6.1 shall govern any action arising out of or related to the Agreements and you shall not be prevented from bringing proceedings at any time."
+    },
+    {
+      "id": "S78",
+      "text": "7. About these Terms Under applicable law, you may have certain rights that can't be limited by a contract. These terms are in no way intended to restrict those rights."
+    },
+    {
+      "id": "S79",
+      "text": "Changes We may make changes to these Terms (including any additional Spotify terms and conditions incorporated by reference herein) from time to time by notifying you of such changes by any reasonable means (before they take effect), including by posting a revised Agreement on the applicable Spotify Service (provided that, for material changes, we will seek to supplement such notice by email, an in-service pop-up message, or other means). Any such changes will not apply to any dispute between you and us arising prior to the date on which we posted the revised Terms, or other Spotify terms and conditions, incorporating such changes, or otherwise notified you of such changes. Your use of the Spotify Service following any changes to these Terms will constitute your acceptance of such changes. If you do not wish to continue using the Spotify Service under the updated Terms, you may terminate your account by contacting us. The effective date set forth at the top of this document indicates when these Terms were last changed."
+    },
+    {
+      "id": "S80",
+      "text": "Entire Agreement Other than as stated in this section or as explicitly agreed upon in writing between you and Spotify, these Terms constitute all the terms and conditions agreed upon between you and Spotify and supersede any prior agreements in relation to the subject matter of these Terms, whether written or oral. As noted above, other terms and conditions governing use of the Spotify Service are incorporated herein by reference, including the following terms and conditions: the Spotify Premium Promotional Offer Terms;"
+    },
+    {
+      "id": "S81",
+      "text": "Spotify's Card Terms; the Spotify User Guidelines; the Spotify Copyright Policy; and the Spotify Support Community Terms."
+    },
+    {
+      "id": "S82",
+      "text": "Severability and Waiver Unless as otherwise stated in these Terms, should any provision of these Terms be held invalid or unenforceable for any reason or to any extent, the remaining provisions of these Terms will not be affected, and the application of that provision shall be enforced to the extent permitted by law."
+    },
+    {
+      "id": "S83",
+      "text": "Any failure by Spotify or any third-party beneficiary to enforce these Terms or any provision thereof shall not waive Spotify's or the applicable third-party beneficiary's right to do so."
+    },
+    {
+      "id": "S84",
+      "text": "Assignment Spotify may assign any or all of these Terms, and may assign or delegate, in whole or in part, any of its rights or obligations under these Terms. You may not assign these Terms, in whole or in part, nor transfer or sub-license your rights under these Terms, to any third party."
+    },
+    {
+      "id": "S85",
+      "text": "Company About Advertising Support Legal Privacy Policy"
+    }
+  ],
+  "hidden": [
+    {
+      "reason": "zero_size_font",
+      "text": "Spotify – Home",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Premium Individual 1 account – for one person. Premium Duo 2 accounts – for couples under one roof. Premium Family 4 accounts – for family members under one roof. Premium Student 1 account – discount for eligible students.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "zero_size_font",
+      "text": "Spotify – Home",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "TRANSLATE with",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Chinese Simplified",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Chinese Traditional",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Haitian Creole",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "TRANSLATE with",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "COPY THE URL BELOW",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Enable collaborative features and customize widget:",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Bing Webmaster Portal",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Bu sayfa İngilizce",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Türkçe diline çevir",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Abhazca Acholi Afar Afrika dili Almanca Alur Arapça Arnavutça Assamca Avarca Awadhi Aymara Azerice Açece Balice Bambara Baskça Batak Batak Simalungun Batak Toba Baule Başkurtça Belarusça Beluçça Bemba Bengalce Betawi Bhojpuri Bikol Boşnakça Bretonca Bulgarca Burmaca Buryatça Cava dili Cebuano Chamorro Chicheva Chuukese Danca Darice Dinka Divehi Dogri Dombe Dyula Dzongkha Endonezya dili Ermenice Esperantoca Estonyaca Ewe Faroe Dili Farsça Felemenkçe Fiji Dili Filipince Fince Fon Fransızca Fransızca (Kanada) Friuli Dili Frizon dili Fula Ga Galce Galiçyaca Guarani Gücerat dili Gürcüce Habeşçe Haiti creole dili Hakha Falam Hausa dili Havai dili Hiligaynon Hintçe Hmong dili Hosa Hunsrik Hırvatça Jamaika Patois Japonca Jingpho Kalaallisut Kamboçyaca Kannada Kantonca Kanuri Kapampanganca Katalanca Kazakça Keçi Keçuva Khasi dili Kiga dili Kikongo Kinyarwanda dili Kokborok Komi dili Konkani (Latin) Korece Korsika dili Krio dili Kuzey Laponce Kuzey i̇skoç dili Kürtçe Kürtçe (Sorani) Kırgızca Kırım Tatarcası Kırım Tatarcası (Latin) Laoca Latgalcece Latince Lehçe Letonca Ligurca Limburgca Lingala Litvanca Lombardça Luganda Luo dili Lüksemburgca Macarca Madagaskar dili Madurca Maithili Makassarca Makedonca Malayalam Malayca (Arap) Malezya dili Malta dili Mam Manx Maori dili Marathi Mari Marshall Adaları Dili Marwari Mauritius Kreolcesi Meitei/Meetei (Mayek) Minangkabau Mizo Moğolca N'Ko Bambara Nahuatl Ndau (Zimbabwe) Ndebele Nepalce Newari Norveççe Nuer Odia Oksitanca Oromo Osetçe Pangasinan Papiamento Pencabice (Arap) Pencap dili Peştuca Portekizce Portekizce (Portekiz) Roman Romence Rundi Rusça Samoaca Sango Sanskritçe Santali Santali (Latin) Sepedi Sesotho dili Seylanca Seyşel Kreolü Shona Sicilyaca Silezyaca Sint Slovakça Slovence Somalice Sundanizce Susu Svahili dili Swati Sırpça Tacikce Tahitice Tamazight Tamazight (Latin) Tamil Tatarca Tay dili Telugu dili Tetum Tibetçe Tigrinya Tiv Tok Pisin Tongaca Tshiluba Tsonga Tswana Tulu Tumbuka Tuvaca Twi Türkmence Türkçe Udmurtç",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "İngilizce dilini her zaman Türkçe diline çevir",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "İngilizce için asla çeviri yapma",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "www.spotify.com için asla çeviri yapma",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "About Your Privacy We process your data to deliver content or advertisements and measure the delivery of such content or advertisements to extract insights about our website. We share this information with our partners on the basis of consent and legitimate interest. You may exercise your right to consent or object to a legitimate interest, based on a specific purpose below or at a partner level in the link under each purpose. These choices will be signaled to our vendors participating in the Transparency and Consent Framework. More information Allow All Manage Consent Preferences Strictly Necessary Cookies Always Active First Party Functional Cookies First Party Performance Cookies First Party Targeting Cookies Content Selection, Delivery, and Reporting Creation and Use of Universal Identifiers Store and/or access information on a device 83 partners can use this purpose Personalised advertising 77 partners can use this purpose Personalised content 16 partners can use this purpose Advertising and content measurement, audience research, and services development 90 partners can use this purpose Ensure security, prevent and detect fraud, and fix errors 62 partners can use this special purpose Always Active Deliver and present advertising and content 61 partners can use this special purpose Always Active Match and combine data from other data sources 59 partners can use this feature Always Active Link different devices 60 partners can use this feature Always Active Identify devices based on information transmitted automatically 71 partners can use this feature Always Active Functional Cookies Performance Cookies Targeting Cookies Save and communicate privacy choices 56 partners can use this special purpose Always Active Reject All Confirm My Choices",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are necessary for the service to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the service will not then work.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Functional Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies enable us to provide enhanced functionality and personalisation. Without these cookies, some or all of these services may not function properly.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Performance Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors move around the platform. Without these cookies, we are unable to monitor the performance of our services.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Targeting Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies may be used to deliver targeted advertisements and to build a profile of your interests. If you do not allow these cookies you will still experience advertising but it will be less tailored to you.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Content Selection, Delivery, and Reporting",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. Without these cookies, you may not be able to use or see these sharing tools.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Creation and Use of Universal Identifiers",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Where we have your email address, device ID, other contact details, or data accessed from your device, the following vendors may rely on your consent for this purpose in order to create a unique advertising identifier which is used for personalised advertising, measurement, and analytics subject to your choices below: The Trade Desk Inc. (EUID), LiveRamp (RampID), ID5 (ID5 ID), Google (PAIR ID).",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Store and/or access information on a device",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Store and access information on a device",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Cookies, device or similar online identifiers together with other information (e.g. browser type and information, language, screen size, supported technologies, etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Personalised advertising",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Use profiles to select personalised advertising 62 partners can use this purpose Advertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. View Illustrations Create profiles for personalised advertising 62 partners can use this purpose Information about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. View Illustrations Use limited data to select advertising 74 partners can use this purpose Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). View Illustrations Object to Legitimate Interests List of IAB Vendors",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Personalised content",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Create profiles to personalise content 16 partners can use this purpose Information about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests. View Illustrations Use profiles to select personalised content 14 partners can use this purpose Content presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. View Illustrations List of IAB Vendors",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Advertising and content measurement, audience research, and services development",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Understand audiences through statistics or combinations of data from different sources 59 partners can use this purpose Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents). View Illustrations Object to Legitimate Interests Develop and improve services 63 partners can use this purpose Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers. View Illustrations Measure content performance 31 partners can use this purpose Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. View Illustrations Object to Legitimate Interests Measure advertising performance 85 partners can use this purpose Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very ",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Match and combine data from other sources",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Always Active",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, or your answers to a survey), in support of the purposes explained in this notice. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices). List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Functional Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies allow the website to remember choices you make (such as your user name, language or the region you are in) and provide enhanced, more personal features and content. These cookies can also be used to remember changes you have made to text size, fonts and other parts of web pages that you can customise. If you do not allow these cookies then some or all of these services may not function properly.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Performance Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies gather data about how visitors use our services to enhance the performance of our services. For example, these cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors interact with our services. If you do not allow these cookies we will not be able to monitor the performance of our services.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Targeting Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaigns. They remember that you have visited a website and this information may be shared with other organisations such as advertisers. These cookies collect information about your browsing habits in order to make advertising relevant to you and your interests.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Back Button Cookie List Search Icon Filter Icon Consent",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Clear checkbox label Apply Cancel",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Leg.Interest",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    }
+  ],
+  "extraction": {
+    "region": "main",
+    "dropped_lines": 34
+  }
+}
