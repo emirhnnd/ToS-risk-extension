@@ -1,5 +1,6 @@
 import { CATEGORIES } from '../shared/categories';
 import type { Report } from '../shared/schema';
+import { BUILD_TIME } from '../shared/build';
 import { highlightQuote } from './highlight';
 import { HIDDEN_LABELS, LEGAL_DISCLAIMER, REJECT_LABELS, RISK_LEVEL_LABELS, SEVERITY_LABELS, UNCERTAINTY_LABELS } from './labels';
 
@@ -46,6 +47,7 @@ export class ReportPanel {
       h('p', { class: 'disclaimer', 'data-testid': 'legal-disclaimer', role: 'note' }, '⚖️ ', LEGAL_DISCLAIMER),
       this.body,
     );
+    this.frame.append(h('div', { class: 'build', 'data-testid': 'build' }, `sürüm: ${BUILD_TIME.slice(0, 16).replace('T', ' ')} UTC`));
     this.root.append(this.frame);
     document.documentElement.append(host);
   }
@@ -210,6 +212,8 @@ button.primary { background: #1f5eff; color: #fff; border-color: #1f5eff; width:
 button.icon { padding: 0 10px; font-size: 18px; line-height: 24px; }
 button.link { border: 0; background: none; color: #1f5eff; padding: 0; text-decoration: underline; }
 .muted { color: #5f5f5f; font-size: 12px; }
+.build { padding: 4px 14px; border-top: 1px solid #e3e3e3; color: #8a8a8a; font-size: 11px; }
+.frame.min .build { display: none; }
 .score { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; border-radius: 8px; font-weight: 600; }
 .score .num { font-size: 32px; }
 .score.low { background: #e5f6ea; } .score.medium { background: #fff0d6; } .score.high { background: #fde3e1; }

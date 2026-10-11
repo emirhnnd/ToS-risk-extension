@@ -1,4 +1,5 @@
 import type { AnalyzeRequest, AnalyzeResponse } from '../shared/messages';
+import { BUILD_TIME } from '../shared/build';
 import { CORPUS_FORMAT, snapshotFileName, type CorpusSnapshot } from '../shared/corpus';
 import { findHiddenText, removeHiddenLines } from '../sanitizer/hidden';
 import { segmentText } from '../sanitizer/segment';
@@ -52,7 +53,7 @@ async function exportSnapshot(): Promise<void> {
   const now = new Date();
   const snap: CorpusSnapshot = {
     format: CORPUS_FORMAT, captured_at: now.toISOString(), url: location.href, title: document.title,
-    detection_score: detectionScore, segments, hidden, extraction,
+    detection_score: detectionScore, segments, hidden, extraction, extension_build: BUILD_TIME,
   };
   const blob = new Blob([JSON.stringify(snap, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
