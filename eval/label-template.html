@@ -39,7 +39,8 @@
 <body>
 <header>
   <h1>🏷️ Altın Etiketleme</h1>
-  <label>Korpus: <input id="corpusFile" type="file" accept=".json,application/json" /></label>
+  <label>Metin: <select id="corpusPick"><option value="">— listeden seçin —</option></select></label>
+  <label class="muted">veya dosya: <input id="corpusFile" type="file" accept=".json,application/json" /></label>
   <label>Mevcut etiket (devam): <input id="goldFile" type="file" accept=".json,application/json" /></label>
   <label>Etiketleyen: <input id="labeler" type="text" size="14" placeholder="Adınız" /></label>
   <label><input id="complete" type="checkbox" /> Metnin tamamını okudum</label>
@@ -49,7 +50,10 @@
 <main>
   <section>
     <div id="empty" class="card">
-      <p><strong>Başlamak için</strong> uzantının "💾 Eval için metni kaydet" butonuyla indirdiğiniz korpus dosyasını (<code>eval/corpus/*.json</code>) seçin.</p>
+      <p><strong>Başlamak için</strong> yukarıdaki <b>Metin</b> listesinden bir metin seçin.</p>
+      <table id="corpusTable" class="muted" style="margin:12px auto;text-align:left;border-collapse:collapse"></table>
+      <p class="muted">Liste <code>npm run label</code> çalıştırıldığı anda <code>eval/corpus/</code> klasöründe olan dosyalardan oluşur. Yeni bir etiket dosyasını <code>eval/gold/</code> içine koyduktan sonra durumların güncellenmesi için komutu tekrar çalıştırın.</p>
+      <p class="muted">Listede olmayan bir metin için uzantının "💾 Eval için metni kaydet" butonuyla indirdiğiniz korpus dosyasını (<code>eval/corpus/*.json</code>) seçin.</p>
       <p class="muted">Bu araç LLM'in sonuçlarını bilerek göstermez: etiketler LLM'den bağımsız, kör olarak hazırlanır.</p>
     </div>
     <div id="doc" class="card" hidden>
@@ -93,6 +97,8 @@
 <script>
 'use strict';
 const CATEGORIES = /*__CATEGORIES__*/[];
+/** npm run label anında eval/corpus + eval/gold'dan gömülür: [{file, corpus, gold|null}] */
+const CORPUS_LIST = /*__CORPUS_LIST__*/[];
 const SEV = { low: 'Düşük', medium: 'Orta', high: 'Yüksek' };
 const $ = (id) => document.getElementById(id);
 const state = { corpus: null, corpusFile: '', items: [], selection: null };
@@ -113,25 +119,72 @@ function readJson(file) {
 }
 function storageKey() { return 'tos-gold:' + state.corpusFile; }
 function persist() {
+  setTimeout(renderCorpusList, 0);
   try { localStorage.setItem(storageKey(), JSON.stringify({ items: state.items, labeler: $('labeler').value, complete: $('complete').checked })); $('autosave').textContent = 'taslak kaydedildi'; } catch { $('autosave').textContent = ''; }
 }
 
 // --- korpus yükleme ---
+function loadCorpus(data, fileName, diskGold) {
+  if (data.format !== 'tos-risk-corpus/v1' || !Array.isArray(data.segments)) return alertBox('Bu bir korpus dosyası değil. Uzantının "Eval için metni kaydet" çıktısını seçin.');
+  state.corpus = data; state.corpusFile = fileName; state.items = [];
+  $('labeler').value = ''; $('complete').checked = false;
+  let restored = false;
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey()) || 'null');
+    if (saved && saved.items && saved.items.length && confirmBox(`Bu metin için tarayıcıda ${saved.items.length} etiketlik bir taslak bulundu. Devam edilsin mi?`)) {
+      state.items = saved.items; $('labeler').value = saved.labeler || ''; $('complete').checked = !!saved.complete; restored = true;
+    }
+  } catch {}
+  // Taslak yoksa eval/gold'daki kayıtlı etiketlerle devam et
+  if (!restored && diskGold) { state.items = diskGold.items || []; $('labeler').value = diskGold.labeler || ''; $('complete').checked = !!diskGold.complete; }
+  if (!$('labeler').value) { try { $('labeler').value = localStorage.getItem('tos-gold:labeler-name') || ''; } catch {} }
+  renderDoc(); renderItems(); window.scrollTo(0, 0);
+}
 $('corpusFile').addEventListener('change', async (e) => {
   const f = e.target.files[0]; if (!f) return;
   let data;
   try { data = await readJson(f); } catch { return alertBox('Dosya okunamadı (geçerli JSON değil).'); }
-  if (data.format !== 'tos-risk-corpus/v1' || !Array.isArray(data.segments)) return alertBox('Bu bir korpus dosyası değil. Uzantının "Eval için metni kaydet" çıktısını seçin.');
-  state.corpus = data; state.corpusFile = f.name; state.items = [];
-  $('labeler').value = ''; $('complete').checked = false;
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey()) || 'null');
-    if (saved && saved.items && saved.items.length && confirmBox(`Bu metin için ${saved.items.length} etiketlik bir taslak bulundu. Devam edilsin mi?`)) {
-      state.items = saved.items; $('labeler').value = saved.labeler || ''; $('complete').checked = !!saved.complete;
-    }
-  } catch {}
-  renderDoc(); renderItems();
+  const entry = CORPUS_LIST.find((c) => c.file === f.name);
+  $('corpusPick').value = entry ? f.name : '';
+  loadCorpus(data, f.name, entry ? entry.gold : null);
 });
+
+// --- metin listesi (gömülü korpus) ---
+function draftCount(file) {
+  try { const s = JSON.parse(localStorage.getItem('tos-gold:' + file) || 'null'); return s && s.items ? s.items.length : 0; } catch { return 0; }
+}
+function statusOf(entry) {
+  if (entry.gold && entry.gold.complete) return { icon: '✅', text: `tamamlandı (${entry.gold.items.length} etiket)` };
+  if (entry.gold) return { icon: '📝', text: `kayıtlı taslak (${entry.gold.items.length} etiket, "tamamını okudum" yok)` };
+  const d = draftCount(entry.file);
+  if (d) return { icon: '📝', text: `tarayıcıda taslak (${d} etiket, henüz indirilmedi)` };
+  return { icon: '⬜', text: 'etiketlenmedi' };
+}
+function shortName(entry) {
+  try { return new URL(entry.corpus.url).hostname.replace(/^www\./, ''); } catch { return entry.file; }
+}
+function renderCorpusList() {
+  const sel = $('corpusPick'); const current = sel.value;
+  sel.replaceChildren(new Option(CORPUS_LIST.length ? '— listeden seçin —' : '(eval/corpus boş)', ''));
+  const table = $('corpusTable'); table.replaceChildren();
+  for (const entry of CORPUS_LIST) {
+    const st = statusOf(entry);
+    sel.append(new Option(`${st.icon} ${shortName(entry)} · ${entry.corpus.segments.length} bölüm`, entry.file));
+    const tr = document.createElement('tr');
+    for (const t of [st.icon, shortName(entry), `${entry.corpus.segments.length} bölüm`, st.text]) {
+      const td = document.createElement('td'); td.textContent = t; td.style.padding = '2px 8px'; tr.append(td);
+    }
+    tr.style.cursor = 'pointer';
+    tr.addEventListener('click', () => { sel.value = entry.file; sel.dispatchEvent(new Event('change')); });
+    table.append(tr);
+  }
+  sel.value = current;
+}
+$('corpusPick').addEventListener('change', () => {
+  const entry = CORPUS_LIST.find((c) => c.file === $('corpusPick').value);
+  if (entry) loadCorpus(entry.corpus, entry.file, entry.gold);
+});
+renderCorpusList();
 
 $('goldFile').addEventListener('change', async (e) => {
   const f = e.target.files[0]; if (!f) return;
@@ -229,7 +282,7 @@ function renderItems() {
     box.append(d);
   });
 }
-$('labeler').addEventListener('change', persist);
+$('labeler').addEventListener('change', () => { try { localStorage.setItem('tos-gold:labeler-name', $('labeler').value.trim()); } catch {} persist(); });
 $('complete').addEventListener('change', persist);
 
 // --- dışa aktarma ---

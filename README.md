@@ -83,7 +83,7 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 ```
 
 1. Sözleşme sayfasında panelden **💾 Eval için metni kaydet** → dosyayı `eval/corpus/` içine koyun.
-2. `npm run label` → `eval/label.html` dosyasını tarayıcıda açın, korpusu yükleyip riskli ifadeleri seçerek etiketleyin, `eval/gold/` içine kaydedin. Araç LLM sonucunu göstermez (kör etiketleme).
+2. `npm run label` → `eval/label.html` dosyasını tarayıcıda açın. `eval/corpus/` içindeki metinler araca gömülür ve listede etiket durumlarıyla görünür (⬜ etiketlenmedi / 📝 taslak / ✅ tamamlandı). Riskli ifadeleri seçerek etiketleyin, indirilen dosyayı `eval/gold/` içine koyun. (`label.html` korpus metnini içerdiği için üretilmiş dosyadır, git'e girmez.) Araç LLM sonucunu göstermez (kör etiketleme).
 3. `npm run eval` (anahtar `.env` içindeki `GEMINI_API_KEY`). İlk çalıştırma LLM'i çağırır, sonrakiler önbellekten okur; `--no-cache` yeni çağrı yapar.
 
 **Eşleştirme kuralı** (sonuçlara bakmadan önce yazıldı, `eval/lib/match.ts`): sistem bulgusu ile altın etiket, *aynı kategoride* ve alıntılarının metindeki karakter aralıkları *kesişiyorsa* eşleşir; eşleştirme bire birdir. Aynı maddeyi parçalı bulmak FP değil "tekrar" sayılır. Yeri doğru ama kategorisi farklı bulgu FP + FN olur ve raporda ayrıca işaretlenir.
