@@ -7,3 +7,5 @@ cypress/videos/
 cypress/screenshots/
 .DS_Store
 eval/label.html
+dist-e2e/
+.browsers/

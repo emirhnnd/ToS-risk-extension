@@ -3,6 +3,7 @@ import { selectWithinBudget } from '../sanitizer/segment';
 import { buildReport } from '../validator/validate';
 import { DEFAULT_MODEL, analyzeWithGemini } from './llm';
 import { MAX_LLM_CHARS } from '../shared/limits';
+import { E2E, E2E_PLACEHOLDER_KEY } from '../shared/env';
 
 /**
  * Service worker: LLM istemcisi burada yaşar.
@@ -11,6 +12,7 @@ import { MAX_LLM_CHARS } from '../shared/limits';
  */
 
 chrome.runtime.onInstalled.addListener(async () => {
+  if (E2E) return; // Cypress build: seçenekler sekmesi testi bölmesin
   const { apiKey } = await chrome.storage.local.get('apiKey');
   if (!apiKey) await chrome.runtime.openOptionsPage();
 });
@@ -32,7 +34,10 @@ async function handleAnalyze(msg: unknown): Promise<AnalyzeResponse> {
   const { url, title, detectionScore, segments, hidden } = req.data;
   if (segments.length === 0) return { ok: false, error: 'Sayfada analiz edilecek görünür metin bulunamadı.' };
 
-  const { apiKey, model } = await chrome.storage.local.get(['apiKey', 'model']);
+  const stored = await chrome.storage.local.get(['apiKey', 'model']);
+  const { model } = stored;
+  // E2E build'de anahtar uzantıda tutulmaz; yerel test sunucusu kendi .env anahtarını ekler.
+  const apiKey = E2E ? E2E_PLACEHOLDER_KEY : stored.apiKey;
   if (typeof apiKey !== 'string' || !apiKey) {
     return { ok: false, error: 'API anahtarı ayarlanmamış. Uzantı simgesine sağ tıklayıp "Seçenekler"i açın.' };
   }

@@ -1,9 +1,9 @@
 import { GEMINI_RESPONSE_SCHEMA, buildSystemInstruction, buildUserMessage } from '../shared/prompt';
 import type { Segment } from '../shared/schema';
 import { parseLlmOutput, type ParseResult } from '../validator/validate';
+import { LLM_ENDPOINT } from '../shared/env';
 
 export const DEFAULT_MODEL = 'gemini-3.8-flash';
-const ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 export interface LlmConfig {
   apiKey: string;
@@ -43,7 +43,7 @@ export async function analyzeWithGemini(
   for (let attempt = 1; attempt <= 2; attempt++) {
     let res: Response;
     try {
-      res = await doFetch(`${ENDPOINT}/${encodeURIComponent(cfg.model)}:generateContent`, {
+      res = await doFetch(`${LLM_ENDPOINT}/${encodeURIComponent(cfg.model)}:generateContent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-goog-api-key': cfg.apiKey },
         body,
@@ -96,7 +96,10 @@ async function httpErrorMessage(res: Response, model: string): Promise<string> {
       return `"${model}" modeli bulunamadı. Ayarlar sayfasından başka bir model deneyin.`;
     case 429:
       return 'Gemini istek limiti aşıldı. Bir dakika bekleyip tekrar deneyin.';
-    default:
-      return `LLM hatası (${res.status}).`;
+    default: {
+      let msg = '';
+      try { msg = String(JSON.parse(detail)?.error?.message ?? ''); } catch { /* JSON değil */ }
+      return `LLM hatası (${res.status})${msg ? `: ${msg.slice(0, 200)}` : '.'}`;
+    }
   }
 }

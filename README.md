@@ -43,6 +43,9 @@ src/
   background/  service worker, LLM istemcisi
   ui/          ayarlar sayfası, rapor paneli
 tests/unit/    Vitest
+cypress/       E2E: e2e/*.cy.js, fixtures/pages (test sayfaları), fixtures/llm (kayıtlı Gemini yanıtları)
+scripts/       test sunucusu + LLM vekili, Cypress çalıştırıcısı, etiketleme aracı üreticisi
+eval/          korpus, altın etiketler, ölçüm
 ```
 
 ## Risk skoru
@@ -87,6 +90,26 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 3. `npm run eval` (anahtar `.env` içindeki `GEMINI_API_KEY`). İlk çalıştırma LLM'i çağırır, sonrakiler önbellekten okur; `--no-cache` yeni çağrı yapar.
 
 **Eşleştirme kuralı** (sonuçlara bakmadan önce yazıldı, `eval/lib/match.ts`): sistem bulgusu ile altın etiket, *aynı kategoride* ve alıntılarının metindeki karakter aralıkları *kesişiyorsa* eşleşir; eşleştirme bire birdir. Aynı maddeyi parçalı bulmak FP değil "tekrar" sayılır. Yeri doğru ama kategorisi farklı bulgu FP + FN olur ve raporda ayrıca işaretlenir.
+
+## Uçtan uca test (Cypress)
+
+```
+npm run e2e         # tüm Cypress testleri (ilk sefer Chrome for Testing indirir)
+npm run e2e:video   # yalnızca demo testi, adımlar arası beklemeli → cypress/videos/demo.cy.js.mp4
+npm run e2e:open    # Cypress arayüzü
+```
+
+- **Neden Chrome for Testing?** Markalı Chrome 137'den beri `--load-extension` bayrağını desteklemiyor; Cypress belgeleri de Chrome for Testing veya Chromium öneriyor. `scripts/e2e.mjs` onu bir kez `.browsers/` altına indirir.
+- **Ayrı e2e build'i (`dist-e2e/`).** `vite build --mode e2e` iki şeyi değiştirir. Birincisi, Cypress test edilen sayfayı iframe içinde açtığı için içerik betiği çerçevelere de girer (`all_frames`). İkincisi, LLM isteği Google yerine yerel test sunucusuna (`localhost:5555/e2e-llm/…`) gider. Normal build'de bunların hiçbiri yoktur; `tests/unit/e2e-setup.test.ts` bunu denetler.
+- **Anahtar yine uzantıda değil.** E2E build'inde uzantı yer tutucu bir anahtar gönderir. Gerçek anahtarı test sunucusu `.env`'den ekleyip isteği Gemini'ye iletir.
+- **Kayıtlı gerçek yanıtlar.** Sunucu (`LLM_MODE=auto`) her başarılı Gemini yanıtını `cypress/fixtures/llm/<istek özeti>.json` olarak kaydeder; aynı istek tekrar gelirse kayıttan döndürür. Video (`e2e:video`, `LLM_MODE=replay`) bu kayıtlarla çekilir. Böylece videodaki çıktı gerçek bir Gemini yanıtıdır ama video beklemesiz ve tekrarlanabilir olur. Sayfa veya prompt değişirse istek özeti değişir ve kayıt geçersiz kalır; `npm run e2e` yeniden kaydeder.
+- **Gizli metnin LLM'e gitmediği dışarıdan kanıtlanır.** Test sunucusu son LLM isteğini `/e2e-llm/last` adresinde gösterir. Demo testi bu isteğin içinde gizli talimatların hiçbirinin olmadığını doğrular. Ekran dışı (`left:-9999px`) metin kuralı jsdom'da test edilemiyordu; burada gerçek tarayıcıda test edilir.
+
+| Test | Ne gösterir |
+|---|---|
+| `demo.cy.js` 1) mutlu yol | Panel kendiliğinden açılır, hukuki uyarı görünür, analiz sonrası her alıntı sayfa metninde birebir bulunur, "Sayfada göster" vurgular, salt-okuma denetimi 0 |
+| `demo.cy.js` 2) belirsizlik | Gizli talimatlı sayfada belirsizlik **yüksek**, gizli içerik "şüpheli" olarak listelenir, LLM'e giden istekte gizli metin yok, sayfadaki butona kodla hiç tıklanmadı |
+| `guards.cy.js` | Sözleşme olmayan sayfada panel açılmaz; panel open Shadow DOM'dadır; uyarı panel küçültülünce bile görünür |
 
 ## Güvenlik
 

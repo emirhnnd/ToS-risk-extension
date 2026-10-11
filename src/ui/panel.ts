@@ -206,7 +206,7 @@ const STYLES = `
 .frame.min .body { display: none; }
 header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid #e3e3e3; }
 .disclaimer { margin: 0; padding: 8px 14px; background: #fff4ce; color: #3b2f00; border-bottom: 1px solid #e6d58a; font-size: 13px; font-weight: 600; }
-.body { overflow-y: auto; padding: 12px 14px; }
+.body { overflow-y: auto; padding: 12px 14px; flex: 1 1 auto; min-height: 0; } /* min-height:0 → uzun rapor panel içinde kayar, ekrandan taşmaz */
 button { font: inherit; cursor: pointer; border: 1px solid #b5b5b5; background: #f4f4f4; border-radius: 6px; padding: 6px 12px; }
 button.primary { background: #1f5eff; color: #fff; border-color: #1f5eff; width: 100%; padding: 9px; font-weight: 600; }
 button.icon { padding: 0 10px; font-size: 18px; line-height: 24px; }
