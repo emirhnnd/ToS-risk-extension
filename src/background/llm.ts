@@ -50,7 +50,9 @@ export async function analyzeWithGemini(
         signal: AbortSignal.timeout(cfg.timeoutMs ?? 90_000),
       });
     } catch (e) {
-      return { ok: false, error: `LLM'e ulaşılamadı: ${(e as Error).message}`, attempts: attempt };
+      // Zaman aşımı ve ağ hataları geçici olabilir: bir kez daha denenir.
+      lastError = networkErrorMessage(e as Error, cfg.model);
+      continue;
     }
     if (!res.ok) {
       // HTTP hataları yeniden denenmez (anahtar hatası, kota vb. tekrarla düzelmez)
@@ -67,12 +69,19 @@ export async function analyzeWithGemini(
     if (parsed.ok) return { ok: true, data: parsed.data, attempts: attempt, raw };
     lastError = parsed.error;
   }
-  return { ok: false, error: `Analiz başarısız: ${lastError}`, attempts: 2, raw: lastRaw };
+  return { ok: false, error: lastRaw === undefined ? lastError : `Analiz başarısız: ${lastError}`, attempts: 2, raw: lastRaw };
 }
 
 interface GeminiResponse {
   candidates?: { content?: { parts?: { text?: string }[] }; finishReason?: string }[];
   promptFeedback?: { blockReason?: string };
+}
+
+export function networkErrorMessage(e: Error, model: string): string {
+  if (e.name === 'TimeoutError' || /timed out|timeout/i.test(e.message)) {
+    return `Gemini zamanında yanıt vermedi (${model}). Biraz bekleyip tekrar deneyin veya Ayarlar'dan daha hızlı bir model seçin (örn. gemini-3.5-flash-lite).`;
+  }
+  return 'Gemini\'ye ulaşılamadı. İnternet bağlantınızı kontrol edip tekrar deneyin.';
 }
 
 async function httpErrorMessage(res: Response, model: string): Promise<string> {

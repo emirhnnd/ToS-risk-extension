@@ -26,6 +26,8 @@ npm run build    # dist/ klasörü oluşur
 ```
 
 Chrome → `chrome://extensions` → Geliştirici modu → **Paketlenmemiş öğe yükle** → `dist/` klasörü.
+**Kodu her güncellediğinizde:** `npm run build` → `chrome://extensions`'ta uzantının ⟳ (yenile) simgesi → açık sekmeyi F5 ile yenile. Bu sıra atlanırsa Chrome eski dosyaları arar (`ERR_FILE_NOT_FOUND`).
+
 Ayarlar sayfasında Gemini API anahtarını girin. Anahtar yalnızca `chrome.storage.local` içinde saklanır, repoda yoktur.
 
 Yerel test sayfaları için `npm run fixtures` çalıştırıp http://localhost:5555 adresini açın (kurgusal ToS + prompt injection sayfası).

@@ -40,8 +40,27 @@ describe('analyzeWithGemini', () => {
     if (!r.ok) expect(r.error).toMatch(re);
     expect(fetchFn).toHaveBeenCalledTimes(1);
   });
-  it('ağ hatası yakalanır', async () => {
+  it('ağ hatası yakalanır, bir kez yeniden denenir, Türkçe mesaj döner', async () => {
     const fetchFn = vi.fn(async () => { throw new TypeError('Failed to fetch'); });
-    expect(await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn })).toMatchObject({ ok: false });
+    const r = await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn });
+    expect(r).toMatchObject({ ok: false, attempts: 2 });
+    if (!r.ok) expect(r.error).toMatch(/ulaşılamadı/);
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+  });
+  it('zaman aşımı (Chrome\'da görüldü): Türkçe mesaj, model adı ve öneri içerir', async () => {
+    const err = Object.assign(new Error('signal timed out'), { name: 'TimeoutError' });
+    const fetchFn = vi.fn(async () => { throw err; });
+    const r = await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'gemini-x', fetchFn });
+    expect(r.ok).toBe(false);
+    if (!r.ok) {
+      expect(r.error).toMatch(/zamanında yanıt vermedi/);
+      expect(r.error).toContain('gemini-x');
+      expect(r.error).not.toMatch(/signal timed out/);
+    }
+  });
+  it('ilk denemede zaman aşımı, ikincide başarı', async () => {
+    const err = Object.assign(new Error('signal timed out'), { name: 'TimeoutError' });
+    const fetchFn = vi.fn().mockRejectedValueOnce(err).mockResolvedValueOnce(geminiOk(JSON.stringify(output([]))));
+    expect(await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn })).toMatchObject({ ok: true, attempts: 2 });
   });
 });

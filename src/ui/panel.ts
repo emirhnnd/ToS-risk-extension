@@ -27,6 +27,7 @@ export class ReportPanel {
   private readonly body: HTMLElement;
   private readonly frame: HTMLElement;
   onAnalyze: () => void = () => {};
+  onExport: () => void = () => {};
 
   constructor() {
     document.getElementById(HOST_ID)?.remove();
@@ -60,7 +61,14 @@ export class ReportPanel {
       h('p', {}, detectionScore >= 0.5 ? 'Bu sayfa bir sözleşme metnine benziyor.' : 'Bu sayfa bir sözleşme sayfasına pek benzemiyor, yine de analiz edebilirsiniz.'),
       btn,
       h('p', { class: 'muted' }, 'Analiz için sayfanın görünür metni, kendi API anahtarınızla Gemini\'ye gönderilir.'),
+      this.exportButton(),
     );
+  }
+
+  private exportButton(): HTMLElement {
+    const b = h('button', { class: 'link', 'data-testid': 'export-button', title: 'LLM\'e gönderilen metni eval korpusu için JSON olarak indirir' }, '💾 Eval için metni kaydet');
+    b.addEventListener('click', () => this.onExport());
+    return h('p', { class: 'muted' }, b);
   }
 
   showLoading(step: string): void {
@@ -180,7 +188,7 @@ export class ReportPanel {
     parts.push(h('p', { class: 'muted' }, `Kapsam: metnin %${Math.round(r.coverage * 100)}'i analiz edildi · ${new Date(r.analyzed_at).toLocaleString('tr-TR')}`));
     const again = h('button', { 'data-testid': 'analyze-button' }, 'Yeniden analiz et');
     again.addEventListener('click', () => this.onAnalyze());
-    parts.push(again);
+    parts.push(again, this.exportButton());
 
     this.body.replaceChildren(...parts.filter((p): p is Node => !!p && typeof p !== 'string'));
   }

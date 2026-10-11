@@ -45,3 +45,17 @@ describe('looksLikeInstruction', () => {
     'You can cancel at any time from your account settings.',
   ])('sıradan sözleşme metni: %s', (t) => expect(looksLikeInstruction(t)).toBe(false));
 });
+
+import { snapshotFileName } from '../../src/shared/corpus';
+describe('snapshotFileName', () => {
+  const d = new Date('2026-10-11T09:00:00Z');
+  it('alan adı + son yol parçası + tarih', () => {
+    expect(snapshotFileName('https://www.spotify.com/tr-tr/legal/end-user-agreement/', d)).toBe('spotify-com-end-user-agreement_2026-10-11.json');
+  });
+  it('Türkçe karakter ve uzantı temizlenir', () => {
+    expect(snapshotFileName('https://www.trendyol.com/s%C3%B6zle%C5%9Fme.html', d)).toBe('trendyol-com-sozlesme_2026-10-11.json');
+  });
+  it('geçersiz URL çökmez', () => {
+    expect(snapshotFileName('::', d)).toBe('sayfa_2026-10-11.json');
+  });
+});

@@ -1,4 +1,5 @@
 import type { AnalyzeRequest, AnalyzeResponse } from '../shared/messages';
+import { CORPUS_FORMAT, snapshotFileName, type CorpusSnapshot } from '../shared/corpus';
 import { findHiddenText, removeHiddenLines } from '../sanitizer/hidden';
 import { segmentText } from '../sanitizer/segment';
 import { ReportPanel } from '../ui/panel';
@@ -19,6 +20,7 @@ function openPanel(): ReportPanel {
   if (panel && document.getElementById('tos-risk-panel-host')) return panel;
   panel = new ReportPanel();
   panel.onAnalyze = () => void runAnalysis(panel!);
+  panel.onExport = () => void exportSnapshot();
   panel.showIdle(currentDetection());
   return panel;
 }
@@ -27,24 +29,44 @@ function currentDetection(): number {
   return detectContractPage(location.href, document.title, document.body?.innerText ?? '');
 }
 
+/** Sayfadan LLM girdisini üretir: algıla → page-agent ile oku → gizliyi ayıkla → böl. */
+async function captureInput() {
+  const detectionScore = currentDetection();
+  const hidden = findHiddenText(document.body);
+  let visible: string;
+  try {
+    visible = await extractVisibleText();
+  } catch (e) {
+    console.warn('[ToS Risk] page-agent metin çıkarma başarısız, innerText kullanılıyor:', e);
+    visible = document.body.innerText;
+  }
+  const { text } = removeHiddenLines(visible, hidden);
+  return { detectionScore, hidden, segments: segmentText(text) };
+}
+
+/** Eval korpusu için LLM girdisini JSON olarak indirir (LLM çağrısı yapmaz). */
+async function exportSnapshot(): Promise<void> {
+  const { detectionScore, hidden, segments } = await captureInput();
+  const now = new Date();
+  const snap: CorpusSnapshot = {
+    format: CORPUS_FORMAT, captured_at: now.toISOString(), url: location.href, title: document.title,
+    detection_score: detectionScore, segments, hidden,
+  };
+  const blob = new Blob([JSON.stringify(snap, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = snapshotFileName(location.href, now);
+  a.click(); // kullanıcının kendi butonuna basmasıyla tetiklenen indirme; sayfaya dokunmaz
+  setTimeout(() => URL.revokeObjectURL(a.href), 10_000);
+}
+
 async function runAnalysis(p: ReportPanel): Promise<void> {
   const stopGuard = startActionGuard();
   try {
     p.showLoading('Sayfa metni okunuyor…');
-    const detectionScore = currentDetection();
-    const hidden = findHiddenText(document.body);
+    const { detectionScore, hidden, segments } = await captureInput();
 
-    let visible: string;
-    try {
-      visible = await extractVisibleText();
-    } catch (e) {
-      console.warn('[ToS Risk] page-agent metin çıkarma başarısız, innerText kullanılıyor:', e);
-      visible = document.body.innerText;
-    }
-    const { text } = removeHiddenLines(visible, hidden);
-    const segments = segmentText(text);
-
-    p.showLoading(`Yapay zekâ analiz ediyor (${segments.length} bölüm)… Bu 10–60 sn sürebilir.`);
+    p.showLoading(`Yapay zekâ analiz ediyor (${segments.length} bölüm)… Genelde 10–60 sn sürer.`);
     const req: AnalyzeRequest = { type: 'analyze', url: location.href, title: document.title, detectionScore, segments, hidden };
     const res = (await chrome.runtime.sendMessage(req)) as AnalyzeResponse | undefined;
 
