@@ -2,6 +2,7 @@ import type { AnalyzeRequest, AnalyzeResponse } from '../shared/messages';
 import { CORPUS_FORMAT, snapshotFileName, type CorpusSnapshot } from '../shared/corpus';
 import { findHiddenText, removeHiddenLines } from '../sanitizer/hidden';
 import { segmentText } from '../sanitizer/segment';
+import { restrictToMainContent } from '../sanitizer/region';
 import { ReportPanel } from '../ui/panel';
 import { startActionGuard } from './action-guard';
 import { detectContractPage } from './detect';
@@ -40,17 +41,18 @@ async function captureInput() {
     console.warn('[ToS Risk] page-agent metin çıkarma başarısız, innerText kullanılıyor:', e);
     visible = document.body.innerText;
   }
-  const { text } = removeHiddenLines(visible, hidden);
-  return { detectionScore, hidden, segments: segmentText(text) };
+  const { text: noHidden } = removeHiddenLines(visible, hidden);
+  const { text, region, dropped_lines } = restrictToMainContent(noHidden);
+  return { detectionScore, hidden, segments: segmentText(text), extraction: { region, dropped_lines } };
 }
 
 /** Eval korpusu için LLM girdisini JSON olarak indirir (LLM çağrısı yapmaz). */
 async function exportSnapshot(): Promise<void> {
-  const { detectionScore, hidden, segments } = await captureInput();
+  const { detectionScore, hidden, segments, extraction } = await captureInput();
   const now = new Date();
   const snap: CorpusSnapshot = {
     format: CORPUS_FORMAT, captured_at: now.toISOString(), url: location.href, title: document.title,
-    detection_score: detectionScore, segments, hidden,
+    detection_score: detectionScore, segments, hidden, extraction,
   };
   const blob = new Blob([JSON.stringify(snap, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { MAX_SEGMENT_CHARS, segmentText, selectWithinBudget } from '../../src/sanitizer/segment';
+import { MAX_SEGMENT_CHARS, segmentText, selectWithinBudget, tidyInline } from '../../src/sanitizer/segment';
 import { looksLikeInstruction } from '../../src/sanitizer/instructions';
 
 describe('segmentText', () => {
@@ -58,4 +58,42 @@ describe('snapshotFileName', () => {
   it('geçersiz URL çökmez', () => {
     expect(snapshotFileName('::', d)).toBe('sayfa_2026-10-11.json');
   });
+});
+
+describe('gerçek sayfa: satır içi linklerin böldüğü cümleler (Spotify, 2026-10-11)', () => {
+  // page-agent çıktısında satır içi <a>/<strong> her biri ayrı satır olur
+  const raw = [
+    '1. Giriş',
+    'Bu Şartlar\'ı içeren veya bu Şartlar ile bağlantılı tüm web sitelerimiz ve yazılım uygulamalarımız (toplu olarak "',
+    'Spotify Hizmeti',
+    '") ve Spotify Hizmeti aracılığıyla kullanıma sunulan her türlü müzik ("',
+    'İçerik',
+    '") dahil olmak üzere hizmetlerimizi kullanımınız bu Şartlar\'a tabidir.',
+    'Daha fazla bilgi için',
+    'Spotify Gizlilik Politikası',
+    '\'na bakın.',
+    'Hizmet Sağlayıcı Bu Şartlar siz ve Spotify AB arasındadır.',
+  ].join('\n');
+
+  it('bölünmüş cümleler birleşir, tamamlanmış cümleler ayrı kalır', () => {
+    const s = segmentText(raw);
+    expect(s.map((x) => x.text)).toEqual([
+      '1. Giriş Bu Şartlar\'ı içeren veya bu Şartlar ile bağlantılı tüm web sitelerimiz ve yazılım uygulamalarımız (toplu olarak "Spotify Hizmeti") ve Spotify Hizmeti aracılığıyla kullanıma sunulan her türlü müzik ("İçerik") dahil olmak üzere hizmetlerimizi kullanımınız bu Şartlar\'a tabidir.',
+      'Daha fazla bilgi için Spotify Gizlilik Politikası\'na bakın.',
+      'Hizmet Sağlayıcı Bu Şartlar siz ve Spotify AB arasındadır.',
+    ]);
+  });
+});
+
+describe('tidyInline', () => {
+  it.each([
+    ['(toplu olarak " Spotify Hizmeti ") ve', '(toplu olarak "Spotify Hizmeti") ve'],
+    ["Politikası 'na bakın", "Politikası'na bakın"],
+    ['abonelik , iptal', 'abonelik, iptal'],
+  ])('%s → %s', (a, b) => expect(tidyInline(a)).toBe(b));
+  it.each([
+    ["the 'Service' means", "the 'Service' means"],
+    ["the 'term' means", "the 'term' means"],
+    ['(see Section 7)', '(see Section 7)'],
+  ])('İngilizce tırnağa dokunmaz: %s', (a, b) => expect(tidyInline(a)).toBe(b));
 });

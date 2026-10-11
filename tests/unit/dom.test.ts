@@ -128,3 +128,21 @@ describe('startActionGuard idempotent', () => {
     expect(stop().synthetic).toBe(1);
   });
 });
+
+import { restrictToMainContent } from '../../src/sanitizer/region';
+describe('restrictToMainContent (menü / alt bilgi / çerez uyarısı)', () => {
+  const lines = ['Türkiye Close Skip to content Premium plans', 'Your subscription renews automatically each month unless cancelled.', 'We may share your data with partners for advertising.', 'We and our partners process data to provide: Accept Cookies'];
+  it('<main> varsa yalnızca içindeki satırlar kalır', () => {
+    document.body.innerHTML = `<nav>${lines[0]}</nav><main><p>${lines[1]}</p><p>${lines[2]}</p></main><div class="cookie">${lines[3]}</div>`;
+    const r = restrictToMainContent(lines.join('\n'), document);
+    expect(r).toEqual({ text: `${lines[1]}\n${lines[2]}`, region: 'main', dropped_lines: 2 });
+  });
+  it('<main> yoksa hiçbir şey atılmaz', () => {
+    document.body.innerHTML = `<div>${lines.join('</div><div>')}</div>`;
+    expect(restrictToMainContent(lines.join('\n'), document)).toMatchObject({ region: 'whole_page', dropped_lines: 0 });
+  });
+  it('<main> sayfanın küçük bir parçasıysa (ör. yalnızca başlık) hiçbir şey atılmaz', () => {
+    document.body.innerHTML = `<main>Kısa</main><div>${lines.join(' ')}</div>`;
+    expect(restrictToMainContent(lines.join('\n'), document).region).toBe('whole_page');
+  });
+});

@@ -21,6 +21,10 @@ export function normalizeForMatch(input: string): string {
     .replace(/[‐-―−]/g, '-')
     .replace(/…/g, '...')
     .replace(/\s+/g, ' ')
+    // Tırnak/parantez/noktalama çevresindeki boşluk farkı içerik farkı değildir:
+    // '(" Spotify Hizmeti ")' ≡ '("Spotify Hizmeti")', 'Politikası 'na' ≡ 'Politikası'na'
+    .replace(/\s*(["'()\[\]])\s*/g, '$1')
+    .replace(/\s+([,.;:!?])/g, '$1')
     .trim();
 }
 

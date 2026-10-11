@@ -18,6 +18,8 @@ export const CorpusSnapshotSchema = z.object({
   detection_score: AnalyzeRequestSchema.shape.detectionScore,
   segments: AnalyzeRequestSchema.shape.segments,
   hidden: AnalyzeRequestSchema.shape.hidden,
+  /** Metin çıkarma bilgisi: yalnızca <main> mı alındı, kaç satır atıldı (şeffaflık) */
+  extraction: z.object({ region: z.enum(['main', 'whole_page']), dropped_lines: z.number().int().min(0) }).optional(),
 });
 export type CorpusSnapshot = z.infer<typeof CorpusSnapshotSchema>;
 

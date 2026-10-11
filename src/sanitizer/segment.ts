@@ -20,18 +20,48 @@ export function segmentText(text: string): Segment[] {
   const merged: string[] = [];
   let carry = '';
   for (const line of lines) {
-    const cur = carry ? `${carry} ${line}` : line;
-    if (cur.length < MIN_SEGMENT_CHARS) {
-      carry = cur;
-    } else {
-      merged.push(cur);
+    // Satır içi link/kalın yazı page-agent çıktısında cümleyi böler (gerçek Spotify sayfasında görüldü):
+    //   '... (toplu olarak "'  +  'Spotify Hizmeti ") ve ...'  → tek cümle
+    if (carry && !continues(carry, line) && carry.length >= MIN_SEGMENT_CHARS) {
+      merged.push(carry);
       carry = '';
     }
+    carry = carry ? `${carry} ${line}` : line;
   }
   if (carry) merged.push(carry);
 
-  const pieces = merged.flatMap(splitLong);
+  const pieces = merged.map(tidyInline).flatMap(splitLong);
   return pieces.map((t, i) => ({ id: `S${i + 1}`, text: t }));
+}
+
+/** Önceki satır cümleyi bitirmediyse veya sonraki satır cümlenin devamıysa true. */
+function continues(prev: string, next: string): boolean {
+  const endsSentence = /[.!?:;]["'”’)\]]*$/.test(prev);
+  const nextIsContinuation = /^[\p{Ll}"'”’),.;:!?\]]/u.test(next);
+  return !endsSentence || nextIsContinuation;
+}
+
+/**
+ * Satır birleştirmenin bıraktığı boşluk izlerini temizler (yalnızca görüntü; eşleştirme
+ * normalizeForMatch ile zaten boşluktan bağımsızdır):
+ *   '(" Spotify Hizmeti ")' → '("Spotify Hizmeti")'   'Politikası 'na' → 'Politikası'na'
+ */
+export function tidyInline(t: string): string {
+  return tidyStraightQuotes(t)
+    .replace(/“\s+/g, '“')
+    .replace(/\s+”/g, '”')
+    .replace(/(\p{L}) (['’])(\p{Ll}{1,5})(?![\p{L}'’])/gu, '$1$2$3')
+    .replace(/\s+([,.;:!?])(?=\s|$)/g, '$1');
+}
+
+/** Düz çift tırnakları sırayla açılış/kapanış sayar; açılıştan sonraki ve kapanıştan önceki boşluğu siler.
+ *  Tek sayıda tırnak varsa eşleşme belirsizdir, metne dokunulmaz. */
+function tidyStraightQuotes(t: string): string {
+  const parts = t.split('"');
+  if (parts.length % 2 === 0) return t; // tek sayıda tırnak
+  return parts
+    .map((p, i) => (i % 2 === 1 ? p.trim() : p)) // tırnak içleri
+    .join('"');
 }
 
 function splitLong(p: string): string[] {

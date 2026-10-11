@@ -69,6 +69,7 @@ Her kategori yalnızca bir kez, en yüksek şiddetiyle sayılır. Böylece LLM a
 | Grup büyüklüğü | Bireysel |
 | "sade Türkçe açıklama ve ___" | Güven / belirsizlik seviyesi |
 | page-agent kullanımı | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler |
+| Eval dili | 4 Türkçe + 2 İngilizce metin (planlanan 2 TR + 3 EN yerine; Spotify `tr-en` adresi Türkçe metin döndürdü). Açıklamalar her durumda Türkçe |
 | İçerik betiği kapsamı | Otomatik algılama (F1) için tüm http/https sayfalarda çalışır. Yalnızca okuma yapar, ağ isteği atmaz |
 
 ## Eval
@@ -102,4 +103,5 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 - Talimat tespiti düzenli ifadelere dayanır; eş anlamlı ifadeleri veya desteklenmeyen dilleri kaçırabilir. Bu bir raporlama sinyalidir, asıl savunma değildir.
 - Gizli metin tespiti; başka bir elemanın arkasına saklanmış (z-index) veya resim üstüne aynı renkte yazılmış metni yakalamaz. `aria-hidden` bilinçli olarak gizli sayılmaz, çünkü görsel olarak görünürdür.
 - jsdom yerleşim hesaplamadığı için "ekran dışı" kuralı birim testlerinde değil, Cypress'te gerçek Chrome'da test edilir.
+- Metin çıkarma, sayfada `<main>` bölgesi varsa (ve metnin ≥%40'ını içeriyorsa) yalnızca onu alır; menü, alt bilgi ve çerez uyarısı dışarıda kalır. `<main>` yoksa sayfanın tamamı alınır ve bu gürültü LLM'e gider. Korpus dosyasındaki `extraction` alanı hangisinin olduğunu ve kaç satır atıldığını kaydeder.
 - Alıntı normalizasyonu aksanları kaldırır; çok nadir durumlarda farklı kelimeleri eşleştirebilir.
