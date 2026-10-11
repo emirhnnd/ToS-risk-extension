@@ -69,7 +69,7 @@ Her kategori yalnızca bir kez, en yüksek şiddetiyle sayılır. Böylece LLM a
 | Grup büyüklüğü | Bireysel |
 | "sade Türkçe açıklama ve ___" | Güven / belirsizlik seviyesi |
 | page-agent kullanımı | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler |
-| Eval dili | 3 Türkçe (Spotify, Getir, YouTube) + 3 İngilizce (Netflix, Amazon.com, Steam) metin, hepsi 11 Ekim 2026 tarihli tek sürümden (`extension_build: 2026-10-11T07:10:18.198Z`). Spotify `tr-en` adresi Türkçe metin döndürdü; Trendyol sayfası metin çıkarmaya uygun olmadığı için dışarıda kaldı. Açıklamalar her durumda Türkçe |
+| Eval dili | 3 Türkçe (Spotify, Getir, YouTube) + 3 İngilizce (Netflix, Amazon.com, Steam) metin, hepsi 11 Ekim 2026 tarihli tek sürümden (`extension_build: 2026-10-11T07:10:18.198Z`). Spotify `tr-en` adresi Türkçe metin döndürdü. Açıklamalar her durumda Türkçe |
 | İçerik betiği kapsamı | Otomatik algılama (F1) için tüm http/https sayfalarda çalışır. Yalnızca okuma yapar, ağ isteği atmaz |
 
 ## Eval
