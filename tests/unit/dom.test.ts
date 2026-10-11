@@ -137,7 +137,14 @@ describe('restrictToMainContent (menü / alt bilgi / çerez uyarısı)', () => {
     const r = restrictToMainContent(lines.join('\n'), document);
     expect(r).toEqual({ text: `${lines[1]}\n${lines[2]}`, region: 'main', dropped_lines: 2 });
   });
-  it('<main> yoksa hiçbir şey atılmaz', () => {
+  it('<main> yoksa header/nav/footer satırları atılır, metinde de geçen satır kalır (Amazon)', () => {
+    document.body.innerHTML = '<header>Teslimat konumu: Semt 00000 Konumu güncelle</header><nav>Kullanım Koşulları</nav><div><h1>Kullanım Koşulları</h1><p>Amazon Hizmetleri\'ni kullanarak bu koşulları kabul edersiniz.</p></div><footer>© Amazon</footer>';
+    const text = ['Teslimat konumu: Semt 00000 Konumu güncelle', 'Kullanım Koşulları', 'Amazon Hizmetleri\'ni kullanarak bu koşulları kabul edersiniz.', '© Amazon'].join('\n');
+    expect(restrictToMainContent(text, document)).toEqual({
+      text: 'Kullanım Koşulları\nAmazon Hizmetleri\'ni kullanarak bu koşulları kabul edersiniz.', region: 'without_landmarks', dropped_lines: 2,
+    });
+  });
+  it('<main> ve işaretli bölge yoksa hiçbir şey atılmaz', () => {
     document.body.innerHTML = `<div>${lines.join('</div><div>')}</div>`;
     expect(restrictToMainContent(lines.join('\n'), document)).toMatchObject({ region: 'whole_page', dropped_lines: 0 });
   });

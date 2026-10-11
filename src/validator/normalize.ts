@@ -13,7 +13,7 @@ export function normalizeForMatch(input: string): string {
   return input
     .normalize('NFKD')
     .replace(/\p{M}+/gu, '') // birleşik aksan işaretleri
-    .replace(/[­​-‍⁠﻿]/g, '') // yumuşak tire, sıfır genişlikli
+    .replace(/[\u00AD\u200B-\u200D\u2060\uFEFF\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '') // yumuşak tire, sıfır genişlikli, C0 kontrol karakterleri
     .toLowerCase()
     .replace(/ı/g, 'i')
     .replace(/[‘’‚‛′`´]/g, "'")

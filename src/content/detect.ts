@@ -13,6 +13,8 @@ const TITLE_KEYWORDS = [
   'terms of service', 'terms of use', 'terms and conditions', 'privacy policy', 'privacy notice',
   'user agreement', 'subscription terms', 'kullanim kosullari', 'kullanim sartlari', 'gizlilik politikasi',
   'uyelik sozlesmesi', 'aydinlatma metni', 'gizlilik bildirimi', 'abonelik',
+  // Gerçek Amazon başlığı "Kullanım ve Satış Şartları" listede yoktu (algılama 0.3 → yanlış "sözleşme değil" uyarısı)
+  'satis sartlari', 'satis kosullari', 'kullanim ve satis', 'hizmet sartlari', 'hizmet kosullari', 'conditions of use', 'conditions of sale',
 ];
 const BODY_KEYWORDS = [
   'you agree', 'these terms', 'personal data', 'third parties', 'governing law', 'liability',

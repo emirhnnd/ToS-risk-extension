@@ -21,3 +21,16 @@ describe('simplifiedToPlainText', () => {
     expect(simplifiedToPlainText(s)).toBe('Terms of Service\nAccept\nPrivacy Policy\nWe may share data.');
   });
 });
+
+describe('gerçek sayfalardan çıkan regresyonlar (2026-10-11 korpusu)', () => {
+  it('satır ortasındaki page-agent etiketleri atılır (Amazon, Netflix)', () => {
+    const s = 'Ana içerik .com.tr [8]<div id=glow-ingress-block>Teslimat konumu: X Konumu güncelle /> [9]<select title=Şurada ara: name=url id=searchDropdownBox>Tüm Kategoriler Kitaplar /> Hesap\nSon Güncelleme: 10 Nisan 2026 [9]<select title=Tercih ettiğiniz dil... id=lang-switcher>Bir dil seç Türkçe /> Gizlilik';
+    const out = simplifiedToPlainText(s);
+    expect(out).not.toMatch(/\[\d+\]|<|\/>|id=/);
+    expect(out).toContain('Teslimat konumu: X Konumu güncelle');
+    expect(out).toContain('Son Güncelleme: 10 Nisan 2026 Bir dil seç Türkçe Gizlilik');
+  });
+  it('Amazon başlığı sözleşme olarak algılanır', () => {
+    expect(detectContractPage('https://www.amazon.com.tr/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM', 'Amazon.com.tr Kullanım ve Satış Şartları - Amazon Müşteri Hizmetleri', 'Amazon Hizmetleri\'ni kullanarak, bu koşullarla bağlı olmayı kabul etmektesiniz. Kişisel veri sorumluluk')).toBeGreaterThanOrEqual(0.5);
+  });
+});

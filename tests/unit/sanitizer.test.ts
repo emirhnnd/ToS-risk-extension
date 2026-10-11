@@ -97,3 +97,11 @@ describe('tidyInline', () => {
     ['(see Section 7)', '(see Section 7)'],
   ])('İngilizce tırnağa dokunmaz: %s', (a, b) => expect(tidyInline(a)).toBe(b));
 });
+
+describe('kontrol karakterleri (gerçek Getir sayfası)', () => {
+  it('\\u0001 metinden atılır ve alıntı eşleşmesini bozmaz', () => {
+    const s = segmentText('Üye İşyeri: GetirYemek bölümünde listelenen restoranlar,\u0001\u0001 GetirÇarşı bölümünde listelenen satıcılar.');
+    expect(s[0]!.text).not.toMatch(/\u0001/);
+    expect(s[0]!.text).toContain('restoranlar, GetirÇarşı');
+  });
+});

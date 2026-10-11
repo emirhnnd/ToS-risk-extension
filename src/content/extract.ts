@@ -32,12 +32,16 @@ export async function extractVisibleText(): Promise<string> {
 export function simplifiedToPlainText(simplified: string): string {
   return simplified
     .split('\n')
-    .map((line) => {
-      const l = line.replace(/^\s*\*?/, '').trim();
-      // `<a aria-label=X />` (metinsiz) → atılır; `<a ...>Metin />` → "Metin"
-      const m = l.match(/^(?:\[\d+\])?<[a-zA-Z][\w-]*(?:\s[^>]*?)?(?:\s*\/>|>([\s\S]*?)\s*\/>)$/);
-      return (m ? m[1] ?? '' : l).trim();
-    })
+    .map((line) =>
+      line
+        .replace(/^\s*\*?/, '')
+        // Etiket işaretleri satırın HERHANGİ bir yerinde olabilir (gerçek Amazon/Netflix sayfalarında görüldü):
+        //   'Ana içerik [8]<div id=glow-ingress-block>Teslimat konumu … />'  → yalnızca metin
+        .replace(/(?:\[\d+\])?<[a-zA-Z][\w-]*(?:\s[^<>]*?)?>/g, ' ')
+        .replace(/\s*\/>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim(),
+    )
     .filter((l) => l.length > 0)
     .join('\n');
 }

@@ -14,7 +14,8 @@ export const MIN_SEGMENT_CHARS = 40;
 export function segmentText(text: string): Segment[] {
   const lines = text
     .split(/\n+/)
-    .map((l) => l.replace(/\s+/g, ' ').trim())
+    // C0 kontrol karakterleri (gerçek Getir sayfasında \u0001 görüldü) metinden atılır
+    .map((l) => l.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').replace(/\s+/g, ' ').trim())
     .filter((l) => l.length > 0);
 
   const merged: string[] = [];

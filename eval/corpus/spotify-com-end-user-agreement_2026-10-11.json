@@ -1,0 +1,744 @@
+{
+  "format": "tos-risk-corpus/v1",
+  "captured_at": "2026-10-11T06:46:50.841Z",
+  "url": "https://www.spotify.com/tr-en/legal/end-user-agreement/",
+  "title": "Terms and Conditions of Use - Spotify",
+  "detection_score": 1,
+  "segments": [
+    {
+      "id": "S1",
+      "text": "Türkiye Legal Terms and Conditions of Use Intellectual Property Policy Privacy Policy User Guidelines Premium Offer Terms Spotify Kullanım Şartları Son Güncelleme: 26 Ağustos 2025 1. Giriş 2. Tarafımızca Sunulan Spotify Hizmeti 3. Spotify Hizmeti'ni Kullanımınız 4. İçerik ve Fikri Mülkiyet Hakları 5. Müşteri Desteği, Bilgi, Sorular ve Şikayetler 6. Sorunlar ve Anlaşmazlıklar 7. Bu Şartlar Hakkında 1. Giriş Bu Şartlar'ı içeren veya bu Şartlar ile bağlantılı tüm web sitelerimiz ve yazılım uygulamalarımız (toplu olarak \"Spotify Hizmeti\") ve Spotify Hizmeti aracılığıyla kullanıma sunulan her türlü müzik, video, podcast, sesli kitap veya diğer materyal (\"İçerik\") dahil olmak üzere müzik ve başka içeriklerin akışı için Spotify'ın kişiselleştirilmiş hizmetlerini kullanımınız (bunlara erişim dahil) bu Şartlar'a tabi olacağından lütfen bu Kullanım Şartları'nı ( \"Şartlar\") dikkatli bir şekilde okuyun."
+    },
+    {
+      "id": "S2",
+      "text": "Spotify Hizmeti'nin kullanımı, Spotify tarafından sunulacak ve bu Şartlar'a referans yoluyla ilave edilecek ek şartlara veya koşullara tabidir (toplu olarak \"Sözleşmeler\"). Bu ek şartların yanı sıra bu Şartlar'ı veya referans yoluyla dahil edilmiş olan ek şartları nasıl değiştirebileceğimiz hakkında bilgi için lütfen aşağıdaki 7. Bölüm'e bakın. Spotify'ın kişisel verilerinizi nasıl topladığı, kullandığı, paylaştığı ve koruduğu hakkında daha fazla bilgi edinmek için lütfen Spotify Gizlilik Politikası'na bakın."
+    },
+    {
+      "id": "S3",
+      "text": "Spotify Hizmeti'ne kaydolarak veya başka bir şekilde kullanarak bu Şartlar'ı kabul edersiniz. Bu Şartlar'ı kabul etmiyorsanız Spotify Hizmeti'ni kullanmamalı veya herhangi bir İçerik'e erişmemelisiniz."
+    },
+    {
+      "id": "S4",
+      "text": "Hizmet Sağlayıcı Bu Şartlar siz ve Spotify AB, Regeringsgatan 19, 111 53, Stockholm, İsveç arasındadır."
+    },
+    {
+      "id": "S5",
+      "text": "Yaş ve uygunluk koşulları Spotify Hizmeti'ni kullanabilmek ve herhangi bir İçerik'e erişebilmek için (1) 13 yaşında (veya kendi ülkenizdeki eş değer asgari yaşta) veya daha büyük olmanız; (2) kendi ülkenizde yasal sorumluluk yaşının altındaysanız veliniz veya vasinizden izin almış olmanız; (3) bizimle bağlayıcı bir sözleşme imzalama yetkisine sahip olmanız ve geçerli kanunlar kapsamında bu yönde bir engelinizin olmaması ve (4) Hizmet'in kullanılabilir olduğu bir ülkede ikamet etmeniz gerekmektedir. Ayrıca, Spotify'a gönderdiğiniz her türlü kayıt bilgisinin gerçek, doğru, eksiksiz olduğuna ve bu bilgileri her zaman bu şekilde tutmayı kabul ettiğinize dair söz verirsiniz. Kendi ülkenizde yasal sorumluluk yaşının altındaysanız bu Şartlar'ı sizin adınıza veliniz veya vasiniz imzalamalıdır. Spotify Hizmeti'ni kullanmak ve İçeriğe erişmek için asgari yaş gerekliliklerini karşılamıyorsanız kullanıcı olarak kaydolmamalısınız. Bazı pazarlarda Spotify, ana hesap sahiplerine aile aboneliğinin bir parçası olarak çocuk deneyimlerine erişim imkanı sunabilir."
+    },
+    {
+      "id": "S6",
+      "text": "Ana hesap sahibi, söz konusu erişimi etkinleştirerek deneyime erişen tüm kullanıcıların yasal vasisi olduğunu ve genç kullanıcının Spotify'ı kullanmasına izin verdiğini onaylar."
+    },
+    {
+      "id": "S7",
+      "text": "2. Tarafımızca Sunulan Spotify Hizmeti Spotify Hizmeti Seçenekleri Çok sayıda Spotify Hizmeti seçeneği sunarız. Bazı Spotify Hizmeti seçenekleri ücretsiz sunulurken bazı seçenekler içinse erişim öncesinde ödeme yapılması gerekir (\"Ücretli Abonelikler\"). Bunların yanı sıra üçüncü taraf ürünlerinin ve hizmetlerinin sunulması dahil, özel promosyon planları, abonelikler veya hizmetler de sunabiliriz. Bu tür üçüncü tarafların sağladığı ürünler ve hizmetler bizim sorumluluğumuzda değildir."
+    },
+    {
+      "id": "S8",
+      "text": "Avantajlı Kullanımlar Muhtelif zamanlarda, Ücretli Aboneliklerin avantajlı kullanımları, belirli bir süre boyunca ödeme yapılmadan veya indirimli bir fiyatla tarafımızdan veya bizim adımıza başkaları tarafından sunulabilir (\"Avantajlı Kullanım\"). Avantajlı Kullanım aracılığıyla bir Spotify Hizmeti'ni kullanarak Spotify Premium Promosyon Teklifi Şartları'nı kabul etmiş sayılırsınız."
+    },
+    {
+      "id": "S9",
+      "text": "Üçüncü Taraf Uygulamaları, Cihazlar ve Açık Kaynak Yazılımı Spotify Hizmeti; üçüncü taraf uygulamaları, web siteleri ve hizmetlerinin (\"Üçüncü Taraf Uygulamaları\") yanı sıra üçüncü taraf kişisel bilgisayarları, mobil telefonları, tabletleri, giyilebilir cihazları, hoparlörleri ve diğer cihazları (\"Cihazlar\") ile entegre edilebilir veya bunlarla başka şekilde etkileşime geçebilir. Söz konusu Üçüncü Taraf Uygulamaları ve Cihazları'nı kullanmanız, tarafınıza ilgili üçüncü tarafça sunulacak ek şartlara, koşullara ve politikalara tabi olabilir. Spotify, Üçüncü Taraf Uygulamaları ve Cihazları'nın Spotify Hizmeti ile uyumlu olacağını garanti etmez."
+    },
+    {
+      "id": "S10",
+      "text": "Hizmet Sınırlamaları ve Değişiklikleri Spotify Hizmeti'ni faal durumda tutmak ve size kişiselleştirilmiş, sürükleyici bir ses deneyimi sunmak için makul özeni gösteriyoruz. Ancak hizmet sunumlarımız ve bunların kullanılabilirlikleri zaman zaman ve geçerli kanunlara tabi olmak üzere, size karşı hiçbir yükümlülük olmaksızın değişebilir; örnek:"
+    },
+    {
+      "id": "S11",
+      "text": "Spotify Hizmeti'nde teknik sorunlar, bakım veya test işlemleri ya da ilgili kanunlardaki ve düzenleme gerekliliklerindeki değişiklikleri yansıtmak için yapılması gerekenler dahil olmak üzere güncellemeler nedeniyle geçici kesintiler söz konusu olabilir."
+    },
+    {
+      "id": "S12",
+      "text": "Hizmetler'i sürekli geliştirmeyi ve iyileştirmeyi amaçlıyoruz ve Spotify Hizmeti'nin tamamını veya bir kısmını değiştirebilir, askıya alabilir ya da (belirli işlevler, özellikler, abonelik planları ve promosyon teklifleri dahil) sağlamayı durdurabiliriz (geçici veya kalıcı olarak)."
+    },
+    {
+      "id": "S13",
+      "text": "Dinamik içerik teklifimiz sürekli olarak gelişmekte ve Spotify topluluğunun ihtiyaçlarına uyum sağlamaktadır. Spotify, Spotify Hizmeti ile herhangi bir belirli içeriği sunmakla yükümlü değildir ve Spotify ya da ilgili sahipler belirli şarkılara, videolara, podcast'lere, sesli kitaplara ve diğer İçerikler'e erişimi önceden bildirimde bulunmaksızın kaldırabilir."
+    },
+    {
+      "id": "S14",
+      "text": "Spotify Hizmeti'ni artık kullanmak istemiyorsanız bu Şartlar'ı sonlandırma hakkınız aşağıdaki 6. Bölüm'de belirtilmiştir."
+    },
+    {
+      "id": "S15",
+      "text": "Spotify'ın Ön Ödemeli Döneminiz (bu terim, aşağıdaki Ödemeler ve İptaller bölümünde tanımlanmıştır) sona ermeden sonlandırdığı bir Ücretli Abonelik ile ilgili olarak doğrudan Spotify'a önceden ödediğiniz tutarlar olması durumunda Spotify, ilgili sonlandırma işlemine müteakip mevcut Ücretli Aboneliğinizin kullanılmayan kısmı için Ön Ödemeli Dönem'e ilişkin önceden ödenmiş ücretleri tarafınıza iade edecektir. İadeyi gerçekleştirebilmemiz için hesabınız ve fatura bilgileriniz güncel olmalıdır."
+    },
+    {
+      "id": "S16",
+      "text": "Spotify, resmi makamların ve diğer üçüncü tarafların eylemlerinden veya kontrolümüz dışındaki durumlardan kaynaklanan internet veya diğer hizmet kesintileri ya da arızalarıyla bağlantılı olarak size karşı hiçbir sorumluluk veya iade yükümlülüğü taşımaz."
+    },
+    {
+      "id": "S17",
+      "text": "3. Spotify Hizmeti'ni Kullanımınız Spotify hesabı oluşturma Spotify Hizmeti'nin tamamını veya bir kısmını kullanmak için bir Spotify hesabı oluşturmanız gerekebilir ve bu hesabın ikamet ettiğiniz ülkede olması gerekir. Kullanıcı adınız ve parolanız kişisel kullanımınıza özeldir ve gizli tutulmalıdır. Kullanıcı adınızın ve parolanızın her türlü kullanımından (her türlü yetkisiz kullanım dahil) sizin sorumlu olduğunuzu kabul edersiniz. Kullanıcı adınız veya parolanız kaybolur ya da çalınırsa veya hesabınıza yetkisiz bir giriş olduğunu düşünürseniz hemen Müşteri Hizmetleri ekibimizi bilgilendirin."
+    },
+    {
+      "id": "S18",
+      "text": "Spotify herhangi bir gerekçeyle kullanıcı adınızı geri alabilir veya değiştirmenizi gerekli kılabilir."
+    },
+    {
+      "id": "S19",
+      "text": "Spotify Hizmeti'ni kullanma haklarınız Spotify Hizmeti'ne Erişim Bu Şartlar'a (diğer geçerli şartlar ve koşullar dahil) uyumunuza tabi olmak üzere, Spotify Hizmeti'ni ve İçerik'i kişisel, ticari olmayan şekilde kullanmanız için size sınırlı, münhasır olmayan, iptal edilebilir bir izin (toplu olarak \"Erişim\") veririz. Spotify Hizmeti'nin yalnızca ikamet ettiğiniz ülkede sunulan sürümüne Erişmelisiniz. Bu Erişim, sizin tarafınızdan ya da Spotify tarafından sonlandırılmadıkça ve sonlandırılana kadar yürürlükte kalacaktır. Spotify Hizmeti'ni veya İçerik'i yeniden dağıtmayacağınızı, satmayacağınızı ya da devretmeyeceğinizi kabul edersiniz."
+    },
+    {
+      "id": "S20",
+      "text": "Spotify yazılım uygulamaları ve İçerik size lisanslanmamakta, satılmamakta ya da devredilmemekte olup Cihazlarınıza yüklendikten sonra bile Spotify yazılım uygulamalarının ve İçerik'in tüm kopyalarının mülkiyeti Spotify ve lisans sağlayıcılarında kalır."
+    },
+    {
+      "id": "S21",
+      "text": "Spotify'ın Mülkiyet Hakları Spotify Hizmeti ve İçerik, Spotify'ın veya Spotify'ın lisans sağlayıcılarının mülkiyetindedir. Tüm Spotify ticari markaları, hizmet markaları, ticari adları, logoları, alan adları ve Spotify markasının diğer tüm özellikleri (\"Spotify Marka Özellikleri\") yalnızca Spotify'ın veya lisans sağlayıcılarının mülkiyetindedir. Bu Şartlar size hiçbir Spotify Marka Özelliği'ni ticari veya ticari olmayan amaçlar doğrultusunda kullanma hakkı vermemektedir."
+    },
+    {
+      "id": "S22",
+      "text": "Spotify Kullanıcı İlkeleri'ne ve Platform Kuralları'na uymayı ve Spotify Hizmeti'ni, İçerik'i ya da bunların herhangi bir bölümünü Sözleşmelerde açıkça izin verilmemiş hiçbir biçimde kullanmamayı kabul edersiniz."
+    },
+    {
+      "id": "S23",
+      "text": "Ödemeler ve iptal Ücretli Abonelikler Aşağıdaki yöntemlerle doğrudan Spotify'dan ya da bir üçüncü taraf aracılığıyla Ücretli Abonelik satın alabilirsiniz:"
+    },
+    {
+      "id": "S24",
+      "text": "Aylık olarak ya da satın alımınızdan önce size açıklanan başka bir düzenli aralıkta peşin abonelik ücreti ödeyerek veya Belirli bir süreliğine (\"Ön Ödemeli Dönem\") Spotify Hizmeti'ne erişmenizi sağlayan ön ödemeyle."
+    },
+    {
+      "id": "S25",
+      "text": "Vergi oranları, sunduğunuz bilgiler ve aylık ücretlendirmeniz sırasında geçerli olan oran baz alınarak hesaplanır."
+    },
+    {
+      "id": "S26",
+      "text": "Bir üçüncü taraf aracılığıyla Ücretli Abonelik erişimi satın alırsanız bu Şartlar'ın yanı sıra Spotify Hizmeti'ni kullanımınıza ilişkin olarak ilgili üçüncü tarafın ayrı şartları ve koşulları geçerli olabilir. Ücretli Abonelik'i Spotify tarafından ya da Spotify adına sağlanan veya satılan bir kod, hediye kartı, ön ödemeli teklif ya da başka bir teklifle (\"Kodlar\") satın alırsanız Spotify Kart Şartları'nı kabul etmeniz gerekir."
+    },
+    {
+      "id": "S27",
+      "text": "Fiyat ve vergi değişiklikleri Spotify; düzenli abonelik ücretleri, Ön Ödeme Dönemi (henüz ödemesi yapılmamış dönemler için) ya da Kodlar (yukarıda tanımlanmıştır) dahil Ücretli Abonelikler'in ücretini zaman zaman değiştirebilir ve her türlü fiyat değişikliğini makul bir süre önce size bildirecektir. Fiyat değişiklikleri, fiyat değişikliği tarihini takip eden bir sonraki abonelik döneminin başında yürürlüğe girer. Geçerli kanunlara tabi olmak üzere, fiyat değişikliği geçerli olduktan sonra Spotify Hizmeti'ni kullanmaya devam ederek yeni fiyatı kabul etmiş olursunuz. Bir fiyat değişikliğini kabul etmiyorsanız fiyat değişikliği yürürlüğe girmeden önce geçerli Ücretli Abonelik'ten çıkarak değişikliği reddedebilirsiniz."
+    },
+    {
+      "id": "S28",
+      "text": "Vergi oranları, aylık ücretlendirmeniz sırasında geçerli olan oranları baz alır. Bu tutarlar ülkenizdeki, eyaletinizdeki hatta şehrinizdeki vergi gerekliliklerine göre zamanla değişebilir. Vergi oranlarındaki her türlü değişiklik, sunduğunuz hesap bilgilerine göre otomatik olarak uygulanır."
+    },
+    {
+      "id": "S29",
+      "text": "Ücretli Abonelik veya Avantajlı Kullanım fiyatı, ikamet ettiğiniz ülkede sunulan Spotify Hizmeti'nin sürümüne özeldir ve geçerli fiyat bedelini ödemeden Ücretli Abonelik veya Avantajlı Kullanıma erişmek ya da Spotify'ın söz konusu Erişim için ödeme almaya yönelik yasal girişimlerini zorlaştırmak amacıyla herhangi bir araç kullanmamayı kabul edersiniz."
+    },
+    {
+      "id": "S30",
+      "text": "Faturalandırma ve İptal Aksi belirtilmedikçe (örneğin, Ön Ödemeli Süre için kaydolduysanız) Ücretli Abonelikler iptal edilene kadar süresiz olarak devam eder. Her faturalandırma döneminin ilk gününde tekrar faturalandırılırsınız; ilgili ödemeyi yapar ve o sırada geçerli olan abonelik ücretini ödeme yönteminizden tahsil etmemiz için bize (veya bir üçüncü taraf aracılığıyla kaydolursanız geçerli üçüncü tarafa) yetki verirsiniz."
+    },
+    {
+      "id": "S31",
+      "text": "Ücretli Aboneliğinizi, Spotify hesabınızda oturum açıp Hesap sayfasındaki yönergeleri izleyerek veya bu bağlantıya tıklayıp talimatları uygulayarak istediğiniz zaman iptal edebilirsiniz. Aksi belirtilmedikçe iptal işlemi iptal ettiğiniz fatura döneminin sonunda geçerli olur ve Spotify Hizmeti'nin ücretsiz sürümüne düşürülürsünüz. Bu Şartlar'da aksi belirtilmediği sürece kısmi üyelik dönemleri için iade veya kredi sunmayız."
+    },
+    {
+      "id": "S32",
+      "text": "Bir Kod kullanarak Ücretli Abonelik satın aldıysanız aboneliğiniz, Kod'da belirtilen sürenin sonunda ya da Spotify Hizmeti için ödenmesi gereken ön ödeme bakiyesi yetersiz olduğunda aboneliğiniz otomatik olarak sonlandırılır."
+    },
+    {
+      "id": "S33",
+      "text": "Bu Şartlar kapsamında sahip olduğumuz diğer haklara ilaveten ve bunlardan bağımsız olarak, Ücretli Aboneliği en az 14 gün önceden size bildirerek herhangi bir zamanda sonlandırma hakkını saklı tutarız. Başka türlü bilgi vermediğimiz sürece, Ücretli Aboneliğe erişiminizi geçerli fatura döneminin kalan süresi boyunca sürdürmenize izin veririz. Bunun ardından hesabınızı Spotify Hizmeti'nin ücretsiz sürümüne düşürürüz."
+    },
+    {
+      "id": "S34",
+      "text": "Cayma hakkı Avantajlı Kullanım için üye olursanız Avantajlı Kullanım aldığınız Ücretli Abonelik için cayma hakkının Avantajlı Kullanımı başlatmanızdan on dört (14) gün sonra sona ereceğini kabul edersiniz. Avantajlı Kullanım sona ermeden önce Ücretli Abonelik'i iptal etmezseniz cayma hakkınızı kaybedersiniz ve siz Ücretli Abonelik'i iptal edene kadar kararlaştırılan tutarı size her ay otomatik olarak yansıtması için Spotify'ı yetkilendirmiş olursunuz. On dört (14) günün altındaki Avantajlı Kullanımlar için; Avantajlı Kullanımınızın sona ermesinden hemen sonra size ücretli hizmeti sunacağımızı ve bu noktadan sonra cayma hakkınızı kaybedeceğinizi açıkça kabul edersiniz."
+    },
+    {
+      "id": "S35",
+      "text": "Avantajlı Kullanım olmaksızın Ücretli Abonelik satın alırsanız herhangi bir gerekçeyle cayma hakkınızı kullanmak için on dört (14) gününüzün olduğunu ve fikrinizi değiştirdiğinizi bildirene kadar sunulan hizmetler karşılığında tarafımıza ödeme yapmanız gerektiğini kabul edersiniz. Satın alma işleminizin hemen sonrasında tarafınıza hizmeti sağlayacağımızı, cayma hakkınızı kaybedeceğinizi ve Spotify'a siz iptal edene kadar her ay sizden otomatik olarak ücret tahsil etme yetkisi verdiğinizi açıkça onaylarsınız."
+    },
+    {
+      "id": "S36",
+      "text": "Kullanıcı İlkeleri Spotify'ı herkesin keyifle kullanmaya devam edebilmesi amacıyla Spotify Hizmeti'ni kullanmanıza ilişkin ilkeler (\"Spotify Kullanıcı İlkeleri\") belirledik. Spotify Hizmeti'ni kullanırken Spotify Kullanıcı İlkeleri ve Platform Kuralları'nın yanı sıra yürürlükteki tüm yasalara, kurallara ve yönetmeliklere uymalı ve üçüncü tarafların fikri mülkiyetine, gizliliğine ve diğer haklarına riayet etmelisiniz."
+    },
+    {
+      "id": "S37",
+      "text": "Marka Hesapları Bir şirket, organizasyon, kuruluş veya marka (\"Marka\") adına bir Spotify hesabı (\"Marka Hesabı\") oluşturduğunuzda Şartlar (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) genelinde kullanılan \"siz\" ve \"sizin\" ifadeleri hem sizin için hem de Marka için geçerli olacaktır."
+    },
+    {
+      "id": "S38",
+      "text": "Marka Hesabı oluşturursanız Şartlar'da (diğer tüm Spotify şartları ve koşulları dahil) belirtilen tüm izinleri ve lisansları vermeye ve Marka'yı Şartlar'a bağlı kılmaya yetkili olduğunuzu beyan ve garanti edersiniz."
+    },
+    {
+      "id": "S39",
+      "text": "Marka, söz konusu desteği ima etmeye ilişkin hakları bağımsız bir şekilde edinmiş olduğu durumlar haricinde, Marka ile takip edilen kullanıcı, sanatçı, şarkı yazarı ya da başka herhangi bir kişi arasında bir destek ilişkisi veya ticari ilişki olduğunu ima eden herhangi bir eylemde bulunmadığı sürece kullanıcıları takip edebilir, çalma listeleri oluşturabilir ve paylaşabilir. Ayrıca Markalar sanatçılara, şarkı yazarlarına, kullanıcılara veya başka herhangi bir tarafa sağlanan tüm destekleri veya karşılıkları açıklama konusunda kullanıcılarımıza karşı şeffaf olmalı ve bu tür faaliyetlerde bulunurken geçerli kanunlar, düzenlemeler ve uygulama esaslarına uymalıdır."
+    },
+    {
+      "id": "S40",
+      "text": "İhracat kontrolü ve yaptırımlar (1) Bölgesel yaptırımlara tabi herhangi bir ülkede veya bölgede (topluca \"Yaptırıma Tabi Ülkeler\") bulunmadığınızı, bu tür bir ülke veya bölge kanunları çerçevesinde kurulmadığınızı veya normalde bu tür bir ülkede veya bölgede ikamet etmediğinizi ya da mal varlığı yaptırımlarına tabi bir hükumete ait olmadığınızı yahut böyle bir hükumet adına hareket etmediğinizi, bir Yaptırıma Tabi Ülkede kurulan, bulunan ya da normalde burada ikamet eden bir kişi ya da kuruluşa ait olmadığınızı ve bunlar adına hareket etmediğinizi ve (2) AB finansal yaptırımlarına tabi kişiler, gruplar ve kuruluşlar konsolide listesi, Birleşik Krallık Konsolide Listesi veya ABD hükumeti tarafından uygulanan Özel Olarak Belirlenmiş Vatandaşlar Listesi gibi AB, Birleşik Krallık, ABD veya diğer hükumetlerin geçerli kısıtlanmış taraflar listelerinde tanımlanmış bir kişi olmadığınızı veya bu şekilde tanımlanmış bir kuruluşun P'sinden daha fazlasına sahip olduğu ya da doğrudan veya dolaylı olarak kontrol ettiği veya bu tür bir kuruluş adına ya da talimatıyla hareket eden bir kişi veya kuruluş olmadığınızı beyan ve garanti edersiniz."
+    },
+    {
+      "id": "S41",
+      "text": "Spotify'ın ürünleri, değiştirilmiş haliyle 2021/821 sayılı Yönetmelik (AB Çift Kullanımlı Mallar Yönetmeliği), 2002 tarihli Birleşik Krallık İhracat Kontrol Yasası ve 2008 tarihli Birleşik Krallık İhracat Kontrol Emri, ABD Ticaret Bakanlığı tarafından uygulanan İhracat Yönetimi Düzenlemeleri, Hazine Bakanlığı Yabancı Varlıklar Kontrol Dairesi tarafından uygulanan ticari ve ekonomik yaptırımlar ve Dış İşleri Bakanlığı tarafından uygulanan Uluslararası Silah Kaçakçılığı Yönetmelikleri dahil ancak bunlarla sınırlı olmamak üzere, Avrupa Birliği, Birleşik Krallık ve Amerika Birleşik Devletleri'nin ihracat kontrolü ve ekonomik yaptırım kanunlarına (toplu olarak \"Ticaret Kontrol Yasaları\") tabi olabilir."
+    },
+    {
+      "id": "S42",
+      "text": "Spotify ürün veya hizmetlerini kullanımınızda geçerli tüm Ticaret Kontrol Yasaları'na uymayı kabul edersiniz. Özellikle, bu Şartlar kapsamında Spotify'dan alınan herhangi bir ürünü, yazılımı veya teknolojiyi (bu tür teknolojilerden türetilen ya da bu tür teknolojilere dayalı ürünler dahil) İhracat Kontrol Yasaları tarafından yasaklanmış herhangi bir varış yerine, kuruluşa ya da kişiye veya söz konusu kanunlarca yasaklanmış herhangi bir son kullanım için doğrudan veya dolaylı olarak kullanmamayı, satmamayı, ihraç etmemeyi, yeniden ihraç etmemeyi, devretmemeyi, yönlendirmemeyi, sağlamamayı veya başka bir şekilde elden çıkarmamayı kabul edersiniz. Spotify'ın, geçerli Ticaret Kontrol Yasaları uyarınca yasaklanmış herhangi bir şekilde hareket etmesi gerekmeyecektir ve geçerli Ticaret Kontrol Yasaları uyarınca yasaklanmış olabilecek ürünlerin veya hizmetlerin sağlanmasına doğrudan veya dolaylı olarak dahil olmaktan kaçınmak, Spotify'ın münhasır takdirine bağlı olacaktır."
+    },
+    {
+      "id": "S43",
+      "text": "4. İçerik ve Fikri Mülkiyet Hakları Kullanıcı içeriği Hizmette yayınladığınız içerik Spotify kullanıcıları Spotify Hizmeti'ne içerik yükleyebilir, yayınlayabilir ya da başka şekilde içerikle katkıda bulunabilir (\"Kullanıcı İçeriği\"). Şüpheye mahal vermemek adına; \"Kullanıcı İçeriği\" Spotify Hizmetin'e kullanıcılar tarafından eklenen, oluşturulan, yüklenen, gönderilen, dağıtılan veya yayınlanan tüm bilgileri, materyalleri, mesaj ve diğer iletişimleri ve başka her türlü içeriği kapsar. Kullanıcı İçeriği, diğer üçüncü taraf içerikleri ve bunların moderasyonu hakkında daha fazla bilgi edinmek için Platform Kuralları'mıza, İçerik Eylemleri hakkındaki bilgilere, Güvenlik ve Gizlilik Merkezimize ve Fikri Mülkiyet Politikamıza bakın."
+    },
+    {
+      "id": "S44",
+      "text": "Yayınladığınız tüm Kullanıcı İçeriği'nden sadece siz sorumlusunuz Spotify'da yayınladığınız herhangi bir Kullanıcı İçeriği ile ilgili olarak (1) söz konusu Kullanıcı İçeriği'ne sahip olduğunuzu veya Kullanıcı İçeriği'ni yayınlama hakkına sahip olduğunuzu ve (2) söz konusu Kullanıcı İçeriği'nin veya aşağıda verilen lisans uyarınca Kullanıcı İçeriği'nin Spotify tarafından kullanılmasının: (i) bu Şartlar'ı, geçerli yasaları, herhangi bir üçüncü tarafın fikri mülkiyetini veya diğer haklarını ihlal etmediğini veya (ii) Spotify'ın ya da ilgili kişi ya da kuruluşun önceden açık yazılı onayı olmadan, sizin ya da size ait Kullanıcı İçeriği'nin Spotify veya başka herhangi bir sanatçı, grup, plak şirketi ya da başka bir kişi veya kuruluş ile ilişkili veya bunlar tarafından destekleniyor olduğunu ima etmediğini taahhüt edersiniz."
+    },
+    {
+      "id": "S45",
+      "text": "Diğer Spotify kullanıcılarına mesaj veya ileti göndermek de dahil olmak üzere, Kullanıcı İçeriği'ni Spotify Hizmeti'nde farklı yollarla yayınlamanızı veya paylaşmanızı sağlayabiliriz. Spotify Hizmeti üzerinden Kullanıcı İçeriği veya diğer bilgiler yayınlarken ya da paylaşırken yayınlama veya paylaşım yöntemine bağlı olarak ilgili içeriğin ve diğer bilgilerin bir veya daha fazla kullanıcıya özel olarak iletilebileceğini, herkese açık olabileceğini ve Spotify Hizmeti'nde ve internette başkaları tarafından kullanılabileceğini ve yeniden paylaşılabileceğini lütfen unutmayın. Bu nedenle, Spotify Hizmeti'nde yayın veya paylaşım yaparken dikkatli olun ve hesap ayarlarınızın farkında olun. Spotify, sizin veya başkalarının Spotify Hizmeti üzerinden yayınladıkları veya paylaştıklarından sorumlu değildir."
+    },
+    {
+      "id": "S46",
+      "text": "Kullanıcı içeriğinin izlenmesi Spotify, (herkese açık yayınlanan ya da özel olarak paylaşılan) Kullanıcı İçeriği'ni izleyebilir ya da inceleyebilir ancak bu yönde hiçbir yükümlülüğü bulunmamaktadır. Spotify, her türlü Kullanıcı İçeriği'ni herhangi bir nedenle ya da nedensiz şekilde kaldırma ya da buna erişimi engelleme hakkını saklı tutar. Spotify bu tür eylemleri size önceden bildirimde bulunmaksızın gerçekleştirebilir."
+    },
+    {
+      "id": "S47",
+      "text": "Tarafımıza verdiğiniz lisanslar Kullanıcı İçeriği Hizmette yayınladığınızda Kullanıcı İçeriği'nin mülkiyetini elinizde bulundurursunuz. Ancak Kullanıcı İçeriğinizi Spotify Hizmeti'nde kullanılabilir hale getirebilmemiz ve size belirli özellikler ve işlevler sunabilmemiz için sizden bu Kullanıcı İçeriği'ne ilişkin sınırlı bir lisans almamız gerekir. Bu doğrultuda Spotify'a herhangi bir Kullanıcı İçeriğinizi Spotify Hizmeti ile bağlantılı olarak herhangi bir ortam aracılığıyla, tek başına ya da başka İçerik ile veya materyallerle birlikte, herhangi bir şekilde ve bilinen ya da bundan sonra geliştirilecek olan herhangi bir araçla, yöntemle veya teknolojiyle çoğaltmak, herkese açık hale getirmek, icra etmek ve göstermek, tercüme etmek, değiştirmek, türev eserlerini oluşturmak ve dağıtmak üzere münhasır olmayan, devredilebilir, alt lisansı verilebilir, telifsiz, tamamen ödenmiş, iptal edilemez ve tüm dünyada geçerli bir lisans verirsiniz."
+    },
+    {
+      "id": "S48",
+      "text": "Mümkün olan ve geçerli kanunlar kapsamında izin verilen ölçüde, Geri Bildirim dahil herhangi bir Kullanıcı İçeriği'nin yazarı olarak tanımlanma hakkınız ve bu tür Kullanıcı İçeriği'nin uygunsuz şekilde ele alınmasına itiraz etme hakkınız dahil olmak üzere her türlü \"manevi haktan\" veya eş değer haklardan feragat etmeyi ve bu tür haklardan yararlanmamayı da kabul edersiniz."
+    },
+    {
+      "id": "S49",
+      "text": "Geri Bildirim Spotify Hizmeti veya herhangi bir İçerik ile bağlantılı olarak geri bildirim, fikir veya öneri (\"Geri Bildirim\") sunmanız halinde ilgili Geri Bildirim gizli olmayacaktır ve Spotify bu Geri Bildirim'i sınırlama olmaksızın ve size ödeme yapmaksızın kullanabilir. Bu Şartlar kapsamında Geri Bildirim, bir tür Kullanıcı İçeriği olarak kabul edilir."
+    },
+    {
+      "id": "S50",
+      "text": "Cihazınız. Bize ayrıca şu hakları verirsiniz: (1) Spotify Hizmeti'nin işleyişini kolaylaştırmak amacıyla Spotify Hizmeti'nin Cihazınızdaki işlemciyi, bant genişliğini ve depolama donanımını kullanmasına izin vermek ve (2) size reklam ve diğer bilgileri sunmamıza ve Spotify Gizlilik Politikası uyarınca izin verildiği üzere iş ortaklarımızın da aynısını yapmasına izin vermek."
+    },
+    {
+      "id": "S51",
+      "text": "İçerik deneyimi Spotify olarak her kullanıcı için mükemmel ve benzersiz deneyimler oluşturmayı hedefliyoruz."
+    },
+    {
+      "id": "S52",
+      "text": "Spotify'da önerileri anlama bölümünde, belirli içeriklerin size nasıl ve neden gösterildiği dahil olmak üzere öneri sistemlerimizin nasıl çalıştığı hakkında daha fazla bilgi edinebilirsiniz. Spotify Hizmeti'nin herhangi bir kısmında, seçimi ve yerleşimi dahil olmak üzere eriştiğiniz İçerik, Spotify'ın üçüncü taraflarla sözleşmeleri dahil olmak üzere ticari hususlardan etkilenebilir."
+    },
+    {
+      "id": "S53",
+      "text": "Spotify tarafından lisanslanan, sağlanan, oluşturulan veya başka bir şekilde kullanıma sunulan bazı İçerikler (ör. podcast'ler) reklam içerebilir ve ilgili reklamlardan Spotify sorumlu değildir."
+    },
+    {
+      "id": "S54",
+      "text": "İhlal iddiaları Spotify, fikri mülkiyet hakkı sahiplerinin haklarına saygı duyar. Herhangi bir İçerik'in telif haklarınızı, ticari marka veya diğer fikri mülkiyet haklarınızı ihlal ettiğini düşünüyorsanız lütfen Spotify Fikri Mülkiyet Politikası'nı inceleyin."
+    },
+    {
+      "id": "S55",
+      "text": "5. Müşteri Desteği, Bilgi, Sorular ve Şikayetler Spotify Destek Topluluğu Spotify Destek Topluluğu Spotify Hizmeti ile ilgili tartışmalara katılıp bilgi, ipucu ve başka materyaller paylaşabileceğiniz bir alandır. Spotify Destek Topluluğu'nu kullanarak Topluluk Şartları'nı kabul etmiş olursunuz."
+    },
+    {
+      "id": "S56",
+      "text": "Müşteri Desteği, Bilgi, Sorular, Şikayetler Hesapla ilgili ya da ödemeyle ilgili sorular (\"Müşteri Desteği Soruları\") ile ilgili olarak lütfen web sitemizin Hakkımızda bölümünde yer alan Müşteri Hizmetleri kaynaklarını kullanın."
+    },
+    {
+      "id": "S57",
+      "text": "Spotify Hizmeti ile veya bu Şartlar ile (buraya dahil edilen ek Spotify şartları ve koşulları dahil) ilgili herhangi bir sorunuz olması halinde lütfen web sitemizin Hakkımızda bölümüne giderek Spotify Müşteri Hizmetleri ile iletişime geçin."
+    },
+    {
+      "id": "S58",
+      "text": "6. Sorunlar ve Anlaşmazlıklar Spotify Hizmeti'ni askıya almak veya feshetmek Bu Şartlar, sizin tarafınızdan ya da Spotify tarafından feshedilene kadar sizin için geçerli olmaya devam edecektir. Bu Şartlar'ı ihlal ettiğinizi düşünürsek, tarafınıza makul bir süre öncesinde bildirimde bulunarak Spotify Hizmeti'ni ya da herhangi bir önemli bileşenini tarafınıza sağlamayı durdurursak veya geçerli kanunlara uyum amacıyla bunun gerekli olduğunu düşündüğümüz durumlarda Spotify, herhangi bir zamanda bu Şartlar'ı (buraya dahil edilen ek Spotify şartları ve koşulları dahil) feshedebilir ya da Spotify Hizmeti'ne erişiminizi askıya alabilir. Siz veya Spotify bu Şartlar'ı ihlal eder veya Spotify sizin Spotify Hizmeti'ne erişiminizi askıya alırsa Spotify'ın geçerli kanunlara tabi olmak üzere tarafınıza karşı hiçbir yükümlülüğü ve sorumluluğu olmayacağını (bu Şartlarda aksi belirtilmediği takdirde) ve halihazırda yapmış olduğunuz ödemeleri iade etmeyeceğini kabul edersiniz. Bu Şartlar'ı istediğiniz zaman feshedebilirsiniz. Bu durumda, Spotify Hizmeti'ne erişim sağlamaya veya Spotify Hizmeti'ni kullanmaya devam edemezsiniz."
+    },
+    {
+      "id": "S59",
+      "text": "Spotify hesabınızı nasıl feshedeceğinizi öğrenmek için lütfen Hakkımızda sayfamızdaki Müşteri Desteği kaynaklarından yararlanın."
+    },
+    {
+      "id": "S60",
+      "text": "Buradaki 4. (İçerik ve Fikri Mülkiyet Hakları), 3. (Spotify Hizmetini Kullanımınız), 2. (Tarafımızca Sunulan Spotify Hizmeti), 6. (Sorunlar ve Anlaşmazlıklar) ve 7. (Bu Şartlar Hakkında) maddeler ile açıkça ya da özellikleri gereği Şartlar'ın feshedilmesinden sonra yürürlükte kalması gereken diğer tüm maddeler, Şartlar feshedildikten sonra da yürürlükte kalacaktır."
+    },
+    {
+      "id": "S61",
+      "text": "Garanti reddi Bazı yargı bölgelerinde tüketicinin geçerli yasal haklarına ilişkin zımni garantilerin veya sınırlamaların hariç tutulmasına izin verilmemektedir. Bu tür bir durumda hariç bırakma durumu ve sınırlamalar sizin için geçerli olmayabilir ve hiçbir şey yasal haklarınızı etkilemeyecektir."
+    },
+    {
+      "id": "S62",
+      "text": "Spotify, Spotify Hizmetleri'ni makul özen ve beceriyle ve Spotify tarafından sağlanan Spotify Hizmeti'nin tüm özelliklerine uygun olarak sağlamaya devam edecektir. Ancak bu duruma tabi olmak üzere Spotify Hizmeti \"olduğu gibi\" ve \"kullanılabilir olduğu şekliyle\", hiçbir türde açık, zımni veya yasal garanti olmaksızın sunulmaktadır. Ayrıca, Spotify ve tüm içerik sahipleri yeterli kalite, pazarlanabilirlik, belirli bir amaca uygunluk veya ihlal içermemeyle ilgili her türlü açık, zımni ve yasal garantiyi reddetmektedir. Spotify ya da hiçbir içerik sahibi, Spotify Hizmeti'nin kötü amaçlı yazılımlardan ya da başka zararlı bileşenlerden ari olduğuna dair hiçbir garanti vermemektedir. Ayrıca Spotify, hiçbir üçüncü taraf uygulaması (veya bunların içeriği), kullanıcı içeriği, cihaz ya da Spotify Hizmeti üzerinden ya da aracılığıyla veya köprü verilen herhangi bir web sitesinde bir üçüncü tarafça reklamı yapılan, tanıtılan veya sunulan herhangi bir ürün ya da hizmete dair hiçbir beyanda bulunmaz, bunları garanti etmez veya bunlara ilgili sorumluluk kabul etmez ve Spotify, bunlara ilişkin üçüncü taraf sağlayıcıları ile sizin aranızdaki hiçbir işlem için sorumlu değildir."
+    },
+    {
+      "id": "S63",
+      "text": "Sizin tarafınızdan Spotify'dan alınan sözlü ya da yazılı hiçbir tavsiye ya da bilgi, Spotify adına herhangi bir şekilde bir garanti teşkil etmeyecektir. Spotify Hizmeti'ni kullanırken sakıncalı içerik filtreleme özelliklerine erişebilirsiniz ancak bu özelliklerin kullanılması bazı sakıncalı içeriklerin sunulmasıyla sonuçlanabilir ve tüm sakıncalı içerikleri filtrelemek için bu özelliklere güvenmemeniz gerekir. Bu madde geçerli kanunların izin verdiği azami ölçüde uygulanacaktır."
+    },
+    {
+      "id": "S64",
+      "text": "Sorumluluk Sınırlaması ve İddianın Gönderim Süresi Spotify Hizmeti'nde yaşadığınız herhangi bir sorunda ya da memnuniyetsizlikte tek ve münhasır çözüm yolunuzun tüm Spotify yazılımını kaldırmak ve Spotify Hizmeti'ni kullanmayı durdurmak olduğunu kabul edersiniz. Spotify'ın Spotify Hizmetleri aracılığıyla ya da bu hizmetlerle bağlantılı olarak kullanıma sunulan üçüncü taraf uygulamaları veya içeriklerden kaynaklanan ya da bunlarla bağlantılı hiçbir yükümlülüğü ve sorumluluğu bulunmadığını; ilgili üçüncü taraflarla aranızdaki ilişki söz konusu üçüncü taraflarla aranızdaki ayrı sözleşmelere tabi olsa da Spotify'a ilişkin olarak buradaki üçüncü taraf uygulamalarında ya da içerikte yaşadığınız her türlü sorun veya memnuniyetsizlik için tek ve münhasır çözüm yolunuzun söz konusu üçüncü taraf uygulamalarını kaldırmak ve/veya kullanmayı bırakmak olduğunu kabul edersiniz."
+    },
+    {
+      "id": "S65",
+      "text": "Spotify, yetkilileri, hissedarları, çalışanları, temsilcileri, yöneticileri, bağlı ortaklıkları, iştirakleri, halefleri, görevlileri, tedarikçileri veya lisans sağlayıcıları hiçbir durumda şunlardan sorumlu olmayacaktır: (1) her türlü dolaylı, özel, arızi, cezai, örnek niteliğindeki veya bağlı zarardan; (2) Spotify Hizmeti'nin, cihazların, üçüncü taraf uygulamalarının veya üçüncü taraf uygulama içeriğinin kullanılmasından veya kullanılamamasından kaynaklanan her durumda kullanım kaybı, veri kaybı, iş veya kâr kaybından (doğrudan veya dolaylı); veya (3) Spotify Hizmeti'ne, üçüncü taraf uygulamalarına veya üçüncü taraf uygulama içeriğine ilişkin tüm iddialar için (a) Spotify'a ilk iddiadan önceki on iki ay içinde ödemiş olduğunuz tutar veya (b) 30,00 $ arasında hangisi daha yüksekse ilgili tutardaki toplam yükümlülük. Maruz kaldığınız zararlara yönelik yükümlülüğümüz, makul olarak öngörülebilir zararlarla sınırlıdır."
+    },
+    {
+      "id": "S66",
+      "text": "Şüpheye mahal vermemek adına bu Şartlar, geçerli kanunun ilgili sınırlamayı yasakladığı ölçüde Spotify'ın dolandırıcılık, dolandırma amaçlı yanlış beyan, ölüm veya bedensel yaralanmaya ilişkin yükümlülüğünü ya da geçerli kanunlar çerçevesinde sınırlanamaz veya hariç bırakılamaz herhangi bir başka yükümlülüğü sınırlamaz."
+    },
+    {
+      "id": "S67",
+      "text": "Bu tür kısıtlamaların geçerli kanunlar tarafından yasaklandığı durumlar hariç olmak üzere, bu şartlar kapsamındaki tüm iddialar, iddiada bulunan tarafın iddiaya yol açan eylemi, ihmali ya da kusuru ilk öğrendiği ya da makul olarak öğrenmiş olması gereken tarihten itibaren bir (1) yıl içinde (tahkim talebinde bulunarak veya aşağıdaki tahkim anlaşması kapsamında bireysel bir dava açarak) başlatılmalıdır ve bu süre içerisinde belirtilmeyen hiçbir iddia için hiçbir çözüm yolu hakkı bulunmayacaktır."
+    },
+    {
+      "id": "S68",
+      "text": "Üçüncü Taraf Hakları İçerik sahiplerinin ve belirli distribütörlerin (uygulama mağazası sağlayıcıları gibi) Şartlar'ın amaçlanan lehtarları olduğunu ve Şartlar'ın doğrudan aleyhinize uygulama hakkına sahip olduğunu kabul eder ve onaylarsınız. Bu maddede belirtilen durumlar haricinde, Şartlar ile siz ve Spotify haricinde herhangi birine haklar verilmesi amaçlanmamış olup Şartlar hiçbir durumda hiçbir üçüncü taraf lehtar hakları oluşturmayacaktır."
+    },
+    {
+      "id": "S69",
+      "text": "Mobil yazılım uygulamalarımızdan herhangi birini (her biri bir \"Uygulama\") Apple Inc. (\"Apple\") App Store'dan indirdiyseniz ya da Uygulama'yı bir iOS cihazında kullanıyorsanız Apple'a ilişkin aşağıdaki bildirimi okuduğunuzu, anladığınızı ve kabul ettiğinizi onaylarsınız. Bu Şartlar Apple ile değil, yalnızca sizinle Spotify arasındadır ve Apple, Spotify Hizmeti'nden ya da içeriğinden sorumlu değildir. Apple, Spotify Hizmeti ile ilgili olarak hiçbir bakım veya destek hizmeti sunmakla yükümlü değildir. Spotify Hizmeti'nin geçerli herhangi bir garantiye uygun olmaması halinde Apple'a bildirimde bulunabilirsiniz ve Apple, Uygulama'nın geçerli satın alma fiyatını size iade eder ve geçerli kanunların izin verdiği azami ölçüde Apple'ın, Spotify Hizmeti'ne ilişkin olarak başka hiçbir garanti yükümlülüğü bulunmamaktadır. Apple, aşağıdakiler dahil olmak üzere, sizin tarafınızdan ya da herhangi bir üçüncü tarafça, Spotify Hizmeti'ne ya da Spotify Hizmeti'ni elinizde bulundurmanıza veya kullanmanıza ilişkin olarak iletilen hiçbir iddiayı ele almaktan sorumlu değildir: (1) ürün sorumluluğu iddiaları;"
+    },
+    {
+      "id": "S70",
+      "text": "(2) Spotify Hizmeti'nn geçerli herhangi bir yasal gerekliliğe ya da düzenleme gerekliliğine uymadığına dair herhangi bir iddia (3) tüketicinin korunması yasası ya da benzer mevzuat kapsamında ortaya çıkan iddialar ve (4) fikri mülkiyet ihlaline yönelik iddialar. Apple, Spotify Hizmeti'nin veya Uygulama'yı bulundurmanızın ve kullanmanızın söz konusu üçüncü tarafın fikri mülkiyet haklarını ihlal ettiğine dair hiçbir üçüncü taraf iddiasını araştırmaktan, savunmaktan, çözümlemekten ya da gidermekten sorumlu değildir. Spotify Hizmeti'ni kullanırken geçerli tüm üçüncü taraf şartlarına uymayı kabul edersiniz. Apple ve Apple'ın alt kuruluşları bu Şartlar'ın üçüncü taraf lehtarlarıdır ve bu Şartlar'ı kabul ettiğinizde Apple, bu Şartlar'ın bir üçüncü tarafı olarak bu Şartlar'ı sizin aleyhinize uygulama hakkına sahip olur (ve bu hakkı kabul ettiği varsayılır)."
+    },
+    {
+      "id": "S71",
+      "text": "Tazmin Spotify'ın maruz kaldığı, aşağıdakilerden kaynaklanan veya bunlarla bağlantılı olan ve makul olarak öngörülebilir her türlü zarar, kayıp ve makul masraf (makul avukatlık ücretleri ve masrafları da dahil) karşısında Spotify'ı tazmin etmeyi ve beri kılmayı kabul edersiniz: (1) bu Şartlar'ı ihlal etmeniz (buraya dahil edilen tüm ek Spotify şartları ve koşulları dahil); (2) yayınladığınız veya başka bir şekilde katkıda bulunduğunuz herhangi bir Kullanıcı İçeriği; (3) Spotify Hizmeti üzerinde ya da aracılığıyla dahil olduğunuz herhangi bir faaliyet ve (4) herhangi bir kanunu ya da bir üçüncü tarafın haklarını ihlal etmeniz."
+    },
+    {
+      "id": "S72",
+      "text": "Kanun Seçimi, Zorunlu Tahkim ve Yargı Yeri 6.1 Geçerli Kanun / Yargı Yetkisi İkamet ettiğiniz ülkenin zorunlu kanunları kapsamında aksi gerekmediği müddetçe, Sözleşmeler (ve bunlar nedeniyle ya da bunlarla bağlantılı olarak ortaya çıkan tüm sözleşme dışı anlaşmazlıklar/iddialar), kanun seçimi ya da kanun çatışması ilkeleri dikkate alınmaksızın aşağıda listelenen eyaletin ya da ülkenin kanunlarına tabidir."
+    },
+    {
+      "id": "S73",
+      "text": "Ayrıca, Sözleşmeler ile (ve bunlar nedeniyle ya da bunlarla bağlantılı olarak ortaya çıkan tüm sözleşme dışı anlaşmazlıklarla/iddialarla) bağlantılı olarak oluşan her türlü anlaşmazlık, iddia ve çatışmayı çözmek için siz ve Spotify, aşağıda listelenen mahkemelerin yargı yetkisine tabi olmayı kabul edersiniz. Ancak geçerli zorunlu kanunlar çerçevesinde ikamet ettiğiniz ülkede yasal işlem başlatmayı seçebilirsiniz veya sadece ikamet ettiğiniz ülkede yasal işlem başlatabiliyor olabiliriz Ülke veya bölge Kanun Seçimi Yargı yetkisi Spotify'ın kullanılabildiği diğer tüm ülkeler ve bölgeler."
+    },
+    {
+      "id": "S74",
+      "text": "İsveç Kanunları Münhasır; İsveç Mahkemeleri Bulgaristan, Kıbrıs, Estonya, Fransa, Hong Kong, Letonya, Litvanya, Lüksemburg, Malta, Monako, Norveç, Filipinler, Portekiz, Slovakya, İspanya, Türkiye İsveç Kanunları Münhasır değil; İsveç Mahkemeleri Brezilya Brezilya Kanunları Münhasır; São Paulo Eyalet ve Federal Mahkemeleri, Brezilya'da São Paulo Eyaleti Kanada Quebec'te ikamet edenler için geçerli değil: Ontario Bölgesinin Kanunları Quebec'te İkamet Edenler: Quebec, Kanada Bölgesinin Kanunları Quebec'te ikamet edenler için geçerli değil: Hüküm verme amacı haricinde münhasır; Ontario Mahkemeleri, Kanada Quebec'te İkamet Edenler: Quebec, Kanada Mahkemeleri Bolivya, Şili, Kolombiya, Kosta Rika, Dominik Cumhuriyeti, Ekvador, El Salvador, Guatemala, Honduras, Nikaragua, Panama, Paraguay, Peru, Uruguay New York Eyaleti, ABD Münhasır; New York (NY) Eyalet ve Federal Mahkemeleri 6.2 TOPLU DAVA FERAGATİ GEÇERLİ KANUNLARIN İZİN VERDİĞİ DURUMLARDA SİZ VE SPOTIFY, BİRBİRİNİZE KARŞI HERHANGİ BİR TOPLU YA DA TEMSİLİ GİBİ GÖRÜNEN DAVADA BİR DAVACI YA DA TOPLU DAVA TARAFI OLARAK DEĞİL, YALNIZCA KENDİ SIFATINIZLA İDDİADA BULUNABİLECEĞİNİZİ KABUL EDERSİNİZ."
+    },
+    {
+      "id": "S75",
+      "text": "Siz ve Spotify mutabık kalmadığınız sürece hiçbir hakem ya da hakim birden fazla kişinin iddialarını birleştiremez veya başka bir şekilde herhangi bir türde bir temsili dava ya da toplu dava yürütemez."
+    },
+    {
+      "id": "S76",
+      "text": "6.3 TAHKİM Bu 6.3. maddenin yürütülebilir olduğu bir yargı bölgesinde bulunmanız, merkezinizin burada olması, burada ofisleriniz olması ya da iş yapmanız halinde aşağıdaki zorunlu tahkim hükümleri sizin için geçerlidir:"
+    },
+    {
+      "id": "S77",
+      "text": "6.3.1 Anlaşmazlıkların çözümü ve tahkim Siz ve Spotify, bu Sözleşmeler ile veya Hizmet'in bir kullanıcısı olarak Spotify ile aranızdaki ilişkiyle herhangi bir şekilde bağlantılı ya da ilişkili olarak Spotify ile aranızda oluşan her türlü anlaşmazlığın, iddianın veya çatışmanın (sözleşmeye, haksız fiile, yasaya, dolandırıcılığa, yanlış beyana ya da başka bir yasal teoriye dayalı olarak veya iddianın Sözleşmeler süresince ya da Sözleşmeler sona erdikten sonra oluşmasından bağımsız olarak), zorunlu bağlayıcı bireysel tahkim ile çözümleneceğini kabul edesiniz. Tahkim, mahkemede görülen bir davaya göre daha gayriresmidir. TAHKİMDE HAKİM YA DA JÜRİ BULUNMAZ VE TAHKİM KARARININ MAHKEMECE İNCELENMESİ SINIRLIDIR. Mahkemeye göre daha sınırlı tespitler yapılabilir. Hakemin bu karara uyması gerekir ve bir mahkemeyle aynı tazminat ve zararın telafisi kararını verebilir (avukatlık ücretleri dahil) ancak hakem, tahkimin taraflarından başka herhangi bir taraf lehinde açıklayıcı ya da ihtiyati tedbir kararı veremez. Bu tahkim hükmü, Sözleşmeler sona erdikten sonra da yürürlükte kalacaktır."
+    },
+    {
+      "id": "S78",
+      "text": "6.3.2 İstisnalar Yukarıdaki 6.3.1. maddeden bağımsız olarak siz ve Spotify, burada yer alan hiçbir şeyin sizin ya da bizim şunlara ilişkin haklarımızdan feragat ettiğimiz, men edildiğimiz veya bu haklarımızın başka bir şekilde sınırlandırıldığı anlamına gelmeyeceğini kabul ederiz: (1) küçük anlaşmazlıklara bakan mahkemelerde bireysel dava açma (2) haciz işlemleri olduğu durumlarda, bu haciz işlemlerini geçerli eyalet kurumları, federal ve yerel kurumlar aracılığıyla yaptırma, (3) bir hukuk mahkemesinde ihtiyati tedbir kararı aldırma veya (4) fikri mülkiyet ihlali iddialarını ele almak için bir hukuk mahkemesinde dava açmak."
+    },
+    {
+      "id": "S79",
+      "text": "6.3.3 Tahkim kuralları Tahkim işlemleri sizin tarafınızdan ya da bizim tarafımızdan başlatılabilir. Sizinle Spotify arasındaki tüm tahkimler, ilgili tarihte yürürlükte olan Uluslararası Ticaret Odası (\"ICC\") Tahkim Kurallarına (\"ICC Kuralları\") göre, bu Sözleşmeler tarafından tadil edildiği şekliyle ICC Kuralları'na uygun şekilde atanan bir veya daha fazla hakim tarafından nihai olarak sonuçlandırılacak ve ICC Uluslararası Tahkim Mahkemesi tarafından yönetilecektir."
+    },
+    {
+      "id": "S80",
+      "text": "Tüm tahkimler İngilizce olarak yürütülecek ve Avrupa Birliği üyesi bir ülkenin ya da başka bir yargı bölgesinin zorunlu bir kanunu aksini gerektirmediği müddetçe tüm tahkimlerde uygulanacak olan kanun, [6.1. maddede belirtilen ilgili eyalet veya ülke kanunu] olacak ve kanun seçimi ya da kanun çatışması ilkeleri dikkate alınmayacaktır."
+    },
+    {
+      "id": "S81",
+      "text": "6.3.4 Gönderim süresi Tüm tahkimler, iddiada bulunan tarafın iddiaya yol açan eylemi, ihmali ya da kusuru ilk öğrendiği ya da makul olarak öğrenmiş olması gereken tarihten itibaren BİR (1) YIL içinde bir talep gönderilerek başlatılmalıdır ve bu süre içerisinde belirtilmeyen hiçbir iddia için hiçbir çözüm yolu hakkı bulunmayacaktır. Geçerli kanunlar, hak talebinde bulunmaya yönelik bir yıllık süre sınırlamasına izin vermiyorsa hak talepleri, geçerli kanunlar kapsamında izin verilen en kısa sürede belirtilmelidir."
+    },
+    {
+      "id": "S82",
+      "text": "6.3.5 Bildirim; Tebligat Tahkime başvurmak isteyen bir taraf, öncelikle taahhütlü postayla ya da Federal Express (imza gereklidir) hizmetiyle veya sizin kayıtlarınızda fiziksel adresimiz mevcut değilse elektronik posta yoluyla karşı tarafa yazılı bir bildirim (\"Bildirim\") göndermelidir. Spotify'ın Bildirim adresi: [Spotify, Attn: General Counsel, 4 World Trade Center, 150 Greenwich Street, 62nd Floor, New York, New York 10007, ABD]. Bildirimde (1) iddianın ya da anlaşmazlığın niteliği ile temeli açıklanmalı ve (2) istenen özel tazmin kararı (\"Talep\") belirtilmelidir. İddiayı doğrudan çözümlemek için iyi niyetle hareket etmeyi kabul ederiz ancak Bildirim alındıktan sonra 30 gün içinde bu şekilde bir anlaşmaya varamazsak sizin tarafınızdan ya da Spotify tarafından bir tahkim işlemi başlatılabilir. Tahkim sırasında, sizin tarafınızdan ya da Spotify tarafından önerilen herhangi bir uzlaşma tutarı (varsa), hakem nihai bir karar ve hüküm verene kadar hakeme açıklanmamalıdır."
+    },
+    {
+      "id": "S83",
+      "text": "Anlaşmazlığımızın tahkim aracılığıyla nihai olarak lehinize çözümlenmesi halinde Spotify (1) varsa hakem tarafından kararlaştırılan tutarı, (2) hakemin kararından önce anlaşmazlığın çözümü için Spotify tarafından teklif edilen en son yazılı uzlaşma tutarını veya (3) 1.000,00 $'nı (hangisi en fazlaysa) size ödeyecektir. Tahkim sırasında açıklanan tüm belgeler ve bilgiler alıcı tarafından kesinlikle gizli tutulacak ve alıcı tarafından tahkimin amaçları ya da hakemin kararının ve hükmümün uygulanması dışında hiçbir amaç için kullanılmayacak ve bu tür amaçlar için ya da geçerli kanunların gerektirdiği şekilde bilmesi gereken kişilere gizlilikle açıklama haricinde açıklanmayacaktır. Hakemin kararını ve hükmünü uygulamak için gereken durumlar haricinde siz ya da Spotify, tarafların anlaşmazlık içinde olduğu, tahkimin yapıldığı veya hakem tarafından herhangi bir karar ya da hüküm verildiği bilgisi dahil ancak bunlarla sınırlı olmamak üzere hiçbir kamu duyurusu ya da kamuya açık yorum yapmayacaksınız veya tahkimle ilgili hiçbir propaganda başlatmayacaksınız."
+    },
+    {
+      "id": "S84",
+      "text": "6.3.6 Değişiklikler Spotify bu tahkim hükmünde gelecekte herhangi bir değişiklik (Spotify'ın Bildirim adresi değişikliği hariç) yaparsa 30 gün içinde Spotify'ın Bildirim adresine yazılı bir bildirim göndererek söz konusu değişikliğe itiraz edebilirsiniz. Bu durumda, Spotify'daki hesabınız derhal sonlandırılır ve bu tahkim hükmü, reddettiğiniz tadillerden hemen önce yürürlükte olduğu şekliyle geçerli kalmaya devam eder."
+    },
+    {
+      "id": "S85",
+      "text": "6.3.7 Yürütülebilirlik 6.2. Madde'deki toplu dava feragatinin tahkimde yürütülemez olduğu ya da bu 6.3. Madde'nin herhangi bir kısmının geçersiz ya da yürütülemez olduğu anlaşılırsa bu 6.3. Madde'nin tamamı geçersiz ve hükümsüz olacaktır ve bu durumda taraflar, Sözleşmeler'den kaynaklanan ya da bunlarla bağlantılı olarak oluşacak tüm davaların 6.1. Madde'de açıklanan münhasır yargı yetkisi ve yargı yerine tabi olacağını ve herhangi bir zamanda dava açmanızın engellenmeyeceğini kabul ederler."
+    },
+    {
+      "id": "S86",
+      "text": "7. Bu Şartlar Hakkında Geçerli kanuna göre bir sözleşmeyle sınırlanamayacak belirli haklara sahip olabilirsiniz. Bu şartlar hiçbir şekilde bu hakları sınırlamayı amaçlamaz."
+    },
+    {
+      "id": "S87",
+      "text": "Değişiklikler Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir. Güncellenen Şartlar kapsamında Spotify Hizmeti'ni kullanmaya devam etmek istemiyorsanız bizimle iletişime geçerek hesabınızı sonlandırabilirsiniz. Bu belgenin en başında belirtilen tarih, bu Şartlar'ın en son değiştirildiği tarihi gösterir."
+    },
+    {
+      "id": "S88",
+      "text": "Sözleşmenin Bütünlüğü Bu maddede belirtilen ya da Spotify ile aranızda yazılı olarak açıkça anlaşılan durumlar haricinde, Şartlar Spotify ile sizin aranızda kabul edilen tüm şartları ve koşulları teşkil eder ve bu Şartlar'ın konusuna ilişkin olarak önceden var olan yazılı veya sözlü tüm sözleşmelerin yerini alır. Yukarıda belirtildiği gibi, Spotify Hizmeti'nin kullanımına ilişkin diğer şartlar ve koşullar, ilkeler ve politikalar atıf yoluyla buraya dahil edilmiştir. Bunlar aşağıdakileri içerir: (a) Spotify Hizmeti'nde sunulan belirli hizmetlerle ilgili ek hüküm ve koşullar:"
+    },
+    {
+      "id": "S89",
+      "text": "Spotify Premium Promosyon Teklifi Şartları;"
+    },
+    {
+      "id": "S90",
+      "text": "Spotify Kart Şartları ve Spotify Destek Topluluğu Şartları ve (b) ilkeler ve politikalar:"
+    },
+    {
+      "id": "S91",
+      "text": "Spotify Gizlilik Politikası; Spotify Kullanıcı İlkeleri;"
+    },
+    {
+      "id": "S92",
+      "text": "Spotify Platform Kuralları ve Spotify Fikri Mülkiyet Politikası."
+    },
+    {
+      "id": "S93",
+      "text": "Bölünebilirlik ve Feragat Şartlar'da aksi belirtilmiş olan durumlar haricinde, Şartlar'ın herhangi bir hükmünün herhangi bir nedenle veya herhangi bir ölçüde geçersiz ya da uygulanamaz kılınması durumunda Şartlar'ın geri kalan hükümleri etkilenmeyecek ve söz konusu hüküm kanunların izin verdiği azami ölçüde uygulanacaktır."
+    },
+    {
+      "id": "S94",
+      "text": "Spotify'ın ya da herhangi bir üçüncü taraf lehtarın Şartlar'ı ya da herhangi bir hükmünü uygulamaması, Spotify'ın veya geçerli üçüncü taraf lehtarın bu hakkında feragat ettiği anlamına gelmeyecektir."
+    },
+    {
+      "id": "S95",
+      "text": "Devir ve Temlik Spotify, Şartlar'ı ve Şartlar'daki haklarından herhangi birini tamamen ya da kısmen devir ve temlik edebilir ve Spotify, Şartlar kapsamındaki yükümlülüklerinden herhangi birini devredebilir. Siz Şartlar'ı hiçbir bir üçüncü tarafa tamamen ya da kısmen devir ve temlik edemez veya Şartlar kapsamındaki haklarınızı devredemez veya alt lisansını veremezsiniz."
+    },
+    {
+      "id": "S96",
+      "text": "Legal Privacy Policy"
+    }
+  ],
+  "hidden": [
+    {
+      "reason": "zero_size_font",
+      "text": "Spotify – Home",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Premium Individual 1 account – for one person. Premium Duo 2 accounts – for couples under one roof. Premium Family Up to 6 accounts – for family under one roof. Premium Student 1 account – discount for eligible students.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "zero_size_font",
+      "text": "Spotify – Home",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "TRANSLATE with",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Chinese Simplified",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Chinese Traditional",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Haitian Creole",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "TRANSLATE with",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "COPY THE URL BELOW",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Enable collaborative features and customize widget:",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "visibility_hidden",
+      "text": "Bing Webmaster Portal",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "About Your Privacy We process your data to deliver content or advertisements and measure the delivery of such content or advertisements to extract insights about our website. We share this information with our partners on the basis of consent and legitimate interest. You may exercise your right to consent or object to a legitimate interest, based on a specific purpose below or at a partner level in the link under each purpose. These choices will be signaled to our vendors participating in the Transparency and Consent Framework. More information Allow All Manage Consent Preferences Strictly Necessary Cookies Always Active First Party Functional Cookies First Party Performance Cookies First Party Targeting Cookies Content Selection, Delivery, and Reporting Creation and Use of Universal Identifiers Store and/or access information on a device 83 partners can use this purpose Personalised advertising 77 partners can use this purpose Personalised content 16 partners can use this purpose Advertising and content measurement, audience research, and services development 90 partners can use this purpose Ensure security, prevent and detect fraud, and fix errors 62 partners can use this special purpose Always Active Deliver and present advertising and content 61 partners can use this special purpose Always Active Match and combine data from other data sources 59 partners can use this feature Always Active Link different devices 60 partners can use this feature Always Active Identify devices based on information transmitted automatically 71 partners can use this feature Always Active Functional Cookies Performance Cookies Targeting Cookies Save and communicate privacy choices 56 partners can use this special purpose Always Active Reject All Confirm My Choices",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are necessary for the service to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the service will not then work.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Functional Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies enable us to provide enhanced functionality and personalisation. Without these cookies, some or all of these services may not function properly.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Performance Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors move around the platform. Without these cookies, we are unable to monitor the performance of our services.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "First Party Targeting Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies may be used to deliver targeted advertisements and to build a profile of your interests. If you do not allow these cookies you will still experience advertising but it will be less tailored to you.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Content Selection, Delivery, and Reporting",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. Without these cookies, you may not be able to use or see these sharing tools.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Creation and Use of Universal Identifiers",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Where we have your email address, device ID, other contact details, or data accessed from your device, the following vendors may rely on your consent for this purpose in order to create a unique advertising identifier which is used for personalised advertising, measurement, and analytics subject to your choices below: The Trade Desk Inc. (EUID), LiveRamp (RampID), ID5 (ID5 ID), Google (PAIR ID).",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Store and/or access information on a device",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Store and access information on a device",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Cookies, device or similar online identifiers together with other information (e.g. browser type and information, language, screen size, supported technologies, etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Personalised advertising",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Use profiles to select personalised advertising 62 partners can use this purpose Advertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. View Illustrations Create profiles for personalised advertising 62 partners can use this purpose Information about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. View Illustrations Use limited data to select advertising 74 partners can use this purpose Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). View Illustrations Object to Legitimate Interests List of IAB Vendors",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Personalised content",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Create profiles to personalise content 16 partners can use this purpose Information about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests. View Illustrations Use profiles to select personalised content 14 partners can use this purpose Content presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. View Illustrations List of IAB Vendors",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Advertising and content measurement, audience research, and services development",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Understand audiences through statistics or combinations of data from different sources 59 partners can use this purpose Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents). View Illustrations Object to Legitimate Interests Develop and improve services 63 partners can use this purpose Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers. View Illustrations Measure content performance 31 partners can use this purpose Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. View Illustrations Object to Legitimate Interests Measure advertising performance 85 partners can use this purpose Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very ",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Switch Label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Remove Objection",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Match and combine data from other sources",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Always Active",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, or your answers to a survey), in support of the purposes explained in this notice. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices). List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Functional Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies allow the website to remember choices you make (such as your user name, language or the region you are in) and provide enhanced, more personal features and content. These cookies can also be used to remember changes you have made to text size, fonts and other parts of web pages that you can customise. If you do not allow these cookies then some or all of these services may not function properly.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Performance Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies gather data about how visitors use our services to enhance the performance of our services. For example, these cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors interact with our services. If you do not allow these cookies we will not be able to monitor the performance of our services.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Targeting Cookies",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaigns. They remember that you have visited a website and this information may be shared with other organisations such as advertisers. These cookies collect information about your browsing habits in order to make advertising relevant to you and your interests.",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. List of IAB Vendors | View Illustrations",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Back Button Cookie List Search Icon Filter Icon Consent",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Clear checkbox label Apply Cancel",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "Leg.Interest",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    },
+    {
+      "reason": "display_none",
+      "text": "checkbox label",
+      "looks_like_instruction": false
+    }
+  ],
+  "extraction": {
+    "region": "main",
+    "dropped_lines": 41
+  }
+}

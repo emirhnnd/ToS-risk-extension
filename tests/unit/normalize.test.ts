@@ -27,3 +27,6 @@ describe('normalizeForMatch', () => {
     expect(normalizeForMatch('we may not share')).not.toBe(normalizeForMatch('we maynot share'));
   });
 });
+describe('kontrol karakterleri', () => {
+  it('\\u0001 yok sayılır', () => expect(normalizeForMatch('restoranlar,\u0001\u0001 GetirÇarşı')).toBe(normalizeForMatch('restoranlar, GetirÇarşı')));
+});
