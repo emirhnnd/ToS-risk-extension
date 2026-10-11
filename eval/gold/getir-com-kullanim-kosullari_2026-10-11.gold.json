@@ -1,0 +1,47 @@
+{
+  "format": "tos-risk-gold/v1",
+  "corpus_file": "getir-com-kullanim-kosullari_2026-10-11.json",
+  "labeler": "Emirhan",
+  "labeled_at": "2026-10-11T12:45:46.944Z",
+  "complete": true,
+  "items": [
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "high",
+      "quote": "Getir, tamamen kendi takdirine bağlı ve tek taraflı olarak, işbu Koşullar’ı, uygun göreceği herhangi bir zamanda, Uygulama üzerinden ilan ederek değiştirebilir.",
+      "note": "Tüketiciye haber verilmeden yapılması"
+    },
+    {
+      "category": "ARBITRARY_TERMINATION",
+      "severity": "high",
+      "quote": "Getir’in dilediği zaman hizmetlerini askıya alma veya durdurma hakkı saklıdır.",
+      "note": "Sebep vermeden hesap kapama"
+    },
+    {
+      "category": "ARBITRARY_TERMINATION",
+      "severity": "high",
+      "quote": "Müşteri’nin işbu belirtilen Koşullar’a, amaca, ilgili mevzuata veya iyi niyet/ahlak kurallarına aykırı davrandığının tespiti halinde veya güvenlikten şüphe edilen durumlarda, Getir Müşteri’nin üyeliğini askıya alma veya Uygulama’dan tamamen çıkarma hakkını saklı tutar.",
+      "note": "Sebep olmadan tüketicinin alehine karar verme"
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "Müşteri, GetirYemek ve/veya GetirÇarşı ve/veya GetirSu üzerinden Üye İşyeri’ne ait Ürün/hizmeti sipariş ettiğinde, Getir sadece bir aracı olarak hareket eder ve bu nedenle Üye İşyeri tarafından sunulan ürün/hizmetlerin kalitesinden, doğru sağlanmasından ya da Üye İşyeri’nin Müşteri’ye Uygulama üzerinden sunduğu Ürün/hizmetler nedeniyle vermiş olduğu zararın tazmininden sorumlu olamaz."
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "medium",
+      "quote": "Müşteri’ye Uygulama üzerinden gösterilen teslim süresi, Getir’in teslimatı gerçekleştirmeyi hedeflediği tahmini ve bağlayıcı olmayan bir süredir. Ürün’ün hedeflenen süre içerisinde teslim edilememesinden Getir sorumlu tutulamaz."
+    },
+    {
+      "category": "NO_REFUND",
+      "severity": "high",
+      "quote": "Bu kapsamda, Getir veya Üye İşyeri ilgili siparişin tamamına veya bir kısmına ilişkin iptal ve iadeyi kabul etmeyebilecek ve ücret iadesi yapmayabilecektir."
+    },
+    {
+      "category": "JURISDICTION_FOREIGN_LAW",
+      "severity": "medium",
+      "quote": "Uyuşmazlığın tüketici uyuşmazlığı olmaması halinde, İstanbul Merkez (Çağlayan) Mahkemeleri ve İcra Daireleri yetkili olacaktır."
+    }
+  ]
+}
