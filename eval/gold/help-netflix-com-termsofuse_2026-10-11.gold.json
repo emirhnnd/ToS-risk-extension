@@ -1,0 +1,59 @@
+{
+  "format": "tos-risk-gold/v1",
+  "corpus_file": "help-netflix-com-termsofuse_2026-10-11.json",
+  "labeler": "Emirhan",
+  "labeled_at": "2026-10-11T11:54:08.624Z",
+  "complete": true,
+  "items": [
+    {
+      "category": "AUTO_RENEWAL",
+      "severity": "low",
+      "quote": "Your Netflix subscription will continue until terminated. To purchase a subscription, you will need to add one or more Payment Methods"
+    },
+    {
+      "category": "NO_REFUND",
+      "severity": "medium",
+      "quote": "payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "We may change our subscription plans and the price of our service from time to time."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "We may, from time to time, change these Terms of Use."
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "The Netflix service is provided \"as is\" and without warranty or condition. In particular, our service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us."
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": ", to the extent permitted by applicable law, we will not be held liable should such events occur."
+    },
+    {
+      "category": "ARBITRATION_CLASS_WAIVER",
+      "severity": "high",
+      "quote": "WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING."
+    },
+    {
+      "category": "JURISDICTION_FOREIGN_LAW",
+      "severity": "medium",
+      "quote": "These Terms of Use shall be governed by and construed in accordance with the laws of the Netherlands."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "medium",
+      "quote": "Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"),"
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "medium",
+      "quote": "worldwide and in perpetuity without further compensation, acknowledgement or payment to you for any purpose whatsoever"
+    }
+  ]
+}
