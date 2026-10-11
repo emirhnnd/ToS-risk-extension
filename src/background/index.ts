@@ -2,13 +2,13 @@ import { AnalyzeRequestSchema, type AnalyzeResponse } from '../shared/messages';
 import { selectWithinBudget } from '../sanitizer/segment';
 import { buildReport } from '../validator/validate';
 import { DEFAULT_MODEL, analyzeWithGemini } from './llm';
+import { MAX_LLM_CHARS } from '../shared/limits';
 
 /**
  * Service worker: LLM istemcisi burada yaşar.
  * API anahtarı yalnızca chrome.storage.local'dan okunur ve içerik betiğine/sayfaya
  * HİÇBİR ZAMAN gönderilmez. Rapor (skor, doğrulama) da burada, kodla üretilir.
  */
-export const MAX_LLM_CHARS = 120_000;
 
 chrome.runtime.onInstalled.addListener(async () => {
   const { apiKey } = await chrome.storage.local.get('apiKey');

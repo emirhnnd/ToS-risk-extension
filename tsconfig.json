@@ -13,5 +13,5 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true
   },
-  "include": ["src", "tests", "vite.config.ts", "manifest.config.ts"]
+  "include": ["src", "tests", "eval", "vite.config.ts", "manifest.config.ts"]
 }

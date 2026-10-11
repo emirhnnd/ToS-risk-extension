@@ -71,6 +71,21 @@ Her kategori yalnızca bir kez, en yüksek şiddetiyle sayılır. Böylece LLM a
 | page-agent kullanımı | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler |
 | İçerik betiği kapsamı | Otomatik algılama (F1) için tüm http/https sayfalarda çalışır. Yalnızca okuma yapar, ağ isteği atmaz |
 
+## Eval
+
+```
+eval/corpus/   uzantının "💾 Eval için metni kaydet" butonuyla kaydedilen, tarihli LLM girdileri
+eval/gold/     eval/label.html ile ELLE (LLM görmeden) hazırlanan altın etiketler
+eval/cache/    LLM ham yanıtları: aynı girdi → aynı sonuç (tekrarlanabilirlik)
+eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle yazılan hata analizi
+```
+
+1. Sözleşme sayfasında panelden **💾 Eval için metni kaydet** → dosyayı `eval/corpus/` içine koyun.
+2. `npm run label` → `eval/label.html` dosyasını tarayıcıda açın, korpusu yükleyip riskli ifadeleri seçerek etiketleyin, `eval/gold/` içine kaydedin. Araç LLM sonucunu göstermez (kör etiketleme).
+3. `npm run eval` (anahtar `.env` içindeki `GEMINI_API_KEY`). İlk çalıştırma LLM'i çağırır, sonrakiler önbellekten okur; `--no-cache` yeni çağrı yapar.
+
+**Eşleştirme kuralı** (sonuçlara bakmadan önce yazıldı, `eval/lib/match.ts`): sistem bulgusu ile altın etiket, *aynı kategoride* ve alıntılarının metindeki karakter aralıkları *kesişiyorsa* eşleşir; eşleştirme bire birdir. Aynı maddeyi parçalı bulmak FP değil "tekrar" sayılır. Yeri doğru ama kategorisi farklı bulgu FP + FN olur ve raporda ayrıca işaretlenir.
+
 ## Güvenlik
 
 - **Gizli metin LLM'e gitmez.** `display:none`, `visibility:hidden`, `opacity:0`, 2 px altı yazı, ekran dışı konum, kırpma, şeffaf veya arka planla aynı renk yazı tespit edilir (`src/sanitizer/hidden.ts`). Bu metinler raporda "gizli içerik" olarak listelenir; talimata benzeyenler güvenilirliği düşürür.

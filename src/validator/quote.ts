@@ -30,6 +30,14 @@ export class QuoteIndex {
     this.joined = parts.join(' ');
   }
 
+  /** Alıntının birleşik normalize metindeki [başlangıç, bitiş) aralığı; yoksa null. Eval eşleştirmesi için. */
+  locate(quote: string): [number, number] | null {
+    const q = normalizeForMatch(quote);
+    if (q.length === 0) return null;
+    const pos = this.joined.indexOf(q);
+    return pos === -1 ? null : [pos, pos + q.length];
+  }
+
   check(quote: string): QuoteCheck {
     const q = normalizeForMatch(quote);
     // "..." ile ortası atlanmış alıntı birebir değildir.
