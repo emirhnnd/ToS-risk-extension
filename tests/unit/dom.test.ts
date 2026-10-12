@@ -57,6 +57,33 @@ describe('ReportPanel', () => {
     expect(p.shadowRoot.querySelector('.frame')!.classList.contains('min')).toBe(true);
     expect(p.shadowRoot.querySelector('[data-testid=legal-disclaimer]')).not.toBeNull(); // küçültülünce de orada
   });
+  it('kapat düğmesi paneli sayfadan kaldırır', () => {
+    const p = new ReportPanel();
+    let closed = 0;
+    p.onClose = () => closed++;
+    (p.shadowRoot.querySelector('[data-testid=close]') as HTMLButtonElement).click();
+    expect(document.getElementById(HOST_ID)).toBeNull();
+    expect(p.isOpen).toBe(false);
+    expect(closed).toBe(1);
+  });
+  it('Esc yalnızca odak paneldeyken kapatır (sayfanın kendi Esc kullanımı bozulmaz)', () => {
+    const p = new ReportPanel();
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, composed: true }));
+    expect(p.isOpen).toBe(true);
+    p.shadowRoot.querySelector('[data-testid=minimize]')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, composed: true }));
+    expect(p.isOpen).toBe(false);
+  });
+  it('küçültülünce: simge ve aria-expanded değişir, uyarının ilk cümlesi kalır', () => {
+    const p = new ReportPanel();
+    const btn = p.shadowRoot.querySelector('[data-testid=minimize]') as HTMLButtonElement;
+    btn.click();
+    expect(btn.textContent).toBe('+');
+    expect(btn.getAttribute('aria-expanded')).toBe('false');
+    expect(p.shadowRoot.querySelector('[data-testid=legal-disclaimer-core]')!.textContent).toBe('Bu uygulama hukuki tavsiye vermez.');
+    btn.click();
+    expect(btn.textContent).toBe('–');
+    expect(btn.getAttribute('aria-expanded')).toBe('true');
+  });
   it('LLM metnindeki HTML çalıştırılmaz (XSS)', () => {
     const p = new ReportPanel();
     const evil = '<img src=x onerror="window.__pwned=1">';

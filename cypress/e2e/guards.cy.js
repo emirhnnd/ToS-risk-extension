@@ -15,4 +15,13 @@ describe('ToS Risk Analizi – sınırlar', () => {
     cy.get('[data-testid=minimize]').click();
     cy.get('[data-testid=legal-disclaimer]').should('be.visible'); // küçültülünce bile
   });
+
+  it('panel kapatılabilir (× düğmesi) ve küçültülünce uyarının ilk cümlesi kalır', () => {
+    cy.visit('/terms-happy.html');
+    cy.get('[data-testid=minimize]').click().should('have.attr', 'aria-expanded', 'false');
+    cy.get('[data-testid=legal-disclaimer-core]').should('be.visible').and('have.text', 'Bu uygulama hukuki tavsiye vermez.');
+    cy.get('[data-testid=analyze-button]').should('not.be.visible');
+    cy.get('[data-testid=close]').click();
+    cy.get('#tos-risk-panel-host').should('not.exist');
+  });
 });

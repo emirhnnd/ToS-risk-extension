@@ -126,7 +126,7 @@ npm run e2e:open    # Cypress arayüzü
 |---|---|
 | `demo.cy.js` 1) mutlu yol | Panel kendiliğinden açılır, hukuki uyarı görünür, analiz sonrası her alıntı sayfa metninde birebir bulunur, "Sayfada göster" vurgular, salt-okuma denetimi 0 |
 | `demo.cy.js` 2) belirsizlik | Gizli talimatlı sayfada belirsizlik **yüksek**, gizli içerik "şüpheli" olarak listelenir, LLM'e giden istekte gizli metin yok, sayfadaki butona kodla hiç tıklanmadı |
-| `guards.cy.js` | Sözleşme olmayan sayfada panel açılmaz; panel open Shadow DOM'dadır; uyarı panel küçültülünce bile görünür |
+| `guards.cy.js` | Sözleşme olmayan sayfada panel açılmaz; panel open Shadow DOM'dadır; panel küçültülünce uyarının ilk cümlesi ("Bu uygulama hukuki tavsiye vermez.") kalır; × ile kapatılır, uzantı simgesiyle yeniden açılır |
 
 ## Güvenlik
 

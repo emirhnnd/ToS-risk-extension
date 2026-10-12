@@ -27,8 +27,22 @@ export class ReportPanel {
   private readonly root: ShadowRoot;
   private readonly body: HTMLElement;
   private readonly frame: HTMLElement;
+  private readonly host: HTMLElement;
+  private readonly onKeydown: (e: KeyboardEvent) => void;
   onAnalyze: () => void = () => {};
   onExport: () => void = () => {};
+  onClose: () => void = () => {};
+
+  /** Paneli sayfadan kaldırır (analiz sürüyorsa sonucu artık gösterilmez). */
+  close(): void {
+    document.removeEventListener('keydown', this.onKeydown, true);
+    this.host.remove();
+    this.onClose();
+  }
+
+  get isOpen(): boolean {
+    return this.host.isConnected;
+  }
 
   constructor() {
     document.getElementById(HOST_ID)?.remove();
@@ -36,18 +50,36 @@ export class ReportPanel {
     this.root = host.attachShadow({ mode: 'open' });
     this.root.append(h('style', {}, STYLES));
 
-    const minimize = h('button', { class: 'icon', 'data-testid': 'minimize', 'aria-label': 'Küçült / büyüt', title: 'Küçült / büyüt' }, '–');
-    minimize.addEventListener('click', () => this.frame.classList.toggle('min'));
+    // Küçült / büyüt: simge ve erişilebilirlik durumu panelin hâline göre değişir
+    const minimize = h('button', { class: 'icon', 'data-testid': 'minimize', 'aria-expanded': 'true', 'aria-label': 'Paneli küçült', title: 'Küçült' }, '–');
+    minimize.addEventListener('click', () => {
+      const min = this.frame.classList.toggle('min');
+      minimize.textContent = min ? '+' : '–';
+      minimize.setAttribute('aria-expanded', String(!min));
+      minimize.setAttribute('aria-label', min ? 'Paneli büyüt' : 'Paneli küçült');
+      minimize.title = min ? 'Büyüt' : 'Küçült';
+    });
+    // Kapat: panel sayfadan kaldırılır; uzantı simgesine tıklayınca yeniden açılır
+    const close = h('button', { class: 'icon', 'data-testid': 'close', 'aria-label': 'Paneli kapat', title: 'Kapat (Esc). Uzantı simgesiyle yeniden açılır' }, '×');
+    close.addEventListener('click', () => this.close());
+    this.onKeydown = (e: KeyboardEvent) => {
+      // Yalnızca odak paneldeyken: sayfanın kendi Esc kullanımını bozmamak için
+      if (e.key === 'Escape' && e.composedPath().includes(host)) this.close();
+    };
+    document.addEventListener('keydown', this.onKeydown, true);
 
+    // Hukuki uyarı: ilk cümle her durumda (küçültülmüşken de) görünür, devamı yalnızca açıkken
+    const [first, ...rest] = LEGAL_DISCLAIMER.split(/(?<=\.)\s+/);
     this.body = h('div', { class: 'body', 'data-testid': 'panel-body' });
     this.frame = h(
       'section',
       { class: 'frame', 'data-testid': 'panel', role: 'complementary', 'aria-label': 'Sözleşme risk raporu' },
-      h('header', {}, h('strong', {}, 'Sözleşme Risk Analizi'), minimize),
-      h('p', { class: 'disclaimer', 'data-testid': 'legal-disclaimer', role: 'note' }, '⚖️ ', LEGAL_DISCLAIMER),
+      h('header', {}, h('strong', {}, 'Sözleşme Risk Analizi'), h('span', { class: 'actions' }, minimize, close)),
+      h('p', { class: 'disclaimer', 'data-testid': 'legal-disclaimer', role: 'note' }, '⚖️ ', h('span', { 'data-testid': 'legal-disclaimer-core' }, first ?? LEGAL_DISCLAIMER), rest.length ? h('span', { class: 'more' }, ' ', rest.join(' ')) : null),
       this.body,
     );
     this.frame.append(h('div', { class: 'build', 'data-testid': 'build' }, `sürüm: ${BUILD_TIME.slice(0, 16).replace('T', ' ')} UTC`));
+    this.host = host;
     this.root.append(this.frame);
     document.documentElement.append(host);
   }
@@ -200,10 +232,12 @@ const sevRank = (s: 'low' | 'medium' | 'high') => ({ low: 0, medium: 1, high: 2 
 
 const STYLES = `
 :host { all: initial; }
-.frame { position: fixed; top: 16px; right: 16px; z-index: 2147483647; width: 380px; max-height: calc(100vh - 32px);
+.frame { position: fixed; top: 16px; right: 16px; z-index: 2147483647; width: min(380px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
   display: flex; flex-direction: column; background: #fff; color: #1a1a1a; border: 1px solid #c8c8c8; border-radius: 10px;
   box-shadow: 0 6px 24px rgba(0,0,0,.18); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
-.frame.min .body { display: none; }
+.frame.min .body, .frame.min .build, .frame.min .disclaimer .more { display: none; }
+.frame.min .disclaimer { border-bottom: 0; border-radius: 0 0 10px 10px; }
+.actions { display: flex; gap: 6px; }
 header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid #e3e3e3; }
 .disclaimer { margin: 0; padding: 8px 14px; background: #fff4ce; color: #3b2f00; border-bottom: 1px solid #e6d58a; font-size: 13px; font-weight: 600; }
 .body { overflow-y: auto; padding: 12px 14px; flex: 1 1 auto; min-height: 0; } /* min-height:0 → uzun rapor panel içinde kayar, ekrandan taşmaz */
