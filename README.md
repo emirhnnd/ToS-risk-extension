@@ -10,7 +10,7 @@ Kullanım koşulları, gizlilik politikası ve abonelik şartları sayfalarını
 
 [![Demo videosu: mutlu yol ve gizli talimatlı sayfada dürüst belirsizlik](docs/demo-poster.png)](docs/demo.mp4)
 
-▶ **[Videoyu izle: docs/demo.mp4](docs/demo.mp4)**
+▶ **[Videoyu izle: docs/demo.mp4](docs/demo.mp4)** · [doğrudan indir](https://github.com/emirhnnd/ToS-risk-extension/raw/main/docs/demo.mp4)
 
 1. **Mutlu yol:** Panel sözleşme sayfasında kendiliğinden açılır ve maddeleri bulur. Her alıntı sayfada kodla doğrulanır. "Skor nasıl hesaplandı?" tablosu skorun formülden geldiğini gösterir. "Sayfada göster" alıntıyı vurgular.
 2. **Belirsizlik anı:** Gizli talimatlı sayfada panel "bu raporun güvenilirliği düşük" der. Gizli talimatlar "şüpheli" olarak listelenir ve yapay zekâya gönderilmez; test bunu LLM'e giden istekten doğrular. Sayfadaki "Abone ol" butonuna kodla hiç tıklanmaz.
