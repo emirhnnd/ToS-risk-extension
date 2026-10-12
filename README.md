@@ -22,6 +22,10 @@ LLM sistemin içinde **güvenilmez bir bileşen**dir. Ürettiği hiçbir şey do
 
 Üç ayrı çalışma ortamı var ve güven sınırları bunlara göre çizildi:
 
+![Mimari: sayfa, içerik betiği, service worker ve Gemini arasındaki güven sınırları](docs/mimari.png)
+
+<details><summary>Diyagram kaynağı (Mermaid)</summary>
+
 ```mermaid
 flowchart TB
   subgraph Sayfa["Ziyaret edilen sayfa (güvenilmez)"]
@@ -54,7 +58,13 @@ flowchart TB
   GUARD -.->|analiz boyunca sentetik tıklama sayar| DOM
 ```
 
+</details>
+
 ### Veri akışı (bir analiz)
+
+![Veri akışı: bir analizin adımları](docs/veri-akisi.png)
+
+<details><summary>Diyagram kaynağı (Mermaid)</summary>
 
 ```mermaid
 sequenceDiagram
@@ -77,6 +87,8 @@ sequenceDiagram
   S-->>P: Rapor
   P->>K: skor, maddeler + alıntılar, reddedilenler, gizli içerik, belirsizlik, hukuki uyarı
 ```
+
+</details>
 
 | Bileşen | Sorumluluk | Neye erişemez |
 |---|---|---|
