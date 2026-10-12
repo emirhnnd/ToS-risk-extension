@@ -180,3 +180,46 @@ describe('restrictToMainContent (menü / alt bilgi / çerez uyarısı)', () => {
     expect(restrictToMainContent(lines.join('\n'), document).region).toBe('whole_page');
   });
 });
+
+import { clipPathHidesAll, filterOpacity, findHiddenText as findHidden2 } from '../../src/sanitizer/hidden';
+describe('gizleme kuralları (yerleşimden bağımsız kısımlar)', () => {
+  it.each([
+    ['inset(50%)', true], ['inset(0 0 100% 0)', true], ['inset(0px 0px 100% 0px)', true], ['inset(0 50% 0 50%)', true],
+    ['inset(10%)', false], ['none', false], ['', false],
+    ['polygon(0 0, 0 0, 0 0)', true], ['polygon(0px 0px, 0px 0px, 0px 0px)', true], ['polygon(0% 0%, 100% 0%, 100% 100%)', false],
+    ['circle(0px at 50% 50%)', true], ['circle(40%)', false], ['ellipse(0 10px)', true],
+  ])('clip-path %s → tamamen gizli: %s', (cp, hides) => {
+    expect(clipPathHidesAll(cp, { width: 200, height: 40 })).toBe(hides);
+  });
+  it('filter: opacity', () => {
+    expect(filterOpacity('opacity(0)')).toBe(0);
+    expect(filterOpacity('blur(2px) opacity(0%)')).toBe(0);
+    expect(filterOpacity('opacity(0.8)')).toBe(0.8);
+    expect(filterOpacity('none')).toBe(1);
+  });
+  it('neredeyse şeffaf yazı, filter:opacity(0) ve 3 px yazı jsdom\'da da yakalanır', () => {
+    document.body.innerHTML = `
+      <div style="color: rgba(0,0,0,0.02)">neredeyse şeffaf gizli talimat metni</div>
+      <div style="filter: opacity(0)">filtreyle gizlenmiş talimat metni burada</div>
+      <div style="font-size: 3px">üç piksellik okunmaz yazı burada duruyor</div>
+      <div style="font-size: 10px">on piksellik dipnot normal görünür metin</div>`;
+    const reasons = findHidden2(document.body).map((h) => h.reason);
+    expect(reasons).toEqual(['transparent', 'zero_opacity', 'zero_size_font']);
+  });
+});
+
+describe('hukuki uyarı panelin HER durumunda görünür', () => {
+  it.each(['boşta', 'yükleniyor', 'hata', 'rapor', 'küçültülmüş'])('%s', (state) => {
+    const p = new ReportPanel();
+    if (state === 'boşta') p.showIdle(0.9);
+    if (state === 'yükleniyor') p.showLoading('…');
+    if (state === 'hata') p.showError('LLM hatası');
+    if (state === 'rapor') p.showReport(report());
+    if (state === 'küçültülmüş') (p.shadowRoot.querySelector('[data-testid=minimize]') as HTMLButtonElement).click();
+    const core = p.shadowRoot.querySelector('[data-testid=legal-disclaimer-core]')!;
+    expect(core.textContent).toBe('Bu uygulama hukuki tavsiye vermez.');
+    // Gizleyen bir kural yok: uyarı gövdenin (body) dışında, küçültme yalnızca gövdeyi ve ek cümleyi gizler
+    expect(core.closest('.body')).toBeNull();
+    expect(core.closest('.more')).toBeNull();
+  });
+});

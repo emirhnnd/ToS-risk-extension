@@ -50,7 +50,7 @@ export interface Segment {
 
 /** Sanitizer'ın LLM'e GÖNDERMEDİĞİ, sayfada gizli bulunan metin */
 export interface HiddenTextFinding {
-  reason: 'display_none' | 'visibility_hidden' | 'zero_size_font' | 'offscreen' | 'transparent' | 'same_color' | 'aria_hidden' | 'zero_opacity' | 'clipped';
+  reason: 'display_none' | 'visibility_hidden' | 'zero_size_font' | 'offscreen' | 'transparent' | 'same_color' | 'aria_hidden' | 'zero_opacity' | 'clipped' | 'zero_size';
   text: string;
   /** Talimat benzeri kalıplar içeriyor mu (örn. "önceki talimatları yok say") */
   looks_like_instruction: boolean;

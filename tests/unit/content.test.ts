@@ -34,3 +34,26 @@ describe('gerçek sayfalardan çıkan regresyonlar (2026-10-11 korpusu)', () => 
     expect(detectContractPage('https://www.amazon.com.tr/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM', 'Amazon.com.tr Kullanım ve Satış Şartları - Amazon Müşteri Hizmetleri', 'Amazon Hizmetleri\'ni kullanarak, bu koşullarla bağlı olmayı kabul etmektesiniz. Kişisel veri sorumluluk')).toBeGreaterThanOrEqual(0.5);
   });
 });
+
+describe('algılama: ödevdeki üç sayfa türü (kullanım koşulları, gizlilik, abonelik)', () => {
+  const body = 'These terms apply. We collect personal data and share it with third parties. You agree to the governing law.';
+  const bodyTr = 'Kişisel verileriniz üçüncü taraflarla paylaşılır. Sorumluluk kabul edilmez. Yetkili mahkeme İstanbul. Kabul etmiş sayılırsınız.';
+  it.each([
+    ['https://example.com/privacy', 'Privacy Policy', body],
+    ['https://example.com/legal/privacy-notice', 'Privacy Notice – Example', body],
+    ['https://ornek.com/gizlilik-politikasi', 'Gizlilik Politikası', bodyTr],
+    ['https://ornek.com/kvkk-aydinlatma-metni', 'KVKK Aydınlatma Metni', bodyTr],
+    ['https://example.com/subscription-terms', 'Subscription Terms', body],
+    ['https://ornek.com/uyelik-sozlesmesi', 'Üyelik Sözleşmesi', bodyTr],
+    ['https://ornek.com/abonelik-sartlari', 'Abonelik Şartları', bodyTr],
+    ['https://example.com/terms', 'Terms of Service', body],
+  ])('%s → sözleşme sayfası', (url, title, text) => {
+    expect(detectContractPage(url, title, text)).toBeGreaterThanOrEqual(0.5);
+  });
+  it.each([
+    ['https://ornek.com/tarifler/elmali-kek', 'Elmalı Kek Tarifi', 'Unu ve şekeri karıştırın.'],
+    ['https://news.example.com/2026/10/12/story', 'Local team wins', 'The match ended 2-1.'],
+  ])('%s → sözleşme değil', (url, title, text) => {
+    expect(detectContractPage(url, title, text)).toBeLessThan(0.5);
+  });
+});

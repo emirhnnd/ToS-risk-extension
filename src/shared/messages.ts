@@ -15,7 +15,7 @@ export const AnalyzeRequestSchema = z.object({
   hidden: z
     .array(
       z.object({
-        reason: z.enum(['display_none', 'visibility_hidden', 'zero_size_font', 'offscreen', 'transparent', 'same_color', 'aria_hidden', 'zero_opacity', 'clipped']),
+        reason: z.enum(['display_none', 'visibility_hidden', 'zero_size_font', 'offscreen', 'transparent', 'same_color', 'aria_hidden', 'zero_opacity', 'clipped', 'zero_size']),
         text: z.string().max(2000),
         looks_like_instruction: z.boolean(),
       }),

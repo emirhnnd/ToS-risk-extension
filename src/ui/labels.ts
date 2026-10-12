@@ -24,6 +24,7 @@ export const HIDDEN_LABELS: Record<HiddenTextFinding['reason'], string> = {
   same_color: 'arka planla aynı renkte yazı',
   aria_hidden: 'erişilebilirlikten gizli',
   clipped: 'kırpılarak gizlenmiş',
+  zero_size: 'çizilen alanı sıfır (ör. scale(0))',
 };
 
 export const REJECT_LABELS: Record<RejectedFinding['reason'], string> = {

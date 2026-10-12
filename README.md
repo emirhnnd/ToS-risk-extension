@@ -4,7 +4,6 @@ Kullanım koşulları, gizlilik politikası ve abonelik şartları sayfalarını
 
 > ⚠️ **Bu uygulama hukuki tavsiye vermez.**
 
-> 🚧 Geliştirme sürüyor (gün 2/5). Bu README teslimden önce mimari diyagram, eval sonuçları ve güvenlik bölümüyle tamamlanacak.
 
 ## Temel ilke
 
@@ -130,19 +129,32 @@ npm run e2e:open    # Cypress arayüzü
 
 ## Güvenlik
 
-- **Gizli metin LLM'e gitmez.** `display:none`, `visibility:hidden`, `opacity:0`, 2 px altı yazı, ekran dışı konum, kırpma, şeffaf veya arka planla aynı renk yazı tespit edilir (`src/sanitizer/hidden.ts`). Bu metinler raporda "gizli içerik" olarak listelenir; talimata benzeyenler güvenilirliği düşürür.
-- **Sayfa metni veri olarak işaretlenir.** Talimatlar `systemInstruction` alanında, sayfa metni `<untrusted_document>` içinde gönderilir; metindeki kapanış etiketi etkisizleştirilir (sınırlayıcıdan kaçış saldırısı).
+- **Gizli metin LLM'e gitmez.** Tespit (`src/sanitizer/hidden.ts`) iki katmanlıdır:
+  - **CSS kuralları:** `display:none`, `visibility:hidden`, `opacity:0` / `filter:opacity(0)`, 4 px altı yazı, şeffaf (alfa < 0,1) veya arka planla aynı renk, ekran dışı konum, `clip` / dejenere `clip-path`.
+  - **Geometri:** Gerçek tarayıcıda metnin çizildiği dikdörtgenler okunur. Böylece `transform:scale(0)` ve `overflow:hidden` bir kutunun dışına itilen metin (`text-indent:-9999px`, 1 px kutu) tek tek kural yazmadan yakalanır.
+
+  29 gizleme tekniğinden oluşan test sayfasında (`cypress/fixtures/pages/terms-hidden-techniques.html`) ilk ölçümde 9 teknik LLM'e sızıyordu; şimdi 27'si engelleniyor. Kalan iki teknikten biri bilinen sınırlama (üstü başka elemanla örtülen metin), diğeri ise aslında görünür. Yanlış alarm kontrolü için ikinci bir sayfa var (`terms-real-layouts.html`): kaydırılabilir sözleşme kutusu, "…" ile kısaltma, satır sınırlama ve 10 px dipnotun hepsi LLM'e gidiyor. İki sayfa da `cypress/e2e/hiding.cy.js` ile gerçek Chrome'da test edilir. Gizli metinler raporda "gizli içerik" olarak listelenir; talimata benzeyenler güvenilirliği düşürür.
+- **Sayfa metni veri olarak işaretlenir.** Talimatlar `systemInstruction` alanında, sayfa metni `<untrusted_document>` içinde gönderilir. Metindeki kapanış etiketi etkisizleştirilir (sınırlayıcıdan kaçış saldırısı). Sayfa başlığı (`<title>`) ve URL de saldırganın kontrolünde olduğu için bloğun **içinde** durur. v1'de talimat düzeyindeydiler; denetimde bulunup prompt v2'de düzeltildi.
 - **LLM hiçbir şeye karar vermez.** Doğrulama iki katmanlıdır. Dış yapı katıdır: bilinmeyen bir alan varsa (`.strict()`: LLM'in eklediği bir `risk_score` alanı bile) çıktının tamamı reddedilir. Bulgular ise tek tek doğrulanır: şemaya uymayan bulgu (örn. 600 karakteri aşan alıntı) atılır, "reddedilen iddia" olarak gösterilir ve belirsizliği yükseltir. İlk eval koşusunda tek bir uzun alıntı Spotify analizinin tamamını düşürdüğü için bu ayrım yapıldı. Alıntısı metinde olmayan iddia atılır. Skor formülle hesaplanır.
 - **page-agent salt okuma modunda.** Yalnızca `@page-agent/page-controller` paketinin `updateTree()` metodu kullanılır; aksiyonlu `page-agent` paketi bağımlılıkta yoktur. `tests/unit/readonly.test.ts`, kaynak kodda hiçbir aksiyon metodunun çağrılmadığını denetler. Kütüphanedeki `eval` çağrısı yalnızca hiç kullanmadığımız `executeJavascript` aksiyonundadır; ayrıca MV3'ün içerik güvenliği politikası `eval`'i zaten engeller.
 - **API anahtarı.** Yalnızca service worker okur; içerik betiği ve sayfa göremez. İstek başlığında (`x-goog-api-key`) gönderilir, URL'de değil. `tests/unit/secrets.test.ts` git'e girecek dosyaları anahtar kalıplarına karşı tarar; `.githooks/pre-commit` anahtar içeren commit'i engeller.
 - **XSS.** Panel, LLM veya sayfa kaynaklı metni yalnızca `textContent` ile yazar; birim testi `<img onerror>` içeren LLM çıktısının çalışmadığını doğrular.
 - **Mesaj doğrulama.** Service worker, içerik betiğinden gelen isteği de Zod ile doğrular ve yalnızca kendi uzantısından gelen mesajları kabul eder.
+- **Mimari sınırlar testle korunur.** `tests/unit/boundaries.test.ts`, içerik betiğinden ulaşılabilen her modülü import grafı üzerinden tarar. Hiçbiri API anahtarını okumaz, LLM uç noktasını bilmez veya ağ isteği atmaz. `fetch` kullanan tek dosya LLM istemcisidir.
+- **Bozuk / kötü niyetli LLM çıktısına dayanıklılık.** `tests/unit/fuzz.test.ts`, tohumlu rastgele üretilmiş binlerce LLM yanıtında şunları denetler:
+  - Ayrıştırıcı hiçbir girdide çökmez.
+  - Rapordaki her alıntı metinde vardır.
+  - Skor her zaman 0–100 arasında ve formülle aynıdır.
+  - Hiçbir bulgu sessizce kaybolmaz.
+
+  Aynı dosyadaki metamorfik testler şunların skoru değiştirmediğini doğrular: bulgu sırası, aynı bulgunun tekrarı, aynı kategoride ikinci madde, alıntının harf/boşluk biçimi, LLM'in açıklaması ve uydurma bir bulgu. Testlerin gerçekten hata yakalayıp yakalamadığı koda bilerek hata konarak denendi. Bu denemede "kategori birden çok kez sayılsın" hatasının fuzz testinden sağ çıktığı görüldü ve onu yakalayan metamorfik test eklendi.
 
 ## Bilinen sınırlamalar
 
 - **Alıntı doğrulama, metnin sayfada var olduğunu kanıtlar; gerçek bir sözleşme maddesi olduğunu kanıtlamaz.** Saldırgan uydurma bir maddeyi sayfaya görünür biçimde yazarsa doğrulama onu kabul eder. Bu durumda tek savunma, görünür metindeki talimat benzeri ifadelerin güvenilirliği düşürmesidir (`tests/unit/fixtures.test.ts`, "BİLİNEN SINIRLAMA" testi).
 - Talimat tespiti düzenli ifadelere dayanır; eş anlamlı ifadeleri veya desteklenmeyen dilleri kaçırabilir. Bu bir raporlama sinyalidir, asıl savunma değildir.
-- Gizli metin tespiti; başka bir elemanın arkasına saklanmış (z-index) veya resim üstüne aynı renkte yazılmış metni yakalamaz. `aria-hidden` bilinçli olarak gizli sayılmaz, çünkü görsel olarak görünürdür.
-- jsdom yerleşim hesaplamadığı için "ekran dışı" kuralı birim testlerinde değil, Cypress'te gerçek Chrome'da test edilir.
+- Gizli metin tespiti, başka bir elemanın arkasına saklanmış (üstü örtülen) veya resim üstüne aynı renkte yazılmış metni yakalamaz. `aria-hidden` bilinçli olarak gizli sayılmaz, çünkü görsel olarak görünürdür. Kapalı akordeonlar gibi sayfada o an görünmeyen içerik analiz edilmez ve "gizli içerik" listesinde görünür.
+- jsdom yerleşim hesaplamadığı için geometri kuralları (ekran dışı, sıfır alan, kutu dışına itilme) birim testlerinde değil, Cypress'te gerçek Chrome'da test edilir.
+- Eval sonuçları prompt v1 ile üretildi. v2 yalnızca sayfa başlığının ve URL'nin konumunu değiştirir; eval v2 ile yeniden koşulmadı.
 - Metin çıkarma, sayfada `<main>` bölgesi varsa (ve metnin ≥%40'ını içeriyorsa) yalnızca onu alır; menü, alt bilgi ve çerez uyarısı dışarıda kalır. `<main>` yoksa sayfanın tamamı alınır ve bu gürültü LLM'e gider. Korpus dosyasındaki `extraction` alanı hangisinin olduğunu ve kaç satır atıldığını kaydeder.
 - Alıntı normalizasyonu aksanları kaldırır; çok nadir durumlarda farklı kelimeleri eşleştirebilir.
