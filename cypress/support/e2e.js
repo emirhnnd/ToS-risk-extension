@@ -1,9 +1,14 @@
 /// <reference types="cypress" />
 
-/** Video için adımlar arası bekleme (npm run e2e:video → DEMO_PAUSE=1500). Normal koşuda 0. */
+/**
+ * Video için adımlar arası bekleme (npm run e2e:video → DEMO_PAUSE=1500 ms). Normal koşuda 0.
+ * Süre node tarafındaki bir görevden okunur: Cypress 16'da Cypress.env() kaldırıldı,
+ * cy.task her sürümde çalışır.
+ */
 Cypress.Commands.add('demoPause', (ms) => {
-  const wait = ms ?? Number(Cypress.env('DEMO_PAUSE') || 0);
-  if (wait > 0) cy.wait(wait, { log: false });
+  const run = (wait) => { if (wait > 0) cy.wait(wait, { log: false }); };
+  if (typeof ms === 'number') return run(ms);
+  cy.task('demoPauseMs', null, { log: false }).then((wait) => run(Number(wait) || 0));
 });
 
 /** Paneldeki "analiz et" butonuna basar ve rapor (veya hata) gelene kadar bekler. */

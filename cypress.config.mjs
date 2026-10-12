@@ -24,6 +24,8 @@ export default defineConfig({
         if (e.code !== 'EADDRINUSE') throw e;
         console.log('Port 5555 zaten açık: mevcut test sunucusu kullanılıyor.');
       }
+      // Demo videosu için adımlar arası bekleme (ms); scripts/e2e.mjs video modunda ayarlar
+      on('task', { demoPauseMs: () => Number(process.env.DEMO_PAUSE || 0) });
       on('before:browser:launch', (browser, launchOptions) => {
         if (browser.family === 'chromium' && browser.name !== 'electron') {
           launchOptions.extensions.push(resolve('dist-e2e'));

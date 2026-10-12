@@ -27,7 +27,15 @@ describe('ToS Risk Analizi – sınırlar', () => {
 
   it('sayfanın agresif CSS\'i paneli ve hukuki uyarıyı gizleyemez', () => {
     cy.visit('/terms-hostile-css.html'); // #tos-risk-panel-host { display:none !important } vb.
-    cy.get('#tos-risk-panel-host').should('be.visible');
+    // Kabın kendisi 0 yükseklikte (içindeki panel position:fixed); bu yüzden kabın gizlenmediğini
+    // hesaplanan stilden, panelin görünürlüğünü panelin kendisinden kontrol ederiz.
+    cy.get('#tos-risk-panel-host').should(($h) => {
+      const cs = getComputedStyle($h[0]);
+      expect(cs.display, 'kab display').not.to.equal('none');
+      expect(cs.visibility, 'kab visibility').to.equal('visible');
+      expect(cs.opacity, 'kab opacity').to.equal('1');
+    });
+    cy.get('[data-testid=panel]').should('be.visible');
     cy.get('[data-testid=legal-disclaimer]').should('be.visible');
     cy.get('[data-testid=analyze-button]').should('be.visible');
   });

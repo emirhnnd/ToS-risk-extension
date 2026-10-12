@@ -46,6 +46,7 @@ const browser = await chromeForTesting();
 console.log(`→ Tarayıcı: ${browser}`);
 
 if (command === 'video') {
+  process.env.DEMO_PAUSE ??= '1500'; // cypress.config.mjs → task demoPauseMs
   process.env.LLM_MODE ??= 'replay'; // video: önceden kaydedilmiş gerçek Gemini yanıtları, bekleme yok
 }
 
@@ -55,7 +56,7 @@ if (command === 'open') {
   const result = await cypress.run({
     browser,
     headed: true,
-    ...(command === 'video' ? { spec: 'cypress/e2e/demo.cy.js', env: { DEMO_PAUSE: 1500 } } : {}),
+    ...(command === 'video' ? { spec: 'cypress/e2e/demo.cy.js' } : {}),
   });
   if (result.status === 'failed') {
     console.error('Cypress başlatılamadı:', result.message);
