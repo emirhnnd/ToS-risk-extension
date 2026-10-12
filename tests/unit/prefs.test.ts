@@ -43,6 +43,16 @@ describe('panel: boşta görünümü', () => {
     p.showIdle(0.9, { devMode: true });
     expect(p.shadowRoot.querySelector('[data-testid=export-button]')).not.toBeNull();
   });
+  it('rapor ekranında da eval düğmesi yalnızca geliştirici modunda (demo videosunda görülen hata)', () => {
+    const p = new ReportPanel();
+    const rep = { url: 'x', analyzed_at: '', document_type: 'terms', language: 'en', risk_score: 0, risk_level: 'low', findings: [], rejected: [], hidden: [], instruction_segments: [], summary_tr: '', coverage: 1, uncertainty: { level: 'low', reasons: [], notes: [] } } as const;
+    p.showIdle(0.9);
+    p.showReport(rep as never);
+    expect(p.shadowRoot.querySelector('[data-testid=export-button]')).toBeNull();
+    p.showIdle(0.9, { devMode: true });
+    p.showReport(rep as never);
+    expect(p.shadowRoot.querySelector('[data-testid=export-button]')).not.toBeNull();
+  });
   it('kendiliğinden açıldıysa "bu sitede açılmasın" bağlantısı vardır', () => {
     const p = new ReportPanel();
     let n = 0;

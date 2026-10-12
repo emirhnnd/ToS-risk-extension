@@ -34,6 +34,8 @@ export class ReportPanel {
   onExport: () => void = () => {};
   onClose: () => void = () => {};
   onDisableAutoOpen: () => void = () => {};
+  /** Geliştirici modu: "eval için metni kaydet" düğmesi (boşta ve rapor ekranında) yalnızca açıkken görünür */
+  devMode = false;
 
   /** Paneli sayfadan kaldırır (analiz sürüyorsa sonucu artık gösterilmez). */
   close(): void {
@@ -91,6 +93,7 @@ export class ReportPanel {
   }
 
   showIdle(detectionScore: number, opts: { devMode?: boolean; autoOpened?: boolean } = {}): void {
+    if (opts.devMode !== undefined) this.devMode = opts.devMode;
     const btn = h('button', { class: 'primary', 'data-testid': 'analyze-button' }, 'Bu sayfayı analiz et');
     btn.addEventListener('click', () => this.onAnalyze());
     let quiet: HTMLElement | null = null;
@@ -103,7 +106,7 @@ export class ReportPanel {
       h('p', {}, detectionScore >= 0.5 ? 'Bu sayfa bir sözleşme metnine benziyor.' : 'Bu sayfa bir sözleşme sayfasına pek benzemiyor, yine de analiz edebilirsiniz.'),
       btn,
       h('p', { class: 'muted' }, 'Analiz için sayfanın görünür metni, kendi API anahtarınızla Gemini\'ye gönderilir.'),
-      ...[quiet, opts.devMode ? this.exportButton() : null].filter((x): x is HTMLElement => x !== null),
+      ...[quiet, this.devMode ? this.exportButton() : null].filter((x): x is HTMLElement => x !== null),
     );
   }
 
@@ -252,7 +255,7 @@ export class ReportPanel {
     parts.push(h('p', { class: 'muted' }, `Kapsam: metnin %${Math.round(r.coverage * 100)}'i analiz edildi · ${new Date(r.analyzed_at).toLocaleString('tr-TR')}`));
     const again = h('button', { 'data-testid': 'analyze-button' }, 'Yeniden analiz et');
     again.addEventListener('click', () => this.onAnalyze());
-    parts.push(again, this.exportButton());
+    parts.push(again, this.devMode ? this.exportButton() : null);
 
     this.body.replaceChildren(...parts.filter((p): p is Node => !!p && typeof p !== 'string'));
   }
