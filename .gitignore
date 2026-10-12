@@ -9,3 +9,4 @@ cypress/screenshots/
 eval/label.html
 dist-e2e/
 .browsers/
+!.env.example
