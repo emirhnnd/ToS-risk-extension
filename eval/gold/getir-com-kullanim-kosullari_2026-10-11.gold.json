@@ -37,11 +37,6 @@
       "category": "NO_REFUND",
       "severity": "high",
       "quote": "Bu kapsamda, Getir veya Üye İşyeri ilgili siparişin tamamına veya bir kısmına ilişkin iptal ve iadeyi kabul etmeyebilecek ve ücret iadesi yapmayabilecektir."
-    },
-    {
-      "category": "JURISDICTION_FOREIGN_LAW",
-      "severity": "medium",
-      "quote": "Uyuşmazlığın tüketici uyuşmazlığı olmaması halinde, İstanbul Merkez (Çağlayan) Mahkemeleri ve İcra Daireleri yetkili olacaktır."
     }
   ]
 }
