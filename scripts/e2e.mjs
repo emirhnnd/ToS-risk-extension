@@ -46,7 +46,7 @@ const browser = await chromeForTesting();
 console.log(`→ Tarayıcı: ${browser}`);
 
 if (command === 'video') {
-  process.env.DEMO_PAUSE ??= '1500'; // cypress.config.mjs → task demoPauseMs
+  process.env.DEMO_PAUSE ??= '2000'; // cypress.config.mjs → task demoPauseMs
   process.env.LLM_MODE ??= 'replay'; // video: önceden kaydedilmiş gerçek Gemini yanıtları, bekleme yok
 }
 
