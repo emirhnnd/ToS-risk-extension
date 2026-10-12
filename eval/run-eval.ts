@@ -21,6 +21,7 @@ import { PROMPT_VERSION, buildSystemInstruction, buildUserMessage } from '../src
 import type { Report, Segment } from '../src/shared/schema';
 import { selectWithinBudget } from '../src/sanitizer/segment';
 import { buildReport, parseLlmOutput } from '../src/validator/validate';
+import { computeRiskScore } from '../src/validator/score';
 import { GoldSchema, type Gold } from './lib/gold';
 import { matchFindings, prf, type MatchResult } from './lib/match';
 
@@ -41,6 +42,8 @@ interface DocResult {
   name: string; url: string; captured_at: string; language: string;
   segments: number; coverage: number; llm_findings: number; rejected: number;
   report: Report; match: MatchResult; cached: boolean;
+  /** Altın etiketlerin kategorileri ve aynı formülle hesaplanan skor (LLM'in şiddet seçimlerinin skora etkisini görmek için) */
+  gold_categories: CategoryId[]; gold_score: number;
 }
 
 async function main() {
@@ -73,6 +76,8 @@ async function main() {
       name, url: snap.url, captured_at: snap.captured_at, language: r.report.language, segments: snap.segments.length,
       coverage: r.report.coverage, llm_findings: r.llmFindings, rejected: r.report.rejected.filter((x) => x.reason !== 'duplicate').length,
       report: r.report, match, cached: r.cached,
+      gold_categories: [...new Set(gold.items.map((g) => g.category))],
+      gold_score: computeRiskScore(gold.items.map((g) => ({ ...g, segment_id: 'S1', matched_segment_id: 'S1', explanation_tr: '', confidence: 1 }))),
     });
   }
 
@@ -133,12 +138,36 @@ export function renderMarkdown(results: DocResult[], skipped: string[], model: s
     `| Birleştirilen kesişen altın etiket (aynı kategori) | ${sum((r) => r.match.mergedGold)} |`,
     `| TP'lerde şiddet uyumu (LLM = elle etiket) | ${pct(TP ? sevAgree / TP : null)} (${sevAgree}/${TP}) |`, '');
 
-  L.push('## Metin bazında', '', '| Metin | Dil | Bölüm | Kapsam | TP | FP | FN | Precision | Recall | Reddedilen | Skor |', '|---|---|---|---|---|---|---|---|---|---|---|');
+  L.push('## Metin bazında', '', '| Metin | Dil | Bölüm | Kapsam | TP | FP | FN | Precision | Recall | Reddedilen | Skor | Belirsizlik |', '|---|---|---|---|---|---|---|---|---|---|---|---|');
   for (const r of results) {
     const m = prf(r.match.tp.length, r.match.fp.length, r.match.fn.length);
-    L.push(`| [${r.name}](${r.url}) | ${r.language} | ${r.segments} | ${pct(r.coverage)} | ${r.match.tp.length} | ${r.match.fp.length} | ${r.match.fn.length} | ${pct(m.precision)} | ${pct(m.recall)} | ${r.rejected} | ${r.report.risk_score} |`);
+    L.push(`| [${r.name}](${r.url}) | ${r.language} | ${r.segments} | ${pct(r.coverage)} | ${r.match.tp.length} | ${r.match.fp.length} | ${r.match.fn.length} | ${pct(m.precision)} | ${pct(m.recall)} | ${r.rejected} | ${r.report.risk_score} | ${r.report.uncertainty.level === 'high' ? 'yüksek' : 'düşük'}${r.report.uncertainty.reasons.length ? ` (${r.report.uncertainty.reasons.join(', ')})` : ''} |`);
   }
   L.push('');
+
+  // İkincil ölçüm (sonuçlar görüldükten SONRA eklendi; birincil ölçüm yukarıdaki madde düzeyidir):
+  // skor her kategoriyi belge başına bir kez saydığı için, skora giren düzeyde başarı.
+  let dcTp = 0, dcFp = 0, dcFn = 0;
+  for (const r of results) {
+    const sysCats = new Set(r.report.findings.map((f) => f.category));
+    const goldCats = new Set(r.gold_categories);
+    for (const c of sysCats) (goldCats.has(c) ? dcTp++ : dcFp++);
+    for (const c of goldCats) if (!sysCats.has(c)) dcFn++;
+  }
+  const dc = prf(dcTp, dcFp, dcFn);
+  const tps = results.flatMap((r) => r.match.tp);
+  const rank = { low: 0, medium: 1, high: 2 } as const;
+  const sevLow = tps.filter((t) => rank[t.sys.severity] < rank[t.gold.severity]).length;
+  const sevHigh = tps.filter((t) => rank[t.sys.severity] > rank[t.gold.severity]).length;
+  L.push('## Skorun kullandığı düzey: belge × kategori (ikincil ölçüm)', '',
+    '> Risk skoru her kategoriyi belge başına bir kez sayar. Bu tablo "belgede bu risk türü var mı?" sorusunda sistemin başarısını gösterir.',
+    '> Bu ölçüm sonuçlar görüldükten **sonra** eklendi; birincil ölçüm yukarıdaki madde düzeyidir.', '',
+    '| Metrik | Değer |', '|---|---|',
+    `| Belge×kategori TP / FP / FN | ${dcTp} / ${dcFp} / ${dcFn} |`,
+    `| Precision / Recall / F1 | ${pct(dc.precision)} / ${pct(dc.recall)} / ${pct(dc.f1)} |`,
+    `| TP'lerde LLM şiddeti: daha düşük / aynı / daha yüksek | ${sevLow} / ${tps.length - sevLow - sevHigh} / ${sevHigh} |`, '',
+    '| Metin | Sistem skoru | Altın etiketlerle aynı formül | Fark |', '|---|---|---|---|',
+    ...results.map((r) => `| ${r.name} | ${r.report.risk_score} | ${r.gold_score} | ${r.report.risk_score - r.gold_score > 0 ? '+' : ''}${r.report.risk_score - r.gold_score} |`), '');
 
   L.push('## Kategori bazında', '', '| Kategori | TP | FP | FN | Precision | Recall |', '|---|---|---|---|---|---|');
   for (const c of Object.keys(CATEGORIES) as CategoryId[]) {

@@ -93,6 +93,20 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 
 **Ek kural (etiketleme bittikten sonra, sonuçlar görülmeden eklendi):** Aynı kategoride metinde kesişen altın etiketler tek madde sayılır. Etiketleme sırasında aynı paragraf yanlışlıkla birkaç kez ya da iç içe parçalar halinde eklenmişti (Spotify'da 3, Steam'de 2 etiket). Bu kural olmasaydı LLM o maddeyi doğru bulsa bile fazla kopyalar FN sayılırdı. Etiket dosyalarına dokunulmadı; birleştirme sayısı `results.md` özetinde gösterilir.
 
+### Sonuçlar (özet)
+
+6 gerçek metin (Spotify, Getir, YouTube: TR · Netflix, Amazon.com, Steam: EN), 45 elle etiketlenmiş madde, `gemini-3.8-flash`, prompt v1. Ayrıntı: [`eval/results.md`](eval/results.md), hataların tek tek nedenleri: [`eval/error-analysis.md`](eval/error-analysis.md).
+
+| Ölçüm | Precision | Recall | F1 |
+|---|---|---|---|
+| Madde düzeyi (birincil) | %82 | %69 | %75 |
+| Belge × kategori (skorun kullandığı düzey) | %94 | %91 | %93 |
+
+- **Halüsinasyon:** LLM'in 39 iddiasının hiçbiri alıntı doğrulamasında reddedilmedi.
+- **Kaçırmalar:** 14 kaçırmanın 7'si aynı kategorinin ikinci örneği (LLM kategori başına genelde tek madde veriyor). 3'ü, aynı maddenin komşu cümlesinin alıntılanması.
+- **Şiddet ve skor:** LLM şiddeti sistematik olarak düşük tahmin ediyor (eşleşen 31 maddenin 15'inde). Bu yüzden skor 6 metnin 5'inde, elle etiketlerle hesaplanandan düşük; Getir'de risk seviyesi "orta" yerine "düşük" çıkıyor.
+- **Eval'in bulup düzelttiği iki hata:** (1) Tek bir uzun alıntı Spotify analizinin tamamını düşürüyordu; bulgular artık tek tek doğrulanıyor. (2) Görünür talimat sezgisi, sözleşmelerdeki yapay zekâ maddelerinde ("AI-generated content", "model parameters") yanlış alarm veriyordu; desen daraltıldı.
+
 ## Uçtan uca test (Cypress)
 
 ```

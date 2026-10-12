@@ -1,0 +1,2228 @@
+{
+  "model": "gemini-3.8-flash",
+  "prompt_version": "v1",
+  "generated_at": "2026-10-12T19:53:55.196Z",
+  "skipped": [],
+  "results": [
+    {
+      "name": "amazon-com-display_2026-10-11",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM",
+      "captured_at": "2026-10-11T07:15:52.698Z",
+      "language": "en",
+      "segments": 71,
+      "coverage": 1,
+      "llm_findings": 7,
+      "rejected": 0,
+      "report": {
+        "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM",
+        "analyzed_at": "2026-10-11T07:15:52.698Z",
+        "document_type": "terms",
+        "language": "en",
+        "risk_score": 46,
+        "risk_level": "high",
+        "findings": [
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "high",
+            "quote": "Amazon reserves the right to refuse service, terminate accounts, terminate your rights to use Amazon Services, remove or edit content, or cancel orders in its sole discretion.",
+            "segment_id": "S13",
+            "explanation_tr": "Amazon, tamamen kendi takdirine bağlı olarak herhangi bir gerekçe sunmaksızın hesabınızı kapatabilir, siparişlerinizi iptal edebilir veya hizmet vermeyi reddedebilir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S13"
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "medium",
+            "quote": "If you do post content or submit material, and unless we indicate otherwise, you grant Amazon a nonexclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, perform, translate, create derivative works from, distribute, and display such content throughout the world in any media.",
+            "segment_id": "S15",
+            "explanation_tr": "Platforma yüklediğiniz yorum, görsel veya diğer içerikler üzerinde şirkete dünya çapında, süresiz, geri alınamaz ve ücretsiz çok geniş kullanım hakları tanınmaktadır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S15"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": "TO THE FULL EXTENT PERMISSIBLE BY LAW, AMAZON WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF ANY AMAZON SERVICE, OR FROM ANY INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH ANY AMAZON SERVICE, INCLUDING, BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES, UNLESS OTHERWISE SPECIFIED IN WRITING.",
+            "segment_id": "S31",
+            "explanation_tr": "Şirket, hizmetin veya ürünlerin kullanımından doğabilecek doğrudan ya da dolaylı zararlar konusunda yasal sınırların elverdiği en geniş ölçüde sorumluluk kabul etmemektedir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S31"
+          },
+          {
+            "category": "ARBITRATION_CLASS_WAIVER",
+            "severity": "high",
+            "quote": "YOU AND WE AGREE THAT ANY DISPUTE OR CLAIM RELATING IN ANY WAY TO YOUR USE OF ANY AMAZON SERVICE, OR TO ANY PRODUCTS OR SERVICES SOLD OR DISTRIBUTED BY AMAZON OR THROUGH AMAZON.COM, WILL BE RESOLVED BY BINDING ARBITRATION RATHER THAN IN COURT.",
+            "segment_id": "S32",
+            "explanation_tr": "Uyuşmazlık durumunda mahkemeye gitme hakkınızdan feragat ederek bağlayıcı tahkim sürecine başvurmak zorunda bırakılmaktasınız.",
+            "confidence": 0.95,
+            "matched_segment_id": "S32"
+          },
+          {
+            "category": "ARBITRATION_CLASS_WAIVER",
+            "severity": "high",
+            "quote": "YOU AND WE AGREE THAT ANY ARBITRATION PROCEEDING WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS OR REPRESENTATIVE ACTION.",
+            "segment_id": "S34",
+            "explanation_tr": "Kullanıcılar haklarını ararken toplu dava açma veya toplu tahkime katılma hakkından açıkça feragat etmektedir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S34"
+          },
+          {
+            "category": "JURISDICTION_FOREIGN_LAW",
+            "severity": "medium",
+            "quote": "By using any Amazon Service, you agree that applicable federal law, and the laws of the state of Washington, without regard to principles of conflict of laws, will govern these Conditions of Use and any dispute of any sort that might arise between you and Amazon except for disputes arising from personal injury or physical harm to property allegedly caused by products purchased using Amazon Services.",
+            "segment_id": "S43",
+            "explanation_tr": "Doğabilecek tüm uyuşmazlıklarda kullanıcının yerel hukuku yerine ABD Federal hukuku ve Washington Eyaleti kanunları geçerli kılınmaktadır.",
+            "confidence": 0.9,
+            "matched_segment_id": "S43"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "We reserve the right to make changes to our site, policies, Service Terms, and these Conditions of Use at any time. By using Amazon Services after such changes, you agree to be bound by them.",
+            "segment_id": "S44",
+            "explanation_tr": "Amazon, sözleşme şartlarını ve politikalarını dilediği zaman tek taraflı değiştirme hakkını saklı tutar ve hizmeti kullanmaya devam etmeniz yeni şartları kabul ettiğiniz anlamına gelir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S44"
+          }
+        ],
+        "rejected": [],
+        "hidden": [
+          {
+            "reason": "offscreen",
+            "text": "Main content",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Keyboard shortcuts",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Show/Hide shortcuts",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "To move between items, use your keyboard's up or down arrows.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Select the department you want to search in",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "zero_opacity",
+            "text": "All Departments Arts & Crafts Automotive Baby Beauty & Personal Care Books Boys' Fashion Computers Deals Digital Music Electronics Girls' Fashion Health & Household Home & Kitchen Industrial & Scientific Kindle Store Luggage Men's Fashion Movies & TV Music, CDs & Vinyl Pet Supplies Prime Video Software Sports & Outdoors Tools & Home Improvement Toys & Games Video Games Women's Fashion",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Search Amazon",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "International Shopping Transition Alert",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Sign in New customer? Start here. Your Lists Create a List Find a List or Registry Your Account Account Orders Recommendations Browsing History Your Shopping preferences Watchlist Video Purchases & Rentals Kindle Unlimited Content & Devices Subscribe & Save Items Memberships & Subscriptions Music Library",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Change language English - EN español - ES العربية - AR Deutsch - DE עברית - HE 한국어 - KO português - PT 中文 (简体) - ZH 中文 (繁體) - ZH Change currency $ - USD - US Dollar Change You are shopping on Amazon.com Change country/region.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Change language English - EN español - ES العربية - AR Deutsch - DE עברית - HE 한국어 - KO português - PT 中文 (简体) - ZH 中文 (繁體) - ZH",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Change currency",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "$ - USD - US Dollar Change",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "You are shopping on Amazon.com",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Change country/region.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Disability Customer Support",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Thank you for your feedback.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Please select what best describes the information:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "This information is confusing or wrong",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "This isn't the information I was looking for",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "I don't like this policy",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Thanks! While we're unable to respond directly to your feedback, we'll use this information to improve our online Help.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Your Orders Track or cancel orders",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Returns & Refunds Exchange or return items",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Manage Prime Cancel or view benefits",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Payment Settings Add or edit payment methods",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Carrier Info Shipping carrier information",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Account Settings Change email or password",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: amzn-nv-flyout-healthy-choice",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: nav-rufus-disc-txt",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: a-truncate-cut",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: sp-cc-wrapper",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: .mo-wp",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: .a-image-container",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: .amzn-box-inner",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: .js-order-card",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: pldn-deep-link",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: add-to-cart-btn",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: amzn-nav-app-banner-container",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "offscreen",
+            "text": "Test: .sparkle-container",
+            "looks_like_instruction": false
+          }
+        ],
+        "instruction_segments": [],
+        "summary_tr": "Amazon Kullanım Koşulları, tüketici haklarını önemli ölçüde kısıtlayan maddeler barındırmaktadır. Şirket, tek taraflı fesih hakkı ve kapsamlı sorumluluk muafiyeti getirmekte, uyuşmazlıkları zorunlu tahkim ve Washington Eyaleti hukuku ile sınırlamaktadır. Ayrıca toplu dava hakkı engellenmekte ve yüklenen içerikler üzerinde süresiz ve devredilebilir haklar talep edilmektedir.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "low",
+          "reasons": [],
+          "notes": []
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "CONTENT_LICENSE",
+              "severity": "high",
+              "quote": "If you do post content or submit material, and unless we indicate otherwise, you grant Amazon a nonexclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, perform, translate, create derivative works from, distribute, and display such content throughout the world in any media."
+            },
+            "sys": {
+              "category": "CONTENT_LICENSE",
+              "severity": "medium",
+              "quote": "If you do post content or submit material, and unless we indicate otherwise, you grant Amazon a nonexclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, perform, translate, create derivative works from, distribute, and display such content throughout the world in any media.",
+              "segment_id": "S15",
+              "explanation_tr": "Platforma yüklediğiniz yorum, görsel veya diğer içerikler üzerinde şirkete dünya çapında, süresiz, geri alınamaz ve ücretsiz çok geniş kullanım hakları tanınmaktadır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S15"
+            },
+            "overlap": 342
+          },
+          {
+            "gold": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "high",
+              "quote": "By using any Amazon Service, you agree that applicable federal law, and the laws of the state of Washington, without regard to principles of conflict of laws, will govern these Conditions of Use and any dispute of any sort that might arise between you and Amazon"
+            },
+            "sys": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "medium",
+              "quote": "By using any Amazon Service, you agree that applicable federal law, and the laws of the state of Washington, without regard to principles of conflict of laws, will govern these Conditions of Use and any dispute of any sort that might arise between you and Amazon except for disputes arising from personal injury or physical harm to property allegedly caused by products purchased using Amazon Services.",
+              "segment_id": "S43",
+              "explanation_tr": "Doğabilecek tüm uyuşmazlıklarda kullanıcının yerel hukuku yerine ABD Federal hukuku ve Washington Eyaleti kanunları geçerli kılınmaktadır.",
+              "confidence": 0.9,
+              "matched_segment_id": "S43"
+            },
+            "overlap": 262
+          },
+          {
+            "gold": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "DISPUTES YOU AND WE AGREE THAT ANY DISPUTE OR CLAIM RELATING IN ANY WAY TO YOUR USE OF ANY AMAZON SERVICE, OR TO ANY PRODUCTS OR SERVICES SOLD OR DISTRIBUTED BY AMAZON OR THROUGH AMAZON.COM, WILL BE RESOLVED BY BINDING ARBITRATION RATHER THAN IN COURT."
+            },
+            "sys": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "YOU AND WE AGREE THAT ANY DISPUTE OR CLAIM RELATING IN ANY WAY TO YOUR USE OF ANY AMAZON SERVICE, OR TO ANY PRODUCTS OR SERVICES SOLD OR DISTRIBUTED BY AMAZON OR THROUGH AMAZON.COM, WILL BE RESOLVED BY BINDING ARBITRATION RATHER THAN IN COURT.",
+              "segment_id": "S32",
+              "explanation_tr": "Uyuşmazlık durumunda mahkemeye gitme hakkınızdan feragat ederek bağlayıcı tahkim sürecine başvurmak zorunda bırakılmaktasınız.",
+              "confidence": 0.95,
+              "matched_segment_id": "S32"
+            },
+            "overlap": 243
+          },
+          {
+            "gold": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "high",
+              "quote": "We reserve the right to make changes to our site, policies, Service Terms, and these Conditions of Use at any time. By using Amazon Services after such changes, you agree to be bound by them."
+            },
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "We reserve the right to make changes to our site, policies, Service Terms, and these Conditions of Use at any time. By using Amazon Services after such changes, you agree to be bound by them.",
+              "segment_id": "S44",
+              "explanation_tr": "Amazon, sözleşme şartlarını ve politikalarını dilediği zaman tek taraflı değiştirme hakkını saklı tutar ve hizmeti kullanmaya devam etmeniz yeni şartları kabul ettiğiniz anlamına gelir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S44"
+            },
+            "overlap": 191
+          },
+          {
+            "gold": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "high",
+              "quote": "Amazon reserves the right to refuse service, terminate accounts, terminate your rights to use Amazon Services, remove or edit content, or cancel orders in its sole discretion."
+            },
+            "sys": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "high",
+              "quote": "Amazon reserves the right to refuse service, terminate accounts, terminate your rights to use Amazon Services, remove or edit content, or cancel orders in its sole discretion.",
+              "segment_id": "S13",
+              "explanation_tr": "Amazon, tamamen kendi takdirine bağlı olarak herhangi bir gerekçe sunmaksızın hesabınızı kapatabilir, siparişlerinizi iptal edebilir veya hizmet vermeyi reddedebilir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S13"
+            },
+            "overlap": 175
+          },
+          {
+            "gold": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "YOU AND WE AGREE THAT ANY ARBITRATION PROCEEDING WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS OR REPRESENTATIVE ACTION."
+            },
+            "sys": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "YOU AND WE AGREE THAT ANY ARBITRATION PROCEEDING WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS OR REPRESENTATIVE ACTION.",
+              "segment_id": "S34",
+              "explanation_tr": "Kullanıcılar haklarını ararken toplu dava açma veya toplu tahkime katılma hakkından açıkça feragat etmektedir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S34"
+            },
+            "overlap": 139
+          }
+        ],
+        "fn": [
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": "THE AMAZON SERVICES AND ALL INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) AND OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE AMAZON SERVICES ARE PROVIDED BY AMAZON ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, UNLESS OTHERWISE SPECIFIED IN WRITING. AMAZON MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THE AMAZON SERVICES, OR THE INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE AMAZON SERVICES, UNLESS OTHERWISE SPECIFIED IN WRITING."
+          }
+        ],
+        "fp": [
+          {
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "TO THE FULL EXTENT PERMISSIBLE BY LAW, AMAZON WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF ANY AMAZON SERVICE, OR FROM ANY INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH ANY AMAZON SERVICE, INCLUDING, BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES, UNLESS OTHERWISE SPECIFIED IN WRITING.",
+              "segment_id": "S31",
+              "explanation_tr": "Şirket, hizmetin veya ürünlerin kullanımından doğabilecek doğrudan ya da dolaylı zararlar konusunda yasal sınırların elverdiği en geniş ölçüde sorumluluk kabul etmemektedir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S31"
+            }
+          }
+        ],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 0
+      },
+      "cached": true,
+      "gold_categories": [
+        "ARBITRATION_CLASS_WAIVER",
+        "LIABILITY_DISCLAIMER",
+        "CONTENT_LICENSE",
+        "UNILATERAL_CHANGE",
+        "ARBITRARY_TERMINATION",
+        "JURISDICTION_FOREIGN_LAW"
+      ],
+      "gold_score": 54
+    },
+    {
+      "name": "getir-com-kullanim-kosullari_2026-10-11",
+      "url": "https://getir.com/yardim/kullanim-kosullari/",
+      "captured_at": "2026-10-11T07:16:06.387Z",
+      "language": "tr",
+      "segments": 83,
+      "coverage": 1,
+      "llm_findings": 4,
+      "rejected": 0,
+      "report": {
+        "url": "https://getir.com/yardim/kullanim-kosullari/",
+        "analyzed_at": "2026-10-11T07:16:06.387Z",
+        "document_type": "terms",
+        "language": "tr",
+        "risk_score": 18,
+        "risk_level": "low",
+        "findings": [
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "Getir, tamamen kendi takdirine bağlı ve tek taraflı olarak, işbu Koşullar’ı, uygun göreceği herhangi bir zamanda, Uygulama üzerinden ilan ederek değiştirebilir.",
+            "segment_id": "S76",
+            "explanation_tr": "Şirket, kullanım koşullarını kullanıcı onayına gerek duymaksızın tek taraflı olarak ve dilediği zaman değiştirme hakkını saklı tutmaktadır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S76"
+          },
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "medium",
+            "quote": "Getir’in dilediği zaman hizmetlerini askıya alma veya durdurma hakkı saklıdır.",
+            "segment_id": "S70",
+            "explanation_tr": "Şirket, herhangi bir gerekçe göstermeksizin ve önceden bildirim yapma yükümlülüğü olmaksızın hizmetleri dilediği an durdurabilir veya askıya alabilir.",
+            "confidence": 0.9,
+            "matched_segment_id": "S70"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "medium",
+            "quote": "Getir sadece bir aracı olarak hareket eder ve bu nedenle Üye İşyeri tarafından sunulan ürün/hizmetlerin kalitesinden, doğru sağlanmasından ya da Üye İşyeri’nin Müşteri’ye Uygulama üzerinden sunduğu Ürün/hizmetler nedeniyle vermiş olduğu zararın tazmininden sorumlu olamaz.",
+            "segment_id": "S34",
+            "explanation_tr": "Getir, platformdaki üye işyerlerinden sipariş edilen ürünlerin ayıbından, kalitesinden veya neden olabileceği zararlardan aracı olduğunu belirterek sorumluluk kabul etmemektedir.",
+            "confidence": 0.9,
+            "matched_segment_id": "S34"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "low",
+            "quote": "Müşteri’ye Uygulama üzerinden gösterilen teslim süresi, Getir’in teslimatı gerçekleştirmeyi hedeflediği tahmini ve bağlayıcı olmayan bir süredir. Ürün’ün hedeflenen süre içerisinde teslim edilememesinden Getir sorumlu tutulamaz.",
+            "segment_id": "S14",
+            "explanation_tr": "Uygulama üzerinden belirtilen teslimat sürelerinin bağlayıcı olmadığı ve olası gecikmelerden şirketin sorumlu tutulamayacağı düzenlenmiştir.",
+            "confidence": 0.85,
+            "matched_segment_id": "S14"
+          }
+        ],
+        "rejected": [],
+        "hidden": [
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Simplified",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Traditional",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Haitian Creole",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "COPY THE URL BELOW",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Enable collaborative features and customize widget:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Bing Webmaster Portal",
+            "looks_like_instruction": false
+          }
+        ],
+        "instruction_segments": [],
+        "summary_tr": "Sözleşme genelinde şirkete şartları tek taraflı değiştirme ve hizmeti dilediğinde askıya alma yetkisi tanınmıştır. Ayrıca üye işyerleri üzerinden temin edilen ürünlerin kalitesinden veya geciken teslimatlardan kaynaklanabilecek zararlar bakımından şirketin sorumluluğu reddedilmektedir.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "low",
+          "reasons": [
+            "llm_reported_uncertainty"
+          ],
+          "notes": [
+            "Metin sonunda yer alan son güncelleme tarihi (06/04/2026) ileri bir tarihi göstermektedir."
+          ]
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "Müşteri, GetirYemek ve/veya GetirÇarşı ve/veya GetirSu üzerinden Üye İşyeri’ne ait Ürün/hizmeti sipariş ettiğinde, Getir sadece bir aracı olarak hareket eder ve bu nedenle Üye İşyeri tarafından sunulan ürün/hizmetlerin kalitesinden, doğru sağlanmasından ya da Üye İşyeri’nin Müşteri’ye Uygulama üzerinden sunduğu Ürün/hizmetler nedeniyle vermiş olduğu zararın tazmininden sorumlu olamaz."
+            },
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "medium",
+              "quote": "Getir sadece bir aracı olarak hareket eder ve bu nedenle Üye İşyeri tarafından sunulan ürün/hizmetlerin kalitesinden, doğru sağlanmasından ya da Üye İşyeri’nin Müşteri’ye Uygulama üzerinden sunduğu Ürün/hizmetler nedeniyle vermiş olduğu zararın tazmininden sorumlu olamaz.",
+              "segment_id": "S34",
+              "explanation_tr": "Getir, platformdaki üye işyerlerinden sipariş edilen ürünlerin ayıbından, kalitesinden veya neden olabileceği zararlardan aracı olduğunu belirterek sorumluluk kabul etmemektedir.",
+              "confidence": 0.9,
+              "matched_segment_id": "S34"
+            },
+            "overlap": 272
+          },
+          {
+            "gold": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "medium",
+              "quote": "Müşteri’ye Uygulama üzerinden gösterilen teslim süresi, Getir’in teslimatı gerçekleştirmeyi hedeflediği tahmini ve bağlayıcı olmayan bir süredir. Ürün’ün hedeflenen süre içerisinde teslim edilememesinden Getir sorumlu tutulamaz."
+            },
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "low",
+              "quote": "Müşteri’ye Uygulama üzerinden gösterilen teslim süresi, Getir’in teslimatı gerçekleştirmeyi hedeflediği tahmini ve bağlayıcı olmayan bir süredir. Ürün’ün hedeflenen süre içerisinde teslim edilememesinden Getir sorumlu tutulamaz.",
+              "segment_id": "S14",
+              "explanation_tr": "Uygulama üzerinden belirtilen teslimat sürelerinin bağlayıcı olmadığı ve olası gecikmelerden şirketin sorumlu tutulamayacağı düzenlenmiştir.",
+              "confidence": 0.85,
+              "matched_segment_id": "S14"
+            },
+            "overlap": 228
+          },
+          {
+            "gold": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "high",
+              "quote": "Getir, tamamen kendi takdirine bağlı ve tek taraflı olarak, işbu Koşullar’ı, uygun göreceği herhangi bir zamanda, Uygulama üzerinden ilan ederek değiştirebilir.",
+              "note": "Tüketiciye haber verilmeden yapılması"
+            },
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Getir, tamamen kendi takdirine bağlı ve tek taraflı olarak, işbu Koşullar’ı, uygun göreceği herhangi bir zamanda, Uygulama üzerinden ilan ederek değiştirebilir.",
+              "segment_id": "S76",
+              "explanation_tr": "Şirket, kullanım koşullarını kullanıcı onayına gerek duymaksızın tek taraflı olarak ve dilediği zaman değiştirme hakkını saklı tutmaktadır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S76"
+            },
+            "overlap": 160
+          },
+          {
+            "gold": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "high",
+              "quote": "Getir’in dilediği zaman hizmetlerini askıya alma veya durdurma hakkı saklıdır.",
+              "note": "Sebep vermeden hesap kapama"
+            },
+            "sys": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "medium",
+              "quote": "Getir’in dilediği zaman hizmetlerini askıya alma veya durdurma hakkı saklıdır.",
+              "segment_id": "S70",
+              "explanation_tr": "Şirket, herhangi bir gerekçe göstermeksizin ve önceden bildirim yapma yükümlülüğü olmaksızın hizmetleri dilediği an durdurabilir veya askıya alabilir.",
+              "confidence": 0.9,
+              "matched_segment_id": "S70"
+            },
+            "overlap": 78
+          }
+        ],
+        "fn": [
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "high",
+            "quote": "Müşteri’nin işbu belirtilen Koşullar’a, amaca, ilgili mevzuata veya iyi niyet/ahlak kurallarına aykırı davrandığının tespiti halinde veya güvenlikten şüphe edilen durumlarda, Getir Müşteri’nin üyeliğini askıya alma veya Uygulama’dan tamamen çıkarma hakkını saklı tutar.",
+            "note": "Sebep olmadan tüketicinin alehine karar verme"
+          },
+          {
+            "category": "NO_REFUND",
+            "severity": "high",
+            "quote": "Bu kapsamda, Getir veya Üye İşyeri ilgili siparişin tamamına veya bir kısmına ilişkin iptal ve iadeyi kabul etmeyebilecek ve ücret iadesi yapmayabilecektir."
+          }
+        ],
+        "fp": [],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 0
+      },
+      "cached": true,
+      "gold_categories": [
+        "UNILATERAL_CHANGE",
+        "ARBITRARY_TERMINATION",
+        "LIABILITY_DISCLAIMER",
+        "NO_REFUND"
+      ],
+      "gold_score": 35
+    },
+    {
+      "name": "help-netflix-com-termsofuse_2026-10-11",
+      "url": "https://help.netflix.com/legal/termsofuse?locale=en",
+      "captured_at": "2026-10-11T07:15:37.741Z",
+      "language": "en",
+      "segments": 45,
+      "coverage": 1,
+      "llm_findings": 7,
+      "rejected": 0,
+      "report": {
+        "url": "https://help.netflix.com/legal/termsofuse?locale=en",
+        "analyzed_at": "2026-10-11T07:15:37.741Z",
+        "document_type": "terms",
+        "language": "en",
+        "risk_score": 40,
+        "risk_level": "medium",
+        "findings": [
+          {
+            "category": "AUTO_RENEWAL",
+            "severity": "medium",
+            "quote": "Unless you cancel your subscription before your billing date, you authorize us to charge the subscription fee for the next billing cycle to your Payment Method",
+            "segment_id": "S24",
+            "explanation_tr": "Abonelik fatura kesim tarihinden önce iptal edilmediği sürece otomatik olarak yenilenir ve ücret kayıtlı ödeme yönteminden kesilmeye devam eder.",
+            "confidence": 0.95,
+            "matched_segment_id": "S24"
+          },
+          {
+            "category": "NO_REFUND",
+            "severity": "medium",
+            "quote": "To the extent permitted by the applicable law, payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content.",
+            "segment_id": "S30",
+            "explanation_tr": "Yapılan ödemelerin iadesi yapılmaz; kısmen kullanılan dönemler veya izlenmeyen içerikler için herhangi bir geri ödeme ya da bakiye tanımlanmaz.",
+            "confidence": 0.95,
+            "matched_segment_id": "S30"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "We may change our subscription plans and the price of our service from time to time.",
+            "segment_id": "S31",
+            "explanation_tr": "Şirket, abonelik planlarını ve hizmet ücretlerini tek taraflı olarak değiştirme hakkını saklı tutar.",
+            "confidence": 0.9,
+            "matched_segment_id": "S31"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "medium",
+            "quote": "The Netflix service is provided \"as is\" and without warranty or condition. In particular, our service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us.",
+            "segment_id": "S35",
+            "explanation_tr": "Hizmet herhangi bir garanti verilmeden sunulur ve şirket kesintilerden veya dolaylı zararlardan doğan sorumlulukları kabul etmeyerek tazminat haklarından feragat edilmesini ister.",
+            "confidence": 0.95,
+            "matched_segment_id": "S35"
+          },
+          {
+            "category": "ARBITRATION_CLASS_WAIVER",
+            "severity": "high",
+            "quote": "WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.",
+            "segment_id": "S36",
+            "explanation_tr": "Kullanıcı, şirkete karşı toplu dava açma veya toplu davalara katılma hakkından feragat ederek uyuşmazlıkları yalnızca bireysel olarak takip etmeyi kabul eder.",
+            "confidence": 0.95,
+            "matched_segment_id": "S36"
+          },
+          {
+            "category": "JURISDICTION_FOREIGN_LAW",
+            "severity": "low",
+            "quote": "These Terms of Use shall be governed by and construed in accordance with the laws of the Netherlands.",
+            "segment_id": "S37",
+            "explanation_tr": "Sözleşmenin Hollanda yasalarına tabi olacağı belirtilmekle birlikte, ikamet ettiğiniz ülkenin emredici tüketici koruma hakları saklı tutulmuştur.",
+            "confidence": 0.9,
+            "matched_segment_id": "S37"
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "low",
+            "quote": "Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"), including responses to questionnaires or through postings to the Netflix service, including our websites and user interfaces, worldwide and in perpetuity without further compensation, acknowledgement or payment to you",
+            "segment_id": "S39",
+            "explanation_tr": "Gönderdiğiniz her türlü geri bildirim, yorum veya fikir üzerinde şirkete dünya çapında, süresiz ve bedelsiz kullanım hakkı tanınır.",
+            "confidence": 0.85,
+            "matched_segment_id": "S39"
+          }
+        ],
+        "rejected": [],
+        "hidden": [
+          {
+            "reason": "clipped",
+            "text": "Select your preferred language:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Privacy Preference Center General Description Essential Cookies First Party Performance and Functionality Cookies Third Party Performance and Functionality Cookies Advertising Cookies General Description This cookie tool will help you understand the use of cookies on the Netflix service, and how you can control the use of these cookies. Privacy settings in most browsers allow you to prevent your browser from accepting some or all cookies, notify you when it receives a new cookie, or disable cookies altogether. If your browser disables all cookies, then information will not be collected or stored via the cookies listed in this tool. This means that your use of the Netflix service may be impaired. Please note that when you use this cookie tool to opt out of certain cookies, your opt out preferences are recorded by placing a cookie on your device. Therefore, your browser must be configured to accept cookies in order for your preferences to take effect. Also, if you delete or clear your cookies, or change your web browser, you will need to reset your cookie preferences. For more information on our use of cookies, please visit the Cookies and other Technologies section of our Privacy Statement. Save settings",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Opt-Out Request Honored",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Privacy Preference Center",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Essential Cookies These cookies are strictly necessary to provide the Netflix service. For example, we and our Service Providers may use these cookies to authenticate and identify users when they use our websites so we can provide our service to them. They also help us to administer and operate our business; for safety, security and fraud prevention; and to comply with law and enforce our Terms of Use. As these cookies are strictly necessary to provide our service, you cannot opt out of them. Lifespan: Most cookies are session cookies (e.g. only active until you close your browser). Some cookies are active for a longer time, ranging from 3 to 12 months. The cookies used to prevent fraud and maintain the security or our services are active for a maximum period of 24 months.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Always Active",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Cookies Details",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "First Party Performance and Functionality Cookies These cookies help us to customize and enhance your online experience with the Netflix service. For example, they help us to remember your preferences and prevent you from needing to re-enter information you previously provided (for example, during member sign up). We also use these cookies to collect information (such as popular pages, conversion rates, viewing patterns, click-through and other information) about our visitors' use of the Netflix service so that we can provide our service and also to research, analyze and improve our services. Deletion of these types of cookies may result in limited functionality of our service. Lifespan: Most cookies are only active for one day. Some cookies are active for a longer time, ranging from 3 to 12 months.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Always Active",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Cookies Details",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Third Party Performance and Functionality Cookies These cookies, set by third parties, help us to customize and enhance your online experience with Netflix. The cookies in this category are only set on Tudum (our official fandom site). We use these cookies to provide you experiences hosted by third parties, like displaying social media content. For further information on how these third parties use such cookies, please see the privacy information provided by the third party on their website. Deletion of these types of cookies may result in limited functionality. Cookies Details",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Third Party Performance and Functionality Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Advertising Cookies These cookies collect information via the Netflix service in connection with “Advertisements” (as defined in our Terms of Use ). “Advertising Companies” (as defined in our Privacy Statement ) may also collect information via these cookies in connection with Advertisements. If you opt out of advertising cookies, you may still see Advertisements on the Netflix service but they will not be based on information collected from advertising cookies. “Netflix Marketing Providers” (also defined in the our Privacy Statement ) may also collect information via advertising cookies in connection with Netflix marketing campaigns promoting the Netflix service or Netflix content, such as our ads on third party services. If you opt out of advertising cookies, you may still see Netflix marketing campaigns promoting the Netflix service or Netflix content, but they will not be based on information collected from these advertising cookies. Finally, Netflix supports the self-regulatory Principles for Online Behavioral Advertising programs of the Digital Advertising Alliance (DAA), the Digital Advertising Alliance of Canada (DAAC), and the European Interactive Digital Advertising Alliance (EDAA). Cookies Details",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Advertising Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Back Button Cookie List Consent Leg.Interest",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Filter Button",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Clear checkbox label Apply Cancel",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Simplified",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Traditional",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Haitian Creole",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "COPY THE URL BELOW",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Enable collaborative features and customize widget:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Bing Webmaster Portal",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Bu sayfa İngilizce",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Türkçe diline çevir",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Abhazca Acholi Afar Afrika dili Almanca Alur Arapça Arnavutça Assamca Avarca Awadhi Aymara Azerice Açece Balice Bambara Baskça Batak Batak Simalungun Batak Toba Baule Başkurtça Belarusça Beluçça Bemba Bengalce Betawi Bhojpuri Bikol Boşnakça Bretonca Bulgarca Burmaca Buryatça Cava dili Cebuano Chamorro Chicheva Chuukese Danca Darice Dinka Divehi Dogri Dombe Dyula Dzongkha Endonezya dili Ermenice Esperantoca Estonyaca Ewe Faroe Dili Farsça Felemenkçe Fiji Dili Filipince Fince Fon Fransızca Fransızca (Kanada) Friuli Dili Frizon dili Fula Ga Galce Galiçyaca Guarani Gücerat dili Gürcüce Habeşçe Haiti creole dili Hakha Falam Hausa dili Havai dili Hiligaynon Hintçe Hmong dili Hosa Hunsrik Hırvatça Jamaika Patois Japonca Jingpho Kalaallisut Kamboçyaca Kannada Kantonca Kanuri Kapampanganca Katalanca Kazakça Keçi Keçuva Khasi dili Kiga dili Kikongo Kinyarwanda dili Kokborok Komi dili Konkani (Latin) Korece Korsika dili Krio dili Kuzey Laponce Kuzey i̇skoç dili Kürtçe Kürtçe (Sorani) Kırgızca Kırım Tatarcası Kırım Tatarcası (Latin) Laoca Latgalcece Latince Lehçe Letonca Ligurca Limburgca Lingala Litvanca Lombardça Luganda Luo dili Lüksemburgca Macarca Madagaskar dili Madurca Maithili Makassarca Makedonca Malayalam Malayca (Arap) Malezya dili Malta dili Mam Manx Maori dili Marathi Mari Marshall Adaları Dili Marwari Mauritius Kreolcesi Meitei/Meetei (Mayek) Minangkabau Mizo Moğolca N'Ko Bambara Nahuatl Ndau (Zimbabwe) Ndebele Nepalce Newari Norveççe Nuer Odia Oksitanca Oromo Osetçe Pangasinan Papiamento Pencabice (Arap) Pencap dili Peştuca Portekizce Portekizce (Portekiz) Roman Romence Rundi Rusça Samoaca Sango Sanskritçe Santali Santali (Latin) Sepedi Sesotho dili Seylanca Seyşel Kreolü Shona Sicilyaca Silezyaca Sint Slovakça Slovence Somalice Sundanizce Susu Svahili dili Swati Sırpça Tacikce Tahitice Tamazight Tamazight (Latin) Tamil Tatarca Tay dili Telugu dili Tetum Tibetçe Tigrinya Tiv Tok Pisin Tongaca Tshiluba Tsonga Tswana Tulu Tumbuka Tuvaca Twi Türkmence Türkçe Udmurtç",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "İngilizce dilini her zaman Türkçe diline çevir",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "İngilizce için asla çeviri yapma",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "help.netflix.com için asla çeviri yapma",
+            "looks_like_instruction": false
+          }
+        ],
+        "instruction_segments": [],
+        "summary_tr": "Netflix Kullanım Koşulları; otomatik yenilenen abonelik, peşin ödemelerin iade edilmemesi ve fiyat değişikliklerinin tek taraflı yapılabilmesi gibi standart dijital abonelik şartlarını içermektedir. Ayrıca şirketin sorumluluğunu sınırlandıran maddeler, toplu dava hakkından feragat hükmü ve geri bildirimler üzerinde geniş kullanım hakları tüketicinin aleyhine olabilecek unsurlar arasındadır.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "low",
+          "reasons": [],
+          "notes": []
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING."
+            },
+            "sys": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.",
+              "segment_id": "S36",
+              "explanation_tr": "Kullanıcı, şirkete karşı toplu dava açma veya toplu davalara katılma hakkından feragat ederek uyuşmazlıkları yalnızca bireysel olarak takip etmeyi kabul eder.",
+              "confidence": 0.95,
+              "matched_segment_id": "S36"
+            },
+            "overlap": 241
+          },
+          {
+            "gold": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "The Netflix service is provided \"as is\" and without warranty or condition. In particular, our service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us."
+            },
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "medium",
+              "quote": "The Netflix service is provided \"as is\" and without warranty or condition. In particular, our service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us.",
+              "segment_id": "S35",
+              "explanation_tr": "Hizmet herhangi bir garanti verilmeden sunulur ve şirket kesintilerden veya dolaylı zararlardan doğan sorumlulukları kabul etmeyerek tazminat haklarından feragat edilmesini ister.",
+              "confidence": 0.95,
+              "matched_segment_id": "S35"
+            },
+            "overlap": 209
+          },
+          {
+            "gold": {
+              "category": "CONTENT_LICENSE",
+              "severity": "medium",
+              "quote": "Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"),"
+            },
+            "sys": {
+              "category": "CONTENT_LICENSE",
+              "severity": "low",
+              "quote": "Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"), including responses to questionnaires or through postings to the Netflix service, including our websites and user interfaces, worldwide and in perpetuity without further compensation, acknowledgement or payment to you",
+              "segment_id": "S39",
+              "explanation_tr": "Gönderdiğiniz her türlü geri bildirim, yorum veya fikir üzerinde şirkete dünya çapında, süresiz ve bedelsiz kullanım hakkı tanınır.",
+              "confidence": 0.85,
+              "matched_segment_id": "S39"
+            },
+            "overlap": 174
+          },
+          {
+            "gold": {
+              "category": "NO_REFUND",
+              "severity": "medium",
+              "quote": "payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content."
+            },
+            "sys": {
+              "category": "NO_REFUND",
+              "severity": "medium",
+              "quote": "To the extent permitted by the applicable law, payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content.",
+              "segment_id": "S30",
+              "explanation_tr": "Yapılan ödemelerin iadesi yapılmaz; kısmen kullanılan dönemler veya izlenmeyen içerikler için herhangi bir geri ödeme ya da bakiye tanımlanmaz.",
+              "confidence": 0.95,
+              "matched_segment_id": "S30"
+            },
+            "overlap": 132
+          },
+          {
+            "gold": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "medium",
+              "quote": "These Terms of Use shall be governed by and construed in accordance with the laws of the Netherlands."
+            },
+            "sys": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "low",
+              "quote": "These Terms of Use shall be governed by and construed in accordance with the laws of the Netherlands.",
+              "segment_id": "S37",
+              "explanation_tr": "Sözleşmenin Hollanda yasalarına tabi olacağı belirtilmekle birlikte, ikamet ettiğiniz ülkenin emredici tüketici koruma hakları saklı tutulmuştur.",
+              "confidence": 0.9,
+              "matched_segment_id": "S37"
+            },
+            "overlap": 101
+          },
+          {
+            "gold": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "We may change our subscription plans and the price of our service from time to time."
+            },
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "We may change our subscription plans and the price of our service from time to time.",
+              "segment_id": "S31",
+              "explanation_tr": "Şirket, abonelik planlarını ve hizmet ücretlerini tek taraflı olarak değiştirme hakkını saklı tutar.",
+              "confidence": 0.9,
+              "matched_segment_id": "S31"
+            },
+            "overlap": 84
+          }
+        ],
+        "fn": [
+          {
+            "category": "AUTO_RENEWAL",
+            "severity": "low",
+            "quote": "Your Netflix subscription will continue until terminated. To purchase a subscription, you will need to add one or more Payment Methods"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "We may, from time to time, change these Terms of Use."
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": ", to the extent permitted by applicable law, we will not be held liable should such events occur."
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "medium",
+            "quote": "worldwide and in perpetuity without further compensation, acknowledgement or payment to you for any purpose whatsoever"
+          }
+        ],
+        "fp": [
+          {
+            "sys": {
+              "category": "AUTO_RENEWAL",
+              "severity": "medium",
+              "quote": "Unless you cancel your subscription before your billing date, you authorize us to charge the subscription fee for the next billing cycle to your Payment Method",
+              "segment_id": "S24",
+              "explanation_tr": "Abonelik fatura kesim tarihinden önce iptal edilmediği sürece otomatik olarak yenilenir ve ücret kayıtlı ödeme yönteminden kesilmeye devam eder.",
+              "confidence": 0.95,
+              "matched_segment_id": "S24"
+            }
+          }
+        ],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 0
+      },
+      "cached": true,
+      "gold_categories": [
+        "AUTO_RENEWAL",
+        "NO_REFUND",
+        "UNILATERAL_CHANGE",
+        "LIABILITY_DISCLAIMER",
+        "ARBITRATION_CLASS_WAIVER",
+        "JURISDICTION_FOREIGN_LAW",
+        "CONTENT_LICENSE"
+      ],
+      "gold_score": 45
+    },
+    {
+      "name": "spotify-com-end-user-agreement_2026-10-11",
+      "url": "https://www.spotify.com/tr-en/legal/end-user-agreement/",
+      "captured_at": "2026-10-11T07:15:23.609Z",
+      "language": "tr",
+      "segments": 96,
+      "coverage": 1,
+      "llm_findings": 9,
+      "rejected": 1,
+      "report": {
+        "url": "https://www.spotify.com/tr-en/legal/end-user-agreement/",
+        "analyzed_at": "2026-10-11T07:15:23.609Z",
+        "document_type": "terms",
+        "language": "tr",
+        "risk_score": 45,
+        "risk_level": "high",
+        "findings": [
+          {
+            "category": "AUTO_RENEWAL",
+            "severity": "medium",
+            "quote": "Aksi belirtilmedikçe (örneğin, Ön Ödemeli Süre için kaydolduysanız) Ücretli Abonelikler iptal edilene kadar süresiz olarak devam eder. Her faturalandırma döneminin ilk gününde tekrar faturalandırılırsınız; ilgili ödemeyi yapar ve o sırada geçerli olan abonelik ücretini ödeme yönteminizden tahsil etmemiz için bize (veya bir üçüncü taraf aracılığıyla kaydolursanız geçerli üçüncü tarafa) yetki verirsiniz.",
+            "segment_id": "S30",
+            "explanation_tr": "Aboneliğiniz siz açıkça iptal etmediğiniz sürece her dönem otomatik olarak yenilenir ve kayıtlı ödeme yönteminizden ücret tahsil edilmeye devam eder.",
+            "confidence": 0.98,
+            "matched_segment_id": "S30"
+          },
+          {
+            "category": "NO_REFUND",
+            "severity": "medium",
+            "quote": "Aksi belirtilmedikçe iptal işlemi iptal ettiğiniz fatura döneminin sonunda geçerli olur ve Spotify Hizmeti'nin ücretsiz sürümüne düşürülürsünüz. Bu Şartlar'da aksi belirtilmediği sürece kısmi üyelik dönemleri için iade veya kredi sunmayız.",
+            "segment_id": "S31",
+            "explanation_tr": "Dönem ortasında iptal etmeniz durumunda, kalan günlerin veya kısmi kullanım süresinin ücreti geri ödenmez ya da kredi olarak verilmez.",
+            "confidence": 0.95,
+            "matched_segment_id": "S31"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "Spotify; düzenli abonelik ücretleri, Ön Ödeme Dönemi (henüz ödemesi yapılmamış dönemler için) ya da Kodlar (yukarıda tanımlanmıştır) dahil Ücretli Abonelikler'in ücretini zaman zaman değiştirebilir ve her türlü fiyat değişikliğini makul bir süre önce size bildirecektir. Fiyat değişiklikleri, fiyat değişikliği tarihini takip eden bir sonraki abonelik döneminin başında yürürlüğe girer. Geçerli kanunlara tabi olmak üzere, fiyat değişikliği geçerli olduktan sonra Spotify Hizmeti'ni kullanmaya devam ederek yeni fiyatı kabul etmiş olursunuz.",
+            "segment_id": "S27",
+            "explanation_tr": "Şirket abonelik ücretlerini tek taraflı olarak değiştirebilir ve fiyat artışından sonra hizmeti kullanmaya devam etmeniz yeni fiyatı kabul ettiğiniz anlamına gelir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S27"
+          },
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "medium",
+            "quote": "Spotify, her türlü Kullanıcı İçeriği'ni herhangi bir nedenle ya da nedensiz şekilde kaldırma ya da buna erişimi engelleme hakkını saklı tutar. Spotify bu tür eylemleri size önceden bildirimde bulunmaksızın gerçekleştirebilir.",
+            "segment_id": "S46",
+            "explanation_tr": "Şirket, yüklediğiniz veya paylaştığınız içerikleri herhangi bir gerekçe göstermeksizin ve önceden haber vermeden silme veya engelleme hakkını saklı tutar.",
+            "confidence": 0.92,
+            "matched_segment_id": "S46"
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "high",
+            "quote": "Bu doğrultuda Spotify'a herhangi bir Kullanıcı İçeriğinizi Spotify Hizmeti ile bağlantılı olarak herhangi bir ortam aracılığıyla, tek başına ya da başka İçerik ile veya materyallerle birlikte, herhangi bir şekilde ve bilinen ya da bundan sonra geliştirilecek olan herhangi bir araçla, yöntemle veya teknolojiyle çoğaltmak, herkese açık hale getirmek, icra etmek ve göstermek, tercüme etmek, değiştirmek, türev eserlerini oluşturmak ve dağıtmak üzere münhasır olmayan, devredilebilir, alt lisansı verilebilir, telifsiz, tamamen ödenmiş, iptal edilemez ve tüm dünyada geçerli bir lisans verirsiniz.",
+            "segment_id": "S47",
+            "explanation_tr": "Hizmete yüklediğiniz içerikler üzerinde şirkete dünya genelinde geçerli, ücretsiz, devredilebilir ve iptal edilemez çok geniş kullanım ve değiştirme hakları vermiş olursunuz.",
+            "confidence": 0.98,
+            "matched_segment_id": "S47"
+          },
+          {
+            "category": "ARBITRATION_CLASS_WAIVER",
+            "severity": "high",
+            "quote": "GEÇERLİ KANUNLARIN İZİN VERDİĞİ DURUMLARDA SİZ VE SPOTIFY, BİRBİRİNİZE KARŞI HERHANGİ BİR TOPLU YA DA TEMSİLİ GİBİ GÖRÜNEN DAVADA BİR DAVACI YA DA TOPLU DAVA TARAFI OLARAK DEĞİL, YALNIZCA KENDİ SIFATINIZLA İDDİADA BULUNABİLECEĞİNİZİ KABUL EDERSİNİZ.",
+            "segment_id": "S74",
+            "explanation_tr": "Şirkete karşı diğer kullanıcılarla birleşerek toplu dava açma veya temsilci sıfatıyla hak arama hakkınızdan feragat etmeniz istenmektedir.",
+            "confidence": 0.98,
+            "matched_segment_id": "S74"
+          },
+          {
+            "category": "ARBITRATION_CLASS_WAIVER",
+            "severity": "high",
+            "quote": "Siz ve Spotify, bu Sözleşmeler ile veya Hizmet'in bir kullanıcısı olarak Spotify ile aranızdaki ilişkiyle herhangi bir şekilde bağlantılı ya da ilişkili olarak Spotify ile aranızda oluşan her türlü anlaşmazlığın, iddianın veya çatışmanın (sözleşmeye, haksız fiile, yasaya, dolandırıcılığa, yanlış beyana ya da başka bir yasal teoriye dayalı olarak veya iddianın Sözleşmeler süresince ya da Sözleşmeler sona erdikten sonra oluşmasından bağımsız olarak), zorunlu bağlayıcı bireysel tahkim ile çözümleneceğini kabul edesiniz.",
+            "segment_id": "S77",
+            "explanation_tr": "Uyuşmazlık durumunda mahkemeye gitmek yerine bağlayıcı bireysel tahkim sürecine başvurmanız zorunlu tutulmaktadır.",
+            "confidence": 0.96,
+            "matched_segment_id": "S77"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir. Güncellenen Şartlar kapsamında Spotify Hizmeti'ni kullanmaya devam etmek istemiyorsanız bizimle iletişime geçerek hesabınızı sonlandırabilirsiniz.",
+            "segment_id": "S87",
+            "explanation_tr": "Kullanım şartlarında yapılan değişikliklerden sonra hizmeti kullanmaya devam etmeniz yeni şartları zımnen kabul ettiğiniz varsayılır; tek alternatifiniz hesabınızı kapatmaktır.",
+            "confidence": 0.94,
+            "matched_segment_id": "S87"
+          }
+        ],
+        "rejected": [
+          {
+            "finding": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "segment_id": "S65",
+              "quote": "Spotify, yetkilileri, hissedarları, çalışanları, temsilcileri, yöneticileri, bağlı ortaklıkları, iştirakleri, halefleri, görevlileri, tedarikçileri veya lisans sağlayıcıları hiçbir durumda şunlardan sorumlu olmayacaktır: (1) her türlü dolaylı, özel, arızi, cezai, örnek niteliğindeki veya bağlı zarardan; (2) Spotify Hizmeti'nin, cihazların, üçüncü taraf uygulamalarının veya üçüncü taraf uygulama içeriğinin kullanılmasından veya kullanılamamasından kaynaklanan her durumda kullanım kaybı, veri kaybı, iş veya kâr kaybından (doğrudan veya dolaylı); veya (3) Spotify Hizmeti'ne, üçüncü taraf uygulamalarına veya üçüncü taraf uygulama içeriğine ilişkin tüm iddialar için (a) Spotify'a ilk iddiadan önceki on iki ay içinde ödemiş olduğunuz tutar veya (b) 30,00 $ arasında hangisi daha yüksekse ilgili tutardaki toplam yükümlülük.",
+              "explanation_tr": "Şirket veri ve kâr kaybı gibi dolaylı zararlardan sorumlu olmadığını belirtmekte ve azami tazminat sorumluluğunu son 12 ayda ödenen tutar veya 30 dolar ile sınırlamaktadır.",
+              "confidence": 0.97
+            },
+            "reason": "schema_invalid",
+            "detail": "findings.5.quote – Too big: expected string to have <=600 characters"
+          }
+        ],
+        "hidden": [
+          {
+            "reason": "zero_size_font",
+            "text": "Spotify – Home",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Premium Individual 1 account – for one person. Premium Duo 2 accounts – for couples under one roof. Premium Family Up to 6 accounts – for family under one roof. Premium Student 1 account – discount for eligible students.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "zero_size_font",
+            "text": "Spotify – Home",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Simplified",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Traditional",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Haitian Creole",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "COPY THE URL BELOW",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Enable collaborative features and customize widget:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Bing Webmaster Portal",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "About Your Privacy We process your data to deliver content or advertisements and measure the delivery of such content or advertisements to extract insights about our website. We share this information with our partners on the basis of consent and legitimate interest. You may exercise your right to consent or object to a legitimate interest, based on a specific purpose below or at a partner level in the link under each purpose. These choices will be signaled to our vendors participating in the Transparency and Consent Framework. More information Allow All Manage Consent Preferences Strictly Necessary Cookies Always Active First Party Functional Cookies First Party Performance Cookies First Party Targeting Cookies Content Selection, Delivery, and Reporting Creation and Use of Universal Identifiers Store and/or access information on a device 83 partners can use this purpose Personalised advertising 77 partners can use this purpose Personalised content 16 partners can use this purpose Advertising and content measurement, audience research, and services development 90 partners can use this purpose Ensure security, prevent and detect fraud, and fix errors 62 partners can use this special purpose Always Active Deliver and present advertising and content 61 partners can use this special purpose Always Active Match and combine data from other data sources 59 partners can use this feature Always Active Link different devices 60 partners can use this feature Always Active Identify devices based on information transmitted automatically 71 partners can use this feature Always Active Functional Cookies Performance Cookies Targeting Cookies Save and communicate privacy choices 56 partners can use this special purpose Always Active Reject All Confirm My Choices",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies are necessary for the service to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the service will not then work.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "First Party Functional Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies enable us to provide enhanced functionality and personalisation. Without these cookies, some or all of these services may not function properly.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "First Party Performance Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors move around the platform. Without these cookies, we are unable to monitor the performance of our services.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "First Party Targeting Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies may be used to deliver targeted advertisements and to build a profile of your interests. If you do not allow these cookies you will still experience advertising but it will be less tailored to you.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Content Selection, Delivery, and Reporting",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. Without these cookies, you may not be able to use or see these sharing tools.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Creation and Use of Universal Identifiers",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Where we have your email address, device ID, other contact details, or data accessed from your device, the following vendors may rely on your consent for this purpose in order to create a unique advertising identifier which is used for personalised advertising, measurement, and analytics subject to your choices below: The Trade Desk Inc. (EUID), LiveRamp (RampID), ID5 (ID5 ID), Google (PAIR ID).",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Store and/or access information on a device",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Store and access information on a device",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Cookies, device or similar online identifiers together with other information (e.g. browser type and information, language, screen size, supported technologies, etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Personalised advertising",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Use profiles to select personalised advertising 62 partners can use this purpose Advertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. View Illustrations Create profiles for personalised advertising 62 partners can use this purpose Information about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. View Illustrations Use limited data to select advertising 74 partners can use this purpose Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). View Illustrations Object to Legitimate Interests List of IAB Vendors",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Remove Objection",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Personalised content",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Create profiles to personalise content 16 partners can use this purpose Information about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests. View Illustrations Use profiles to select personalised content 14 partners can use this purpose Content presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. View Illustrations List of IAB Vendors",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Advertising and content measurement, audience research, and services development",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Understand audiences through statistics or combinations of data from different sources 59 partners can use this purpose Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents). View Illustrations Object to Legitimate Interests Develop and improve services 63 partners can use this purpose Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers. View Illustrations Measure content performance 31 partners can use this purpose Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. View Illustrations Object to Legitimate Interests Measure advertising performance 85 partners can use this purpose Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very ",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Remove Objection",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Remove Objection",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Switch Label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Remove Objection",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Match and combine data from other sources",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Always Active",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, or your answers to a survey), in support of the purposes explained in this notice. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices). List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Functional Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies allow the website to remember choices you make (such as your user name, language or the region you are in) and provide enhanced, more personal features and content. These cookies can also be used to remember changes you have made to text size, fonts and other parts of web pages that you can customise. If you do not allow these cookies then some or all of these services may not function properly.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Performance Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies gather data about how visitors use our services to enhance the performance of our services. For example, these cookies allow us to count visits and traffic sources so we can measure and improve the performance of our services. They help us to know which pages are the most and least popular and see how visitors interact with our services. If you do not allow these cookies we will not be able to monitor the performance of our services.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Targeting Cookies",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaigns. They remember that you have visited a website and this information may be shared with other organisations such as advertisers. These cookies collect information about your browsing habits in order to make advertising relevant to you and your interests.",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. List of IAB Vendors | View Illustrations",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Back Button Cookie List Search Icon Filter Icon Consent",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Clear checkbox label Apply Cancel",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Leg.Interest",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "checkbox label",
+            "looks_like_instruction": false
+          }
+        ],
+        "instruction_segments": [],
+        "summary_tr": "Metin, Spotify hizmetinin kullanımına dair önemli tüketici riskleri içermektedir. Aboneliklerin otomatik yenilenmesi, kısmi iadelerin reddedilmesi, tek taraflı fiyat ve sözleşme değişikliklerinin sessiz sedasız kabul edilmiş sayılması gibi finansal yükümlülükler bulunmaktadır. Ayrıca şirketin sorumluluğunu asgari düzeyle sınırlandırması, kullanıcı içeriklerine dair geniş lisans talep etmesi, zorunlu tahkim ve toplu dava hakkından feragat maddeleri yasal hak arama özgürlüğünü kısıtlamaktadır.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "high",
+          "reasons": [
+            "rejected_claims"
+          ],
+          "notes": []
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "CONTENT_LICENSE",
+              "severity": "high",
+              "quote": "Bu doğrultuda Spotify'a herhangi bir Kullanıcı İçeriğinizi Spotify Hizmeti ile bağlantılı olarak herhangi bir ortam aracılığıyla, tek başına ya da başka İçerik ile veya materyallerle birlikte, herhangi bir şekilde ve bilinen ya da bundan sonra geliştirilecek olan herhangi bir araçla, yöntemle veya teknolojiyle çoğaltmak, herkese açık hale getirmek, icra etmek ve göstermek, tercüme etmek, değiştirmek, türev eserlerini oluşturmak ve dağıtmak üzere münhasır olmayan, devredilebilir, alt lisansı verilebilir, telifsiz, tamamen ödenmiş, iptal edilemez ve tüm dünyada geçerli bir lisans verirsiniz."
+            },
+            "sys": {
+              "category": "CONTENT_LICENSE",
+              "severity": "high",
+              "quote": "Bu doğrultuda Spotify'a herhangi bir Kullanıcı İçeriğinizi Spotify Hizmeti ile bağlantılı olarak herhangi bir ortam aracılığıyla, tek başına ya da başka İçerik ile veya materyallerle birlikte, herhangi bir şekilde ve bilinen ya da bundan sonra geliştirilecek olan herhangi bir araçla, yöntemle veya teknolojiyle çoğaltmak, herkese açık hale getirmek, icra etmek ve göstermek, tercüme etmek, değiştirmek, türev eserlerini oluşturmak ve dağıtmak üzere münhasır olmayan, devredilebilir, alt lisansı verilebilir, telifsiz, tamamen ödenmiş, iptal edilemez ve tüm dünyada geçerli bir lisans verirsiniz.",
+              "segment_id": "S47",
+              "explanation_tr": "Hizmete yüklediğiniz içerikler üzerinde şirkete dünya genelinde geçerli, ücretsiz, devredilebilir ve iptal edilemez çok geniş kullanım ve değiştirme hakları vermiş olursunuz.",
+              "confidence": 0.98,
+              "matched_segment_id": "S47"
+            },
+            "overlap": 596
+          },
+          {
+            "gold": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "GEÇERLİ KANUNLARIN İZİN VERDİĞİ DURUMLARDA SİZ VE SPOTIFY, BİRBİRİNİZE KARŞI HERHANGİ BİR TOPLU YA DA TEMSİLİ GİBİ GÖRÜNEN DAVADA BİR DAVACI YA DA TOPLU DAVA TARAFI OLARAK DEĞİL, YALNIZCA KENDİ SIFATINIZLA İDDİADA BULUNABİLECEĞİNİZİ KABUL EDERSİNİZ"
+            },
+            "sys": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "GEÇERLİ KANUNLARIN İZİN VERDİĞİ DURUMLARDA SİZ VE SPOTIFY, BİRBİRİNİZE KARŞI HERHANGİ BİR TOPLU YA DA TEMSİLİ GİBİ GÖRÜNEN DAVADA BİR DAVACI YA DA TOPLU DAVA TARAFI OLARAK DEĞİL, YALNIZCA KENDİ SIFATINIZLA İDDİADA BULUNABİLECEĞİNİZİ KABUL EDERSİNİZ.",
+              "segment_id": "S74",
+              "explanation_tr": "Şirkete karşı diğer kullanıcılarla birleşerek toplu dava açma veya temsilci sıfatıyla hak arama hakkınızdan feragat etmeniz istenmektedir.",
+              "confidence": 0.98,
+              "matched_segment_id": "S74"
+            },
+            "overlap": 248
+          },
+          {
+            "gold": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Bu Şartlar Hakkında Geçerli kanuna göre bir sözleşmeyle sınırlanamayacak belirli haklara sahip olabilirsiniz. Bu şartlar hiçbir şekilde bu hakları sınırlamayı amaçlamaz. Değişiklikler Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir."
+            },
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir. Güncellenen Şartlar kapsamında Spotify Hizmeti'ni kullanmaya devam etmek istemiyorsanız bizimle iletişime geçerek hesabınızı sonlandırabilirsiniz.",
+              "segment_id": "S87",
+              "explanation_tr": "Kullanım şartlarında yapılan değişikliklerden sonra hizmeti kullanmaya devam etmeniz yeni şartları zımnen kabul ettiğiniz varsayılır; tek alternatifiniz hesabınızı kapatmaktır.",
+              "confidence": 0.94,
+              "matched_segment_id": "S87"
+            },
+            "overlap": 140
+          },
+          {
+            "gold": {
+              "category": "AUTO_RENEWAL",
+              "severity": "medium",
+              "quote": "Faturalandırma ve İptal Aksi belirtilmedikçe (örneğin, Ön Ödemeli Süre için kaydolduysanız) Ücretli Abonelikler iptal edilene kadar süresiz olarak devam eder."
+            },
+            "sys": {
+              "category": "AUTO_RENEWAL",
+              "severity": "medium",
+              "quote": "Aksi belirtilmedikçe (örneğin, Ön Ödemeli Süre için kaydolduysanız) Ücretli Abonelikler iptal edilene kadar süresiz olarak devam eder. Her faturalandırma döneminin ilk gününde tekrar faturalandırılırsınız; ilgili ödemeyi yapar ve o sırada geçerli olan abonelik ücretini ödeme yönteminizden tahsil etmemiz için bize (veya bir üçüncü taraf aracılığıyla kaydolursanız geçerli üçüncü tarafa) yetki verirsiniz.",
+              "segment_id": "S30",
+              "explanation_tr": "Aboneliğiniz siz açıkça iptal etmediğiniz sürece her dönem otomatik olarak yenilenir ve kayıtlı ödeme yönteminizden ücret tahsil edilmeye devam eder.",
+              "confidence": 0.98,
+              "matched_segment_id": "S30"
+            },
+            "overlap": 132
+          },
+          {
+            "gold": {
+              "category": "NO_REFUND",
+              "severity": "high",
+              "quote": "Bu Şartlar'da aksi belirtilmediği sürece kısmi üyelik dönemleri için iade veya kredi sunmayız."
+            },
+            "sys": {
+              "category": "NO_REFUND",
+              "severity": "medium",
+              "quote": "Aksi belirtilmedikçe iptal işlemi iptal ettiğiniz fatura döneminin sonunda geçerli olur ve Spotify Hizmeti'nin ücretsiz sürümüne düşürülürsünüz. Bu Şartlar'da aksi belirtilmediği sürece kısmi üyelik dönemleri için iade veya kredi sunmayız.",
+              "segment_id": "S31",
+              "explanation_tr": "Dönem ortasında iptal etmeniz durumunda, kalan günlerin veya kısmi kullanım süresinin ücreti geri ödenmez ya da kredi olarak verilmez.",
+              "confidence": 0.95,
+              "matched_segment_id": "S31"
+            },
+            "overlap": 94
+          }
+        ],
+        "fn": [
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": "Spotify Hizmeti \"olduğu gibi\" ve \"kullanılabilir olduğu şekliyle\", hiçbir türde açık, zımni veya yasal garanti olmaksızın sunulmaktadır. Ayrıca, Spotify ve tüm içerik sahipleri yeterli kalite, pazarlanabilirlik, belirli bir amaca uygunluk veya ihlal içermemeyle ilgili her türlü açık, zımni ve yasal garantiyi reddetmektedir."
+          },
+          {
+            "category": "JURISDICTION_FOREIGN_LAW",
+            "severity": "medium",
+            "quote": "Bulgaristan, Kıbrıs, Estonya, Fransa, Hong Kong, Letonya, Litvanya, Lüksemburg, Malta, Monako, Norveç, Filipinler, Portekiz, Slovakya, İspanya, Türkiye İsveç Kanunları Münhasır değil;"
+          }
+        ],
+        "fp": [
+          {
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Spotify; düzenli abonelik ücretleri, Ön Ödeme Dönemi (henüz ödemesi yapılmamış dönemler için) ya da Kodlar (yukarıda tanımlanmıştır) dahil Ücretli Abonelikler'in ücretini zaman zaman değiştirebilir ve her türlü fiyat değişikliğini makul bir süre önce size bildirecektir. Fiyat değişiklikleri, fiyat değişikliği tarihini takip eden bir sonraki abonelik döneminin başında yürürlüğe girer. Geçerli kanunlara tabi olmak üzere, fiyat değişikliği geçerli olduktan sonra Spotify Hizmeti'ni kullanmaya devam ederek yeni fiyatı kabul etmiş olursunuz.",
+              "segment_id": "S27",
+              "explanation_tr": "Şirket abonelik ücretlerini tek taraflı olarak değiştirebilir ve fiyat artışından sonra hizmeti kullanmaya devam etmeniz yeni fiyatı kabul ettiğiniz anlamına gelir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S27"
+            }
+          },
+          {
+            "sys": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "medium",
+              "quote": "Spotify, her türlü Kullanıcı İçeriği'ni herhangi bir nedenle ya da nedensiz şekilde kaldırma ya da buna erişimi engelleme hakkını saklı tutar. Spotify bu tür eylemleri size önceden bildirimde bulunmaksızın gerçekleştirebilir.",
+              "segment_id": "S46",
+              "explanation_tr": "Şirket, yüklediğiniz veya paylaştığınız içerikleri herhangi bir gerekçe göstermeksizin ve önceden haber vermeden silme veya engelleme hakkını saklı tutar.",
+              "confidence": 0.92,
+              "matched_segment_id": "S46"
+            }
+          },
+          {
+            "sys": {
+              "category": "ARBITRATION_CLASS_WAIVER",
+              "severity": "high",
+              "quote": "Siz ve Spotify, bu Sözleşmeler ile veya Hizmet'in bir kullanıcısı olarak Spotify ile aranızdaki ilişkiyle herhangi bir şekilde bağlantılı ya da ilişkili olarak Spotify ile aranızda oluşan her türlü anlaşmazlığın, iddianın veya çatışmanın (sözleşmeye, haksız fiile, yasaya, dolandırıcılığa, yanlış beyana ya da başka bir yasal teoriye dayalı olarak veya iddianın Sözleşmeler süresince ya da Sözleşmeler sona erdikten sonra oluşmasından bağımsız olarak), zorunlu bağlayıcı bireysel tahkim ile çözümleneceğini kabul edesiniz.",
+              "segment_id": "S77",
+              "explanation_tr": "Uyuşmazlık durumunda mahkemeye gitmek yerine bağlayıcı bireysel tahkim sürecine başvurmanız zorunlu tutulmaktadır.",
+              "confidence": 0.96,
+              "matched_segment_id": "S77"
+            }
+          }
+        ],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 3
+      },
+      "cached": true,
+      "gold_categories": [
+        "AUTO_RENEWAL",
+        "NO_REFUND",
+        "CONTENT_LICENSE",
+        "LIABILITY_DISCLAIMER",
+        "ARBITRATION_CLASS_WAIVER",
+        "JURISDICTION_FOREIGN_LAW",
+        "UNILATERAL_CHANGE"
+      ],
+      "gold_score": 53
+    },
+    {
+      "name": "store-steampowered-com-subscriber-agreement_2026-10-11",
+      "url": "https://store.steampowered.com/subscriber_agreement/",
+      "captured_at": "2026-10-11T07:16:52.679Z",
+      "language": "en",
+      "segments": 109,
+      "coverage": 1,
+      "llm_findings": 7,
+      "rejected": 0,
+      "report": {
+        "url": "https://store.steampowered.com/subscriber_agreement/",
+        "analyzed_at": "2026-10-11T07:16:52.679Z",
+        "document_type": "subscription",
+        "language": "en",
+        "risk_score": 47,
+        "risk_level": "high",
+        "findings": [
+          {
+            "category": "AUTO_RENEWAL",
+            "severity": "medium",
+            "quote": "For Subscriptions ordered based on an agreed usage period, where recurring payments are made in exchange for continued use (\"Recurring Payment Subscriptions\"), by continuing to use the Recurring Payment Subscription you agree and reaffirm that Valve is authorized to charge your credit card (or your Steam Wallet, if funded), or to process your payment with any other applicable third-party payment processor, for any applicable recurring payment amounts.",
+            "segment_id": "S35",
+            "explanation_tr": "Abonelik hizmeti, kullanıcı aksini belirtmedikçe kayıtlı ödeme yönteminden düzenli olarak otomatik çekim yapmaya devam eder.",
+            "confidence": 0.95,
+            "matched_segment_id": "S35"
+          },
+          {
+            "category": "NO_REFUND",
+            "severity": "medium",
+            "quote": "Subject to Section 3.I, funds added to the Steam Wallet are non-refundable and non-transferable.",
+            "segment_id": "S41",
+            "explanation_tr": "Steam Cüzdanına yüklenen bakiyeler genel kural olarak iade edilmez ve nakde çevrilemez.",
+            "confidence": 0.9,
+            "matched_segment_id": "S41"
+          },
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "high",
+            "quote": "Valve may restrict or terminate your Account(s) or a particular Subscription for any conduct or activity that is illegal, constitutes a Cheat or Automation or breaches the Steam Online Conduct Rules. You acknowledge that Valve is not required to provide you notice before terminating your Subscription(s) and/or Account.",
+            "segment_id": "S63",
+            "explanation_tr": "Valve, belirli ihlal veya şüphe durumlarında önceden haber vermeksizin hesabınızı veya aboneliğinizi sonlandırabilir.",
+            "confidence": 0.92,
+            "matched_segment_id": "S63"
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "medium",
+            "quote": "When you upload your content to Steam to make it available to other users and/or to Valve, you grant Valve and its affiliates the worldwide, non-exclusive right to use, reproduce, modify, create derivative works from, distribute, transmit, transcode, translate, broadcast, and otherwise communicate, and publicly display and publicly perform, your User Generated Content, and derivative works of your User Generated Content, for the purpose of the operation, distribution, incorporation as part of and promotion of the Steam service, Steam games or other Steam offerings, including Subscriptions.",
+            "segment_id": "S66",
+            "explanation_tr": "Kullanıcıların Steam üzerine yüklediği içerikler üzerinde şirkete dünya çapında, telifsiz ve geniş kapsamlı kullanım ve işleme hakları tanınmaktadır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S66"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NEITHER VALVE, ITS LICENSORS, NOR THEIR AFFILIATES, NOR ANY OF VALVE’S SERVICE PROVIDERS, SHALL BE LIABLE IN ANY WAY FOR LOSS OR DAMAGE OF ANY KIND RESULTING FROM THE USE OR INABILITY TO USE STEAM, YOUR ACCOUNT, YOUR SUBSCRIPTIONS AND THE CONTENT AND SERVICES INCLUDING, BUT NOT LIMITED TO, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES.",
+            "segment_id": "S86",
+            "explanation_tr": "Hizmetin veya hesabın kullanımından doğabilecek aksaklık, arıza ve zararlar için şirketin hukuki sorumluluğu neredeyse tamamen sınırlandırılmıştır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S86"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "Furthermore, Valve may amend this Agreement (including any Subscription Terms or Rules of Use) unilaterally at any time in its sole discretion. In this case, you will be notified by e-mail of any amendment to this Agreement made by Valve at least 30 (30) days before the effective date of the amendment. You can view the Agreement at any time at http://www.steampowered.com/. Your failure to cancel your Account prior to the effective date of the amendment will constitute your acceptance of the amended terms.",
+            "segment_id": "S92",
+            "explanation_tr": "Valve sözleşme şartlarını tek taraflı olarak değiştirebilir ve bildirime rağmen hesabını kapatmayan kullanıcılar bu değişiklikleri kabul etmiş sayılır.",
+            "confidence": 0.93,
+            "matched_segment_id": "S92"
+          },
+          {
+            "category": "JURISDICTION_FOREIGN_LAW",
+            "severity": "high",
+            "quote": "You and Valve agree that this Agreement shall be deemed to have been made and executed in the State of Washington, U.S.A., and Washington law, excluding conflict of laws principles and the Convention on Contracts for the International Sale of Goods, governs all disputes and claims arising out of or relating to: (i) any aspect of the relationship between us; (ii) this Agreement; or (iii) your use of Steam, your Account or the Content and Services.",
+            "segment_id": "S100",
+            "explanation_tr": "AB ve BK dışındaki kullanıcılar için uyuşmazlıklarda ABD Washington Eyaleti hukuku ve mahkemeleri yetkili kılınmıştır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S100"
+          }
+        ],
+        "rejected": [],
+        "hidden": [
+          {
+            "reason": "display_none",
+            "text": "Giriş yap Mağaza Topluluk Hakkında Destek Dili değiştir Steam mobil uygulamasını yükle Masaüstü internet sitesini görüntüle © Valve Corporation. Tüm hakları saklıdır. Tüm ticari markalar, ABD ve diğer ülkelerde ilgili sahiplerinin mülkiyetindedir. Gizlilik Politikası | Yasal Bilgi | Erişilebilirlik | Steam Abonelik Sözleşmesi | İadeler | Çerezler",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Ana Sayfa Keşif Kuyruğu İstek Listesi Puan Dükkânı Haberler Sıralamalar",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Ana Sayfa Tartışmalar Atölye Pazar Yayınlar",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Ana Sayfa Keşif Kuyruğu İstek Listesi Puan Dükkânı Haberler Sıralamalar",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Ana Sayfa Tartışmalar Atölye Pazar Yayınlar",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "简体中文 (Basitleştirilmiş Çince) 繁體中文 (Geleneksel Çince) 日本語 (Japonca) 한국어 (Korece) ไทย (Tayca) Bahasa Indonesia (Endonezce) Bahasa Melayu (Malayca) BETA Български (Bulgarca) Čeština (Çekçe) Dansk (Danca) Deutsch (Almanca) English (İngilizce) Español - España (İspanyolca - İspanya) Español - Latinoamérica (İspanyolca - Latin Amerika) Ελληνικά (Yunanca) Français (Fransızca) Italiano (İtalyanca) Magyar (Macarca) Nederlands (Hollandaca) Norsk (Norveççe) Polski (Lehçe) Português (Portekizce - Portekiz) Português - Brasil (Portekizce - Brezilya) Română (Rumence) Русский (Rusça) Suomi (Fince) Svenska (İsveççe) Tiếng Việt (Vietnamca) Українська (Ukraynaca) Bir çeviri sorunu bildirin",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Simplified",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Chinese Traditional",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Haitian Creole",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "TRANSLATE with",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "COPY THE URL BELOW",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "EMBED THE SNIPPET BELOW IN YOUR SITE",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Enable collaborative features and customize widget:",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "visibility_hidden",
+            "text": "Bing Webmaster Portal",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Bu sayfa İngilizce",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Türkçe diline çevir",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "Abhazca Acholi Afar Afrika dili Almanca Alur Arapça Arnavutça Assamca Avarca Awadhi Aymara Azerice Açece Balice Bambara Baskça Batak Batak Simalungun Batak Toba Baule Başkurtça Belarusça Beluçça Bemba Bengalce Betawi Bhojpuri Bikol Boşnakça Bretonca Bulgarca Burmaca Buryatça Cava dili Cebuano Chamorro Chicheva Chuukese Danca Darice Dinka Divehi Dogri Dombe Dyula Dzongkha Endonezya dili Ermenice Esperantoca Estonyaca Ewe Faroe Dili Farsça Felemenkçe Fiji Dili Filipince Fince Fon Fransızca Fransızca (Kanada) Friuli Dili Frizon dili Fula Ga Galce Galiçyaca Guarani Gücerat dili Gürcüce Habeşçe Haiti creole dili Hakha Falam Hausa dili Havai dili Hiligaynon Hintçe Hmong dili Hosa Hunsrik Hırvatça Jamaika Patois Japonca Jingpho Kalaallisut Kamboçyaca Kannada Kantonca Kanuri Kapampanganca Katalanca Kazakça Keçi Keçuva Khasi dili Kiga dili Kikongo Kinyarwanda dili Kokborok Komi dili Konkani (Latin) Korece Korsika dili Krio dili Kuzey Laponce Kuzey i̇skoç dili Kürtçe Kürtçe (Sorani) Kırgızca Kırım Tatarcası Kırım Tatarcası (Latin) Laoca Latgalcece Latince Lehçe Letonca Ligurca Limburgca Lingala Litvanca Lombardça Luganda Luo dili Lüksemburgca Macarca Madagaskar dili Madurca Maithili Makassarca Makedonca Malayalam Malayca (Arap) Malezya dili Malta dili Mam Manx Maori dili Marathi Mari Marshall Adaları Dili Marwari Mauritius Kreolcesi Meitei/Meetei (Mayek) Minangkabau Mizo Moğolca N'Ko Bambara Nahuatl Ndau (Zimbabwe) Ndebele Nepalce Newari Norveççe Nuer Odia Oksitanca Oromo Osetçe Pangasinan Papiamento Pencabice (Arap) Pencap dili Peştuca Portekizce Portekizce (Portekiz) Roman Romence Rundi Rusça Samoaca Sango Sanskritçe Santali Santali (Latin) Sepedi Sesotho dili Seylanca Seyşel Kreolü Shona Sicilyaca Silezyaca Sint Slovakça Slovence Somalice Sundanizce Susu Svahili dili Swati Sırpça Tacikce Tahitice Tamazight Tamazight (Latin) Tamil Tatarca Tay dili Telugu dili Tetum Tibetçe Tigrinya Tiv Tok Pisin Tongaca Tshiluba Tsonga Tswana Tulu Tumbuka Tuvaca Twi Türkmence Türkçe Udmurtç",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "İngilizce dilini her zaman Türkçe diline çevir",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "İngilizce için asla çeviri yapma",
+            "looks_like_instruction": false
+          },
+          {
+            "reason": "display_none",
+            "text": "store.steampowered.com için asla çeviri yapma",
+            "looks_like_instruction": false
+          }
+        ],
+        "instruction_segments": [],
+        "summary_tr": "Steam Abonelik Sözleşmesi; tek taraflı değişiklik hakkı, Steam Cüzdanı bakiyelerinin iade edilmezliği ve şirketin kapsamlı sorumluluk muafiyeti gibi tüketici aleyhine ağır şartlar içermektedir. Ayrıca şirket, ihlal durumunda önceden bildirim yapmaksızın hesabı kapatabilmekte ve AB/BK dışındaki kullanıcılar için ABD mahkemelerini yetkili kılmaktadır. Yüklenen kullanıcı içerikleri üzerinde de Valve'a geniş ve bedelsiz lisans hakları tanınmaktadır.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "low",
+          "reasons": [],
+          "notes": []
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "CONTENT_LICENSE",
+              "severity": "high",
+              "quote": "When you upload your content to Steam to make it available to other users and/or to Valve, you grant Valve and its affiliates the worldwide, non-exclusive right to use, reproduce, modify, create derivative works from, distribute, transmit, transcode, translate, broadcast, and otherwise communicate, and publicly display and publicly perform, your User Generated Content, and derivative works of your User Generated Content, for the purpose of the operation, distribution, incorporation as part of and promotion of the Steam service, Steam games or other Steam offerings, including Subscriptions. This license is granted to Valve as the content is uploaded on Steam for the entire duration of the intellectual property rights. It may be terminated if Valve is in breach of the license and has not cured such breach within fourteen (14) days from receiving notice from you sent to the attention of the Valve Legal Department at the applicable Valve address noted on this Privacy Policy page. The termination of said license does not affect the rights of any sub-licensees pursuant to any sub-license granted by Valve prior to termination of the license. Valve is the sole owner of the derivative works created by Valve from your User Generated Content, and is therefore entitled to grant licenses on these derivative works. If you use Valve cloud storage, you grant us a license to store your information as part of that service. Valve may place limits on the amount of storage you may use."
+            },
+            "sys": {
+              "category": "CONTENT_LICENSE",
+              "severity": "medium",
+              "quote": "When you upload your content to Steam to make it available to other users and/or to Valve, you grant Valve and its affiliates the worldwide, non-exclusive right to use, reproduce, modify, create derivative works from, distribute, transmit, transcode, translate, broadcast, and otherwise communicate, and publicly display and publicly perform, your User Generated Content, and derivative works of your User Generated Content, for the purpose of the operation, distribution, incorporation as part of and promotion of the Steam service, Steam games or other Steam offerings, including Subscriptions.",
+              "segment_id": "S66",
+              "explanation_tr": "Kullanıcıların Steam üzerine yüklediği içerikler üzerinde şirkete dünya çapında, telifsiz ve geniş kapsamlı kullanım ve işleme hakları tanınmaktadır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S66"
+            },
+            "overlap": 596
+          },
+          {
+            "gold": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Furthermore, Valve may amend this Agreement (including any Subscription Terms or Rules of Use) unilaterally at any time in its sole discretion. In this case, you will be notified by e-mail of any amendment to this Agreement made by Valve at least 30 (30) days before the effective date of the amendment. You can view the Agreement at any time at http://www.steampowered.com/. Your failure to cancel your Account prior to the effective date of the amendment will constitute your acceptance of the amended terms"
+            },
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "medium",
+              "quote": "Furthermore, Valve may amend this Agreement (including any Subscription Terms or Rules of Use) unilaterally at any time in its sole discretion. In this case, you will be notified by e-mail of any amendment to this Agreement made by Valve at least 30 (30) days before the effective date of the amendment. You can view the Agreement at any time at http://www.steampowered.com/. Your failure to cancel your Account prior to the effective date of the amendment will constitute your acceptance of the amended terms.",
+              "segment_id": "S92",
+              "explanation_tr": "Valve sözleşme şartlarını tek taraflı olarak değiştirebilir ve bildirime rağmen hesabını kapatmayan kullanıcılar bu değişiklikleri kabul etmiş sayılır.",
+              "confidence": 0.93,
+              "matched_segment_id": "S92"
+            },
+            "overlap": 505
+          },
+          {
+            "gold": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "high",
+              "quote": "You and Valve agree that this Agreement shall be deemed to have been made and executed in the State of Washington, U.S.A., and Washington law, excluding conflict of laws principles and the Convention on Contracts for the International Sale of Goods, governs all disputes and claims arising out of or relating to: (i) any aspect of the relationship between us; (ii) this Agreement; or (iii) your use of Steam, your Account or the Content and Services. You and Valve agree that all disputes and claims between you and Valve (including any dispute or claim that arose before the existence of this or any prior agreement) shall be commenced and maintained exclusively in any state or federal court located in King County, Washington, having subject matter jurisdiction. You and Valve hereby consent to the exclusive jurisdiction of such courts and waive any objections as to personal jurisdiction or venue in such courts."
+            },
+            "sys": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "high",
+              "quote": "You and Valve agree that this Agreement shall be deemed to have been made and executed in the State of Washington, U.S.A., and Washington law, excluding conflict of laws principles and the Convention on Contracts for the International Sale of Goods, governs all disputes and claims arising out of or relating to: (i) any aspect of the relationship between us; (ii) this Agreement; or (iii) your use of Steam, your Account or the Content and Services.",
+              "segment_id": "S100",
+              "explanation_tr": "AB ve BK dışındaki kullanıcılar için uyuşmazlıklarda ABD Washington Eyaleti hukuku ve mahkemeleri yetkili kılınmıştır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S100"
+            },
+            "overlap": 444
+          },
+          {
+            "gold": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "medium",
+              "quote": "Valve may restrict or terminate your Account(s) or a particular Subscription for any conduct or activity that is illegal, constitutes a Cheat or Automation or breaches the Steam Online Conduct Rules. You acknowledge that Valve is not required to provide you notice before terminating your Subscription(s) and/or Account."
+            },
+            "sys": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "high",
+              "quote": "Valve may restrict or terminate your Account(s) or a particular Subscription for any conduct or activity that is illegal, constitutes a Cheat or Automation or breaches the Steam Online Conduct Rules. You acknowledge that Valve is not required to provide you notice before terminating your Subscription(s) and/or Account.",
+              "segment_id": "S63",
+              "explanation_tr": "Valve, belirli ihlal veya şüphe durumlarında önceden haber vermeksizin hesabınızı veya aboneliğinizi sonlandırabilir.",
+              "confidence": 0.92,
+              "matched_segment_id": "S63"
+            },
+            "overlap": 318
+          },
+          {
+            "gold": {
+              "category": "AUTO_RENEWAL",
+              "severity": "low",
+              "quote": "For Subscriptions ordered based on an agreed usage period, where recurring payments are made in exchange for continued use (\"Recurring Payment Subscriptions\"), by continuing to use the Recurring Payment Subscription you agree and reaffirm that Valve is authorized to charge your credit card"
+            },
+            "sys": {
+              "category": "AUTO_RENEWAL",
+              "severity": "medium",
+              "quote": "For Subscriptions ordered based on an agreed usage period, where recurring payments are made in exchange for continued use (\"Recurring Payment Subscriptions\"), by continuing to use the Recurring Payment Subscription you agree and reaffirm that Valve is authorized to charge your credit card (or your Steam Wallet, if funded), or to process your payment with any other applicable third-party payment processor, for any applicable recurring payment amounts.",
+              "segment_id": "S35",
+              "explanation_tr": "Abonelik hizmeti, kullanıcı aksini belirtmedikçe kayıtlı ödeme yönteminden düzenli olarak otomatik çekim yapmaya devam eder.",
+              "confidence": 0.95,
+              "matched_segment_id": "S35"
+            },
+            "overlap": 289
+          },
+          {
+            "gold": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "NEITHER VALVE, ITS LICENSORS, NOR THEIR AFFILIATES, NOR ANY OF VALVE’S SERVICE PROVIDERS, SHALL BE LIABLE IN ANY WAY FOR LOSS OR DAMAGE OF ANY KIND RESULTING FROM THE USE OR INABILITY TO USE STEAM,"
+            },
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NEITHER VALVE, ITS LICENSORS, NOR THEIR AFFILIATES, NOR ANY OF VALVE’S SERVICE PROVIDERS, SHALL BE LIABLE IN ANY WAY FOR LOSS OR DAMAGE OF ANY KIND RESULTING FROM THE USE OR INABILITY TO USE STEAM, YOUR ACCOUNT, YOUR SUBSCRIPTIONS AND THE CONTENT AND SERVICES INCLUDING, BUT NOT LIMITED TO, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES.",
+              "segment_id": "S86",
+              "explanation_tr": "Hizmetin veya hesabın kullanımından doğabilecek aksaklık, arıza ve zararlar için şirketin hukuki sorumluluğu neredeyse tamamen sınırlandırılmıştır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S86"
+            },
+            "overlap": 197
+          },
+          {
+            "gold": {
+              "category": "NO_REFUND",
+              "severity": "high",
+              "quote": "funds added to the Steam Wallet are non-refundable and non-transferable. Steam Wallet funds do not constitute a personal property right, have no value outside Steam"
+            },
+            "sys": {
+              "category": "NO_REFUND",
+              "severity": "medium",
+              "quote": "Subject to Section 3.I, funds added to the Steam Wallet are non-refundable and non-transferable.",
+              "segment_id": "S41",
+              "explanation_tr": "Steam Cüzdanına yüklenen bakiyeler genel kural olarak iade edilmez ve nakde çevrilemez.",
+              "confidence": 0.9,
+              "matched_segment_id": "S41"
+            },
+            "overlap": 72
+          }
+        ],
+        "fn": [
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "high",
+            "quote": "STEAM, THE CONTENT AND SERVICES, THE SUBSCRIPTIONS, AND ANY INFORMATION AVAILABLE IN CONNECTION THEREWITH ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, \"WITH ALL FAULTS\" AND WITHOUT WARRANTY OF ANY KIND"
+          },
+          {
+            "category": "NO_REFUND",
+            "severity": "high",
+            "quote": "Your cancellation of an Account, or your cessation of use of any Subscription or request that access to a Subscription be terminated, will not entitle you to any refund, including of any Subscription fees."
+          },
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "high",
+            "quote": "If you provide Valve with any feedback or suggestions about Steam, the Content and Services, or any Valve products, Hardware or services, Valve is free to use the feedback or suggestions however it chooses, without any obligation to account to you"
+          }
+        ],
+        "fp": [],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 2
+      },
+      "cached": true,
+      "gold_categories": [
+        "LIABILITY_DISCLAIMER",
+        "UNILATERAL_CHANGE",
+        "AUTO_RENEWAL",
+        "ARBITRARY_TERMINATION",
+        "NO_REFUND",
+        "JURISDICTION_FOREIGN_LAW",
+        "CONTENT_LICENSE"
+      ],
+      "gold_score": 46
+    },
+    {
+      "name": "youtube-com-static_2026-10-11",
+      "url": "https://www.youtube.com/static?gl=TR&template=terms",
+      "captured_at": "2026-10-11T07:16:21.636Z",
+      "language": "tr",
+      "segments": 76,
+      "coverage": 1,
+      "llm_findings": 5,
+      "rejected": 0,
+      "report": {
+        "url": "https://www.youtube.com/static?gl=TR&template=terms",
+        "analyzed_at": "2026-10-11T07:16:21.636Z",
+        "document_type": "terms",
+        "language": "tr",
+        "risk_score": 27,
+        "risk_level": "medium",
+        "findings": [
+          {
+            "category": "CONTENT_LICENSE",
+            "severity": "medium",
+            "quote": "Hizmet'e İçerik sağlayarak YouTube'a Hizmet'i çalıştırmak, tanıtmak ve iyileştirmek amacıyla bu İçeriği kullanması için (çoğaltmak, dağıtmak, değiştirmek, görüntülemek ve sunmak dahil) tüm dünyada geçerli, münhasır olmayan, telifsiz, devredilebilir, alt lisanslanabilir bir lisans verirsiniz.",
+            "segment_id": "S45",
+            "explanation_tr": "Yüklediğiniz içerikler üzerinde YouTube'a dünya çapında, ücretsiz, başkalarına devredebileceği ve alt lisanslayabileceği geniş bir kullanım yetkisi vermiş olursunuz.",
+            "confidence": 0.95,
+            "matched_segment_id": "S45"
+          },
+          {
+            "category": "ARBITRARY_TERMINATION",
+            "severity": "medium",
+            "quote": "YouTube; (a) bu Sözleşme'yi esaslı şekilde veya üst üste ihlal etmeniz; (b) bir yasal şart ya da bir mahkeme emrine uymak için bunu yapmamızın gerekli olması veya (c) herhangi bir kullanıcı, başka bir üçüncü taraf, YouTube veya İş Ortağı için sorumluluk ya da zarara neden olabilecek davranış olduğuna makul bir şekilde karar vermemiz halinde Google hesabınızı veya Hizmet'in tamamına veya bir kısmına erişiminizi askıya alma veya feshetme hakkını saklı tutar.",
+            "segment_id": "S55",
+            "explanation_tr": "Platform, geniş takdir yetkisine dayanarak hesabınızı veya hizmete erişiminizi tek taraflı olarak askıya alabilir veya kapatabilir.",
+            "confidence": 0.9,
+            "matched_segment_id": "S55"
+          },
+          {
+            "category": "LIABILITY_DISCLAIMER",
+            "severity": "medium",
+            "quote": "Bu Sözleşme'de açıkça belirtilen veya yasaların gerektirdiği durumlar haricinde, YouTube Hizmet'e dair belirli hiçbir vaatte bulunmamaktadır. Örneğin: Hizmet aracılığıyla sağlanan İçerik; Hizmet'in belirli özellikleri veya doğruluğu, güvenilirliği, kullanılabilirliği ya da ihtiyaçlarınızı karşılayabilme kapasitesi hakkında ya da gönderdiğiniz herhangi bir İçeriğin Hizmet'te erişilebilir olacağına ya da saklanacağına dair hiçbir vaatte bulunmayız.",
+            "segment_id": "S61",
+            "explanation_tr": "YouTube, hizmetin kesintisizliği, güvenilirliği ve yüklenen içeriklerin saklanacağı veya erişilebilir kalacağı konusunda sorumluluk kabul etmemektedir.",
+            "confidence": 0.95,
+            "matched_segment_id": "S61"
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "low",
+            "quote": "Bu Sözleşme'de esaslı değişiklik yapmamız durumunda, (1) yeni bir ürün veya özelliği kullanıma sunmamız ya da (2) devam eden kötüye kullanımı önlemek veya yasal şartları yerine getirmek gibi acil durumlar haricinde, makul bir süre öncesinde sizi bilgilendirir ve değişiklikleri inceleme fırsatı sunarız. Yeni şartları kabul etmiyorsanız yüklediğiniz tüm İçerikleri kaldırmanız ve Hizmet'i kullanmayı bırakmanız gerekir.",
+            "segment_id": "S69",
+            "explanation_tr": "Şirket sözleşme koşullarını tek taraflı değiştirebilir; değişiklikleri kabul etmeyen kullanıcının hizmeti kullanmayı bırakması ve içeriğini kaldırması zorunlu tutulur.",
+            "confidence": 0.9,
+            "matched_segment_id": "S69"
+          },
+          {
+            "category": "JURISDICTION_FOREIGN_LAW",
+            "severity": "high",
+            "quote": "Bu Sözleşme ve YouTube ile bu Sözleşme kapsamındaki ilişkiniz İngiliz Kanunlarına tabi olacak ve yasal anlaşmazlıklar için İngiltere ve Galler mahkemelerine başvurulabilecektir.",
+            "segment_id": "S74",
+            "explanation_tr": "Uyuşmazlık durumunda Türk hukuku yerine İngiliz hukuku ile İngiltere ve Galler mahkemeleri yetkili kılınarak kullanıcının yerel hak arama süreçleri zorlaştırılmaktadır.",
+            "confidence": 0.95,
+            "matched_segment_id": "S74"
+          }
+        ],
+        "rejected": [],
+        "hidden": [],
+        "instruction_segments": [],
+        "summary_tr": "İncelenen YouTube Hizmet Şartları, yüklenen içerikler üzerinde platforma oldukça geniş, devredilebilir ve ücretsiz bir lisans tanımaktadır. Uyuşmazlık durumunda İngiliz hukuku ve mahkemeleri yetkili kılınmış, şirketin içeriklerin saklanması ve hizmetin sürekliliğine dair sorumlulukları sınırlandırılmıştır. Ayrıca şirket, geniş yetkilerle hesabı askıya alma ve sözleşme koşullarını tek taraflı güncelleme hakkını saklı tutmaktadır.",
+        "coverage": 1,
+        "uncertainty": {
+          "level": "low",
+          "reasons": [
+            "llm_reported_uncertainty"
+          ],
+          "notes": [
+            "S75 maddesinde yerel tüketici koruma kanunlarının elverdiği ölçüde yerel mahkemelerin yetkili olabileceğine dair istisna yer alsa da genel kural İngiliz hukuku ve mahkemeleri olarak belirlenmiştir."
+          ]
+        }
+      },
+      "match": {
+        "tp": [
+          {
+            "gold": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "high",
+              "quote": "Bu Sözleşme'de açıkça belirtilen veya yasaların gerektirdiği durumlar haricinde, YouTube Hizmet'e dair belirli hiçbir vaatte bulunmamaktadır. Örneğin: Hizmet aracılığıyla sağlanan İçerik; Hizmet'in belirli özellikleri veya doğruluğu, güvenilirliği, kullanılabilirliği ya da ihtiyaçlarınızı karşılayabilme kapasitesi hakkında ya da gönderdiğiniz herhangi bir İçeriğin Hizmet'te erişilebilir olacağına ya da saklanacağına dair hiçbir vaatte bulunmayız."
+            },
+            "sys": {
+              "category": "LIABILITY_DISCLAIMER",
+              "severity": "medium",
+              "quote": "Bu Sözleşme'de açıkça belirtilen veya yasaların gerektirdiği durumlar haricinde, YouTube Hizmet'e dair belirli hiçbir vaatte bulunmamaktadır. Örneğin: Hizmet aracılığıyla sağlanan İçerik; Hizmet'in belirli özellikleri veya doğruluğu, güvenilirliği, kullanılabilirliği ya da ihtiyaçlarınızı karşılayabilme kapasitesi hakkında ya da gönderdiğiniz herhangi bir İçeriğin Hizmet'te erişilebilir olacağına ya da saklanacağına dair hiçbir vaatte bulunmayız.",
+              "segment_id": "S61",
+              "explanation_tr": "YouTube, hizmetin kesintisizliği, güvenilirliği ve yüklenen içeriklerin saklanacağı veya erişilebilir kalacağı konusunda sorumluluk kabul etmemektedir.",
+              "confidence": 0.95,
+              "matched_segment_id": "S61"
+            },
+            "overlap": 450
+          },
+          {
+            "gold": {
+              "category": "CONTENT_LICENSE",
+              "severity": "high",
+              "quote": "Hizmet'e İçerik sağlayarak YouTube'a Hizmet'i çalıştırmak, tanıtmak ve iyileştirmek amacıyla bu İçeriği kullanması için (çoğaltmak, dağıtmak, değiştirmek, görüntülemek ve sunmak dahil) tüm dünyada geçerli, münhasır olmayan, telifsiz, devredilebilir, alt lisanslanabilir bir lisans verirsiniz."
+            },
+            "sys": {
+              "category": "CONTENT_LICENSE",
+              "severity": "medium",
+              "quote": "Hizmet'e İçerik sağlayarak YouTube'a Hizmet'i çalıştırmak, tanıtmak ve iyileştirmek amacıyla bu İçeriği kullanması için (çoğaltmak, dağıtmak, değiştirmek, görüntülemek ve sunmak dahil) tüm dünyada geçerli, münhasır olmayan, telifsiz, devredilebilir, alt lisanslanabilir bir lisans verirsiniz.",
+              "segment_id": "S45",
+              "explanation_tr": "Yüklediğiniz içerikler üzerinde YouTube'a dünya çapında, ücretsiz, başkalarına devredebileceği ve alt lisanslayabileceği geniş bir kullanım yetkisi vermiş olursunuz.",
+              "confidence": 0.95,
+              "matched_segment_id": "S45"
+            },
+            "overlap": 290
+          },
+          {
+            "gold": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "high",
+              "quote": "Bu Sözleşme ve YouTube ile bu Sözleşme kapsamındaki ilişkiniz İngiliz Kanunlarına tabi olacak ve yasal anlaşmazlıklar için İngiltere ve Galler mahkemelerine başvurulabilecektir."
+            },
+            "sys": {
+              "category": "JURISDICTION_FOREIGN_LAW",
+              "severity": "high",
+              "quote": "Bu Sözleşme ve YouTube ile bu Sözleşme kapsamındaki ilişkiniz İngiliz Kanunlarına tabi olacak ve yasal anlaşmazlıklar için İngiltere ve Galler mahkemelerine başvurulabilecektir.",
+              "segment_id": "S74",
+              "explanation_tr": "Uyuşmazlık durumunda Türk hukuku yerine İngiliz hukuku ile İngiltere ve Galler mahkemeleri yetkili kılınarak kullanıcının yerel hak arama süreçleri zorlaştırılmaktadır.",
+              "confidence": 0.95,
+              "matched_segment_id": "S74"
+            },
+            "overlap": 177
+          }
+        ],
+        "fn": [
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "Bu Sözleşme'yi, örneğin (1) Hizmet'teki veya çalışma şeklimizdeki değişiklikleri (yeni ürünler veya özellikler eklememiz ya da eskilerini kaldırmamız gibi) yansıtmak amacıyla, (2) yasal, mevzuata ilişkin ya da güvenlikle ilgili nedenlerden dolayı veya (3) kötüye kullanımı ya da zararı önlemek amacıyla değiştirebiliriz."
+          },
+          {
+            "category": "UNILATERAL_CHANGE",
+            "severity": "medium",
+            "quote": "özellik ve işlev ekleme veya kaldırma, yeni dijital içerikler veya hizmetler sunma ya da eskilerini kullanımdan kaldırma gibi (Hizmet'in tamamında veya bir kısmında geçerli olacak) değişiklikler yapabiliriz."
+          }
+        ],
+        "fp": [
+          {
+            "sys": {
+              "category": "ARBITRARY_TERMINATION",
+              "severity": "medium",
+              "quote": "YouTube; (a) bu Sözleşme'yi esaslı şekilde veya üst üste ihlal etmeniz; (b) bir yasal şart ya da bir mahkeme emrine uymak için bunu yapmamızın gerekli olması veya (c) herhangi bir kullanıcı, başka bir üçüncü taraf, YouTube veya İş Ortağı için sorumluluk ya da zarara neden olabilecek davranış olduğuna makul bir şekilde karar vermemiz halinde Google hesabınızı veya Hizmet'in tamamına veya bir kısmına erişiminizi askıya alma veya feshetme hakkını saklı tutar.",
+              "segment_id": "S55",
+              "explanation_tr": "Platform, geniş takdir yetkisine dayanarak hesabınızı veya hizmete erişiminizi tek taraflı olarak askıya alabilir veya kapatabilir.",
+              "confidence": 0.9,
+              "matched_segment_id": "S55"
+            }
+          },
+          {
+            "sys": {
+              "category": "UNILATERAL_CHANGE",
+              "severity": "low",
+              "quote": "Bu Sözleşme'de esaslı değişiklik yapmamız durumunda, (1) yeni bir ürün veya özelliği kullanıma sunmamız ya da (2) devam eden kötüye kullanımı önlemek veya yasal şartları yerine getirmek gibi acil durumlar haricinde, makul bir süre öncesinde sizi bilgilendirir ve değişiklikleri inceleme fırsatı sunarız. Yeni şartları kabul etmiyorsanız yüklediğiniz tüm İçerikleri kaldırmanız ve Hizmet'i kullanmayı bırakmanız gerekir.",
+              "segment_id": "S69",
+              "explanation_tr": "Şirket sözleşme koşullarını tek taraflı değiştirebilir; değişiklikleri kabul etmeyen kullanıcının hizmeti kullanmayı bırakması ve içeriğini kaldırması zorunlu tutulur.",
+              "confidence": 0.9,
+              "matched_segment_id": "S69"
+            }
+          }
+        ],
+        "duplicates": [],
+        "unlocatableGold": [],
+        "mergedGold": 0
+      },
+      "cached": true,
+      "gold_categories": [
+        "CONTENT_LICENSE",
+        "JURISDICTION_FOREIGN_LAW",
+        "UNILATERAL_CHANGE",
+        "LIABILITY_DISCLAIMER"
+      ],
+      "gold_score": 30
+    }
+  ]
+}

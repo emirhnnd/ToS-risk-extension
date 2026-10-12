@@ -43,6 +43,11 @@ describe('looksLikeInstruction', () => {
     'We may share your personal data with advertising partners.',
     'Aboneliğiniz her ay otomatik olarak yenilenir.',
     'You can cancel at any time from your account settings.',
+    // Eval'de yanlış alarm veren gerçek sözleşme cümleleri (yapay zekâ maddeleri):
+    'You will not, and will not allow any third party to, use AI-generated content from the Amazon Services', // Amazon S10
+    'derive the source code or other underlying components (such as a model, model parameters, or model weights)', // Amazon S49
+    'the training, development, or validation of any machine learning tool, model, system, algorithm, product or other technology', // Netflix S18
+    'Yapay zeka modelleri, model ağırlıkları veya yapay zeka araçları eğitmek amacıyla içerik kullanılamaz.',
   ])('sıradan sözleşme metni: %s', (t) => expect(looksLikeInstruction(t)).toBe(false));
 });
 
