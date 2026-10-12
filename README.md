@@ -21,7 +21,7 @@ LLM sistemin içinde **güvenilmez bir bileşen**dir. Ürettiği hiçbir şey do
 Üç ayrı çalışma ortamı var ve güven sınırları bunlara göre çizildi:
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph Sayfa["Ziyaret edilen sayfa (güvenilmez)"]
     DOM["DOM<br/>görünür + gizli metin"]
   end
@@ -43,13 +43,13 @@ flowchart LR
 
   DOM --> DET & EXT & HID
   EXT --> SEG
-  HID -- "gizli satırlar çıkarılır" --> SEG
-  SEG -- "segmentler + gizli içerik listesi" --> VAL1 --> LLM
-  STORE -. "yalnızca SW okur" .-> LLM
-  LLM -- "<untrusted_document> içinde metin" --> GEM
-  GEM -- "JSON" --> VAL
-  VAL -- "Rapor (kodla üretilmiş)" --> PANEL
-  GUARD -. "analiz boyunca sentetik tıklama sayar" .- DOM
+  HID -->|gizli satırlar çıkarılır| SEG
+  SEG -->|segmentler + gizli içerik listesi| VAL1 --> LLM
+  STORE -.->|yalnızca SW okur| LLM
+  LLM -->|"#lt;untrusted_document#gt; içinde metin"| GEM
+  GEM -->|JSON| VAL
+  VAL -->|"Rapor (kodla üretilmiş)"| PANEL
+  GUARD -.->|analiz boyunca sentetik tıklama sayar| DOM
 ```
 
 ### Veri akışı (bir analiz)
@@ -66,7 +66,7 @@ sequenceDiagram
   P->>P: main bölgesi, segmentler [S1]…[Sn], salt-okuma denetimi başlar
   P->>S: analyze {segmentler, gizli içerik, başlık, URL}
   S->>S: Zod ile isteği doğrula, metni bütçeye sığdır
-  S->>G: systemInstruction + <untrusted_document>…</untrusted_document>, JSON şeması
+  S->>G: systemInstruction + #lt;untrusted_document#gt; içinde metin, JSON şeması
   G-->>S: JSON (bulgular, alıntılar, şiddet)
   S->>S: 1) şema (dış yapı katı, bulgular tek tek)
   S->>S: 2) her alıntıyı metinde ara, yoksa reddet
