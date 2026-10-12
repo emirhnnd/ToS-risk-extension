@@ -47,6 +47,12 @@ scripts/       test sunucusu + LLM vekili, Cypress çalıştırıcısı, etiketl
 eval/          korpus, altın etiketler, ölçüm
 ```
 
+## Arayüz
+
+- Panel sözleşme sayfasında kendiliğinden açılır. Kullanıcı paneli **×** veya Esc ile kapatabilir, küçültebilir ya da "bu sitede kendiliğinden açılmasın" diyebilir; uzantı simgesine tıklayınca panel her zaman yeniden açılır. Küçültülünce hukuki uyarının ilk cümlesi görünür kalır.
+- **Skor nasıl hesaplandı?** bölümü, her risk türünün ağırlık × şiddet = puan katkısını gösterir. Kullanıcı skoru kendisi doğrulayabilir. Belirsizlik yüksekse skorun altında "skor eksik veya yanıltıcı olabilir" notu çıkar.
+- Açık ve koyu tema (`prefers-color-scheme`), klavyeyle gezinme (görünür odak halkası) ve dar ekran (en fazla `100vw − 32px`) desteklenir. Ayarlar sayfası panelle aynı renkleri kullanır.
+
 ## Risk skoru
 
 ```
@@ -55,6 +61,16 @@ skor = min(100, round( Σ_kategori ağırlık(k) × max_çarpan(k) ))
 ```
 
 Her kategori yalnızca bir kez, en yüksek şiddetiyle sayılır. Böylece LLM aynı maddeyi tekrar ederek skoru şişiremez. Ağırlıklar `src/shared/categories.ts` dosyasındadır.
+
+**Sınırı:** Formül deterministiktir, ama şiddet seçimi LLM'den gelir. Ağırlıklar ve eşikler veriyle ayarlanmadı; tasarım kararıdır. Şiddeti LLM'den almak yerine sabit bir değer kullanmanın daha iyi olup olmayacağı eval'deki 6 metinde ölçüldü. Ölçüt, elle etiketlerle aynı formülden çıkan skora olan ortalama mutlak farktı:
+
+| Şiddet kaynağı | Ortalama fark | Risk seviyesi tutan metin |
+|---|---|---|
+| LLM (kullanılan) | 7,0 | 4/6 |
+| Hepsi "orta" | 10,5 | 1/6 |
+| Hepsi "yüksek" | 9,0 | 6/6 (3 metinde skor 12–17 puan fazla) |
+
+LLM şiddeti sabit değerlerden daha yakın çıktığı için korundu. 6 metin ağırlıkları yeniden ayarlamak için yetersizdir; bunu yapmak bu 6 metne göre ezberlemek olurdu.
 
 ## Alıntı doğrulama kuralları
 
@@ -139,6 +155,7 @@ npm run e2e:open    # Cypress arayüzü
 - **page-agent salt okuma modunda.** Yalnızca `@page-agent/page-controller` paketinin `updateTree()` metodu kullanılır; aksiyonlu `page-agent` paketi bağımlılıkta yoktur. `tests/unit/readonly.test.ts`, kaynak kodda hiçbir aksiyon metodunun çağrılmadığını denetler. Kütüphanedeki `eval` çağrısı yalnızca hiç kullanmadığımız `executeJavascript` aksiyonundadır; ayrıca MV3'ün içerik güvenliği politikası `eval`'i zaten engeller.
 - **API anahtarı.** Yalnızca service worker okur; içerik betiği ve sayfa göremez. İstek başlığında (`x-goog-api-key`) gönderilir, URL'de değil. `tests/unit/secrets.test.ts` git'e girecek dosyaları anahtar kalıplarına karşı tarar; `.githooks/pre-commit` anahtar içeren commit'i engeller.
 - **XSS.** Panel, LLM veya sayfa kaynaklı metni yalnızca `textContent` ile yazar; birim testi `<img onerror>` içeren LLM çıktısının çalışmadığını doğrular.
+- **Sayfa paneli gizleyemez.** Panel Shadow DOM'dadır, kabın görünürlük özellikleri ise `:host` üzerinde `!important` ile kilitlidir. Kaskad kuralına göre `!important` bildirimlerde Shadow DOM içindeki kural sayfanınkini yener. Böylece `#tos-risk-panel-host { display:none !important }` gibi bir kural paneli ve hukuki uyarıyı gizleyemez (`terms-hostile-css.html`, `guards.cy.js`). Denetimden önce bu mümkündü.
 - **Mesaj doğrulama.** Service worker, içerik betiğinden gelen isteği de Zod ile doğrular ve yalnızca kendi uzantısından gelen mesajları kabul eder.
 - **Mimari sınırlar testle korunur.** `tests/unit/boundaries.test.ts`, içerik betiğinden ulaşılabilen her modülü import grafı üzerinden tarar. Hiçbiri API anahtarını okumaz, LLM uç noktasını bilmez veya ağ isteği atmaz. `fetch` kullanan tek dosya LLM istemcisidir.
 - **Bozuk / kötü niyetli LLM çıktısına dayanıklılık.** `tests/unit/fuzz.test.ts`, tohumlu rastgele üretilmiş binlerce LLM yanıtında şunları denetler:

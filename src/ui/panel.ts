@@ -2,6 +2,7 @@ import { CATEGORIES } from '../shared/categories';
 import type { Report } from '../shared/schema';
 import { BUILD_TIME } from '../shared/build';
 import { highlightQuote } from './highlight';
+import { RISK_THRESHOLDS, scoreBreakdown } from '../validator/score';
 import { HIDDEN_LABELS, LEGAL_DISCLAIMER, REJECT_LABELS, RISK_LEVEL_LABELS, SEVERITY_LABELS, UNCERTAINTY_LABELS } from './labels';
 
 /**
@@ -122,6 +123,25 @@ export class ReportPanel {
     this.body.replaceChildren(h('div', { class: 'error', 'data-testid': 'error', role: 'alert' }, '❌ ', message), retry);
   }
 
+  /** "Skor nasıl hesaplandı?": kategori × ağırlık × şiddet çarpanı tablosu (koddaki formülün aynısı). */
+  private scoreDetails(r: Report): HTMLElement {
+    const b = scoreBreakdown(r.findings);
+    const n = (x: number) => x.toLocaleString('tr-TR');
+    const rows = b.terms.map((t) =>
+      h('tr', {}, h('td', {}, CATEGORIES[t.category].label_tr), h('td', {}, n(t.weight)), h('td', {}, `${SEVERITY_LABELS[t.severity]} ×${n(t.multiplier)}`), h('td', {}, n(t.points))),
+    );
+    return h(
+      'details',
+      { class: 'score-details', 'data-testid': 'score-details' },
+      h('summary', {}, 'Skor nasıl hesaplandı?'),
+      h('p', { class: 'muted' }, 'Yalnızca alıntısı metinde doğrulanmış maddeler sayılır. Her risk türü bir kez, en yüksek şiddetiyle: ağırlık × şiddet çarpanı (düşük 0,5 · orta 1 · yüksek 1,5).'),
+      b.terms.length
+        ? h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Risk türü'), h('th', {}, 'Ağırlık'), h('th', {}, 'Şiddet'), h('th', {}, 'Puan'))), h('tbody', {}, ...rows))
+        : h('p', { class: 'muted' }, 'Doğrulanmış madde yok, skor 0.'),
+      h('p', { class: 'muted' }, `Toplam: ${b.terms.map((t) => n(t.points)).join(' + ') || '0'} = ${b.total}${b.capped ? ' (100 ile sınırlandı)' : ''}. Eşikler: ${RISK_THRESHOLDS.medium} altı düşük, ${RISK_THRESHOLDS.high} ve üstü yüksek risk. Şiddet seçimi yapay zekâdan gelir.`),
+    );
+  }
+
   showReport(r: Report): void {
     const parts: Child[] = [];
 
@@ -133,7 +153,10 @@ export class ReportPanel {
         h('span', { class: 'num' }, String(r.risk_score)),
         h('span', {}, ` / 100 · ${RISK_LEVEL_LABELS[r.risk_level]}`),
       ),
-      h('p', { class: 'muted' }, 'Skor, yalnızca alıntısı doğrulanmış maddelerden sabit bir formülle hesaplanır.'),
+      r.uncertainty.level === 'high'
+        ? h('p', { class: 'score-caveat', 'data-testid': 'score-caveat' }, 'Güvenilirlik düşük: bazı maddeler doğrulanamadığı ya da sayfada şüpheli içerik olduğu için skor eksik veya yanıltıcı olabilir.')
+        : null,
+      this.scoreDetails(r),
     );
 
     // 2) Belirsizlik (dürüstlük kutusu) – skordan hemen sonra, gözden kaçmasın
@@ -238,39 +261,73 @@ export class ReportPanel {
 const sevRank = (s: 'low' | 'medium' | 'high') => ({ low: 0, medium: 1, high: 2 })[s];
 
 const STYLES = `
-:host { all: initial; }
-.frame { position: fixed; top: 16px; right: 16px; z-index: 2147483647; width: min(380px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
-  display: flex; flex-direction: column; background: #fff; color: #1a1a1a; border: 1px solid #c8c8c8; border-radius: 10px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.18); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+/* Kabı kilitle: sayfanın CSS'i (#tos-risk-panel-host { display:none !important } gibi) paneli ve hukuki
+   uyarıyı gizleyemesin. Kaskad kuralı: !important bildirimlerde Shadow DOM içindeki :host kuralı
+   dış sayfanın kuralını yener. (Test: cypress/fixtures/pages/terms-hostile-css.html) */
+:host {
+  all: initial !important; display: block !important; visibility: visible !important; opacity: 1 !important;
+  position: static !important; transform: none !important; filter: none !important; clip-path: none !important;
+  mask: none !important; contain: none !important; zoom: 1 !important;
+}
+.frame {
+  --bg: #fff; --fg: #1a1a1a; --muted: #5f5f5f; --faint: #8a8a8a; --line: #e3e3e3; --border: #c8c8c8;
+  --btn-bg: #f4f4f4; --btn-border: #b5b5b5; --accent: #1f5eff; --accent-fg: #fff; --link: #1f5eff;
+  --warn-bg: #fff4ce; --warn-fg: #3b2f00; --warn-line: #e6d58a;
+  --ok-bg: #e5f6ea; --mid-bg: #fff0d6; --bad-bg: #fde3e1; --bad-fg: #8a1c12; --bad-line: #e29b95;
+  --info-bg: #eef3ff; --info-line: #c9d7ff; --alarm-bg: #fff1e0; --alarm-line: #e07b00; --alarm-fg: #a23b00;
+  --quote-bg: #f7f7f7; --quote-line: #9a9a9a; --focus: #1f5eff;
+  position: fixed; top: 16px; right: 16px; z-index: 2147483647; width: min(380px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
+  display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.18); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-align: left; direction: ltr; color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  .frame {
+    --bg: #1e1f22; --fg: #ececec; --muted: #a8a8a8; --faint: #8c8c8c; --line: #34363b; --border: #4a4d55;
+    --btn-bg: #2b2d31; --btn-border: #50535b; --accent: #4c7dff; --accent-fg: #fff; --link: #8fb0ff;
+    --warn-bg: #3a3214; --warn-fg: #f6e7a8; --warn-line: #6b5d1f;
+    --ok-bg: #173323; --mid-bg: #3b2f14; --bad-bg: #432020; --bad-fg: #ffb4ab; --bad-line: #7a3a35;
+    --info-bg: #1d2740; --info-line: #34467a; --alarm-bg: #3a2614; --alarm-line: #e07b00; --alarm-fg: #ffb366;
+    --quote-bg: #26282c; --quote-line: #6b6e75; --focus: #8fb0ff;
+    color-scheme: dark; box-shadow: 0 6px 24px rgba(0,0,0,.5);
+  }
+}
+@media (prefers-reduced-motion: no-preference) { button { transition: background-color .12s; } }
 .frame.min .body, .frame.min .build, .frame.min .disclaimer .more { display: none; }
 .frame.min .disclaimer { border-bottom: 0; border-radius: 0 0 10px 10px; }
 .actions { display: flex; gap: 6px; }
-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid #e3e3e3; }
-.disclaimer { margin: 0; padding: 8px 14px; background: #fff4ce; color: #3b2f00; border-bottom: 1px solid #e6d58a; font-size: 13px; font-weight: 600; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.disclaimer { margin: 0; padding: 8px 14px; background: var(--warn-bg); color: var(--warn-fg); border-bottom: 1px solid var(--warn-line); font-size: 13px; font-weight: 600; }
 .body { overflow-y: auto; padding: 12px 14px; flex: 1 1 auto; min-height: 0; } /* min-height:0 → uzun rapor panel içinde kayar, ekrandan taşmaz */
-button { font: inherit; cursor: pointer; border: 1px solid #b5b5b5; background: #f4f4f4; border-radius: 6px; padding: 6px 12px; }
-button.primary { background: #1f5eff; color: #fff; border-color: #1f5eff; width: 100%; padding: 9px; font-weight: 600; }
-button.icon { padding: 0 10px; font-size: 18px; line-height: 24px; }
-button.link { border: 0; background: none; color: #1f5eff; padding: 0; text-decoration: underline; }
-.muted { color: #5f5f5f; font-size: 12px; }
-.build { padding: 4px 14px; border-top: 1px solid #e3e3e3; color: #8a8a8a; font-size: 11px; }
-.frame.min .build { display: none; }
+button { font: inherit; color: var(--fg); cursor: pointer; border: 1px solid var(--btn-border); background: var(--btn-bg); border-radius: 6px; padding: 6px 12px; }
+button:hover { filter: brightness(0.96); }
+button:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); width: 100%; padding: 9px; font-weight: 600; }
+button.icon { padding: 0 10px; font-size: 18px; line-height: 24px; min-width: 32px; }
+button.link { border: 0; background: none; color: var(--link); padding: 0; text-decoration: underline; }
+.muted { color: var(--muted); font-size: 12px; }
+.build { padding: 4px 14px; border-top: 1px solid var(--line); color: var(--faint); font-size: 11px; }
 .score { display: flex; align-items: baseline; gap: 6px; padding: 10px 12px; border-radius: 8px; font-weight: 600; }
 .score .num { font-size: 32px; }
-.score.low { background: #e5f6ea; } .score.medium { background: #fff0d6; } .score.high { background: #fde3e1; }
-.uncertain { margin: 10px 0; padding: 10px 12px; border-radius: 8px; background: #eef3ff; border: 1px solid #c9d7ff; }
-.uncertain.high { background: #fff1e0; border: 2px solid #e07b00; }
+.score.low { background: var(--ok-bg); } .score.medium { background: var(--mid-bg); } .score.high { background: var(--bad-bg); }
+.uncertain { margin: 10px 0; padding: 10px 12px; border-radius: 8px; background: var(--info-bg); border: 1px solid var(--info-line); }
+.uncertain.high { background: var(--alarm-bg); border: 2px solid var(--alarm-line); }
 .uncertain ul { margin: 6px 0 0; padding-left: 18px; }
-.error { padding: 10px 12px; border-radius: 8px; background: #fde3e1; border: 1px solid #e29b95; margin-bottom: 8px; }
+.error { padding: 10px 12px; border-radius: 8px; background: var(--bad-bg); border: 1px solid var(--bad-line); margin-bottom: 8px; }
 h3 { font-size: 15px; margin: 14px 0 6px; }
 .findings { padding-left: 18px; margin: 0; }
 .finding { margin-bottom: 12px; }
 .finding p { margin: 4px 0; }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.badge { font-size: 11px; padding: 1px 8px; border-radius: 10px; font-weight: 600; }
-.badge.low { background: #e5f6ea; } .badge.medium { background: #fff0d6; } .badge.high { background: #fde3e1; color: #8a1c12; }
-blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid #9a9a9a; background: #f7f7f7; font-style: italic; overflow-wrap: anywhere; }
+.badge { font-size: 11px; padding: 1px 8px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+.badge.low { background: var(--ok-bg); } .badge.medium { background: var(--mid-bg); } .badge.high { background: var(--bad-bg); color: var(--bad-fg); }
+blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--quote-line); background: var(--quote-bg); font-style: italic; overflow-wrap: anywhere; }
 details { margin: 10px 0; } summary { cursor: pointer; font-weight: 600; }
 details ul { padding-left: 18px; font-size: 12px; overflow-wrap: anywhere; }
-.hidden-content.alarm summary { color: #a23b00; }
+.hidden-content.alarm summary { color: var(--alarm-fg); }
+.score-caveat { margin: 6px 0 0; font-size: 12px; color: var(--alarm-fg); font-weight: 600; }
+.score-details { margin: 8px 0; font-size: 12px; } .score-details summary { font-weight: 600; font-size: 12px; color: var(--muted); }
+.score-details table { width: 100%; border-collapse: collapse; margin: 6px 0; }
+.score-details th, .score-details td { text-align: left; padding: 3px 4px; border-bottom: 1px solid var(--line); }
+.score-details td:nth-child(n+2), .score-details th:nth-child(n+2) { text-align: right; white-space: nowrap; }
 `;

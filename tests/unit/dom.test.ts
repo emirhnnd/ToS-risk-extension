@@ -223,3 +223,22 @@ describe('hukuki uyarı panelin HER durumunda görünür', () => {
     expect(core.closest('.more')).toBeNull();
   });
 });
+
+describe('panel: skor şeffaflığı', () => {
+  const f = (category: 'AUTO_RENEWAL' | 'DATA_SHARING', severity: 'low' | 'medium' | 'high') =>
+    ({ category, severity, quote: 'q q q q', segment_id: 'S1', matched_segment_id: 'S1', explanation_tr: 'x', confidence: 0.9 });
+  it('"Skor nasıl hesaplandı?" bölümü skorla aynı toplamı gösterir', () => {
+    const p = new ReportPanel();
+    p.showReport(report({ findings: [f('AUTO_RENEWAL', 'high'), f('DATA_SHARING', 'medium')], risk_score: 17, risk_level: 'low' }));
+    const details = p.shadowRoot.querySelector('[data-testid=score-details]')!;
+    expect(details.textContent).toContain('9 + 8 = 17');
+    expect(details.textContent).toContain('×1,5');
+    expect(details.querySelectorAll('tbody tr')).toHaveLength(2);
+    expect(p.shadowRoot.querySelector('[data-testid=score-caveat]')).toBeNull();
+  });
+  it('belirsizlik yüksekse skorun yanında uyarı notu çıkar', () => {
+    const p = new ReportPanel();
+    p.showReport(report({ uncertainty: { level: 'high', reasons: ['rejected_claims'], notes: [] } }));
+    expect(p.shadowRoot.querySelector('[data-testid=score-caveat]')!.textContent).toContain('eksik veya yanıltıcı');
+  });
+});

@@ -24,4 +24,11 @@ describe('ToS Risk Analizi – sınırlar', () => {
     cy.get('[data-testid=close]').click();
     cy.get('#tos-risk-panel-host').should('not.exist');
   });
+
+  it('sayfanın agresif CSS\'i paneli ve hukuki uyarıyı gizleyemez', () => {
+    cy.visit('/terms-hostile-css.html'); // #tos-risk-panel-host { display:none !important } vb.
+    cy.get('#tos-risk-panel-host').should('be.visible');
+    cy.get('[data-testid=legal-disclaimer]').should('be.visible');
+    cy.get('[data-testid=analyze-button]').should('be.visible');
+  });
 });

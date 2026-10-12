@@ -35,3 +35,16 @@ describe('riskLevel', () => {
     expect(riskLevel(45)).toBe('high');
   });
 });
+
+import { scoreBreakdown } from '../../src/validator/score';
+describe('scoreBreakdown (paneldeki "Skor nasıl hesaplandı?")', () => {
+  it('toplamı computeRiskScore ile aynı; kategori bir kez, en yüksek şiddetle', () => {
+    const fs = [v({ category: 'AUTO_RENEWAL', severity: 'low' }), v({ category: 'AUTO_RENEWAL', severity: 'high' }), v({ category: 'DATA_SHARING', severity: 'medium' })];
+    const b = scoreBreakdown(fs);
+    expect(b.total).toBe(computeRiskScore(fs));
+    expect(b.terms).toEqual([
+      { category: 'AUTO_RENEWAL', weight: 6, severity: 'high', multiplier: 1.5, points: 9 },
+      { category: 'DATA_SHARING', weight: 8, severity: 'medium', multiplier: 1, points: 8 },
+    ]);
+  });
+});
