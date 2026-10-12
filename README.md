@@ -1,5 +1,7 @@
 # ToS Risk Analizi: Chrome Uzantısı
 
+[![CI](https://github.com/emirhnnd/ToS-risk-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/emirhnnd/ToS-risk-extension/actions/workflows/ci.yml)
+
 Kullanım koşulları, gizlilik politikası ve abonelik şartları sayfalarını LLM ile analiz eden, ama **LLM'e güvenmeyen** bir Chrome uzantısı (Manifest V3, TypeScript, Vite).
 
 > ⚠️ **Bu uygulama hukuki tavsiye vermez.**

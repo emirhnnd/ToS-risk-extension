@@ -1,0 +1,40 @@
+# Her gönderimde ve PR'da: tip kontrolü, birim testleri (sır taraması dahil) ve iki build.
+# Cypress (gerçek Chrome + uzantı) burada çalışmaz: uzantı yüklemek görünür bir tarayıcı ister;
+# demo videosu yerelde `npm run e2e:video` ile üretilir.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Testler (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    env:
+      CYPRESS_INSTALL_BINARY: 0      # Cypress tarayıcısını indirme (bu işte gerekmiyor)
+      PUPPETEER_SKIP_DOWNLOAD: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Tip kontrolü
+        run: npm run typecheck
+      - name: Birim testleri (şema, alıntı, skor, gizli metin, fuzz, sınırlar, sır taraması)
+        run: npm test
+      - name: Uzantı build (dist)
+        run: npm run build
+      - name: E2E build (dist-e2e) ve normal build'e test izni sızmadığının kontrolü
+        run: |
+          npm run build:e2e
+          if grep -rq "localhost:5555" dist; then echo "dist içinde test sunucusu adresi var!"; exit 1; fi
