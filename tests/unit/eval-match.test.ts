@@ -43,6 +43,24 @@ describe('matchFindings', () => {
     expect(r.tp).toHaveLength(1);
     expect(r.fn).toHaveLength(1);
   });
+  it('aynı kategoride kesişen altın etiketler tek madde sayılır (yanlışlıkla tekrar eklenen paragraf)', () => {
+    const full = 'We may share your personal data with advertising partners and data brokers.';
+    const r = matchFindings(segs, [gold('DATA_SHARING', full), gold('DATA_SHARING', full), gold('DATA_SHARING', 'advertising partners and data brokers')],
+      [sys('DATA_SHARING', 'share your personal data with advertising partners')]);
+    expect(r.mergedGold).toBe(2);
+    expect(r.tp).toHaveLength(1);
+    expect(r.fn).toHaveLength(0);
+  });
+  it('kesişen ama FARKLI kategorili altın etiketler birleşmez', () => {
+    const r = matchFindings(segs, [gold('DATA_SHARING', 'share your personal data with advertising partners'), gold('SENSITIVE_DATA', 'personal data with advertising partners')], []);
+    expect(r.mergedGold).toBe(0);
+    expect(r.fn).toHaveLength(2);
+  });
+  it('geçişli birleştirme: A–B ve B–C kesişiyorsa üçü tek madde', () => {
+    const r = matchFindings(segs, [gold('DATA_SHARING', 'We may share your personal'), gold('DATA_SHARING', 'with advertising partners and data brokers.'), gold('DATA_SHARING', 'personal data with advertising')], []);
+    expect(r.mergedGold).toBe(2);
+    expect(r.fn).toHaveLength(1);
+  });
   it('metinde bulunamayan altın etiket ayrı raporlanır (etiketleme hatası)', () => {
     const r = matchFindings(segs, [gold('NO_REFUND', 'no refunds will be given')], []);
     expect(r.unlocatableGold).toHaveLength(1);

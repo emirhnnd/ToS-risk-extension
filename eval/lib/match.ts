@@ -13,6 +13,12 @@ import type { GoldItem } from './gold';
  *
  * TP = eşleşen G, FN = eşleşmeyen G, FP = eşleşmeyen ve tekrar olmayan S.
  * Ek tanı: FP'nin aralığı FARKLI kategorili bir G ile kesişiyorsa "yanlış kategori".
+ *
+ * EK KURAL (etiketleme bittikten sonra, sonuçlar GÖRÜLMEDEN eklendi):
+ *   Aynı kategoride metinde kesişen altın etiketler tek madde sayılır (aralıkları birleştirilir).
+ *   Neden: etiketleme aracında aynı paragraf yanlışlıkla birkaç kez (veya iç içe parçalar halinde)
+ *   eklenmişti. Kural olmasaydı bire bir eşleştirme, LLM o maddeyi doğru bulsa bile fazla
+ *   kopyaları FN sayardı. Etiket dosyaları değiştirilmedi; birleştirme sayısı raporda gösterilir.
  */
 export interface MatchResult {
   tp: { gold: GoldItem; sys: VerifiedFinding; overlap: number }[];
@@ -21,6 +27,8 @@ export interface MatchResult {
   duplicates: VerifiedFinding[];
   /** Altın etiketin alıntısı korpusta bulunamadı: etiketleme hatası, ölçümden önce düzeltilmeli */
   unlocatableGold: GoldItem[];
+  /** Aynı kategoride kesiştiği için başka bir altın etiketle birleştirilen etiket sayısı */
+  mergedGold: number;
 }
 
 type Span = [number, number];
@@ -28,7 +36,9 @@ const overlap = (a: Span, b: Span) => Math.max(0, Math.min(a[1], b[1]) - Math.ma
 
 export function matchFindings(segments: readonly Segment[], gold: readonly GoldItem[], sys: readonly VerifiedFinding[]): MatchResult {
   const idx = new QuoteIndex(segments);
-  const g = gold.map((item) => ({ item, span: idx.locate(item.quote) }));
+  const located = gold.map((item) => ({ item, span: idx.locate(item.quote) }));
+  const g = mergeOverlappingGold(located);
+  const mergedGold = located.filter((x) => x.span).length - g.filter((x) => x.span).length;
   const s = sys.map((f) => ({ f, span: idx.locate(f.quote) }));
   const unlocatableGold = g.filter((x) => !x.span).map((x) => x.item);
 
@@ -59,7 +69,24 @@ export function matchFindings(segments: readonly Segment[], gold: readonly GoldI
     fp.push({ sys: sx.f, ...(wrong ? { wrongCategoryOf: wrong.item.category } : {}) });
   });
   const fn = g.filter((gx, gi) => gx.span && !gUsed.has(gi)).map((x) => x.item);
-  return { tp, fn, fp, duplicates, unlocatableGold };
+  return { tp, fn, fp, duplicates, unlocatableGold, mergedGold };
+}
+
+/** Aynı kategoride kesişen altın etiketleri (geçişli olarak) tek maddeye indirir; ilk etiket temsilcidir. */
+export function mergeOverlappingGold<T extends { item: GoldItem; span: Span | null }>(items: T[]): T[] {
+  const out: T[] = [];
+  for (const x of items) {
+    if (!x.span) { out.push(x); continue; }
+    let span: Span = [...x.span];
+    // Yeni aralıkla kesişen tüm grupları topla ve birleştir (A–C kesişmez ama B ikisiyle kesişirse tek grup)
+    const hits = out.filter((o) => o.span && o.item.category === x.item.category && overlap(o.span, span) > 0);
+    for (const h of hits) span = [Math.min(span[0], h.span![0]), Math.max(span[1], h.span![1])];
+    if (hits.length === 0) { out.push({ ...x, span }); continue; }
+    const first = hits[0]!;
+    for (const h of hits.slice(1)) out.splice(out.indexOf(h), 1);
+    first.span = span;
+  }
+  return out;
 }
 
 export function prf(tp: number, fp: number, fn: number) {

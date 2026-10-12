@@ -130,6 +130,7 @@ export function renderMarkdown(results: DocResult[], skipped: string[], model: s
     `| Metin sayısı | ${results.length} |`, `| TP / FP / FN | ${TP} / ${FP} / ${FN} |`,
     `| Precision | ${pct(all.precision)} |`, `| Recall | ${pct(all.recall)} |`, `| F1 | ${pct(all.f1)} |`,
     `| Reddedilen alıntı oranı (halüsinasyon göstergesi) | ${pct(llmTotal ? rejTotal / llmTotal : null)} (${rejTotal}/${llmTotal}) |`,
+    `| Birleştirilen kesişen altın etiket (aynı kategori) | ${sum((r) => r.match.mergedGold)} |`,
     `| TP'lerde şiddet uyumu (LLM = elle etiket) | ${pct(TP ? sevAgree / TP : null)} (${sevAgree}/${TP}) |`, '');
 
   L.push('## Metin bazında', '', '| Metin | Dil | Bölüm | Kapsam | TP | FP | FN | Precision | Recall | Reddedilen | Skor |', '|---|---|---|---|---|---|---|---|---|---|---|');

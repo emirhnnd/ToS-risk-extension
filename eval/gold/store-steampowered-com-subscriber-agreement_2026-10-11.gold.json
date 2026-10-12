@@ -1,0 +1,69 @@
+{
+  "format": "tos-risk-gold/v1",
+  "corpus_file": "store-steampowered-com-subscriber-agreement_2026-10-11.json",
+  "labeler": "Emirhan",
+  "labeled_at": "2026-10-12T19:35:05.378Z",
+  "complete": true,
+  "items": [
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "STEAM, THE CONTENT AND SERVICES, THE SUBSCRIPTIONS, AND ANY INFORMATION AVAILABLE IN CONNECTION THEREWITH ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, \"WITH ALL FAULTS\" AND WITHOUT WARRANTY OF ANY KIND"
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "NEITHER VALVE, ITS LICENSORS, NOR THEIR AFFILIATES, NOR ANY OF VALVE’S SERVICE PROVIDERS, SHALL BE LIABLE IN ANY WAY FOR LOSS OR DAMAGE OF ANY KIND RESULTING FROM THE USE OR INABILITY TO USE STEAM,"
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "Furthermore, Valve may amend this Agreement (including any Subscription Terms or Rules of Use) unilaterally at any time in its sole discretion. In this case, you will be notified by e-mail of any amendment to this Agreement made by Valve at least 30 (30) days before the effective date of the amendment. You can view the Agreement at any time at http://www.steampowered.com/. Your failure to cancel your Account prior to the effective date of the amendment will constitute your acceptance of the amended terms"
+    },
+    {
+      "category": "AUTO_RENEWAL",
+      "severity": "low",
+      "quote": "For Subscriptions ordered based on an agreed usage period, where recurring payments are made in exchange for continued use (\"Recurring Payment Subscriptions\"), by continuing to use the Recurring Payment Subscription you agree and reaffirm that Valve is authorized to charge your credit card"
+    },
+    {
+      "category": "ARBITRARY_TERMINATION",
+      "severity": "medium",
+      "quote": "Valve may restrict or terminate your Account(s) or a particular Subscription for any conduct or activity that is illegal, constitutes a Cheat or Automation or breaches the Steam Online Conduct Rules. You acknowledge that Valve is not required to provide you notice before terminating your Subscription(s) and/or Account."
+    },
+    {
+      "category": "NO_REFUND",
+      "severity": "high",
+      "quote": "funds added to the Steam Wallet are non-refundable and non-transferable. Steam Wallet funds do not constitute a personal property right, have no value outside Steam"
+    },
+    {
+      "category": "NO_REFUND",
+      "severity": "high",
+      "quote": "Your cancellation of an Account, or your cessation of use of any Subscription or request that access to a Subscription be terminated, will not entitle you to any refund, including of any Subscription fees."
+    },
+    {
+      "category": "JURISDICTION_FOREIGN_LAW",
+      "severity": "high",
+      "quote": "You and Valve agree that this Agreement shall be deemed to have been made and executed in the State of Washington, U.S.A., and Washington law, excluding conflict of laws principles and the Convention on Contracts for the International Sale of Goods, governs all disputes and claims arising out of or relating to: (i) any aspect of the relationship between us; (ii) this Agreement; or (iii) your use of Steam, your Account or the Content and Services. You and Valve agree that all disputes and claims between you and Valve (including any dispute or claim that arose before the existence of this or any prior agreement) shall be commenced and maintained exclusively in any state or federal court located in King County, Washington, having subject matter jurisdiction. You and Valve hereby consent to the exclusive jurisdiction of such courts and waive any objections as to personal jurisdiction or venue in such courts."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "When you upload your content to Steam to make it available to other users and/or to Valve, you grant Valve and its affiliates the worldwide, non-exclusive right to use, reproduce, modify, create derivative works from, distribute, transmit, transcode, translate, broadcast, and otherwise communicate, and publicly display and publicly perform, your User Generated Content, and derivative works of your User Generated Content, for the purpose of the operation, distribution, incorporation as part of and promotion of the Steam service, Steam games or other Steam offerings, including Subscriptions. This license is granted to Valve as the content is uploaded on Steam for the entire duration of the intellectual property rights. It may be terminated if Valve is in breach of the license and has not cured such breach within fourteen (14) days from receiving notice from you sent to the attention of the Valve Legal Department at the applicable Valve address noted on this Privacy Policy page. The termination of said license does not affect the rights of any sub-licensees pursuant to any sub-license granted by Valve prior to termination of the license. Valve is the sole owner of the derivative works created by Valve from your User Generated Content, and is therefore entitled to grant licenses on these derivative works. If you use Valve cloud storage, you grant us a license to store your information as part of that service. Valve may place limits on the amount of storage you may use."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "Valve is the sole owner of the derivative works created by Valve from your User Generated Content, and is therefore entitled to grant licenses on these derivative works. If you use Valve cloud storage, you grant us a license to store your information as part of that service. Valve may place limits on the amount of storage you may use."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "When you upload your content to Steam to make it available to other users and/or to Valve, you grant Valve and its affiliates the worldwide, non-exclusive right to use, reproduce, modify, create derivative works from, distribute, transmit, transcode, translate, broadcast, and otherwise communicate, and publicly display and publicly perform, your User Generated Content, and derivative works of your User Generated Content, for the purpose of the operation, distribution, incorporation as part of and promotion of the Steam service, Steam games or other Steam offerings, including Subscriptions. This license is granted to Valve as the content is uploaded on Steam for the entire duration of the intellectual property rights. It may be terminated if Valve is in breach of the license and has not cured such breach within fourteen (14) days from receiving notice from you sent to the attention of the Valve Legal Department at the applicable Valve address noted on this Privacy Policy page. The termination of said license does not affect the rights of any sub-licensees pursuant to any sub-license granted by Valve prior to termination of the license."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "If you provide Valve with any feedback or suggestions about Steam, the Content and Services, or any Valve products, Hardware or services, Valve is free to use the feedback or suggestions however it chooses, without any obligation to account to you"
+    }
+  ]
+}

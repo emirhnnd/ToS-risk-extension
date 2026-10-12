@@ -91,6 +91,8 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 
 **Eşleştirme kuralı** (sonuçlara bakmadan önce yazıldı, `eval/lib/match.ts`): sistem bulgusu ile altın etiket, *aynı kategoride* ve alıntılarının metindeki karakter aralıkları *kesişiyorsa* eşleşir; eşleştirme bire birdir. Aynı maddeyi parçalı bulmak FP değil "tekrar" sayılır. Yeri doğru ama kategorisi farklı bulgu FP + FN olur ve raporda ayrıca işaretlenir.
 
+**Ek kural (etiketleme bittikten sonra, sonuçlar görülmeden eklendi):** Aynı kategoride metinde kesişen altın etiketler tek madde sayılır. Etiketleme sırasında aynı paragraf yanlışlıkla birkaç kez ya da iç içe parçalar halinde eklenmişti (Spotify'da 3, Steam'de 2 etiket). Bu kural olmasaydı LLM o maddeyi doğru bulsa bile fazla kopyalar FN sayılırdı. Etiket dosyalarına dokunulmadı; birleştirme sayısı `results.md` özetinde gösterilir.
+
 ## Uçtan uca test (Cypress)
 
 ```

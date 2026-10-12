@@ -1,0 +1,59 @@
+{
+  "format": "tos-risk-gold/v1",
+  "corpus_file": "spotify-com-end-user-agreement_2026-10-11.json",
+  "labeler": "Emirhan",
+  "labeled_at": "2026-10-12T19:21:37.466Z",
+  "complete": true,
+  "items": [
+    {
+      "category": "AUTO_RENEWAL",
+      "severity": "medium",
+      "quote": "Faturalandırma ve İptal Aksi belirtilmedikçe (örneğin, Ön Ödemeli Süre için kaydolduysanız) Ücretli Abonelikler iptal edilene kadar süresiz olarak devam eder."
+    },
+    {
+      "category": "NO_REFUND",
+      "severity": "high",
+      "quote": "Bu Şartlar'da aksi belirtilmediği sürece kısmi üyelik dönemleri için iade veya kredi sunmayız."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "Bu doğrultuda Spotify'a herhangi bir Kullanıcı İçeriğinizi Spotify Hizmeti ile bağlantılı olarak herhangi bir ortam aracılığıyla, tek başına ya da başka İçerik ile veya materyallerle birlikte, herhangi bir şekilde ve bilinen ya da bundan sonra geliştirilecek olan herhangi bir araçla, yöntemle veya teknolojiyle çoğaltmak, herkese açık hale getirmek, icra etmek ve göstermek, tercüme etmek, değiştirmek, türev eserlerini oluşturmak ve dağıtmak üzere münhasır olmayan, devredilebilir, alt lisansı verilebilir, telifsiz, tamamen ödenmiş, iptal edilemez ve tüm dünyada geçerli bir lisans verirsiniz."
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "Spotify Hizmeti \"olduğu gibi\" ve \"kullanılabilir olduğu şekliyle\", hiçbir türde açık, zımni veya yasal garanti olmaksızın sunulmaktadır. Ayrıca, Spotify ve tüm içerik sahipleri yeterli kalite, pazarlanabilirlik, belirli bir amaca uygunluk veya ihlal içermemeyle ilgili her türlü açık, zımni ve yasal garantiyi reddetmektedir."
+    },
+    {
+      "category": "ARBITRATION_CLASS_WAIVER",
+      "severity": "high",
+      "quote": "GEÇERLİ KANUNLARIN İZİN VERDİĞİ DURUMLARDA SİZ VE SPOTIFY, BİRBİRİNİZE KARŞI HERHANGİ BİR TOPLU YA DA TEMSİLİ GİBİ GÖRÜNEN DAVADA BİR DAVACI YA DA TOPLU DAVA TARAFI OLARAK DEĞİL, YALNIZCA KENDİ SIFATINIZLA İDDİADA BULUNABİLECEĞİNİZİ KABUL EDERSİNİZ"
+    },
+    {
+      "category": "JURISDICTION_FOREIGN_LAW",
+      "severity": "medium",
+      "quote": "Bulgaristan, Kıbrıs, Estonya, Fransa, Hong Kong, Letonya, Litvanya, Lüksemburg, Malta, Monako, Norveç, Filipinler, Portekiz, Slovakya, İspanya, Türkiye İsveç Kanunları Münhasır değil;"
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "Bu Şartlar Hakkında Geçerli kanuna göre bir sözleşmeyle sınırlanamayacak belirli haklara sahip olabilirsiniz. Bu şartlar hiçbir şekilde bu hakları sınırlamayı amaçlamaz. Değişiklikler Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "Bu Şartlar Hakkında Geçerli kanuna göre bir sözleşmeyle sınırlanamayacak belirli haklara sahip olabilirsiniz. Bu şartlar hiçbir şekilde bu hakları sınırlamayı amaçlamaz. Değişiklikler Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": ". Bu Şartlar Hakkında Geçerli kanuna göre bir sözleşmeyle sınırlanamayacak belirli haklara sahip olabilirsiniz. Bu şartlar hiçbir şekilde bu hakları sınırlamayı amaçlamaz. Değişiklikler Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "medium",
+      "quote": "Bu Şartlar'da (buraya referans olarak dahil edilen diğer Spotify şartları ve koşulları dahil) zaman zaman sizi ilgili değişiklikler konusunda (değişiklikler geçerli olmadan önce), geçerli Spotify Hizmeti üzerinden revize edilmiş bir Sözleşme yayınlamak dahil olmak üzere makul yöntemlerle (önemli değişikliklerde bu bildirimi e-posta, hizmet içi açılır mesaj veya başka yöntemlerle tamamlamaya çalışmamız şartıyla) bilgilendirmek suretiyle değişiklikler yapabiliriz. İlgili değişiklikler, revize edilen Şartlar'ı ya da diğer Spotify şartları ve koşullarını yayınladığımız, bu değişikliklerin dahil edildiği veya sizi ilgili değişiklikler hakkında bilgilendirdiğimiz tarihten önce sizinle aramızdaki herhangi bir anlaşmazlık için geçerli olmayacaktır. Bu Şartlar'da yapılacak herhangi bir değişiklik sonrasında Spotify Hizmeti'ni kullanmanız, bu değişiklikleri kabul ettiğiniz anlamına gelir."
+    }
+  ]
+}
