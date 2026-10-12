@@ -8,8 +8,8 @@ import { startServer } from './scripts/serve-fixtures.mjs';
 export default defineConfig({
   video: true,
   videoCompression: 28,
-  viewportWidth: 1280,
-  viewportHeight: 800,
+  viewportWidth: 1024,
+  viewportHeight: 720,
   e2e: {
     baseUrl: 'http://localhost:5555',
     specPattern: 'cypress/e2e/**/*.cy.js',
