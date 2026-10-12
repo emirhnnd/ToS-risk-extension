@@ -1,0 +1,44 @@
+{
+  "format": "tos-risk-gold/v1",
+  "corpus_file": "amazon-com-display_2026-10-11.json",
+  "labeler": "Emirhan",
+  "labeled_at": "2026-10-12T19:07:26.271Z",
+  "complete": true,
+  "items": [
+    {
+      "category": "ARBITRATION_CLASS_WAIVER",
+      "severity": "high",
+      "quote": "DISPUTES YOU AND WE AGREE THAT ANY DISPUTE OR CLAIM RELATING IN ANY WAY TO YOUR USE OF ANY AMAZON SERVICE, OR TO ANY PRODUCTS OR SERVICES SOLD OR DISTRIBUTED BY AMAZON OR THROUGH AMAZON.COM, WILL BE RESOLVED BY BINDING ARBITRATION RATHER THAN IN COURT."
+    },
+    {
+      "category": "ARBITRATION_CLASS_WAIVER",
+      "severity": "high",
+      "quote": "YOU AND WE AGREE THAT ANY ARBITRATION PROCEEDING WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS OR REPRESENTATIVE ACTION."
+    },
+    {
+      "category": "LIABILITY_DISCLAIMER",
+      "severity": "high",
+      "quote": "THE AMAZON SERVICES AND ALL INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) AND OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE AMAZON SERVICES ARE PROVIDED BY AMAZON ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, UNLESS OTHERWISE SPECIFIED IN WRITING. AMAZON MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THE AMAZON SERVICES, OR THE INFORMATION, CONTENT, MATERIALS, PRODUCTS (INCLUDING SOFTWARE) OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE AMAZON SERVICES, UNLESS OTHERWISE SPECIFIED IN WRITING."
+    },
+    {
+      "category": "CONTENT_LICENSE",
+      "severity": "high",
+      "quote": "If you do post content or submit material, and unless we indicate otherwise, you grant Amazon a nonexclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, perform, translate, create derivative works from, distribute, and display such content throughout the world in any media."
+    },
+    {
+      "category": "UNILATERAL_CHANGE",
+      "severity": "high",
+      "quote": "We reserve the right to make changes to our site, policies, Service Terms, and these Conditions of Use at any time. By using Amazon Services after such changes, you agree to be bound by them."
+    },
+    {
+      "category": "ARBITRARY_TERMINATION",
+      "severity": "high",
+      "quote": "Amazon reserves the right to refuse service, terminate accounts, terminate your rights to use Amazon Services, remove or edit content, or cancel orders in its sole discretion."
+    },
+    {
+      "category": "JURISDICTION_FOREIGN_LAW",
+      "severity": "high",
+      "quote": "By using any Amazon Service, you agree that applicable federal law, and the laws of the state of Washington, without regard to principles of conflict of laws, will govern these Conditions of Use and any dispute of any sort that might arise between you and Amazon"
+    }
+  ]
+}
