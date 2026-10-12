@@ -43,14 +43,14 @@ Halüsinasyon göstergesi: LLM'in 39 iddiasından **0'ı** alıntı doğrulamas�
 | 10 | Spotify | FN | Sorumluluk reddi | "Spotify Hizmeti "olduğu gibi" … garanti olmaksızın sunulmaktadır." | ŞEMA | LLM bu kategoride sorumluluk sınırlaması maddesini ("Spotify, yetkilileri, hissedarları …") seçti, ama alıntı 600 karakteri aştığı için şemadan geçemedi. Kategori rapora hiç girmedi |
 | 11 | Spotify | FN | Yabancı hukuk / yargı yeri | "Bulgaristan, Kıbrıs, … Türkiye İsveç Kanunları Münhasır değil;" | TABLO | Ülke → geçerli hukuk tablosu tek satır düz metne dönüştü. Türkiye'deki kullanıcı için İsveç hukuku geçerli olduğu bu satırdan okunamıyor |
 | 12 | Spotify | FP | Tek taraflı değişiklik | "Spotify; düzenli abonelik ücretleri … ücretini zaman zaman değiştirebilir …" | ETİKET? | Fiyat değişikliği maddesi. Netflix'teki benzer madde altın etikette "Tek taraflı değişiklik" olarak işaretlendi, burada işaretlenmedi: etiketler arası tutarsızlık |
-| 13 | Spotify | FP | Keyfi hesap kapatma | "Spotify, her türlü Kullanıcı İçeriği'ni herhangi bir nedenle ya da nedensiz şekilde kaldırma …" | KATEGORİ | İçerik kaldırma, hesap kapatma değil; kategori tanımı ("hesabı sebepsiz kapatma") bunu açıkça kapsamıyor |
+| 13 | Spotify | FP | Keyfi hesap kapatma | "Spotify, her türlü Kullanıcı İçeriği'ni herhangi bir nedenle ya da nedensiz şekilde kaldırma …" | KATEGORİ, ETİKET? | İçerik kaldırma, hesap kapatma değil; kategori tanımı bunu açıkça kapsamıyor. Etiketleyici sonradan incelemede riskli kabul etti (aşağıda) |
 | 14 | Spotify | FP | Tahkim / toplu dava feragati | "Siz ve Spotify … zorunlu bağlayıcı bireysel tahkim ile çözümleneceğini kabul edersiniz." | ETİKET?, SINIR | Bu bir tahkim maddesi, ama 6.3 "bu maddenin yürütülebilir olduğu bir yargı bölgesinde bulunmanız halinde" geçerli. Türkiye'deki kullanıcıya uygulanıp uygulanmadığı metinden belli değil |
 | 15 | Steam | FN | Sorumluluk reddi | "STEAM … ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS …" | TEKRAR | Sorumluluk sınırlaması bulundu (TP), garanti reddi raporlanmadı. Amazon'daki #1 ile aynı örüntü |
 | 16 | Steam | FN | İade yok | "Your cancellation of an Account … will not entitle you to any refund …" | TEKRAR | Steam Cüzdanı iade maddesi bulundu (TP), ikinci örnek raporlanmadı |
 | 17 | Steam | FN | Kullanıcı içeriğine geniş lisans | "If you provide Valve with any feedback or suggestions … free to use …" | TEKRAR | Kullanıcı içeriği lisansı bulundu (TP), geri bildirim maddesi raporlanmadı |
 | 18 | YouTube | FN | Tek taraflı değişiklik | "Bu Sözleşme'yi, örneğin (1) Hizmet'teki … değiştirebiliriz." | KOMŞU | LLM hemen sonraki cümleyi seçti (#21); iki alıntı arasında yalnızca 1 karakter var |
 | 19 | YouTube | FN | Tek taraflı değişiklik | "özellik ve işlev ekleme veya kaldırma … değişiklikler yapabiliriz." | TEKRAR | Hizmetin kendisinde değişiklik; ikinci örnek raporlanmadı |
-| 20 | YouTube | FP | Keyfi hesap kapatma | "YouTube; (a) … ihlal etmeniz; (b) … mahkeme emrine …; (c) … makul bir şekilde karar vermemiz halinde … feshetme hakkını saklı tutar." | SINIR | Fesih nedenleri sayılmış, yani "keyfi" değil; ama (c) geniş bir takdir alanı bırakıyor |
+| 20 | YouTube | FP | Keyfi hesap kapatma | "YouTube; (a) … ihlal etmeniz; (b) … mahkeme emrine …; (c) … makul bir şekilde karar vermemiz halinde … feshetme hakkını saklı tutar." | AŞIRI | Fesih nedenleri sayılmış, yani "keyfi" değil. Etiketleyici incelemede "haklı bir madde" diyerek riskli saymadı |
 | 21 | YouTube | FP | Tek taraflı değişiklik | "Bu Sözleşme'de esaslı değişiklik yapmamız durumunda … bilgilendirir …" | KOMŞU | #18'in eşi |
 
 ### Neden dağılımı
@@ -64,7 +64,7 @@ Halüsinasyon göstergesi: LLM'in 39 iddiasından **0'ı** alıntı doğrulamas�
 | TABLO | 1 | – | 1 |
 | BÖLME | 1 | – | 1 |
 | KATEGORİ | – | 1 | 1 |
-| SINIR | – | 1 | 1 |
+| AŞIRI | – | 1 | 1 |
 | ETİKET? (birincil) | – | 2 | 2 |
 | **Toplam** | **14** | **7** | **21** |
 
@@ -105,7 +105,33 @@ Sonuçlardan **önce** yapılanlar:
 - Getir: "İstanbul Merkez (Çağlayan) Mahkemeleri …" etiketi "Yabancı hukuk" kategorisindeydi. Etiketleme kuralı "Türkiye mahkemesi yabancı sayılmaz" dediği için etiketleyicinin kararıyla silindi.
 - Spotify'da 3, Steam'de 2 etiket aynı paragrafın tekrarıydı (etiketleme aracında yanlışlıkla tekrar ekleme). Dosyalar değiştirilmedi; eşleştirmeye "aynı kategoride kesişen altın etiketler tek madde" kuralı eklendi.
 
-ETİKET? olarak işaretlenen 4 FP (#2, #9, #12, #14) altın etikette yer alsaydı precision %82 → %92 olurdu (35/38). Bu sayı **resmî sonuç değildir**, yalnızca etiket belirsizliğinin büyüklüğünü göstermek için verildi.
+## Sonuçlar görüldükten sonra yapılan inceleme (etiket gürültüsü)
+
+Etiketleyici, LLM'in 7 yanlış alarmının cümlelerini tek tek okudu (12 Ekim 2026). Her biri için aynı soruyu yanıtladı: "Etiketlerken bu cümleyi görseydim bu kategoriyle işaretler miydim?" Hangi cümlenin riskli olduğuna dair bir öneri verilmedi; cümleler ve LLM'in kategorisi gösterildi.
+
+| # | Metin | LLM kategorisi | Etiketleyicinin cevabı |
+|---|---|---|---|
+| 2 | Amazon | Sorumluluk reddi | **Evet**, kaçırmışım |
+| 9 | Netflix | Otomatik yenileme | **Evet**, kaçırmışım |
+| 12 | Spotify | Tek taraflı değişiklik (fiyat) | Belki (orta şiddet) |
+| 13 | Spotify | Keyfi hesap kapatma (içerik kaldırma) | **Evet**, kaçırmışım |
+| 14 | Spotify | Tahkim | **Evet**, kaçırmışım |
+| 20 | YouTube | Keyfi hesap kapatma | **Hayır**: "haklı bir madde gibi" |
+| 21 | YouTube | Tek taraflı değişiklik (bildirim) | Emin değilim (düşük/orta) |
+
+**Resmî sonuçlar değiştirilmedi.** İnceleme yalnızca etiket kalitesini ölçmek içindir:
+
+| Varsayım | TP / FP | Precision |
+|---|---|---|
+| Resmî (kör etiketler) | 31 / 7 | %82 |
+| İncelemede "evet" denenler doğru sayılırsa | 35 / 3 | %92 |
+| "Evet" + "belki/emin değilim" doğru sayılırsa | 37 / 1 | %97 |
+
+Yorum:
+- Kör etiketlerimde **en az 4 eksik madde** vardı. Yanlış alarmların yarısından fazlası aslında sistemin değil, etiketin hatası.
+- Bu inceleme **yalnızca LLM'in bulduklarını** kapsıyor. Hem benim hem LLM'in kaçırdığı maddeler hâlâ görünmüyor. Bu yüzden düzeltilmiş bir recall hesaplanamaz; gerçek recall büyük olasılıkla resmî %69'dan da düşüktür.
+- Tek yön: İnceleme yalnızca sistemin lehine sonuç verebilecek maddelere (FP'lere) bakıyor. Bu yüzden düzeltilmiş precision resmî sonuç olarak kullanılmamalı.
+- #13 için etiketleyicinin "evet"i ile kategori tanımı ("hesabı sebepsiz kapatma") çelişiyor. Bu, kategori tanımının içerik kaldırmayı da kapsayacak şekilde genişletilmesi gerektiğini gösteriyor.
 
 ## Sonraki adımlar (yapılmadı)
 

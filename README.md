@@ -103,6 +103,7 @@ eval/results.md   npm run eval çıktısı      eval/error-analysis.md   elle ya
 | Belge × kategori (skorun kullandığı düzey) | %94 | %91 | %93 |
 
 - **Halüsinasyon:** LLM'in 39 iddiasının hiçbiri alıntı doğrulamasında reddedilmedi.
+- **Etiket gürültüsü:** Sonuçlar görüldükten sonra etiketleyici 7 yanlış alarmı tek tek inceledi: 4'üne "kaçırmışım", 2'sine "belki", 1'ine "hayır" dedi. Resmî sayılar değiştirilmedi. "Evet"ler sayılsaydı precision %92 olurdu. Bu inceleme tek yönlü olduğu için recall düzeltilemiyor.
 - **Kaçırmalar:** 14 kaçırmanın 7'si aynı kategorinin ikinci örneği (LLM kategori başına genelde tek madde veriyor). 3'ü, aynı maddenin komşu cümlesinin alıntılanması.
 - **Şiddet ve skor:** LLM şiddeti sistematik olarak düşük tahmin ediyor (eşleşen 31 maddenin 15'inde). Bu yüzden skor 6 metnin 5'inde, elle etiketlerle hesaplanandan düşük; Getir'de risk seviyesi "orta" yerine "düşük" çıkıyor.
 - **Eval'in bulup düzelttiği iki hata:** (1) Tek bir uzun alıntı Spotify analizinin tamamını düşürüyordu; bulgular artık tek tek doğrulanıyor. (2) Görünür talimat sezgisi, sözleşmelerdeki yapay zekâ maddelerinde ("AI-generated content", "model parameters") yanlış alarm veriyordu; desen daraltıldı.
