@@ -103,7 +103,7 @@ async function analyze(snap: CorpusSnapshot, model: string, apiKey: string, useC
   const parsed = parseLlmOutput(raw!);
   if (!parsed.ok) return { ok: false as const, error: parsed.error };
   const report = buildReport({ url: snap.url, now: new Date(snap.captured_at), detectionScore: snap.detection_score, coverage, segments: selected, hidden: snap.hidden, output: parsed.data });
-  return { ok: true as const, report, selected, cached, llmFindings: parsed.data.findings.length };
+  return { ok: true as const, report, selected, cached, llmFindings: parsed.data.findings.length + (parsed.data.schema_rejected?.length ?? 0) };
 }
 
 export function cacheKey(model: string, selected: Segment[], meta: { url: string; title: string }): string {

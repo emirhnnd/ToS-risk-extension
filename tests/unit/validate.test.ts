@@ -22,12 +22,36 @@ describe('parseLlmOutput (K1: şema)', () => {
     const raw = JSON.stringify({ ...output([]), risk_score: 0 });
     expect(parseLlmOutput(raw)).toMatchObject({ ok: false });
   });
-  it('listede olmayan kategori reddedilir', () => {
-    const raw = JSON.stringify(output([{ ...finding(), category: 'TOTALLY_SAFE' as never }]));
-    expect(parseLlmOutput(raw).ok).toBe(false);
+  it('listede olmayan kategori: o bulgu reddedilir, diğerleri korunur', () => {
+    const raw = JSON.stringify(output([{ ...finding(), category: 'TOTALLY_SAFE' as never }, finding()]));
+    const r = parseLlmOutput(raw);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.data.findings).toHaveLength(1);
+    expect(r.data.schema_rejected).toEqual([expect.objectContaining({ reason: 'schema_invalid', detail: expect.stringContaining('findings.0.category') })]);
   });
-  it('aralık dışı güven değeri reddedilir', () => {
-    expect(parseLlmOutput(JSON.stringify(output([finding({ confidence: 7 })]))).ok).toBe(false);
+  it('aralık dışı güven değeri: o bulgu reddedilir', () => {
+    const r = parseLlmOutput(JSON.stringify(output([finding({ confidence: 7 })])));
+    expect(r.ok && r.data.findings.length === 0 && r.data.schema_rejected?.length === 1).toBe(true);
+  });
+  it('600 karakteri aşan alıntı yalnızca o bulguyu düşürür (eval\'de Spotify\'da görüldü)', () => {
+    const r = parseLlmOutput(JSON.stringify(output([finding({ quote: 'a'.repeat(601) }), finding()])));
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.data.findings).toHaveLength(1);
+    expect(r.data.schema_rejected?.[0]?.detail).toContain('findings.0.quote');
+  });
+  it('dış yapı hâlâ katı: findings dizi değilse veya 60\'tan fazlaysa çıktının tamamı reddedilir', () => {
+    expect(parseLlmOutput(JSON.stringify({ ...output([]), findings: 'yok' })).ok).toBe(false);
+    expect(parseLlmOutput(JSON.stringify(output(Array.from({ length: 61 }, () => finding())))).ok).toBe(false);
+  });
+  it('şemadan geçmeyen bulgu raporda reddedilenlere girer ve belirsizliği yükseltir', () => {
+    const p = parseLlmOutput(JSON.stringify(output([finding({ quote: 'a'.repeat(601) }), finding()])));
+    if (!p.ok) throw new Error('beklenmedik');
+    const rep = buildReport({ url: 'https://x.test', now: new Date(), detectionScore: 0.9, coverage: 1, segments: segs, hidden: [], output: p.data });
+    expect(rep.findings).toHaveLength(1);
+    expect(rep.rejected[0]?.reason).toBe('schema_invalid');
+    expect(rep.uncertainty.reasons).toContain('rejected_claims');
   });
 });
 

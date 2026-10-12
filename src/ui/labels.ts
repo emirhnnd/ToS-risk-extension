@@ -5,7 +5,7 @@ export const LEGAL_DISCLAIMER = 'Bu uygulama hukuki tavsiye vermez. Rapor otomat
 export const UNCERTAINTY_LABELS: Record<UncertaintyReason, string> = {
   not_a_contract_page: 'Bu sayfa bir sözleşme sayfasına benzemiyor.',
   partial_coverage: 'Metin çok uzun; bir kısmı analiz edilemedi.',
-  rejected_claims: 'Yapay zekânın bazı iddiaları metinde bulunamadığı için reddedildi.',
+  rejected_claims: 'Yapay zekânın bazı iddiaları doğrulamadan geçemediği (alıntı metinde yok veya biçim hatalı) için reddedildi.',
   hidden_instructions: 'Sayfada gizlenmiş, yapay zekâya yönelik talimat tespit edildi.',
   visible_instructions: 'Sayfa metninde yapay zekâya yönelik talimat gibi görünen ifadeler var.',
   low_confidence_findings: 'Bazı maddelerde yapay zekâ düşük güven bildirdi.',
@@ -31,6 +31,7 @@ export const REJECT_LABELS: Record<RejectedFinding['reason'], string> = {
   too_short: 'alıntı çok kısa',
   contains_ellipsis: 'alıntı kırpılmış (…)',
   duplicate: 'tekrar eden madde',
+  schema_invalid: 'biçim kurallarına uymuyor',
 };
 
 export const SEVERITY_LABELS = { low: 'Düşük', medium: 'Orta', high: 'Yüksek' } as const;

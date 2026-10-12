@@ -1,5 +1,7 @@
 import {
-  LlmOutputSchema,
+  LlmFindingSchema,
+  LlmOutputEnvelopeSchema,
+  type ParsedLlmOutput,
   type HiddenTextFinding,
   type LlmOutput,
   type RejectedFinding,
@@ -13,7 +15,7 @@ import { normalizeForMatch } from './normalize';
 import { QuoteIndex } from './quote';
 import { computeRiskScore, riskLevel } from './score';
 
-export type ParseResult = { ok: true; data: LlmOutput } | { ok: false; error: string };
+export type ParseResult = { ok: true; data: ParsedLlmOutput } | { ok: false; error: string };
 
 /** Adım 1: ham LLM yanıtı → şemaya uyan nesne ya da güvenli hata. Asla throw etmez. */
 export function parseLlmOutput(raw: string): ParseResult {
@@ -23,12 +25,22 @@ export function parseLlmOutput(raw: string): ParseResult {
   } catch {
     return { ok: false, error: 'LLM yanıtı geçerli JSON değil' };
   }
-  const r = LlmOutputSchema.safeParse(json);
+  const r = LlmOutputEnvelopeSchema.safeParse(json);
   if (!r.success) {
     const first = r.error.issues[0];
     return { ok: false, error: `Şema hatası: ${first?.path.join('.') || '(kök)'} – ${first?.message ?? ''}` };
   }
-  return { ok: true, data: r.data };
+  const findings: LlmOutput['findings'] = [];
+  const schema_rejected: RejectedFinding[] = [];
+  r.data.findings.forEach((raw, i) => {
+    const f = LlmFindingSchema.safeParse(raw);
+    if (f.success) findings.push(f.data);
+    else {
+      const first = f.error.issues[0];
+      schema_rejected.push({ finding: raw, reason: 'schema_invalid', detail: `findings.${i}.${first?.path.join('.') ?? ''} – ${first?.message ?? ''}` });
+    }
+  });
+  return { ok: true, data: { ...r.data, findings, schema_rejected } };
 }
 
 /** Adım 2: her iddianın alıntısını orijinal metinde ara. Bulunamayan atılır. */
@@ -70,12 +82,15 @@ export interface ReportInput {
   coverage: number; // 0–1
   segments: readonly Segment[];
   hidden: readonly HiddenTextFinding[];
-  output: LlmOutput;
+  output: ParsedLlmOutput;
 }
 
 /** Adım 3: doğrulanmış maddelerden raporu ve belirsizlik durumunu kodla üret. */
 export function buildReport(input: ReportInput): Report {
-  const { verified, rejected } = verifyFindings(input.output, input.segments);
+  const verifiedResult = verifyFindings(input.output, input.segments);
+  const { verified } = verifiedResult;
+  // Şemadan geçemeyen bulgular da "reddedilen iddia"dır (belirsizliği yükseltir)
+  const rejected = [...(input.output.schema_rejected ?? []), ...verifiedResult.rejected];
   const score = computeRiskScore(verified);
   // LLM bazen boş not döndürüyor (gerçek Chrome testinde görüldü): boş notlar belirsizlik sayılmaz.
   const notes = input.output.uncertainty_notes.map((n) => n.trim()).filter((n) => n.length > 0);

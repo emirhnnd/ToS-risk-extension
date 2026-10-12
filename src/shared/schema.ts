@@ -33,6 +33,15 @@ export const LlmOutputSchema = z
 export type LlmFinding = z.infer<typeof LlmFindingSchema>;
 export type LlmOutput = z.infer<typeof LlmOutputSchema>;
 
+/**
+ * Ayrıştırma iki katmanlıdır: dış yapı (alan adları, bilinmeyen alan yasağı, belge türü, dil)
+ * katı doğrulanır; geçmezse çıktının TAMAMI reddedilir. Bulgular ise TEK TEK doğrulanır:
+ * şemaya uymayan bulgu atılır ve `schema_rejected` listesine girer, diğerleri etkilenmez.
+ * (Eval'de görüldü: tek bir 600+ karakterlik alıntı, Spotify analizinin tamamını düşürüyordu.)
+ */
+export const LlmOutputEnvelopeSchema = LlmOutputSchema.extend({ findings: z.array(z.unknown()).max(60) }).strict();
+export type ParsedLlmOutput = LlmOutput & { schema_rejected?: RejectedFinding[] };
+
 /** Metnin bölünmüş hali. LLM'e giden ve doğrulamada kullanılan birim. */
 export interface Segment {
   id: string; // "S1", "S2"...
@@ -50,7 +59,9 @@ export interface HiddenTextFinding {
 /** Alıntı doğrulamasından geçemeyen ve atılan iddia */
 export interface RejectedFinding {
   finding: unknown;
-  reason: 'quote_not_found' | 'too_short' | 'contains_ellipsis' | 'duplicate';
+  reason: 'quote_not_found' | 'too_short' | 'contains_ellipsis' | 'duplicate' | 'schema_invalid';
+  /** schema_invalid için: hangi alan neden geçmedi */
+  detail?: string;
 }
 
 export interface VerifiedFinding extends LlmFinding {

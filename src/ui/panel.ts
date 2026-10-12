@@ -155,7 +155,7 @@ export class ReportPanel {
         h(
           'details',
           { class: 'rejected', 'data-testid': 'rejected' },
-          h('summary', {}, `🚫 Reddedilen iddialar (${rejected.length}): alıntısı orijinal metinde doğrulanamadı`),
+          h('summary', {}, `🚫 Reddedilen iddialar (${rejected.length}): doğrulamadan geçemedi`),
           h(
             'ul',
             {},
