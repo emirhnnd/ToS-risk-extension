@@ -19,6 +19,11 @@
   <p class="note">Boş bırakırsanız varsayılan model kullanılır. "Model bulunamadı" hatası alırsanız örn. <code>gemini-3.6-flash</code> veya <code>gemini-3.5-flash-lite</code> deneyin.</p>
   <button id="save">Kaydet</button>
   <p id="status" role="status"></p>
+  <h2 style="font-size:17px;margin-top:28px">Panel</h2>
+  <p id="hosts-line" class="note">Panel, sözleşmeye benzeyen sayfalarda kendiliğinden açılır.</p>
+  <button id="reset-hosts" hidden>Tüm sitelerde yeniden kendiliğinden açılsın</button>
+  <p style="margin-top:16px"><label><input id="dev" type="checkbox" style="width:auto" /> Geliştirici modu: panelde "💾 Eval için metni kaydet" düğmesini göster</label></p>
+  <p id="panel-status" class="note" role="status"></p>
   <p class="note">Anahtar yalnızca bu tarayıcıda (chrome.storage.local) saklanır. Ziyaret ettiğiniz sayfalar anahtara erişemez; LLM isteği uzantının arka plan betiğinden yapılır.</p>
   <script type="module" src="./options.ts"></script>
 </body>

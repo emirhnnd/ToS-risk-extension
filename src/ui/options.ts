@@ -23,4 +23,29 @@ document.getElementById('save')!.addEventListener('click', async () => {
   keyInput.value = '';
   statusEl.textContent = 'Kaydedildi.';
 });
-export {};
+// --- Panel tercihleri ---
+import { getPrefs } from '../shared/prefs';
+const hostsLine = document.getElementById('hosts-line') as HTMLParagraphElement;
+const resetBtn = document.getElementById('reset-hosts') as HTMLButtonElement;
+const devBox = document.getElementById('dev') as HTMLInputElement;
+const panelStatus = document.getElementById('panel-status') as HTMLParagraphElement;
+
+async function renderPrefs(): Promise<void> {
+  const prefs = await getPrefs();
+  devBox.checked = prefs.devMode;
+  const n = prefs.autoOpenDisabledHosts.length;
+  hostsLine.textContent = n === 0
+    ? 'Panel, sözleşmeye benzeyen sayfalarda kendiliğinden açılır.'
+    : `Panel şu sitelerde kendiliğinden açılmıyor: ${prefs.autoOpenDisabledHosts.join(', ')}. Uzantı simgesiyle yine açabilirsiniz.`;
+  resetBtn.hidden = n === 0;
+}
+resetBtn.addEventListener('click', async () => {
+  await chrome.storage.local.set({ autoOpenDisabledHosts: [] });
+  panelStatus.textContent = 'Sıfırlandı.';
+  await renderPrefs();
+});
+devBox.addEventListener('change', async () => {
+  await chrome.storage.local.set({ devMode: devBox.checked });
+  panelStatus.textContent = devBox.checked ? 'Geliştirici modu açık (sayfayı yenileyin).' : 'Geliştirici modu kapalı.';
+});
+void renderPrefs();

@@ -8,6 +8,7 @@ import { ReportPanel } from '../ui/panel';
 import { startActionGuard } from './action-guard';
 import { detectContractPage } from './detect';
 import { extractVisibleText } from './extract';
+import { disableAutoOpen, getPrefs, shouldAutoOpen } from '../shared/prefs';
 
 /**
  * İçerik betiği: veri akışının sayfa tarafı (plan §5.2, adım 1–3 ve 6).
@@ -18,13 +19,16 @@ import { extractVisibleText } from './extract';
  */
 let panel: ReportPanel | null = null;
 
-function openPanel(): ReportPanel {
-  if (panel && document.getElementById('tos-risk-panel-host')) return panel;
-  panel = new ReportPanel();
-  panel.onAnalyze = () => void runAnalysis(panel!);
-  panel.onExport = () => void exportSnapshot();
-  panel.showIdle(currentDetection());
-  return panel;
+async function openPanel(autoOpened = false): Promise<ReportPanel> {
+  if (panel && panel.isOpen) return panel;
+  const prefs = await getPrefs();
+  const p = new ReportPanel();
+  panel = p;
+  p.onAnalyze = () => void runAnalysis(p);
+  p.onExport = () => void exportSnapshot();
+  p.onDisableAutoOpen = () => void disableAutoOpen(location.hostname).then(() => p.close());
+  p.showIdle(currentDetection(), { devMode: prefs.devMode, autoOpened });
+  return p;
 }
 
 function currentDetection(): number {
@@ -93,7 +97,9 @@ async function runAnalysis(p: ReportPanel): Promise<void> {
 }
 
 chrome.runtime.onMessage.addListener((msg, sender) => {
-  if (sender.id === chrome.runtime.id && msg?.type === 'open-panel') openPanel();
+  if (sender.id === chrome.runtime.id && msg?.type === 'open-panel') void openPanel();
 });
 
-if (currentDetection() >= 0.5) openPanel();
+void getPrefs().then((prefs) => {
+  if (shouldAutoOpen(currentDetection(), location.hostname, prefs)) void openPanel(true);
+});
