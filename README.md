@@ -24,71 +24,9 @@ LLM sistemin içinde **güvenilmez bir bileşen**dir. Ürettiği hiçbir şey do
 
 ![Mimari: sayfa, içerik betiği, service worker ve Gemini arasındaki güven sınırları](docs/mimari.png)
 
-<details><summary>Diyagram kaynağı (Mermaid)</summary>
-
-```mermaid
-flowchart TB
-  subgraph Sayfa["Ziyaret edilen sayfa (güvenilmez)"]
-    DOM["DOM<br/>görünür + gizli metin"]
-  end
-  subgraph CS["İçerik betiği (sayfanın içinde, anahtar YOK)"]
-    DET["Algılama<br/>detect.ts"]
-    EXT["page-agent<br/>yalnızca DOM→metin"]
-    HID["Gizli metin tespiti<br/>hidden.ts"]
-    SEG["Bölge + segment<br/>region.ts · segment.ts"]
-    GUARD["Salt-okuma denetimi<br/>action-guard.ts"]
-    PANEL["Rapor paneli<br/>open Shadow DOM · panel.ts"]
-  end
-  subgraph SW["Service worker (anahtar burada)"]
-    VAL1["İstek doğrulama (Zod)"]
-    LLM["LLM istemcisi<br/>llm.ts"]
-    VAL["Şema → alıntı → skor → belirsizlik<br/>validator/*"]
-  end
-  STORE[("chrome.storage.local<br/>API anahtarı")]
-  GEM["Gemini API<br/>(güvenilmez)"]
-
-  DOM --> DET & EXT & HID
-  EXT --> SEG
-  HID -->|gizli satırlar çıkarılır| SEG
-  SEG -->|segmentler + gizli içerik listesi| VAL1 --> LLM
-  STORE -.->|yalnızca SW okur| LLM
-  LLM -->|"#lt;untrusted_document#gt; içinde metin"| GEM
-  GEM -->|JSON| VAL
-  VAL -->|"Rapor (kodla üretilmiş)"| PANEL
-  GUARD -.->|analiz boyunca sentetik tıklama sayar| DOM
-```
-
-</details>
-
 ### Veri akışı (bir analiz)
 
 ![Veri akışı: bir analizin adımları](docs/veri-akisi.png)
-
-<details><summary>Diyagram kaynağı (Mermaid)</summary>
-
-```mermaid
-sequenceDiagram
-  autonumber
-  actor K as Kullanıcı
-  participant P as Panel / içerik betiği
-  participant S as Service worker
-  participant G as Gemini
-  K->>P: "Bu sayfayı analiz et"
-  P->>P: page-agent ile görünür metni oku, gizli metni bul ve çıkar
-  P->>P: main bölgesi, segmentler [S1]…[Sn], salt-okuma denetimi başlar
-  P->>S: analyze {segmentler, gizli içerik, başlık, URL}
-  S->>S: Zod ile isteği doğrula, metni bütçeye sığdır
-  S->>G: systemInstruction + #lt;untrusted_document#gt; içinde metin, JSON şeması
-  G-->>S: JSON (bulgular, alıntılar, şiddet)
-  S->>S: 1) şema (dış yapı katı, bulgular tek tek)
-  S->>S: 2) her alıntıyı metinde ara, yoksa reddet
-  S->>S: 3) skor = Σ ağırlık × şiddet (kodla)
-  S->>S: 4) belirsizlik nedenleri (kurallarla)
-  S-->>P: Rapor
-  P->>K: skor, maddeler + alıntılar, reddedilenler, gizli içerik, belirsizlik, hukuki uyarı
-```
-
-</details>
 
 | Bileşen | Sorumluluk | Neye erişemez |
 |---|---|---|

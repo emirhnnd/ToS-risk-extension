@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  actor K as Kullanıcı
+  participant P as Panel / içerik betiği
+  participant S as Service worker
+  participant G as Gemini
+  K->>P: "Bu sayfayı analiz et"
+  P->>P: page-agent ile görünür metni oku, gizli metni bul ve çıkar
+  P->>P: main bölgesi, segmentler [S1]…[Sn], salt-okuma denetimi başlar
+  P->>S: analyze {segmentler, gizli içerik, başlık, URL}
+  S->>S: Zod ile isteği doğrula, metni bütçeye sığdır
+  S->>G: systemInstruction + #lt;untrusted_document#gt; içinde metin, JSON şeması
+  G-->>S: JSON (bulgular, alıntılar, şiddet)
+  S->>S: 1) şema (dış yapı katı, bulgular tek tek)
+  S->>S: 2) her alıntıyı metinde ara, yoksa reddet
+  S->>S: 3) skor = Σ ağırlık × şiddet (kodla)
+  S->>S: 4) belirsizlik nedenleri (kurallarla)
+  S-->>P: Rapor
+  P->>K: skor, maddeler + alıntılar, reddedilenler, gizli içerik, belirsizlik, hukuki uyarı

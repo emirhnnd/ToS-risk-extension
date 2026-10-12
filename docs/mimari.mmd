@@ -1,0 +1,29 @@
+flowchart TB
+  subgraph Sayfa["Ziyaret edilen sayfa (güvenilmez)"]
+    DOM["DOM<br/>görünür + gizli metin"]
+  end
+  subgraph CS["İçerik betiği (sayfanın içinde, anahtar YOK)"]
+    DET["Algılama<br/>detect.ts"]
+    EXT["page-agent<br/>yalnızca DOM→metin"]
+    HID["Gizli metin tespiti<br/>hidden.ts"]
+    SEG["Bölge + segment<br/>region.ts · segment.ts"]
+    GUARD["Salt-okuma denetimi<br/>action-guard.ts"]
+    PANEL["Rapor paneli<br/>open Shadow DOM · panel.ts"]
+  end
+  subgraph SW["Service worker (anahtar burada)"]
+    VAL1["İstek doğrulama (Zod)"]
+    LLM["LLM istemcisi<br/>llm.ts"]
+    VAL["Şema → alıntı → skor → belirsizlik<br/>validator/*"]
+  end
+  STORE[("chrome.storage.local<br/>API anahtarı")]
+  GEM["Gemini API<br/>(güvenilmez)"]
+
+  DOM --> DET & EXT & HID
+  EXT --> SEG
+  HID -->|gizli satırlar çıkarılır| SEG
+  SEG -->|segmentler + gizli içerik listesi| VAL1 --> LLM
+  STORE -.->|yalnızca SW okur| LLM
+  LLM -->|"#lt;untrusted_document#gt; içinde metin"| GEM
+  GEM -->|JSON| VAL
+  VAL -->|"Rapor (kodla üretilmiş)"| PANEL
+  GUARD -.->|analiz boyunca sentetik tıklama sayar| DOM
