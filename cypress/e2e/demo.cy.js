@@ -16,6 +16,13 @@ describe('ToS Risk Analizi – demo', () => {
       .invoke('attr', 'data-score')
       .then((s) => expect(Number(s)).to.be.within(1, 100));
     cy.get('[data-testid=finding]').should('have.length.at.least', 3);
+    cy.demoPause();
+
+    // Skor LLM'den gelmez: döküm, kodla hesaplanan toplamı gösterir
+    cy.get('[data-testid=score-details] summary').click();
+    cy.get('[data-testid=risk-score]').invoke('attr', 'data-score').then((score) => {
+      cy.get('[data-testid=score-details]').should('contain', `= ${score}`);
+    });
 
     // Kodun yaptığı alıntı doğrulamasını dışarıdan da kontrol et: her alıntı sayfa metninde var
     cy.document().then((doc) => {

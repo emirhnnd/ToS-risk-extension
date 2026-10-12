@@ -10,7 +10,12 @@ export interface LlmConfig {
   model: string;
   fetchFn?: typeof fetch; // testlerde sahte fetch
   timeoutMs?: number;
+  /** Geçici sunucu hatasında (5xx) yeniden denemeden önce bekleme; testlerde 0 */
+  retryDelayMs?: number;
 }
+
+/** Geçici sunucu hataları: model yoğun (503) vb. Bir kez beklenip yeniden denenir. */
+const TRANSIENT_STATUS = new Set([500, 502, 503, 504]);
 
 export type LlmResult =
   | { ok: true; data: Extract<ParseResult, { ok: true }>['data']; attempts: number; raw: string }
@@ -55,7 +60,13 @@ export async function analyzeWithGemini(
       continue;
     }
     if (!res.ok) {
-      // HTTP hataları yeniden denenmez (anahtar hatası, kota vb. tekrarla düzelmez)
+      // Geçici sunucu hataları (ör. 503 "model şu an yoğun") bir kez beklenip yeniden denenir.
+      // Anahtar hatası, model bulunamadı, kota (4xx) tekrarla düzelmez: hemen anlaşılır hata döner.
+      if (TRANSIENT_STATUS.has(res.status) && attempt < 2) {
+        lastError = await httpErrorMessage(res, cfg.model);
+        await new Promise((r) => setTimeout(r, cfg.retryDelayMs ?? 3000));
+        continue;
+      }
       return { ok: false, error: await httpErrorMessage(res, cfg.model), attempts: attempt };
     }
     const json = (await res.json().catch(() => null)) as GeminiResponse | null;
@@ -96,6 +107,11 @@ async function httpErrorMessage(res: Response, model: string): Promise<string> {
       return `"${model}" modeli bulunamadı. Ayarlar sayfasından başka bir model deneyin.`;
     case 429:
       return 'Gemini istek limiti aşıldı. Bir dakika bekleyip tekrar deneyin.';
+    case 500:
+    case 502:
+    case 503:
+    case 504:
+      return `Gemini şu an yoğun veya geçici bir sorun yaşıyor (${res.status}). Bir kez otomatik olarak yeniden denendi; birkaç dakika sonra "Tekrar dene"ye basın.`;
     default: {
       let msg = '';
       try { msg = String(JSON.parse(detail)?.error?.message ?? ''); } catch { /* JSON değil */ }

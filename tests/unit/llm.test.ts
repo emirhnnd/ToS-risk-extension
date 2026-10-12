@@ -40,6 +40,20 @@ describe('analyzeWithGemini', () => {
     if (!r.ok) expect(r.error).toMatch(re);
     expect(fetchFn).toHaveBeenCalledTimes(1);
   });
+  it('503 (model yoğun, Cypress koşusunda görüldü): bir kez yeniden dener, ikincide başarı', async () => {
+    const fetchFn = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ error: { message: 'This model is currently experiencing high demand.' } }), { status: 503 }))
+      .mockResolvedValueOnce(geminiOk(JSON.stringify(output([finding()]))));
+    const r = await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn, retryDelayMs: 0 });
+    expect(r).toMatchObject({ ok: true, attempts: 2 });
+  });
+  it('iki kez 503: anlaşılır Türkçe hata, en fazla 2 deneme', async () => {
+    const fetchFn = vi.fn(async () => new Response('{}', { status: 503 }));
+    const r = await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn, retryDelayMs: 0 });
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.error).toMatch(/yoğun/);
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+  });
   it('ağ hatası yakalanır, bir kez yeniden denenir, Türkçe mesaj döner', async () => {
     const fetchFn = vi.fn(async () => { throw new TypeError('Failed to fetch'); });
     const r = await analyzeWithGemini(segs, meta, { apiKey: 'k', model: 'm', fetchFn });
