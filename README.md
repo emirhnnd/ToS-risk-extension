@@ -48,6 +48,8 @@ LLM sistemin içinde **güvenilmez bir bileşen**dir. Ürettiği hiçbir şey do
 
 ## Kurulum (geliştirme)
 
+Gerekli: Node.js 22 veya üstü (CI'da Node 22 ve 24 ile test edilir).
+
 ```bash
 npm install
 npm test         # birim testleri
@@ -59,7 +61,17 @@ Chrome → `chrome://extensions` → Geliştirici modu → **Paketlenmemiş öğ
 
 Ayarlar sayfasında Gemini API anahtarını girin. Anahtar yalnızca `chrome.storage.local` içinde saklanır, repoda yoktur.
 
-Yerel test sayfaları için `npm run fixtures` çalıştırıp http://localhost:5555 adresini açın (kurgusal ToS + prompt injection sayfası).
+Yerel test sayfaları için `npm run fixtures` çalıştırıp http://localhost:5555 adresini açın. Kurgusal ToS, prompt injection, 29 gizleme tekniği, gerçekçi düzenler ve agresif CSS sayfaları var.
+
+Eval ve Cypress (canlı Gemini) için `.env.example` dosyasını `.env` olarak kopyalayıp `GEMINI_API_KEY=` satırına anahtarınızı yazın. `.env` git'e girmez.
+
+**Sürekli entegrasyon:** Her gönderimde GitHub Actions şunları çalıştırır (`.github/workflows/ci.yml`):
+- tip kontrolü
+- birim testleri (sır taraması dahil)
+- normal build ve e2e build
+- normal build'e test sunucusu adresinin sızmadığının kontrolü
+
+Cypress testleri görünür bir tarayıcı gerektirdiği için yerelde çalışır.
 
 ## Klasör yapısı
 
@@ -73,8 +85,10 @@ src/
   ui/          ayarlar sayfası, rapor paneli
 tests/unit/    Vitest
 cypress/       E2E: e2e/*.cy.js, fixtures/pages (test sayfaları), fixtures/llm (kayıtlı Gemini yanıtları)
-scripts/       test sunucusu + LLM vekili, Cypress çalıştırıcısı, etiketleme aracı üreticisi
-eval/          korpus, altın etiketler, ölçüm
+scripts/       test sunucusu + LLM vekili, Cypress çalıştırıcısı, etiketleme aracı ve diyagram üreticileri
+eval/          korpus, altın etiketler, ölçüm, hata analizi
+docs/          demo videosu, mimari ve veri akışı diyagramları (+ Mermaid kaynakları)
+.github/       CI iş akışı
 ```
 
 ## Arayüz
@@ -115,8 +129,9 @@ LLM şiddeti sabit değerlerden daha yakın çıktığı için korundu. 6 metin 
 | Belirsizlik | Varsayım |
 |---|---|
 | Grup büyüklüğü | Bireysel |
-| "sade Türkçe açıklama ve ___" | Güven / belirsizlik seviyesi |
-| page-agent kullanımı | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler |
+| "sade Türkçe açıklama ve ___" (ödev metninde boş) | Güven / belirsizlik seviyesi |
+| "orijinal metinden ___ ile gösterilmeli" (ödev metninde boş) | Orijinal metinden **birebir alıntı** ile; sonraki cümle "Alıntısı olmayan iddia geçersiz sayılır" diyor |
+| page-agent kullanımı ("… sayfada işlem yapabilir. ve ___", ödev metninde eksik) | Yalnızca DOM→metin okuma katmanı (`@page-agent/page-controller`). Aksiyon metotları kapalı; `tests/unit/readonly.test.ts` bunu denetler. Analiz sırasındaki her kod kaynaklı tıklama panelde sayılır |
 | Eval dili | 3 Türkçe (Spotify, Getir, YouTube) + 3 İngilizce (Netflix, Amazon.com, Steam) metin, hepsi 11 Ekim 2026 tarihli tek sürümden (`extension_build: 2026-10-11T07:10:18.198Z`). Spotify `tr-en` adresi Türkçe metin döndürdü. Açıklamalar her durumda Türkçe |
 | İçerik betiği kapsamı | Otomatik algılama (F1) için tüm http/https sayfalarda çalışır. Yalnızca okuma yapar, ağ isteği atmaz |
 
@@ -164,14 +179,15 @@ npm run e2e:open    # Cypress arayüzü
 - **Neden Chrome for Testing?** Markalı Chrome 137'den beri `--load-extension` bayrağını desteklemiyor; Cypress belgeleri de Chrome for Testing veya Chromium öneriyor. `scripts/e2e.mjs` onu bir kez `.browsers/` altına indirir.
 - **Ayrı e2e build'i (`dist-e2e/`).** `vite build --mode e2e` iki şeyi değiştirir. Birincisi, Cypress test edilen sayfayı iframe içinde açtığı için içerik betiği çerçevelere de girer (`all_frames`). İkincisi, LLM isteği Google yerine yerel test sunucusuna (`localhost:5555/e2e-llm/…`) gider. Normal build'de bunların hiçbiri yoktur; `tests/unit/e2e-setup.test.ts` bunu denetler.
 - **Anahtar yine uzantıda değil.** E2E build'inde uzantı yer tutucu bir anahtar gönderir. Gerçek anahtarı test sunucusu `.env`'den ekleyip isteği Gemini'ye iletir.
-- **Kayıtlı gerçek yanıtlar.** Sunucu (`LLM_MODE=auto`) her başarılı Gemini yanıtını `cypress/fixtures/llm/<istek özeti>.json` olarak kaydeder; aynı istek tekrar gelirse kayıttan döndürür. Video (`e2e:video`, `LLM_MODE=replay`) bu kayıtlarla çekilir. Böylece videodaki çıktı gerçek bir Gemini yanıtıdır ama video beklemesiz ve tekrarlanabilir olur. Sayfa veya prompt değişirse istek özeti değişir ve kayıt geçersiz kalır; `npm run e2e` yeniden kaydeder.
+- **Kayıtlı gerçek yanıtlar.** Sunucu (`LLM_MODE=auto`) her başarılı Gemini yanıtını `cypress/fixtures/llm/<istek özeti>.json` olarak kaydeder; aynı istek tekrar gelirse kayıttan döndürür. Video (`e2e:video`, `LLM_MODE=replay`) bu kayıtlarla çekilir. Böylece videodaki çıktı gerçek bir Gemini yanıtıdır, ama video LLM'i beklemez ve tekrarlanabilir olur. Adımlar arasındaki duraklamalar ve ekran altı açıklamalar yalnızca video modunda vardır. Açıklamalar analiz bittikten sonra eklenir, böylece LLM'e giden metni değiştirmezler. Sayfa veya prompt değişirse istek özeti değişir ve kayıt geçersiz kalır; `npm run e2e` yeniden kaydeder.
 - **Gizli metnin LLM'e gitmediği dışarıdan kanıtlanır.** Test sunucusu son LLM isteğini `/e2e-llm/last` adresinde gösterir. Demo testi bu isteğin içinde gizli talimatların hiçbirinin olmadığını doğrular. Ekran dışı (`left:-9999px`) metin kuralı jsdom'da test edilemiyordu; burada gerçek tarayıcıda test edilir.
 
 | Test | Ne gösterir |
 |---|---|
-| `demo.cy.js` 1) mutlu yol | Panel kendiliğinden açılır, hukuki uyarı görünür, analiz sonrası her alıntı sayfa metninde birebir bulunur, "Sayfada göster" vurgular, salt-okuma denetimi 0 |
+| `demo.cy.js` 1) mutlu yol | Panel kendiliğinden açılır ve hukuki uyarı görünür. Analizden sonra her alıntı sayfa metninde birebir bulunur. Skor dökümünün toplamı skorla aynıdır. "Sayfada göster" alıntıyı vurgular. Salt-okuma denetimi 0 |
 | `demo.cy.js` 2) belirsizlik | Gizli talimatlı sayfada belirsizlik **yüksek**, gizli içerik "şüpheli" olarak listelenir, LLM'e giden istekte gizli metin yok, sayfadaki butona kodla hiç tıklanmadı |
-| `guards.cy.js` | Sözleşme olmayan sayfada panel açılmaz; panel open Shadow DOM'dadır; panel küçültülünce uyarının ilk cümlesi ("Bu uygulama hukuki tavsiye vermez.") kalır; × ile kapatılır, uzantı simgesiyle yeniden açılır |
+| `guards.cy.js` | Sözleşme olmayan sayfada panel açılmaz. Panel open Shadow DOM'dadır. Küçültülünce uyarının ilk cümlesi ("Bu uygulama hukuki tavsiye vermez.") kalır. Panel × ile kapatılır. Agresif sayfa CSS'i paneli ve uyarıyı gizleyemez |
+| `hiding.cy.js` | 29 gizleme tekniğinden 27'si LLM'e gitmez (biri bilinen sınırlama, biri aslında görünür). Gerçekçi düzenlerde görünür metin atılmaz |
 
 ## Güvenlik
 
@@ -205,3 +221,11 @@ npm run e2e:open    # Cypress arayüzü
 - Eval sonuçları prompt v1 ile üretildi. v2 yalnızca sayfa başlığının ve URL'nin konumunu değiştirir; eval v2 ile yeniden koşulmadı.
 - Metin çıkarma, sayfada `<main>` bölgesi varsa (ve metnin ≥%40'ını içeriyorsa) yalnızca onu alır; menü, alt bilgi ve çerez uyarısı dışarıda kalır. `<main>` yoksa sayfanın tamamı alınır ve bu gürültü LLM'e gider. Korpus dosyasındaki `extraction` alanı hangisinin olduğunu ve kaç satır atıldığını kaydeder.
 - Alıntı normalizasyonu aksanları kaldırır; çok nadir durumlarda farklı kelimeleri eşleştirebilir.
+
+## Gelecekte yapılabilecekler
+
+- **Prompt v2'nin eval'i:** v1 ile karşılaştırma ve "aynı kategoriden birden fazla madde varsa her birini raporla" talimatı. Kaçırmaların yarısı aynı kategorinin ikinci örneğiydi.
+- **Şiddeti metindeki ifadelere bağlayan kurallar:** Örneğin "sole discretion", "without notice", "non-refundable". Skor tamamen deterministik olur, ama bunu ölçmek için daha büyük bir etiketli küme gerekir.
+- **Tablo farkındalığı:** Tablo satırlarını "hücre | hücre" biçiminde koruyan metin çıkarma. Spotify'ın ülke → hukuk tablosu bu yüzden kaçtı.
+- **ToS değişiklik takibi:** Aynı sayfanın önceki analiziyle karşılaştırıp yeni eklenen riskli maddeleri göstermek.
+- **İkinci etiketleyici:** Etiketleyiciler arası uyumu ölçmek. Tek etiketleyicide en az 4 eksik madde bulundu.
