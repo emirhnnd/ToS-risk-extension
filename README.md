@@ -15,7 +15,7 @@ Kullanım koşulları, gizlilik politikası ve abonelik şartları sayfalarını
 1. **Mutlu yol:** Panel sözleşme sayfasında kendiliğinden açılır ve maddeleri bulur. Her alıntı sayfada kodla doğrulanır. "Skor nasıl hesaplandı?" tablosu skorun formülden geldiğini gösterir. "Sayfada göster" alıntıyı vurgular.
 2. **Belirsizlik anı:** Gizli talimatlı sayfada panel "bu raporun güvenilirliği düşük" der. Gizli talimatlar "şüpheli" olarak listelenir ve yapay zekâya gönderilmez; test bunu LLM'e giden istekten doğrular. Sayfadaki "Abone ol" butonuna kodla hiç tıklanmaz.
 
-Video `npm run e2e:video` ile üretilir. Kullanılan LLM yanıtları gerçek Gemini yanıtlarıdır; kaydedilip (`cypress/fixtures/llm/`) tekrar oynatılır.
+Video `npm run e2e:video` ile üretilir. Kullanılan LLM yanıtları gerçek Gemini yanıtlarıdır; kaydedilip (`cypress/fixtures/llm/`) tekrar oynatılır. Bu kayıtta Gemini uydurma alıntı üretmediği için videoda reddedilen bir iddia görünmüyor. Reddetme davranışı birim testlerinde (`tests/unit/validate.test.ts`, `fuzz.test.ts`) ve eval'de ölçüldü.
 
 
 ## Temel ilke
